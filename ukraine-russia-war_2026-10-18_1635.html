@@ -1,0 +1,211 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ukraine-Russia War — Research Digest — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><img class="hero" src="img/ukraine-russia-war_2026-10-18_1635.jpg" alt=""><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-18 16:35</div><p><strong>Date saved:</strong> 2026-10-18 16:35 (PDT)</p>
+<p><strong>Sources:</strong> The Independent, Kyiv Independent, RBC-Ukraine, Yahoo News, NYT, Radio Svoboda, Le Monde</p>
+<h2>Key findings</h2>
+<h3>Collapse of Trump's energy ceasefire</h3>
+<ul>
+<li><strong>The Independent (Oct 18):</strong> Trump's proposed energy ceasefire has collapsed — Ukraine and Russia are trading strikes. Zelensky said Russia demonstrated "ostentatious disrespect toward the United States" by launching 39 ballistic missiles and 120+ drones at energy and critical infrastructure in Kyiv, Kyiv Oblast and Kharkiv (Oct 14 strike).</li>
+<li><strong>RBC-Ukraine (Oct 18):</strong> Russia hit Ukraine's energy infrastructure 76 times during the week of Trump's truce, Zelenskyy said. At least 600,000 people left without power; 26 power facilities and 4 oil/gas sites damaged.</li>
+<li><strong>NYT:</strong> Zelensky announced in an interview with the Financial Times that Ukraine will resume strikes on Russian refineries — a defiant decision underscoring Trump's inability to end the war he promised to resolve; he had paused the strikes to comply with a US demand.</li>
+</ul>
+<h3>Ukraine's deep strikes inside Russia</h3>
+<ul>
+<li><strong>The Independent / Kyiv Independent (Oct 17-18):</strong> Kyiv launched more than 1,000 drones across Russia, setting the St. Petersburg Oil Terminal ablaze and hitting the Ruchyi oil depot — fires killed one person and wounded five. Also struck a major bridge in St. Petersburg, an Ozon logistics center, and a VK data center (both companies confirmed).</li>
+<li><strong>Radio Svoboda (Oct 18):</strong> Drones mass-attacked Moscow, St. Petersburg and Leningrad Oblast overnight; Russian aviation restricted flights at two Moscow airports and Pulkovo. Ukraine's Air Force downed 140 of 157 Russian drones plus 6 S-8000 "Banderol" glide munitions in one day.</li>
+<li><strong>Kyiv Independent (Oct 17-18):</strong> Ukraine hit a Russian drone manufacturing plant in Rostov Oblast.</li>
+<li><strong>NYT:</strong> Starshield (US-provided satellite internet) disruptions persist — Ukrainian officials said the Pentagon and SpaceX have not responded to inquiries. A Kyiv Independent analysis warns the Starlink-enabled "middle strike" advantage — drones hunting fuel, ammunition and reinforcements deep behind lines — is now at risk.</li>
+</ul>
+<h3>Russian attacks on Ukraine</h3>
+<ul>
+<li><strong>Kyiv Independent (Oct 18):</strong> Russian strikes hit 20 locations nationwide, killing at least 10 and injuring 73; 289 of 332 drones downed overnight; Iskander-M and North Korean KN-23 ballistic missiles struck 22 locations.</li>
+<li><strong>RBC-Ukraine (Oct 18):</strong> Residential building struck in Zaporizhzhia killing a 27-year-old woman; logistics hub near Lviv hit with warehouses engulfed in flames; ballistic weapon used against Kharkiv.</li>
+<li><strong>UN (Oct 9, via DPPA):</strong> More than 100 civilians killed and 429 injured in one week (OHCHR); growing damage to energy facilities ahead of winter; concern over attacks on Black Sea commercial shipping.</li>
+</ul>
+<h3>Front lines</h3>
+<ul>
+<li><strong>Yahoo News (Oct 14):</strong> Operation Vivaldi: Ukraine's Third Army Corps liberated another 101 sq km in the Lyman sector of Donetsk Oblast, retaking Zelena Dolyna, Lypove and Kolodiazi; Russia lost ~3,000 soldiers in the fourth stage. Total: 16 settlements and 277 sq km returned. The fight for the Donbas fortress belt — Sloviansk, Kramatorsk, Druzhkivka, Kostiantynivka — is crucial going into winter, when Russia aims to consolidate urban footholds for a 2027 offensive.</li>
+<li><strong>RBC-Ukraine (Oct 18):</strong> Russian losses as of Oct 18: +2,090 troops and 27 artillery systems in one day.</li>
+</ul>
+<h3>Diplomacy</h3>
+<ul>
+<li><strong>The Independent (Oct 18):</strong> Zelensky arrived in New York as the ceasefire collapsed. Le Monde: Zelensky rejected Trump's "energy ceasefire" after a US-Russia diesel deal, saying he felt "betrayed."</li>
+<li><strong>RBC-Ukraine (Oct 18):</strong> Italy's defense minister said Ukraine can never win the war against Russia.</li>
+<li><strong>CNN (Oct 16-18):</strong> Ukraine has run out of Patriot interceptor missiles as Zelensky and Trump clash; the US resumed intelligence sharing on Russian missile launches with Ukraine.</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-trump-putin-zelensky-oil-refinery-starlink-b3067841.html" target="_blank" rel="noopener">The Independent — Ukraine-Russia war live</a></li>
+<li><a href="https://kyivindependent.com/news-archive/" target="_blank" rel="noopener">Kyiv Independent — News archive</a></li>
+<li><a href="https://newsukraine.rbc.ua/war-in-ukraine" target="_blank" rel="noopener">RBC-Ukraine — War in Ukraine</a></li>
+<li><a href="https://www.yahoo.com/news/world/articles/ukraine-war-latest-operation-vivaldi-175127122.html" target="_blank" rel="noopener">Yahoo News — Ukraine war latest: Operation Vivaldi</a></li>
+<li><a href="https://www.nytimes.com/news-event/ukraine-russia" target="_blank" rel="noopener">NYT — Russia-Ukraine War</a></li>
+<li><a href="https://www.radiosvoboda.org/a/rosiya-ukrayina-zahroza-viyny/31703318.html" target="_blank" rel="noopener">Radio Svoboda — Russia's war against Ukraine</a></li>
+<li><a href="https://www.lemonde.fr/en/diplomacy/" target="_blank" rel="noopener">Le Monde — Diplomacy</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></div>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>
