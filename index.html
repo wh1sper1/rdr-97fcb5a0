@@ -2,74 +2,110 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Daily Anti-Fascist Brief</title><style>
-:root { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; }
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
 * { box-sizing:border-box; }
 body { margin:0; background:var(--paper); color:var(--ink);
   font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
 a { color:inherit; }
-.masthead { background:#111; color:#fff; padding:14px 20px 10px; }
-.masthead .brand { font-size:clamp(20px,6vw,30px); font-weight:700;
-  letter-spacing:1px; text-transform:uppercase; margin:0; }
-.masthead .brand span { color:#e8b04b; }
-.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #333;
-  margin-top:8px; padding-top:8px; font-size:13px; color:#cfd4dc;
-  font-family:system-ui,sans-serif; }
-.dateline a { color:#e8b04b; text-decoration:none; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
 .chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
-  font-family:system-ui,sans-serif; }
-.chip { font-size:12px; font-weight:600; letter-spacing:.4px; padding:5px 12px;
-  border-radius:999px; border:1px solid var(--line); background:#fff;
-  color:var(--muted); text-decoration:none; }
-.chip.active { background:#111; color:#fff; border-color:#111; }
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
 main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
   gap:22px; }
-.card { background:#fff; border:1px solid var(--line); border-radius:6px;
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
   overflow:hidden; display:flex; flex-direction:column;
-  transition:box-shadow .15s ease, transform .15s ease; text-decoration:none; }
-.card:hover { box-shadow:0 8px 24px rgba(0,0,0,.12); transform:translateY(-2px); }
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
 .card img { width:100%; height:180px; object-fit:cover; display:block;
-  background:#dde2e8; }
+  background:#0d1a12; }
 .card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
-.kicker { font-family:system-ui,sans-serif; font-size:11px; font-weight:700;
-  letter-spacing:1.2px; text-transform:uppercase; }
-.card h2 { margin:0; font-size:19px; line-height:1.3; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
 .snippet { color:var(--muted); font-size:14px; line-height:1.45; }
-.when { font-family:system-ui,sans-serif; font-size:12px; color:var(--muted);
-  margin-top:auto; }
-.section-title { font-size:14px; font-family:system-ui,sans-serif; font-weight:700;
-  letter-spacing:1px; text-transform:uppercase; color:var(--muted);
-  border-bottom:2px solid #111; padding-bottom:6px; margin:26px 0 16px; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
 .article { max-width:760px; }
-.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:6px;
-  margin:4px 0 18px; display:block; background:#dde2e8; }
-.article h1 { font-size:34px; line-height:1.2; margin:6px 0 8px; }
-.article .meta { font-family:system-ui,sans-serif; font-size:13px; color:var(--muted);
-  border-bottom:1px solid var(--line); padding-bottom:14px; margin-bottom:18px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
 .article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
-.article h2 { font-size:21px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
   padding-bottom:4px; }
 .article h3 { font-size:17px; margin:18px 0 8px; }
 .article ul { padding-left:22px; }
 .article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
-.article a { color:#1d4ed8; }
+.article a { color:var(--cyan); }
 .article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
-.footer { text-align:center; color:var(--muted); font-family:system-ui,sans-serif;
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
-body.dark { --ink:#e7eaef; --muted:#9aa5b3; --line:#2b313a; --paper:#12151a; }
-body.dark .card, body.dark .chip { background:#1a1f26; }
-body.dark .chip { color:#9aa5b3; border-color:#2b313a; }
-body.dark .chip.active { background:#e8b04b; color:#111; border-color:#e8b04b; }
-body.dark .article a { color:#8ab4ff; }
-body.dark .card:hover { box-shadow:0 8px 24px rgba(0,0,0,.5); }
-.theme-btn { margin-left:auto; font-family:system-ui,sans-serif; font-size:12px;
-  font-weight:600; padding:4px 14px; border-radius:999px; border:1px solid #444;
-  background:transparent; color:#cfd4dc; cursor:pointer; }
-.theme-btn:hover { background:#222; border-color:#666; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
 </style></head><body>
 <div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
   <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
-  <div class="dateline"><span>Sunday, October 18, 2026 · 15:55</span><span>·</span>
+  <div class="dateline"><span>Sunday, October 18, 2026 · 16:08</span><span>·</span>
   <a href="index.html">Front page</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
@@ -81,14 +117,14 @@ body.dark .card:hover { box-shadow:0 8px 24px rgba(0,0,0,.5); }
   var KEY = "research-viewer-theme";
   var btn = document.getElementById("themeBtn");
   function apply(t) {
-    document.body.classList.toggle("dark", t === "dark");
-    btn.textContent = t === "dark" ? "Light" : "Dark";
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
   }
   var saved = null;
   try { saved = localStorage.getItem(KEY); } catch (e) {}
-  if (saved === "dark" || saved === "light") { apply(saved); }
+  apply(saved === "light" ? "light" : "dark");
   btn.addEventListener("click", function () {
-    var now = document.body.classList.contains("dark") ? "light" : "dark";
+    var now = document.body.classList.contains("light") ? "dark" : "light";
     apply(now);
     try { localStorage.setItem(KEY, now); } catch (e) {}
   });
@@ -123,5 +159,40 @@ body.dark .card:hover { box-shadow:0 8px 24px rgba(0,0,0,.5); }
       applyFilter(topic);
     });
   });
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
 </script></body></html>
