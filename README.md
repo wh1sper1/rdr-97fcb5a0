@@ -2,7 +2,7 @@
 
 **Independent, twice-daily news brief — anti-fascist, anti-corruption, anti-corporate.** Every claim sourced, dated and linked to the original article.
 
-**Live site:** https://wh1sper1.github.io/rdr-97fcb5a0/index.html
+**Live site:** https://antifascistbrief.org/index.html
 
 ## Topics covered
 - **Antifa & the anti-fascist movement** — protests, government designations, court cases
