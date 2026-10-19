@@ -123,6 +123,16 @@ body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
 body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
 .contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; color:var(--muted); }
+.donate { max-width:760px; margin:18px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.donate h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .donate h2 { color:#0a7f46; }
+.donate p { color:var(--muted); font-size:14px; margin:0 0 4px; line-height:1.5; }
+.zelle { display:block; width:230px; height:auto; margin:14px auto 0; border:1px solid var(--line);
+  border-radius:8px; background:#fff; }
+.zelle-link { display:inline-block; transition:transform .15s ease; }
+.zelle-link:hover { transform:scale(1.03); }
 </style></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
@@ -223,6 +233,12 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
   <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
   <span class="addr" id="contactAddr"></span>
+</section>
+<section class="donate">
+  <h2>// Donate</h2>
+  <p>If this brief is worth something to you, scan with your Zelle app.</p>
+  <p>Tap the code to open it full size.</p>
+  <a class="zelle-link" href="img/zelle.png" target="_blank"><img class="zelle" src="img/zelle.png" alt="Zelle QR code"></a>
 </section>
 <div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
 </main><script>
