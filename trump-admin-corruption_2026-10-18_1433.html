@@ -74,6 +74,12 @@ body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
 .article h3 { font-size:17px; margin:18px 0 8px; }
 .article ul { padding-left:22px; }
 .article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:inherit; text-decoration:none;
+  border-bottom:1px dotted rgba(57,255,136,.45); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { color:var(--neon); border-bottom-color:var(--neon); }
+body.light .article li a { color:inherit; border-bottom-color:rgba(10,127,70,.45); }
+body.light .article li a:hover { color:#0a7f46; border-bottom-color:#0a7f46; }
 .article a { color:var(--cyan); }
 .article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
 .overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
@@ -137,12 +143,12 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 </ul>
 <h3>White House chaos / polling</h3>
 <ul>
-<li><strong>LA Times (2026-10-16):</strong> Press Secretary Katie Zacharia resigned Friday — her fifth day on the job; second senior official forced out in three days (after Guilfoyle).</li>
+<li><strong><a href="https://www.latimes.com/politics/story/2026-10-16/trumps-team-is-in-chaos-as-midterms-enter-final-stretch" target="_blank" rel="noopener">LA Times</a> (2026-10-16):</strong> Press Secretary Katie Zacharia resigned Friday — her fifth day on the job; second senior official forced out in three days (after Guilfoyle).</li>
 <li><strong>Fox News poll:</strong> Public anxiety over corruption in government has <strong>surpassed the economy</strong> as the top concern of voters entering the November election.</li>
 </ul>
 <h3>Self-enrichment allegations</h3>
 <ul>
-<li><strong>The Nation:</strong> Trump reported income of $2+ billion in 2025, much of it from parties with direct interests in presidential actions; also boasts of stock trades. Analysis of financial documents (UnHerd): owned up to $58M Nvidia shares at start of 2025, bought up to $68M more.</li>
+<li><strong><a href="https://www.thenation.com/article/politics/trump-presidency-personal-wealth-corruption/" target="_blank" rel="noopener">The Nation</a>:</strong> Trump reported income of $2+ billion in 2025, much of it from parties with direct interests in presidential actions; also boasts of stock trades. Analysis of financial documents (UnHerd): owned up to $58M Nvidia shares at start of 2025, bought up to $68M more.</li>
 <li><strong>White House ballroom project donors (Washington Post):</strong> Full donor list includes previously undisclosed contributors who benefited from regulatory decisions, government contracts, and one pardon. Nvidia and Apple each gave $25M; Adelson family and Charles Ergen also at $25M.</li>
 </ul>
 <h3>Noem / DHS</h3>
@@ -163,7 +169,7 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 </ul>
 <h3>US steps back from anti-corruption oversight</h3>
 <ul>
-<li><strong>ABC News:</strong> The U.S. formally withdrew from <strong>GRECO</strong> (Group of States against Corruption, Council of Europe), joining earlier withdrawals from the Venice Commission, WHO, and UN Human Rights Council.</li>
+<li><strong><a href="https://abcnews.com/US/wireStory/us-withdraws-european-anti-corruption-panel-latest-shift-136870520" target="_blank" rel="noopener">ABC News</a>:</strong> The U.S. formally withdrew from <strong>GRECO</strong> (Group of States against Corruption, Council of Europe), joining earlier withdrawals from the Venice Commission, WHO, and UN Human Rights Council.</li>
 </ul>
 <h3>Public opinion</h3>
 <ul>

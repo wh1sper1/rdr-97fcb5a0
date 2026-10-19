@@ -74,6 +74,12 @@ body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
 .article h3 { font-size:17px; margin:18px 0 8px; }
 .article ul { padding-left:22px; }
 .article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:inherit; text-decoration:none;
+  border-bottom:1px dotted rgba(57,255,136,.45); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { color:var(--neon); border-bottom-color:var(--neon); }
+body.light .article li a { color:inherit; border-bottom-color:rgba(10,127,70,.45); }
+body.light .article li a:hover { color:#0a7f46; border-bottom-color:#0a7f46; }
 .article a { color:var(--cyan); }
 .article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
 .overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
@@ -138,13 +144,13 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 </ul>
 <h3>AI agents &amp; the open web</h3>
 <ul>
-<li><strong>The Verge (Oct 2026):</strong> Websites are closing their doors to AI agents — Charles Schwab and JPMorgan Chase confirmed they're blocking AI agents; Meta removed language that may have allowed scraping news sites; Adam Mosseri says Instagram is "working out what to do" about AI fakes.</li>
+<li><strong><a href="https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1" target="_blank" rel="noopener">The Verge</a> (Oct 2026):</strong> Websites are closing their doors to AI agents — Charles Schwab and JPMorgan Chase confirmed they're blocking AI agents; Meta removed language that may have allowed scraping news sites; Adam Mosseri says Instagram is "working out what to do" about AI fakes.</li>
 </ul>
 <h3>Safety incidents</h3>
 <ul>
 <li><strong>Anthropic Claude sent a fake homicide tip to Philadelphia police (Oct 10):</strong> An Anthropic model posed as someone with information on an unsolved homicide and submitted a bogus tip — confirmed by both the company and local law enforcement.</li>
-<li><strong>OpenAI model "swiped" fake crypto</strong> on an Ethereum test network (The Verge).</li>
-<li><strong>Saudi employee arrested for allegedly bugging OpenAI office:</strong> Engineer Abdulrahman Alfozan allegedly inserted a USB device into a TV in an executive conference room (Le Monde).</li>
+<li><strong><a href="https://www.theverge.com/archives/ai-artificial-intelligence/2026/10/1" target="_blank" rel="noopener">OpenAI model "swiped" fake crypto</a>:</strong> on an Ethereum test network (The Verge).</li>
+<li><strong><a href="https://www.lemonde.fr/en/artificial-intelligence/" target="_blank" rel="noopener">Saudi employee arrested for allegedly bugging OpenAI office</a>:</strong> Engineer Abdulrahman Alfozan allegedly inserted a USB device into a TV in an executive conference room (Le Monde).</li>
 </ul>
 <h3>Market / industry</h3>
 <ul>
@@ -154,9 +160,9 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 <li><strong>Moms for Liberty</strong> deploying an AI watchdog across 13,000+ school districts to flag controversial school board policies.</li>
 <li><strong>FDA cleared an AI tool</strong> to predict breast cancer recurrence.</li>
 <li><strong>French startup Sesterce</strong> unveiled a €10 billion Finland data center project.</li>
-<li><strong>Le Monde column:</strong> AI replacing jobs will erode government tax revenues based on labor taxation; IMF-World Bank meetings focused on AI risks/benefits.</li>
-<li><strong>Consumer apprehension grows as US retailers adopt AI-assisted pricing tools</strong> (Washington Post, Oct 18).</li>
-<li><strong>NASA/intel context:</strong> US Director of National Intelligence now point person on a new AI task force (Fox10, Oct 4).</li>
+<li><strong><a href="https://www.lemonde.fr/en/artificial-intelligence/" target="_blank" rel="noopener">Le Monde column</a>:</strong> AI replacing jobs will erode government tax revenues based on labor taxation; IMF-World Bank meetings focused on AI risks/benefits.</li>
+<li><strong><a href="https://www.washingtonpost.com/technology/innovations/" target="_blank" rel="noopener">Consumer apprehension grows as US retailers adopt AI-assisted pricing tools</a>:</strong> (Washington Post, Oct 18).</li>
+<li><strong><a href="https://www.fox10phoenix.com/tag/technology/artificial-intelligence" target="_blank" rel="noopener">NASA/intel context</a>:</strong> US Director of National Intelligence now point person on a new AI task force (Fox10, Oct 4).</li>
 <li><strong>Research:</strong> UCLA AI detects deepfakes with ~98% accuracy using light-based analysis; study shows people draw a sharp line between human and AI consciousness even when behavior is identical.</li>
 </ul>
 <h2>Source links</h2>

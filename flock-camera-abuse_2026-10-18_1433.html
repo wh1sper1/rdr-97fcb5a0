@@ -74,6 +74,12 @@ body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
 .article h3 { font-size:17px; margin:18px 0 8px; }
 .article ul { padding-left:22px; }
 .article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:inherit; text-decoration:none;
+  border-bottom:1px dotted rgba(57,255,136,.45); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { color:var(--neon); border-bottom-color:var(--neon); }
+body.light .article li a { color:inherit; border-bottom-color:rgba(10,127,70,.45); }
+body.light .article li a:hover { color:#0a7f46; border-bottom-color:#0a7f46; }
 .article a { color:var(--cyan); }
 .article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
 .overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
@@ -130,18 +136,18 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 <h2>Key findings</h2>
 <h3>Police misuse of Flock ALPR systems</h3>
 <ul>
-<li><strong>USA TODAY (2026-08-28):</strong> Analysis of 75 million Flock searches across 3.5 years and 6,300+ agencies found hundreds of cases of officers searching single plates hundreds/thousands of times with vague justifications ("SUS", "TRAFFIC", "TEST", single letters). At least 19 police/sheriff employees in five states arrested, fired, or placed under investigation over a two-month span.</li>
-<li><strong>CNN (2026-07-26):</strong> Milwaukee officer Josue Ayala secretly used Flock to locate his romantic partner 124 times and the partner's ex 55 times; the detective who investigated him (Tehrangi Chapman) was later arrested for misusing the system himself. Institute for Justice tallied 2+ dozen cases of officers resigning or arrested for allegedly abusing Flock to stalk romantic interests.</li>
-<li><strong>ABC News:</strong> A Kentucky officer arrested for allegedly tracking his ex-girlfriend 2,000+ times; six Savannah, GA police employees fired in August 2026; a North Carolina officer arrested for tracking a boyfriend's ex-wife.</li>
-<li><strong>AJC (2026-08):</strong> Flock's self-audit tool ("audit assistance tool," alerts on abnormal searches) has itself triggered internal investigations and criminal charges — e.g., former Polk County officer Tracey Royston (4 misdemeanor charges), DeKalb County suspended eight employees, a Conyers dispatch supervisor arrested for 30+ non-law-enforcement accesses.</li>
-<li><strong>The Conversation:</strong> Washington Post investigation identified 50+ officers accused of misusing ALPRs (26 to spy on current/former partners), later updated to 100+ employees charged/accused. Braselton Police Chief Michael Steffman allegedly searched an ex's plates ~600 times; arrested Nov 2025, found dead before trial.</li>
+<li><strong><a href="https://www.usatoday.com/story/news/nation/2026/08/28/flock-camera-investigation-police-arrested-fired-surveillance/91383586007/" target="_blank" rel="noopener">USA TODAY</a> (2026-08-28):</strong> Analysis of 75 million Flock searches across 3.5 years and 6,300+ agencies found hundreds of cases of officers searching single plates hundreds/thousands of times with vague justifications ("SUS", "TRAFFIC", "TEST", single letters). At least 19 police/sheriff employees in five states arrested, fired, or placed under investigation over a two-month span.</li>
+<li><strong><a href="https://www.cnn.com/2026/07/26/us/flock-cameras-surveillance-abuse" target="_blank" rel="noopener">CNN</a> (2026-07-26):</strong> Milwaukee officer Josue Ayala secretly used Flock to locate his romantic partner 124 times and the partner's ex 55 times; the detective who investigated him (Tehrangi Chapman) was later arrested for misusing the system himself. Institute for Justice tallied 2+ dozen cases of officers resigning or arrested for allegedly abusing Flock to stalk romantic interests.</li>
+<li><strong><a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">ABC News</a>:</strong> A Kentucky officer arrested for allegedly tracking his ex-girlfriend 2,000+ times; six Savannah, GA police employees fired in August 2026; a North Carolina officer arrested for tracking a boyfriend's ex-wife.</li>
+<li><strong><a href="https://www.ajc.com/news/2026/08/tool-for-tracking-flock-camera-access-leads-to-more-police-abuse-allegations/" target="_blank" rel="noopener">AJC</a> (2026-08):</strong> Flock's self-audit tool ("audit assistance tool," alerts on abnormal searches) has itself triggered internal investigations and criminal charges — e.g., former Polk County officer Tracey Royston (4 misdemeanor charges), DeKalb County suspended eight employees, a Conyers dispatch supervisor arrested for 30+ non-law-enforcement accesses.</li>
+<li><strong><a href="https://theconversation.com/the-trouble-with-flock-cameras-is-the-surveillance-systems-architecture-not-just-some-of-its-users-291621" target="_blank" rel="noopener">The Conversation</a>:</strong> Washington Post investigation identified 50+ officers accused of misusing ALPRs (26 to spy on current/former partners), later updated to 100+ employees charged/accused. Braselton Police Chief Michael Steffman allegedly searched an ex's plates ~600 times; arrested Nov 2025, found dead before trial.</li>
 </ul>
 <h3>Federal / immigration angle</h3>
 <ul>
 <li><strong>2025:</strong> U.S. Customs and Border Protection accessed 80,000+ cameras during an undisclosed nationwide vehicle-tracking pilot — including one police department's cameras without its knowledge.</li>
 <li>Public records from Danville, Illinois showed 4,000+ searches by federal agencies with potential immigration-enforcement focus, though ICE had no Flock contract.</li>
 <li>2026 study found 11,935 immigration-related searches in partial records from eight college police departments.</li>
-<li><strong>May 2025:</strong> A Texas sheriff's office searched 83,000+ cameras for a woman who had self-managed an abortion (per The Conversation/NPR).</li>
+<li><strong><a href="https://theconversation.com/the-trouble-with-flock-cameras-is-the-surveillance-systems-architecture-not-just-some-of-its-users-291621" target="_blank" rel="noopener">May 2025</a>:</strong> A Texas sheriff's office searched 83,000+ cameras for a woman who had self-managed an abortion (per The Conversation/NPR).</li>
 </ul>
 <h3>Data capability concerns</h3>
 <ul>
@@ -150,8 +156,8 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 </ul>
 <h3>Backlash / vandalism / cancellations</h3>
 <ul>
-<li><strong>NPR (2026-08-21):</strong> Flock cameras vandalized in at least 36 states (sawed down, shot at, paint, stickers, stolen, rammed). DeFlock counts 100+ cities deactivating or canceling contracts.</li>
-<li><strong>ABC News:</strong> 50+ cities/counties canceled or deactivated ALPR cameras in 2026 (Politico tally). Cancellations include Fort Collins CO, Eugene OR, Madison WI, Knoxville TN, Syracuse NY, Walla Walla WA.</li>
+<li><strong><a href="https://www.npr.org/2026/08/21/nx-s1-5931849/amid-intense-backlash-people-are-vandalizing-flock-surveillance-cameras" target="_blank" rel="noopener">NPR</a> (2026-08-21):</strong> Flock cameras vandalized in at least 36 states (sawed down, shot at, paint, stickers, stolen, rammed). DeFlock counts 100+ cities deactivating or canceling contracts.</li>
+<li><strong><a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">ABC News</a>:</strong> 50+ cities/counties canceled or deactivated ALPR cameras in 2026 (Politico tally). Cancellations include Fort Collins CO, Eugene OR, Madison WI, Knoxville TN, Syracuse NY, Walla Walla WA.</li>
 <li><strong>Flock response:</strong> New safeguards announced — every search must be labeled with a criminal case number; automatic review of abnormal search activity with proactive lockouts.</li>
 </ul>
 <h2>Notable quotes / data points</h2>

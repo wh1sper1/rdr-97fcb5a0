@@ -74,6 +74,12 @@ body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
 .article h3 { font-size:17px; margin:18px 0 8px; }
 .article ul { padding-left:22px; }
 .article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:inherit; text-decoration:none;
+  border-bottom:1px dotted rgba(57,255,136,.45); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { color:var(--neon); border-bottom-color:var(--neon); }
+body.light .article li a { color:inherit; border-bottom-color:rgba(10,127,70,.45); }
+body.light .article li a:hover { color:#0a7f46; border-bottom-color:#0a7f46; }
 .article a { color:var(--cyan); }
 .article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
 .overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
@@ -130,7 +136,7 @@ body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; 
 <h2>Ransomware</h2>
 <ul>
 <li><strong>Q3 2026 set a new record:</strong> Comparitech counted <strong>2,627 claimed ransomware attacks</strong> in Q3 2026 — finance, technology, education, healthcare saw significant increases (Oct 9).</li>
-<li><strong>Physical violence threats rising:</strong> Ransomware gangs increasingly threaten employees, executives, and their families to force payment — beyond file encryption and data theft (Infosecurity, Oct 16).</li>
+<li><strong><a href="https://www.infosecurity-magazine.com/data-breaches/" target="_blank" rel="noopener">Physical violence threats rising</a>:</strong> Ransomware gangs increasingly threaten employees, executives, and their families to force payment — beyond file encryption and data theft (Infosecurity, Oct 16).</li>
 <li><strong>Silent Ransom Group:</strong> Leaked chat logs suggest <strong>$206.95M extorted from 27 firms in ~6 months without encrypting files</strong> (Oct 9).</li>
 <li><strong>MonsterCloud CEO charged (Oct 8):</strong> DOJ charged Zohar Pinhasi with wire fraud for billing victims $19M+ while secretly paying attackers for decryptors, claiming proprietary recovery tools.</li>
 <li><strong>Backup targeting:</strong> Ransomware groups increasingly target backup infrastructure to eliminate recovery options (Kaseya advisory).</li>
