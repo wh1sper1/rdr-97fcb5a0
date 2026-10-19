@@ -1,0 +1,289 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Geo Political Intel — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip active" href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geo Political Intel</h1><div class="meta">2 digest(s) &middot; newest first</div></div><div class="section-title">Saved 2026-10-18 18:00</div><article class="article entry"><img class="hero" src="img/geopolitical-world-intel_2026-10-18_1800.jpg" alt="" loading="lazy"><p><strong>Date saved:</strong> 2026-10-18 18:00 (PDT)</p>
+<p><strong>Sources:</strong> EU Council (Data.Europa), The Cipher Brief, Al-Ahram Weekly, The Hill, Atlantic Council</p>
+<h2>Key findings</h2>
+<h3>EU assessment: Russia and China reshaping global order</h3>
+<ul>
+<li><strong>EU Council (2026):</strong> A European Union strategic document warns that "Russia and China foremost among them" are determined to "establish regional dominance and reshape the global order in line with their interests, fostering a return to a sphere-of-influence logic." The document highlights the deepening China-Russia strategic partnership, including military cooperation, which "will continue increasing the interconnection of the strategic theatres from Europe to the Indo-Pacific, and to connect and amplify security threats." It stresses that the transatlantic relationship and EU-NATO cooperation remain key to overall security. The EU faces "another active conflict theatre in the Middle East" with "immediate and far-reaching consequences across security, economic and humanitarian domains." The document emphasizes that "the full restoration of freedom of navigation and safe transit through the Strait of Hormuz, as well as a negotiated long-term resolution to all outstanding issues, in line with international law, are paramount." (<a href="https://data.consilium.europa.eu/doc/document/ST-11631-2026-INIT/en/pdf" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Iran war reordering the global economy</h3>
+<ul>
+<li><strong>The Cipher Brief (2026):</strong> The closure of the Strait of Hormuz — through which roughly 20% of global seaborne oil and a significant share of LNG transited — has triggered what the International Energy Agency calls "the largest supply disruption in the history of the global oil market." Brent crude surged past $120 per barrel at its peak, and WTI has nearly doubled since the start of 2026. When President Trump called on NATO allies, China, Japan, and South Korea to help secure passage through Hormuz, the response was a near-unanimous refusal. On March 16, both China and NATO's European members rejected the request. Russia is the most immediate beneficiary: Moscow built its 2026 federal budget on oil at roughly $60 per barrel, and Brent at $120 has rescued the Russian war economy, providing the Kremlin with revenue to sustain operations in Ukraine precisely when Western sanctions were supposed to be biting hardest. (<a href="https://www.thecipherbrief.com/iran-war-reordering-the-world" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>China's diplomatic tightrope on Iran</h3>
+<ul>
+<li><strong>Al-Ahram Weekly (May 13, 2026):</strong> As the US-Iran conflict spiraled, Beijing sat at the negotiating table with Washington while walking a diplomatic tightrope. The Xi-Trump summit in Beijing (May 14-15) became engulfed by the fallout of the US war on Iran. Xi pressed Trump to reduce US support for Taiwan's self-governing status, while Trump urged Beijing to pressure Iran to keep the Strait of Hormuz open. China retaliated against US sanctions on a Chinese refinery for purchasing Iranian oil by effectively ignoring the measures while ordering agencies to investigate foreign entities involved in enforcing restrictions on Chinese interests. Beijing has repeatedly opposed interventionist positions against Iran, including vetoing, along with Russia, a UN Security Council resolution proposing military force to reopen the Strait of Hormuz. China's policy has been a "militarily non-interventionist approach," presented in implicit contrast to Washington's "heavy-handedness." (<a href="https://english.ahram.org.eg/NewsContentP/50/567810/AlAhram-Weekly/China%E2%80%99s-balancing-act-on-Iran.aspx" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>America's adversaries "attacking sideways"</h3>
+<ul>
+<li><strong>The Hill (2026):</strong> When the US imposed tariffs on China in April 2025, Beijing restricted exports of rare earth elements and magnets — a campaign that continues today. When the US and Israel launched strikes against Iran in February, Tehran expanded the battlefield to Gulf states. The August discovery of an explosive-laden drone at Germany's Leipzig Airport underscores the larger pattern: Beijing, Tehran, and Moscow are increasingly using "horizontal escalation" — expanding conflicts to new geographic regions or domains of competition. China has helped blunt US pressure on both Russia and Iran by supplying Moscow with essential dual-use items for its defense industry and by remaining a major buyer of sanctioned Iranian oil. Russia's war consumes Western air defense missiles; Iran ties down American aircraft, ships, and interceptors in the Middle East; China's military buildup forces Washington to preserve scarce capabilities for a possible South China Sea contingency. (<a href="https://thehill.com/?p=6139049" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>NATO, energy security, and strategic waterways</h3>
+<ul>
+<li><strong>Atlantic Council (2026):</strong> China, Japan, South Korea, and Taiwan would each be affected by a collapse in energy through the Strait of Hormuz, which Iran has effectively closed. Russia has millions of barrels of sanctioned oil ready to sell — unless the US and its allies step up sanctions enforcement. The Strait of Hormuz and Bab-el-Mandeb Straits are identified as "critical maritime arteries for Europe." Disruptions threaten regional security, undermine freedom of navigation, jeopardize food security and supply chains, and hinder the free flow of trade and energy diversification. (<a href="https://www.atlanticcouncil.org/content-type/dispatches/page/25/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>EU Council (2026):</strong> To fund its war machine, Russia uses a network of shadow fleet vessels for oil exports, evading sanctions while creating maritime, environmental, legal, and enforcement risks. China "positions itself to win systemic competition, combining industrial scale, technological ambition, and global reach while exploiting instability." (<a href="https://data.consilium.europa.eu/doc/document/ST-11631-2026-INIT/en/pdf" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://data.consilium.europa.eu/doc/document/ST-11631-2026-INIT/en/pdf" target="_blank" rel="noopener">EU Council — Strategic Document ST-11631-2026-INIT</a></li>
+<li><a href="https://www.thecipherbrief.com/iran-war-reordering-the-world" target="_blank" rel="noopener">The Cipher Brief — How the Iran War Is Reordering the World</a></li>
+<li><a href="https://english.ahram.org.eg/NewsContentP/50/567810/AlAhram-Weekly/China%E2%80%99s-balancing-act-on-Iran.aspx" target="_blank" rel="noopener">Al-Ahram Weekly — China's balancing act on Iran</a></li>
+<li><a href="https://thehill.com/?p=6139049" target="_blank" rel="noopener">The Hill — America's adversaries are attacking sideways</a></li>
+<li><a href="https://www.atlanticcouncil.org/content-type/dispatches/page/25/" target="_blank" rel="noopener">Atlantic Council — Dispatches on China, Japan, South Korea, and Taiwan energy vulnerabilities</a></li>
+<li><a href="https://deflock.org/" target="_blank" rel="noopener">DeFlock.org — Crowdsourced ALPR database</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></article><div class="section-title">Saved 2026-10-18 16:21</div><article class="article entry"><img class="hero" src="img/geopolitical-world-intel_2026-10-18_1621.jpg" alt="" loading="lazy"><p><strong>Date saved:</strong> 2026-10-18 16:21 (PDT)</p>
+<p><strong>Sources:</strong> Anadolu Agency, CNN, Al Jazeera, FT, WEF, Le Monde, UN DPPA, Focus Taiwan, NATO Association of Canada, Taiwan News, The Daily Star, Militarnyi</p>
+<h2>Key findings</h2>
+<h3>Russia / Ukraine / sanctions</h3>
+<ul>
+<li><strong>Anadolu Agency (Oct 17):</strong> Trump issued an executive order implementing the Lindsey Graham Sanctioning Russia and Iran Act of 2026 — but waived its tariffs and many sanctions; duties on Russian goods raised 500%, plus an additional 100% duty on the five largest importers of Russian oil and gas making new purchases on/after Oct 18. (<a href="https://aa.com.tr/en/world/morning-briefing-oct-17-2026/4091615" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>CNN (Oct 18):</strong> Trump waives Russia-related sanctions before they kick in, drawing backlash from Ukraine and US lawmakers; EU leaders expressed regret over the temporary lift on Russian diesel sanctions. Zelensky rejected Trump's "energy ceasefire" and said he felt "betrayed" (Le Monde). (<a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>CNN (Oct 16):</strong> Ukraine runs out of Patriot interceptor missiles as Zelensky and Trump clash over the war; Zelensky said Ukraine will resume strikes on Russian refineries. (<a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>CNN (Oct 18):</strong> Ukraine defies Trump and launches one of its biggest drone attacks on Russia this year. (<a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>UN DPPA:</strong> 100+ civilians killed and 429+ injured in Ukraine in one week (OHCHR); growing damage to energy facilities ahead of winter. (<a href="https://dppa.un.org/en/news/this-week-in-dppa-3-9-october-2026" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Anadolu:</strong> Putin said "security zone" plans on the Ukraine border will not be subject to peace negotiations. (<a href="https://aa.com.tr/en/world/morning-briefing-oct-17-2026/4091615" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Middle East</h3>
+<ul>
+<li><strong>Anadolu (Oct 17):</strong> Strait of Hormuz shipping traffic ~70% below pre-conflict levels; 12 attacks on vessels in one week, including a container ship struck near Ras Shaykh Masud Oct 13 that caught fire and sank. (<a href="https://aa.com.tr/en/world/morning-briefing-oct-17-2026/4091615" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>FT:</strong> Oil hit a five-month high of $110/barrel on the escalation; Houthis encircling Taiz (Yemen's largest cities), attacking Saudi Aramco HQ and Riyadh airport; EU-Gulf meeting and Formula 1 race postponed. (<a href="https://www.ft.com/stream/6ba1c77f-49a1-371a-9b0c-fad05b22d1aa" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>CNN (Oct 17):</strong> Israeli settlers attacked European diplomats in the West Bank; Belgian foreign minister said Belgium will press for EU sanctions over the violence. WaPo photographer Heidi Levine injured in West Bank attack — US State Dept "greatly concerned." (<a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>CNN (Oct 18):</strong> Nine days before Israeli elections, Trump endorses Netanyahu. (<a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>UN DPPA (Oct 9):</strong> Special Envoy Hans Grundberg warned the Security Council that Yemen has returned to full-scale war. (<a href="https://dppa.un.org/en/news/this-week-in-dppa-3-9-october-2026" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Great-power competition: US-China-Taiwan</h3>
+<ul>
+<li><strong>WEF:</strong> Xi's Washington visit delivered ceremony but minimal strategic progress — reciprocal tariff cuts on ~$30B of non-sensitive trade only; tariff truce extended two months to January; semiconductors, EVs, batteries excluded; Taiwan discussed but omitted from official summit documents.</li>
+<li><strong>Charter97 / Bild (Oct 18):</strong> NATO SG Mark Rutte warned if Xi attacks Taiwan he would likely ask Putin to "distract" the US by attacking NATO territory — "probably exactly what will happen"; called the moment the most dangerous since WWII.</li>
+<li><strong>The Daily Star (Oct 18):</strong> Russia Deputy FM Rudenko accused the US of using Taiwan to provoke a crisis in Asia; reaffirmed Moscow's backing of Beijing's position. (<a href="https://www.thedailystar.net/news/world/news/russia-says-us-using-taiwan-stir-crisis-asia-3760201" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Focus Taiwan (Oct 17):</strong> NSC Secretary-General Joseph Wu urged closer Taiwan-Europe ties, citing NATO's report that China is the "decisive enabler" of Russia's war; listed hybrid threats: military drills, undersea cable sabotage, election interference. (<a href="https://focustaiwan.tw/politics/202610170016" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Taiwan News:</strong> US Congress moves to codify the Reagan-era Six Assurances (H.R. 3452 / S. 3208); Japan-Philippines Reciprocal Access Agreement in force; Australia signed for three Japanese Mogami-class frigates; Lai pledged 5% of GDP defense spending by 2030. First two F-16V Block 70 fighters arrived Oct 2. (<a href="https://www.taiwannews.com.tw/news/6451566" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Anadolu:</strong> The US became the first nation to acknowledge deploying weapons in Earth's orbit; suspected explosives found near RAF Fairford (US ops hub in UK). (<a href="https://aa.com.tr/en/world/morning-briefing-oct-17-2026/4091615" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Regional / other</h3>
+<ul>
+<li><strong>Al Jazeera:</strong> Russia's Interior Minister Kolokoltsev met Pakistan army chief Munir in Rawalpindi (Oct 14); Moscow positioning as mediator between Kabul and Islamabad (Zamir Kabulov, TASS).</li>
+<li><strong>Le Monde:</strong> France summoned Iran's ambassador over a "disinformation campaign" on the French school protests; Macron vowed to hold accountable those who "sought to bring down the Republic." (<a href="https://www.lemonde.fr/en/diplomacy/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>WEF:</strong> Denmark, Greenland and the US signed an Arctic security agreement expanding US military presence while reaffirming Danish sovereignty — after Trump's earlier call for US control of Greenland.</li>
+<li><strong>UN DPPA:</strong> 81st UN General Assembly session held amid "the highest level of active conflict since WWII." (<a href="https://dppa.un.org/en/news/this-week-in-dppa-3-9-october-2026" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://aa.com.tr/en/world/morning-briefing-oct-17-2026/4091615" target="_blank" rel="noopener">Anadolu Agency — Morning Briefing Oct 17, 2026</a></li>
+<li><a href="https://edition.cnn.com/sitemap/article/world/2026/10" target="_blank" rel="noopener">CNN — World news, October 2026</a></li>
+<li><a href="https://www.ft.com/stream/6ba1c77f-49a1-371a-9b0c-fad05b22d1aa" target="_blank" rel="noopener">FT — Western Asia stream</a></li>
+<li><a href="https://www.weforum.org/stories/geo-economics-and-politics/iran-conflict-and-other-geopolitical-stories-to-know-this-month/" target="_blank" rel="noopener">World Economic Forum — The Iran conflict turns hybrid, and other geopolitical stories</a></li>
+<li><a href="https://www.lemonde.fr/en/diplomacy/" target="_blank" rel="noopener">Le Monde — Diplomacy</a></li>
+<li><a href="https://dppa.un.org/en/news/this-week-in-dppa-3-9-october-2026" target="_blank" rel="noopener">UN DPPA — This Week in DPPA, 3-9 October 2026</a></li>
+<li><a href="https://focustaiwan.tw/politics/202610170016" target="_blank" rel="noopener">Focus Taiwan — Taiwan security chief urges closer Europe ties</a></li>
+<li><a href="https://natoassociation.ca/after-the-lull-why-renewed-chinese-military-pressure-on-taiwan-matters/" target="_blank" rel="noopener">NATO Association of Canada — After the Lull: renewed Chinese military pressure on Taiwan</a></li>
+<li><a href="https://www.taiwannews.com.tw/news/6451566" target="_blank" rel="noopener">Taiwan News — Taiwan's deterrence is becoming harder to unwind</a></li>
+<li><a href="https://www.thedailystar.net/news/world/news/russia-says-us-using-taiwan-stir-crisis-asia-3760201" target="_blank" rel="noopener">The Daily Star — Russia says US using Taiwan to stir crisis in Asia</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></article>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Gaming — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip active" href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#22d3ee">GAMING</span><h1>Gaming</h1><div class="meta">1 digest(s) &middot; newest first</div></div><div class="section-title">Saved 2026-10-18 18:01</div><article class="article entry"><img class="hero" src="img/gaming_2026-10-18_1801.jpg" alt="" loading="lazy"><p><strong>Date saved:</strong> 2026-10-18 18:01 (PDT)</p>
+<p><strong>Sources:</strong> VGC, IGN, Ground News, BusinessWire, Sortiraparis</p>
+<h2>Key findings</h2>
+<h3>Blockbuster release window</h3>
+<ul>
+<li><strong>Ground News / IGN (Oct):</strong> October 2026 is one of the year's most intense release months — publishers deliberately crowded the window before GTA 6 launches in November: Gears of War: E-Day (Oct 6), Castlevania: Belmont's Curse (Oct 15, franchise 40th anniversary, back to 2D Metroidvania roots), and Call of Duty: Modern Warfare 4 (Oct 22-23). (<a href="https://ground.news/article/the-12-most-exciting-video-game-releases-of-october-2026" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>IGN (Oct):</strong> Full October slate includes Ace Combat 8 (Oct 2), Rayman Origins Enhanced (Oct 1), Dragon's Dogma 2: Dark Arisen on Switch 2 (Oct 9), Warhammer 40K: Boltgun 2 (Oct 14), Final Fantasy Resonance (Oct 22), Phantom Blade 0 (Oct 29), and Resident Evil 2/3/4 on Switch 2 (Oct 16). (<a href="https://www.ign.com/articles/video-game-release-dates-ps4-ps5-xbox-one-series-x-nintendo-switch" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Industry moves</h3>
+<ul>
+<li><strong>VGC (Oct):</strong> Rockstar revealed the official GTA 6 launch trailer — the November release continues to reshape the whole release calendar around it. (<a href="https://www.videogameschronicle.com/category/news/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>VGC (Oct):</strong> Sega pulled Total War: Shogun 2 – Complete Edition from stores citing bugs and AI art; Epic said it "vibe coded" its new Epic Games Launcher with AI because "programming is hard"; Xbox unveiled the $50 Nano Controller (smaller, rechargeable, from November). (<a href="https://www.videogameschronicle.com/category/news/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>VGC (Oct):</strong> WWE 2K26 x Street Fighter DLC pack adds five WWE wrestlers as Street Fighter action figures; Switch 2 version of 007 First Light got a new release date (a year late); October's PS Plus catalog adds Mafia: The Old Country, Tales of Arise and Horizon Forbidden West. (<a href="https://www.videogameschronicle.com/category/news/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Hardware and business</h3>
+<ul>
+<li><strong>BusinessWire (Oct):</strong> Xsolla opened applications for its GDC 2027 scholarship program (75 developers); partnered with Game8 (Japan's largest strategy wiki); Take-Two (NASDAQ: MAT note) schedules Q3 2026 results for Nov 5. (<a href="https://www.businesswire.com/newsroom/industry/entertainment/electronic-games" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>BusinessWire (Oct):</strong> ProbablyMonsters unveiled a new trailer for Nekome: Nazi Hunter at the Galaxies Autumn Showcase, revealing villains "Hitler's Hyenas," ahead of a Steam Next Fest demo. (<a href="https://www.businesswire.com/newsroom/industry/entertainment/electronic-games" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Sortiraparis (Oct):</strong> Star Wars: Galactic Racer — the franchise's first racing game since 2002 — launched Oct 6; Phantom Blade Zero rescheduled to Oct 29 for PC/PS5; Square Enix's Final Fantasy Resonance lands Oct 22 across five platforms. (<a href="https://www.sortiraparis.com/en/what-to-do-in-paris/gaming/guides/261729-october-2026-video-game-releases-the-new-titles-to-watch-for-on-pc-and-consoles" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.videogameschronicle.com/category/news/" target="_blank" rel="noopener">VGC — Gaming News</a></li>
+<li><a href="https://www.ign.com/articles/video-game-release-dates-ps4-ps5-xbox-one-series-x-nintendo-switch" target="_blank" rel="noopener">IGN — Video game release dates</a></li>
+<li><a href="https://ground.news/article/the-12-most-exciting-video-game-releases-of-october-2026" target="_blank" rel="noopener">Ground News — 12 most exciting releases of October 2026</a></li>
+<li><a href="https://ground.news/article/what-new-video-games-will-there-be-this-october-2026_c5b3c2" target="_blank" rel="noopener">Ground News — What new video games this October 2026</a></li>
+<li><a href="https://www.businesswire.com/newsroom/industry/entertainment/electronic-games" target="_blank" rel="noopener">BusinessWire — Electronic games news</a></li>
+<li><a href="https://www.sortiraparis.com/en/what-to-do-in-paris/gaming/guides/261729-october-2026-video-game-releases-the-new-titles-to-watch-for-on-pc-and-consoles" target="_blank" rel="noopener">Sortiraparis — October 2026 video game releases</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></article>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>

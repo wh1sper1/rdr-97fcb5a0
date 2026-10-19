@@ -1,0 +1,288 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Israel Watch — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip active" href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h1>Israel Watch</h1><div class="meta">2 digest(s) &middot; newest first</div></div><div class="section-title">Saved 2026-10-18 18:00</div><article class="article entry"><img class="hero" src="img/israel-watch_2026-10-18_1800.jpg" alt="" loading="lazy"><p><strong>Date saved:</strong> 2026-10-18 18:00 (PDT)</p>
+<p><strong>Sources:</strong> Jerusalem Post, Middle East Eye, Just Security, Wikipedia, Cyble, IDF</p>
+<h2>Key findings</h2>
+<h3>Iran's two-front cyber war against Israel</h3>
+<ul>
+<li><strong>Jerusalem Post (2026):</strong> Since October 7, Iran has sharply escalated cyber operations against Israel through fronts including Handala Hack (tied to Iran's Intelligence Ministry), CyberAv3ngers, and IDFLeaks, according to the Foundation for Defense of Democracies. Handala has leaked the phone of Prime Minister Benjamin Netanyahu's aide Tzachi Braverman, breached former PM Naftali Bennett's Telegram account, doxxed Unit 8200 members, and claimed 197 GB of data from the Nahal Sorek nuclear center. Offline, counter-espionage arrests rose 400% in 2024 as Iran recruited Israelis on Telegram for surveillance and sabotage. The Wall Street Journal reported that some 500 Hamas and Islamic Jihad operatives received combat training in Iran in September 2023, led by the IRGC, with Quds Force commander Esmail Qaani attending. Hamas minutes seized by the IDF show Yahya Sinwar spent over two years planning the October 7 attack and worked to persuade Iran and Hezbollah to join a wider war. (<a href="https://www.jpost.com/opinion/article-911423" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>The tripartite Iran-Israel-US cyber war</h3>
+<ul>
+<li><strong>Cyble (2026):</strong> The period from June 2025 to April 2026 was an unprecedented era of hybrid cyber warfare between Iran, Israel, and the United States. Israeli Operation "Rising Lion" (launched June 13, 2025) involved massive airstrikes aimed at crippling Iran's nuclear infrastructure at Natanz, Fordow, and Isfahan, alongside targeting senior military leadership — causing 4 major industrial outages in Iran targeting steel mills and refineries. Operation "Epic Fury / Roaring Lion" (coordinated US-Israel strikes on Iranian leadership compounds) was preceded by the largest cyberattack in history, creating a "digital fog" that crippled internal military communications and state media (IRNA). Pro-Iranian hacktivist collectives, coordinated via the "Electronic Operations Room" (established Feb 28), continued to target energy, water, and healthcare sectors globally. Unit 8200 orchestrated the hack of surveillance/CCTV cameras and focused on degrading C2 structures and intercepting IRGC communications. Israeli cyber teams worked with Unit 8200 to deliver tailor-made payloads that disrupted processes and spread laterally across Iranian networks. (<a href="https://cyble.com/reports/Iran-Israel-US-Cyber-Warfare-Analysis-25-26.pdf" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Israel's elections and Netanyahu's political position</h3>
+<ul>
+<li><strong>Middle East Eye (2026):</strong> The Israeli election on October 27 is one of the most important in the country's history — the first since 2022 and the Hamas-led attacks of 2023. Prime Minister Benjamin Netanyahu, Israel's longest-serving premier and now seeking a seventh term, faces wide criticism for his handling of the wars, which have isolated Israel internationally. His current government, in power since 2022, is the most right-wing in Israeli history and has overseen what the International Criminal Court has termed genocide and war crimes in Gaza, for which Netanyahu faces an arrest warrant. Other issues include the security of the occupied West Bank, settlement growth, and compulsory military conscription for ultra-Orthodox communities. Former army chief Gadi Eisenkot is challenging Netanyahu. (<a href="https://www.middleeasteye.net/explainers/election-israel-gaza-netanyahu-eisenkot-policy-draft" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Wikipedia (2026):</strong> In February 2026, Israel and the United States launched a major military offensive against Iran with the stated goal of inducing regime change. According to multiple diplomatic sources, Netanyahu lobbied President Trump to initiate the joint strikes. In April 2026, Netanyahu said "There is no ceasefire in Lebanon. We are continuing to strike Hezbollah with full force, and we will not stop until we restore your security." The Israeli-US war on Iran has failed to secure a decisive victory. Tens of thousands of Israelis remain displaced amid attacks from Hezbollah in Lebanon. (<a href="https://en.wikipedia.org/wiki/Benjamin_Netanyahu" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Ongoing strikes in Gaza, Lebanon, and West Bank</h3>
+<ul>
+<li><strong>Just Security (Sep 8, 2026):</strong> Israeli strikes on the southern Lebanese town of Kfar Roummane killed at least 12 people, including two children and one medic, according to Lebanon's Health Ministry. The attacks came without an online evacuation warning from the IDF, which said it launched the strikes in response to drone attacks by Hezbollah and targeted what it described as Hezbollah infrastructure. Israeli strikes in Gaza killed four people on Sunday; a strike killed a man and his eight-year-old daughter, according to the head of Al Shifa Hospital Mohamed Abu Selmia. Two separate Israeli strikes killed two other people, including a child in Gaza City. Netanyahu ordered unauthorized settler outposts in the West Bank to be dismantled. Israel's Supreme Court ruled that defense authorities must enable the safe return of three Palestinian families to their homes after they were chased out of the West Bank village of Jalud by settlers. Violence in the occupied West Bank flared as Israeli troops killed two Palestinians — one shot dead during a village raid by settlers from a nearby outpost. (<a href="https://www.justsecurity.org/156556/early-edition-september-8-2026/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>ABC News / Just Security (Sep 2026):</strong> The United States and Iran exchanged missile fire in waters around Iran — US Central Command struck three Iranian vessels after Iran's IRGC launched ballistic missiles at two US Navy ships. (<a href="https://www.justsecurity.org/156556/early-edition-september-8-2026/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Cyber espionage both directions</h3>
+<ul>
+<li><strong>Jerusalem Post (2026):</strong> Iran's cyber operations against Israel have included penetrating supply chain networks tied to defense contractors and conducting surveillance of critical national infrastructure, such as energy grids and water supply systems. Iranian hackers focused on espionage to gain access to sensitive military, political, and industry-related data across the US, Israel, and global targets. Israel has engaged in cyber espionage operations against Iranian military and political structures to track weapon development and plan countermeasures, including targeting communication channels used by Hezbollah and shutting down support infrastructures for Iranian-aligned militias. Campaigns have included real-time surveillance of Iranian military and nuclear development. (<a href="https://www.jpost.com/opinion/article-911423" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Cyble (2026):</strong> Iranian hackers focused on espionage to gain access to sensitive military, political, and industry-related data. They penetrated supply chain networks tied to defense contractors and conducted surveillance of critical national infrastructure including energy grids and water supply systems. Exfiltrated sensitive information allowed Iran to execute hack-and-leak operations and collect intelligence about adversaries' military readiness and potential vulnerabilities. (<a href="https://cyble.com/reports/Iran-Israel-US-Cyber-Warfare-Analysis-25-26.pdf" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.jpost.com/opinion/article-911423" target="_blank" rel="noopener">Jerusalem Post — Iran's two-front war on Israel: From October 7 to election interference</a></li>
+<li><a href="https://www.middleeasteye.net/explainers/election-israel-gaza-netanyahu-eisenkot-policy-draft" target="_blank" rel="noopener">Middle East Eye — Israel's 2026 election: Who are the main leaders and where do they stand?</a></li>
+<li><a href="https://www.justsecurity.org/156556/early-edition-september-8-2026/" target="_blank" rel="noopener">Just Security — Early Edition: September 8, 2026</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Benjamin_Netanyahu" target="_blank" rel="noopener">Wikipedia — Benjamin Netanyahu</a></li>
+<li><a href="https://cyble.com/reports/Iran-Israel-US-Cyber-Warfare-Analysis-25-26.pdf" target="_blank" rel="noopener">Cyble — The Tripartite Cyber War: Iran-Israel-US Cyber Warfare Analysis 25-26</a></li>
+<li><a href="https://www.fdd.org/" target="_blank" rel="noopener">Foundation for Defense of Democracies — Iran cyber operations against Israel</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></article><div class="section-title">Saved 2026-10-18 16:35</div><article class="article entry"><img class="hero" src="img/israel-watch_2026-10-18_1635.jpg" alt="" loading="lazy"><p><strong>Date saved:</strong> 2026-10-18 16:35 (PDT)</p>
+<p><strong>Sources:</strong> Times of Israel, AP, Le Monde, JNS, Israel National News, Daily Beirut, WSJ (via Ground News), World Israel News, JFeed</p>
+<h2>Key findings</h2>
+<h3>War operations — Gaza</h3>
+<ul>
+<li><strong>Times of Israel (Oct 16-17):</strong> IDF strikes killed two Hamas terrorists who invaded Israel on Oct. 7, 2023 — Nukhba Force cell commander Maher Walid Omar al-Husseini (attacked Re'im base) and weapons-production commander Mohammed Mohammed Abd al-Khalek Hala — plus Palestinian Islamic Jihad operative Ahmad Jabrin Tawfiq Dalha in Khan Younis. IDF says all were "advancing attacks" and restoring capabilities "in systematic violation of the ceasefire." (<a href="https://www.timesofisrael.com/idf-says-hamas-terrorist-who-attacked-reim-base-on-oct-7-killed-in-airstrike/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>AP (Oct 8):</strong> Israeli strikes following warnings in Gaza City and southern Gaza killed two, including a child; a strike on a house in the Sabra neighborhood killed a woman and child and wounded 10. (<a href="https://apnews.com/article/israel-consulate-britain-mideast-october-8-2026-c7a446e1bd01966f19b88af07149c3d5" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Le Monde:</strong> Gaza rescuers say Israeli fire killed seven; the army said three were "military operatives in terrorist organizations." Israel says it killed a Turkish NGO director in a Gaza strike, accusing him of Hamas ties "without providing evidence." (<a href="https://www.lemonde.fr/en/israel/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Le Monde (with Breaking The Silence):</strong> Israeli officers described Gaza rules of engagement, the acknowledged number of civilian casualties, and the extensive use of artificial intelligence — one officer calling it a "'factory of targets' and 'collateral damage.'" (<a href="https://www.lemonde.fr/en/israel/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>World Israel News:</strong> Israel reportedly blocking construction of a military base in Gaza for "Board of Peace" forces ahead of the Knesset election; Israel has reportedly withdrawn from Gaza's Orange Line to the original Yellow Line under US pressure, reducing control from 60%+ to 53%. (<a href="https://worldisraelnews.com/category/arab-israeli-conflict/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>War operations — Lebanon</h3>
+<ul>
+<li><strong>AP (Oct 8):</strong> An Israeli officer was killed and three soldiers injured when their vehicle overturned during an operation in the Litani area. Troops remain in parts of southern Lebanon despite US-mediated withdrawal talks; Hezbollah has refused to disarm. (<a href="https://apnews.com/article/israel-consulate-britain-mideast-october-8-2026-c7a446e1bd01966f19b88af07149c3d5" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Le Monde:</strong> Four killed by Israeli airstrikes in Lebanon despite the ceasefire; Lebanon's president called on the US to stop the strikes. Israel said it destroyed key Hezbollah tunnels in south Lebanon containing "dozens of Iranian-made rockets, missiles, and UAVs" plus anti-tank missiles and hundreds of mines. (<a href="https://www.lemonde.fr/en/israel/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Ground News / IDF (Oct):</strong> Israeli Air Force struck 500+ targets in the past month — 370+ Hezbollah targets in southern Lebanon, 140+ in Gaza, including three Hamas brigade commanders. (<a href="https://ground.news/article/hackers-use-security-cameras-to-track-troops-military-targets-in-israel-ukraine" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>World Israel News:</strong> Israel threatened to seize more of Lebanon and displace over one million Shiites if Hezbollah joins future Iranian attacks on Israel. Hezbollah launched explosive drones at IDF troops in the security zone; one downed. (<a href="https://worldisraelnews.com/category/arab-israeli-conflict/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>JFeed (Oct 16):</strong> Northern Israeli councils warned of planned air force strikes in the Lebanon sector. (<a href="https://www.jfeed.com/news-israel/tn03ba" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Cyber &amp; covert operations</h3>
+<ul>
+<li><strong>WSJ (Oct 10, via Ground News):</strong> Nations including Russia, Ukraine, Israel and Iran are increasingly hacking internet-connected surveillance cameras for wartime intelligence — ~1.2 billion cameras worldwide, weak passwords and outdated firmware. Israel National Cyber Directorate chief Yossi Karadi said Iranian operatives infiltrated road cameras during the June 2025 conflict to track Israeli figures and access the Weizmann Institute. A henhouse camera in northern Israel exposed Israeli military movements near the Lebanon border (its app was found in Arabic). Ukraine's SBU has secured 40,000 compromised cameras since 2022. (<a href="https://ground.news/article/hackers-use-security-cameras-to-track-troops-military-targets-in-israel-ukraine" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>Daily Beirut / Channel 12 (Oct 2026):</strong> Hezbollah has attempted 600+ cyberattacks against Israel since Oct 7, aided by AI, including during ceasefires — Israeli military says no significant successes so far. More than 2,500 cyberattacks against Israel since Oct 7, countered by the Electronic Defense Brigade. (<a href="https://dailybeirut.com/en/lebanon-news/with-ai-assistance-hezbollah-launches-cyberattacks-on-israel/" target="_blank" rel="noopener">Source</a>)</li>
+<li><strong>JNS (archive):</strong> Iranian hackers claimed to have breached the Dimona nuclear facility, claiming thousands of documents. Iran blamed Israel for the Fars News Agency hack — group "Black Reward" claimed ~250 TB deleted.</li>
+<li><strong>Israel National News (archive):</strong> Lebanon's parliamentary committee claimed Israeli spying devices infiltrated UNIFIL and Lebanese army networks. A Knesset website was targeted by Russian hackers with alleged Kremlin ties ("XakNet Team"), claiming revenge for Israeli intel sent to Kyiv on Iranian-made drones. (<a href="https://www.israelnationalnews.com/tags/12841" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Politics</h3>
+<ul>
+<li><strong>CNN (Oct 18):</strong> Nine days before Israeli elections — the first general election since the Oct 7 attacks — Trump finally endorsed Netanyahu. Israel marked the third anniversary of Oct 7 with tributes, Gaza strikes, and political debate. Defense Minister Israel Katz ordered increased military vigilance.</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.timesofisrael.com/idf-says-hamas-terrorist-who-attacked-reim-base-on-oct-7-killed-in-airstrike/" target="_blank" rel="noopener">Times of Israel — IDF strikes</a></li>
+<li><a href="https://apnews.com/article/israel-consulate-britain-mideast-october-8-2026-c7a446e1bd01966f19b88af07149c3d5" target="_blank" rel="noopener">AP — Mideast developments, Oct 8</a></li>
+<li><a href="https://www.lemonde.fr/en/israel/" target="_blank" rel="noopener">Le Monde — Israel</a></li>
+<li><a href="https://ground.news/article/hackers-use-security-cameras-to-track-troops-military-targets-in-israel-ukraine" target="_blank" rel="noopener">Ground News — Hackers use security cameras to track troops</a></li>
+<li><a href="https://dailybeirut.com/en/lebanon-news/with-ai-assistance-hezbollah-launches-cyberattacks-on-israel/" target="_blank" rel="noopener">Daily Beirut — Hezbollah AI cyberattacks on Israel</a></li>
+<li><a href="https://www.jfeed.com/news-israel/tn03ba" target="_blank" rel="noopener">JFeed — IDF strikes Lebanon</a></li>
+<li><a href="https://worldisraelnews.com/category/arab-israeli-conflict/" target="_blank" rel="noopener">World Israel News — Arab-Israeli Conflict</a></li>
+<li><a href="https://www.israelnationalnews.com/tags/12841" target="_blank" rel="noopener">Israel National News — Cyber Warfare</a></li>
+<li><a href="https://ground.news/article/idf-over-the-past-month-the-israeli-air-force-has-attacked-more-than-500-targets-in-lebanon-and-gaza" target="_blank" rel="noopener">Ground News — Israeli Air Force hit 500 targets last month</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></article>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>
