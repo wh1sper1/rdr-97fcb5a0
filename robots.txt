@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://wh1sper1.github.io/rdr-97fcb5a0/sitemap.xml
