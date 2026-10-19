@@ -1,0 +1,248 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Ukraine-Russia War — Research Digest — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><img class="hero" src="img/ukraine-russia-war_2026-10-18_1800.jpg" alt=""><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-18 18:00</div><p><strong>Date saved:</strong> 2026-10-18 18:00 (PDT)</p>
+<p><strong>Sources:</strong> CSIS, Al Jazeera, OSW (Polish Institute), Foreign Policy, RBC-Ukraine, Institute for the Study of War</p>
+<h2>Key findings</h2>
+<h3>Russian casualties and battlefield costs balloon</h3>
+<ul>
+<li><strong>CSIS (Jul 1, 2026):</strong> Russia has suffered approximately 1.4 million battlefield casualties — including killed, wounded, and missing soldiers — between February 2022 and June 2026, with as many as 450,000 deaths. Russian fatalities in Ukraine are more than four times greater than all US fatalities in all wars combined since World War II. Monthly casualty rates exceeded 30,000 per month in 2026, likely surpassing Russia's recruitment rates of roughly 27,000 new recruits per month. The Russia-Ukraine casualty ratio has risen to nearly 8:1 in the first half of 2026, up from 2:1 to 3:1 for much of the war, largely due to Ukraine's use of AI-enabled drones. Russia's territorial control in Ukraine shrank in spring 2026, with a net loss of roughly 400 square kilometers in April and May — the first monthly net losses since August 2024. Putin dramatically scaled back his May 2026 military parade due to concerns about Ukrainian long-range strikes. (<a href="https://www.csis.org/analysis/russian-blood-and-treasure-ballooning-costs-putins-war" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Front lines: Russian offensive stalls, Ukraine advances</h3>
+<ul>
+<li><strong>Al Jazeera (Oct 16, 2026):</strong> Ukraine's Third Army Corps concluded a fourth phase of Operation Vivaldi in Donetsk, reclaiming an additional 100 sq km of territory, bringing total gains to 275 sq km and 16 settlements since August. Russia's overall gains this year are close to nil. Russian forces averaged 14 attacks per day in the Sloviansk direction in August, dropping to 5 in September and 3 in October. In the Kramatorsk direction, attacks fell from 3 per day in August to 0.3 per day in October. Ukrainian commander Robert Brovdi reported Russian casualties increased 25% in the first two weeks of October vs. September, and nearly 60% vs. August. In Dobropillya, Russian casualties were 43% above September's rate and double August's. Zelenskyy said Russian forces outnumber Ukraine's 6-to-8 to 1 in some sectors. (<a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>OSW (Feb 24, 2026):</strong> In year four of the war, Russian forces maintained the initiative and made battlefield advances but failed to achieve significant operational gains or a strategic breakthrough. The Ukrainian army held a coherent defensive line and prevented a collapse. Russia launched unprecedented attacks on Ukraine's energy system in winter 2025/26, aiming to trigger a humanitarian crisis. The ground offensive was accompanied by regular drone strikes involving up to several hundred attack drones per day. (<a href="https://www.osw.waw.pl/en/publikacje/osw-commentary/2026-02-24/year-four-war-front-stabilises-negotiations-stall" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Energy infrastructure war intensifies</h3>
+<ul>
+<li><strong>Al Jazeera (Oct 16, 2026):</strong> Over a 24-hour period on October 14, Russia launched 850 drones and 39 missiles, striking 30 energy targets across 19 regions of Ukraine — despite Trump having declared an "energy ceasefire" on October 11. Five ballistic missiles struck Kyiv's Thermal Power Plant No. 4, causing power outages. Starshield (SpaceX's military Starlink), capped Ukraine's navigation services at 160 km/h, making it difficult or impossible to intercept Russian jet-powered Geran-4 drones flying at over 500 km/h. Elon Musk stated: "Starshield systems are owned and controlled by the US government. Any limits on speed or usage are decided by the US military and ultimately POTUS." Six in 10 Russian drones are now jet-powered. (<a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Foreign Policy (Jul 9, 2026):</strong> Ukraine has hit Russian oil refineries 194 times since the start of 2026, 11 times as often as the same period in 2025. The Ukrainian strategy aims to "cut off a significant share of the revenues financing the Russian war budget, trigger a fuel crisis, and surgically sever the critical links in the defense-industrial supply chain." Ukraine's strikes have taken 42.74% of Russia's total design oil-refining capacity out of operation. Russian cities including Moscow and St. Petersburg have come under attack by Ukrainian drones and long-range missiles, and Crimea has been forced to close summer camps and beaches. (<a href="https://foreignpolicy.com/2026/07/09/ukraine-russia-war-theory-victory-putin-zelensky-crimea-missiles-deep-strikes-oil-refineries/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Ukraine's deep-strike campaign inside Russia</h3>
+<ul>
+<li><strong>Al Jazeera (Oct 16, 2026):</strong> While respecting Trump's energy ceasefire for three days, Ukraine returned to striking Russian refineries on October 15. On October 15, it destroyed four Sukhoi fighters and damaged two more at the Borisoglebsk airfield in Voronezh. Ukraine targeted three Yandex data centers, destroying or crippling those in Sasovo, Kaluga, and Vladimir between October 8-11, and struck a Sberbank data center on October 14, causing Russians to lose online payment services. Ukraine struck a facility manufacturing explosives and rocket fuel in Nizhny Novgorod on October 9, and a plant making additives for missile fuels in the Tver region. During September, Ukraine struck 40 command posts and 50 logistics facilities. (<a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>CSIS (Jul 1, 2026):</strong> Ukraine has orchestrated short-range strikes (less than 30 km) against thousands of targets just across the border in Russia and in Russian-controlled areas like Crimea, causing operational challenges including decreasing Russia's energy refining capacity, causing gasoline shortages, largely knocking out Russia's navy from the war, disrupting logistics, and attritting industrial production. (<a href="https://www.csis.org/analysis/russian-blood-and-treasure-ballooning-costs-putins-war" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>US-Ukraine relations fracture</h3>
+<ul>
+<li><strong>Al Jazeera (Oct 16, 2026):</strong> Trump lifted some oil sanctions against Russia on October 9, inviting Russia to sell 1.8 million tonnes of diesel to the global market — effectively reversing the Lindsey Graham Act he had signed days earlier. Ukraine's partners did not share intelligence that five ballistic missiles were headed toward Kyiv on October 13. Starshield capped Ukraine's navigation services. Zelenskyy told Piers Morgan: "It is a pity we are losing… a strong partner. It's painful when President Trump chooses one side, not our side. This is not the right side of history." The US had also stopped sharing intelligence with Ukraine in March, helping Russia reclaim Kursk. Ukraine's Defense Ministry orders in 2026 were up 50% vs. 2025, with delivery volumes nearly four times last year's, in partnership with European allies. (<a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>RBC-Ukraine (2026):</strong> Over the past month, Russian losses reached 40,000, more than 60% of them killed. Ahead of winter, the exchange of strikes will most likely only intensify: Russia will again try to hit Ukraine's energy sector, counting on using the cold as an additional tool of pressure. (<a href="https://newsukraine.rbc.ua/analytics/putin-s-ballistic-terror-could-be-his-own-1785734379.html" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.csis.org/analysis/russian-blood-and-treasure-ballooning-costs-putins-war" target="_blank" rel="noopener">CSIS — Russian Blood and Treasure: The Ballooning Costs of Putin's War</a></li>
+<li><a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Al Jazeera — Ukraine advances in occupied Donetsk as Trump hands Putin diesel deal</a></li>
+<li><a href="https://www.osw.waw.pl/en/publikacje/osw-commentary/2026-02-24/year-four-war-front-stabilises-negotiations-stall" target="_blank" rel="noopener">OSW — Year four of the war: the front stabilises, negotiations stall</a></li>
+<li><a href="https://foreignpolicy.com/2026/07/09/ukraine-russia-war-theory-victory-putin-zelensky-crimea-missiles-deep-strikes-oil-refineries/" target="_blank" rel="noopener">Foreign Policy — Ukraine Finally Has a Theory of Victory in the War Against Russia</a></li>
+<li><a href="https://newsukraine.rbc.ua/analytics/putin-s-ballistic-terror-could-be-his-own-1785734379.html" target="_blank" rel="noopener">RBC-Ukraine — Putin's ballistic terror could be his own trap</a></li>
+<li><a href="https://www.understandingwar.org/" target="_blank" rel="noopener">Institute for the Study of War — Russian offensive operations assessment</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></div>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>

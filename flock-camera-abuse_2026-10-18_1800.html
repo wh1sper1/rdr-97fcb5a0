@@ -1,0 +1,243 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Flock Camera Abuse — Research Digest — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><img class="hero" src="img/flock-camera-abuse_2026-10-18_1800.jpg" alt=""><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Flock Camera Abuse — Research Digest</h1><div class="meta">Saved 2026-10-18 18:00</div><p><strong>Date saved:</strong> 2026-10-18 18:00 (PDT)</p>
+<p><strong>Sources:</strong> The Detroit News, Mississippi Clarion Ledger, ABC News, The Hill, NPR, Politico, USA TODAY</p>
+<h2>Key findings</h2>
+<h3>City contract cancellations mount</h3>
+<ul>
+<li><strong>The Detroit News (Oct 12, 2026):</strong> Madison Heights, Michigan, became the latest Metro Detroit community to sever ties with Flock Safety, announcing on Oct. 11 that it would disconnect its three ALPR cameras and not renew its contract when it expires in November 2028. The city said Flock was unable to assure officials that "appropriate guardrails" were in place. Ten communities across Metro Detroit have now canceled Flock contracts in the last six months. (<a href="https://www.detroitnews.com/story/news/local/oakland-county/2026/10/12/madison-heights-to-cancel-its-flock-license-plate-reader-contract/92215672007/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>Mississippi Clarion Ledger (Oct 16, 2026):</strong> Jackson Police Chief RaShall Brackney announced the department will not renew its Flock contract, citing privacy concerns. Brackney noted that more than 50 officers nationwide have been charged for policy violations involving Flock license plate readers and said JPD will look at alternative ALPR systems with "stringent policies so we don't over surveil or over police." (<a href="https://www.clarionledger.com/story/news/local/2026/10/16/police-chief-to-end-flock-license-plate-cameras-contract-in-jackson/92263824007/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>ABC News (Sep 1, 2026):</strong> More than 50 cities and counties have canceled or deactivated ALPR cameras in 2026, Politico found. Florida's state transportation office revoked local law enforcement's ability to put license plate readers on state highways. Flock cameras have been vandalized in at least 36 states. The ACLU called it "the biggest, most grassroots privacy backlash that I've ever seen in more than 20 years working on these issues." (<a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>The Hill (Aug 2026):</strong> Tempe, Arizona, terminated its $80,000 Flock contract and Cave Creek followed hours later. More than 90 cities have moved to cancel or reject Flock ALPRs. Flock announced new privacy safeguards including an "Audit Assistance" feature and a "proactive lockout" feature that automatically suspends access for abnormal user behavior. (<a href="https://thehill.com/policy/technology/6053849-flock-contract-cancellations-grow-data-concerns/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Police abuse and stalking scandals</h3>
+<ul>
+<li><strong>ABC News (Sep 1, 2026):</strong> A Kentucky police officer was arrested after allegedly using Flock cameras to track his ex-girlfriend more than 2,000 times. In Savannah, Georgia, six police department employees were fired in August over alleged abuse of Flock cameras. The Institute for Justice has identified more than 100 incidents of ALPR abuse, including stalking and wrongful stops. (<a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>NPR (Aug 22, 2026):</strong> The FBI investigated a case where a police officer searched his ex-girlfriend's license plate number 124 times and her former boyfriend's plate 55 times. NPR found that deputies in Texas used Flock data to investigate a woman suspected of traveling to have an abortion. More than 130,000 ALPR cameras are in cities and towns across the country, according to DeFlock.org. (<a href="https://www.npr.org/2026/08/22/nx-s1-5931446/flock-safety-alternatives-new-names-same-surveillance" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Political and legislative response</h3>
+<ul>
+<li><strong>The Hill (Aug 2026):</strong> Sen. Josh Hawley (R-Mo.) launched an investigation into Flock's national surveillance network, citing "abuse and misuse of personal data." Florida Gov. Ron DeSantis called the increasing use of ALPRs "out of control." The Washington Post investigation found more than 50 law enforcement officers accused, charged with, or convicted of misusing ALPRs for unauthorized purposes. (<a href="https://thehill.com/policy/technology/6053849-flock-contract-cancellations-grow-data-concerns/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>USA TODAY (Aug 2026):</strong> Flock Safety acknowledged that officers conducted searches not tied to law enforcement investigations, including stalking and harassment. More than 20 police agencies have launched investigations, suspended or fired officers, or filed criminal charges for misusing Flock. The company changed its privacy and data retention policies, reducing default retention from 30 to 7 days. (<a href="https://www.usatoday.com/story/news/investigations/2026/09/11/new-flock-misuse-cases-police-arrests-firings-investigation/91691881007/" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.detroitnews.com/story/news/local/oakland-county/2026/10/12/madison-heights-to-cancel-its-flock-license-plate-reader-contract/92215672007/" target="_blank" rel="noopener">The Detroit News — Another Metro Detroit community parts ways with Flock</a></li>
+<li><a href="https://www.clarionledger.com/story/news/local/2026/10/16/police-chief-to-end-flock-license-plate-cameras-contract-in-jackson/92263824007/" target="_blank" rel="noopener">Mississippi Clarion Ledger — Police chief to end Flock cameras contract in Jackson</a></li>
+<li><a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">ABC News — Flock cameras trigger nationwide backlash over privacy concerns, police abuse</a></li>
+<li><a href="https://thehill.com/policy/technology/6053849-flock-contract-cancellations-grow-data-concerns/" target="_blank" rel="noopener">The Hill — Flock contract cancellations grow among cities, other municipalities</a></li>
+<li><a href="https://www.npr.org/2026/08/22/nx-s1-5931446/flock-safety-alternatives-new-names-same-surveillance" target="_blank" rel="noopener">NPR — Flock Safety alternatives: new names, same surveillance</a></li>
+<li><a href="https://www.usatoday.com/story/news/investigations/2026/09/11/new-flock-misuse-cases-police-arrests-firings-investigation/91691881007/" target="_blank" rel="noopener">USA TODAY — More than 50 officers charged for Flock misuse</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></div>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>

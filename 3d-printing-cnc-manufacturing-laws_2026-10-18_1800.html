@@ -1,0 +1,242 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>3D Printing & CNC Manufacturing Laws — Research Digest — Daily Anti-Fascist Brief</title><style>
+
+:root { --ink:#d5f5e3; --muted:#5fae83; --line:#123a26; --paper:#050b07;
+  --neon:#39ff88; --cyan:#00e5ff; --card:#08130c; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif; }
+body::after { content:""; position:fixed; inset:0; pointer-events:none;
+  z-index:1000; opacity:.35;
+  background:repeating-linear-gradient(to bottom, rgba(0,0,0,.18) 0 1px, transparent 1px 3px); }
+body.light { --ink:#111; --muted:#5b6472; --line:#e3e6ea; --paper:#f7f6f3; --card:#fff; }
+body.light::after { display:none; }
+a { color:inherit; }
+.masthead { position:relative; background:#000; color:#fff; padding:16px 20px 10px;
+  border-bottom:1px solid var(--neon); box-shadow:0 0 20px rgba(57,255,136,.25);
+  overflow:hidden; }
+#rain { position:absolute; inset:0; width:100%; height:100%; opacity:.55;
+  pointer-events:none; }
+.masthead .brand, .masthead .dateline { position:relative; z-index:1; }
+.masthead .brand { font-family:'Cascadia Code','JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(17px,5.2vw,27px); font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; margin:0; }
+.masthead .brand span { color:var(--neon);
+  text-shadow:0 0 8px rgba(57,255,136,.9), 0 0 22px rgba(57,255,136,.45); }
+.dateline { display:flex; gap:14px; align-items:center; border-top:1px solid #0d2b1a;
+  margin-top:8px; padding-top:8px; font-size:12px; color:#7fd4a6;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.dateline a { color:var(--cyan); text-decoration:none; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; padding:14px 20px 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.chip { font-size:12px; font-weight:600; letter-spacing:.5px; padding:5px 12px;
+  border-radius:3px; border:1px solid var(--line); background:var(--card);
+  color:var(--muted); text-decoration:none; transition:all .15s ease; }
+.chip:hover { border-color:var(--neon); color:var(--neon); }
+.chip.active { background:var(--neon); color:#031008; border-color:var(--neon);
+  box-shadow:0 0 12px rgba(57,255,136,.55); }
+main { max-width:1080px; margin:0 auto; padding:18px 20px 60px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(310px,1fr));
+  gap:22px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+  text-decoration:none; }
+.card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.card img { width:100%; height:180px; object-fit:cover; display:block;
+  background:#0d1a12; }
+.card .body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:8px; }
+.kicker { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+.card h2 { margin:0; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; line-height:1.4; }
+.snippet { color:var(--muted); font-size:14px; line-height:1.45; }
+.when { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); margin-top:auto; }
+.section-title { font-size:13px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--neon);
+  border-bottom:1px solid var(--neon); padding-bottom:6px; margin:26px 0 16px; }
+.article { max-width:760px; }
+.article .hero { width:100%; max-height:420px; object-fit:cover; border-radius:4px;
+  margin:4px 0 18px; display:block; background:#0d1a12; border:1px solid var(--line); }
+.article h1 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:clamp(20px,4.2vw,30px); line-height:1.25; margin:6px 0 8px; }
+body:not(.light) .article h1 { text-shadow:0 0 16px rgba(57,255,136,.3); }
+.article .meta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; color:var(--muted); border-bottom:1px solid var(--line);
+  padding-bottom:14px; margin-bottom:18px; }
+.article p { font-size:17px; line-height:1.65; margin:0 0 14px; }
+.article h2 { font-size:20px; margin:26px 0 10px; border-bottom:1px solid var(--line);
+  padding-bottom:4px; }
+.article h3 { font-size:17px; margin:18px 0 8px; }
+.article ul { padding-left:22px; }
+.article li { font-size:16px; line-height:1.6; margin-bottom:8px; }
+.article li a { color:var(--neon); text-decoration:none;
+  border-bottom:1px solid rgba(57,255,136,.6); }
+.article li a::after { content:" ↗"; font-size:.7em; opacity:.5; }
+.article li a:hover { text-shadow:0 0 8px rgba(57,255,136,.7);
+  border-bottom-color:var(--neon); }
+body.light .article li a { color:#0a7f46; border-bottom-color:rgba(10,127,70,.6); }
+body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; text-shadow:none; }
+.article a { color:var(--cyan); }
+.article hr { border:0; border-top:1px solid var(--line); margin:24px 0; }
+.overlap { background:rgba(255,200,60,.07); border:1px solid #4a3d15; border-radius:4px;
+  padding:12px 16px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:14px; }
+.overlap summary { cursor:pointer; font-weight:700; }
+.back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
+  margin-bottom:12px; }
+.footer { text-align:center; color:var(--muted);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; padding:30px 0 0; }
+.empty { padding:60px 0; text-align:center; color:var(--muted);
+  font-family:ui-monospace,Menlo,Consolas,monospace; }
+.theme-btn { margin-left:auto; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:600; padding:4px 14px; border-radius:3px;
+  border:1px solid var(--neon); background:transparent; color:var(--neon);
+  cursor:pointer; transition:all .15s ease; letter-spacing:.5px; }
+.theme-btn:hover { background:rgba(57,255,136,.12);
+  box-shadow:0 0 12px rgba(57,255,136,.4); }
+/* light-mode contrast fixes */
+body.light .kicker { filter:brightness(.7) saturate(1.5); }
+body.light .section-title { color:#0a7f46; border-bottom-color:#0a7f46; }
+body.light .article a { color:#0369a1; }
+body.light .back { color:#0e7c4a; }
+body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
+body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
+.contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.contact h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+body.light .contact h2 { color:#0a7f46; }
+.contact p { color:var(--muted); font-size:14px; margin:0 0 16px; line-height:1.5; }
+.contact-btn { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:600; letter-spacing:.5px; padding:10px 22px;
+  border:1px solid var(--neon); border-radius:3px; color:var(--neon);
+  text-decoration:none; transition:all .15s ease; }
+.contact-btn:hover { background:rgba(57,255,136,.12); box-shadow:0 0 12px rgba(57,255,136,.4); }
+body.light .contact-btn { color:#0a7f46; border-color:#0a7f46; }
+body.light .contact-btn:hover { background:rgba(10,127,70,.1); box-shadow:none; }
+.contact .addr { display:block; margin-top:12px; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+</style></head><body>
+<div class="masthead">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <h1 class="brand">Daily <span>Anti-Fascist Brief</span></h1>
+  <div class="dateline"><span>Sunday, October 18, 2026</span><span>·</span>
+  <a href="index.html">Front page</a>
+  <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
+</div>
+
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><img class="hero" src="img/3d-printing-cnc-manufacturing-laws_2026-10-18_1800.jpg" alt=""><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h1>3D Printing &amp; CNC Manufacturing Laws — Research Digest</h1><div class="meta">Saved 2026-10-18 18:00</div><p><strong>Date saved:</strong> 2026-10-18 18:00 (PDT)</p>
+<p><strong>Sources:</strong> PCMag, News From The States (Stateline), Washington State Legislature, California Legislature, PC Mag Opinion</p>
+<h2>Key findings</h2>
+<h3>Washington state leads with comprehensive law</h3>
+<ul>
+<li><strong>Washington State Legislature (Mar 2026):</strong> Governor Bob Ferguson signed HB 2320, a sweeping law that prohibits manufacturing certain firearms and firearm components through use of a 3D printer or CNC milling machine. The law prohibits the sale, transfer, or distribution of certain digital firearm manufacturing code — defined as any digital instructions in the form of CAD files or other code that may be used to program a 3D printer or CNC milling machine to manufacture a firearm, frame, receiver, magazine, or unlawful firearm part. It criminalizes manufacturing frames and receivers via 3D printer or CNC machine unless the person is licensed under federal law. Possessing digital firearm manufacturing code with intent to distribute to an unlicensed person is also prohibited. ("Digital firearm manufacturing code" means any digital instructions in the form of computer-aided design files or other code stored and displayed in electronic format as a digital model that may be used to program a 3D printer or CNC milling machine to manufacture or produce a firearm.) (<a href="https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/House/2320-S.E%20HBR%20APH%2026.pdf" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>California, New York push printer content-filter mandates</h3>
+<ul>
+<li><strong>PCMag (2026):</strong> California's AB 1263 increases liability for those who facilitate or share digital firearm manufacturing code. California's proposed AB 2047 would require consumer 3D printers sold in the state to include technology capable of detecting and blocking attempts to print firearms, gun parts, and machine-gun conversion devices. The proposal would require the California Department of Justice to publicly release performance and technology standards by 2028. Uploaded design files would be scrutinized by AI programs, supplemented by human oversight. (<a href="https://www.pcmag.com/opinions/ghost-gun-crackdown-threatens-the-future-of-3d-printing" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>News From The States (Jun 11, 2026):</strong> As part of New York's state budget approved in 2026, a new law requires 3D printers sold in the state to include blocking technology, if a state working group determines it to be technologically feasible, that prevents the production of firearms and illegal gun parts. Violating the law carries a civil penalty of $5,000 per product. California lawmakers are considering a similar proposal (AB 2047), which passed the Assembly and is pending in the Senate. (<a href="https://www.newsfromthestates.com/article/more-states-restrict-3d-printed-firearms" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Other states tighten restrictions</h3>
+<ul>
+<li><strong>News From The States (Jun 11, 2026):</strong> Colorado's HB26-1144, signed by Gov. Jared Polis in May, prohibits using 3D printers and similar manufacturing technologies to make firearms, unfinished gun parts, large-capacity magazines, and rapid-fire devices. Virginia Gov. Abigail Spanberger signed a law in April prohibiting the manufacture, sale, or possession of unserialized firearms, including unfinished frames or receivers. Maine enacted a law in January prohibiting the sale of guns without serial numbers and requiring serial numbers on all privately manufactured firearms, including 3D-printed guns. New Jersey's new law prohibits unlicensed individuals from possessing digital instructions used to 3D-print firearms. Including this year's measures, at least 16 states have regulations in place for ghost guns, and at least eight states and the District of Columbia specifically outlaw 3D-printed guns, according to Everytown for Gun Safety. (<a href="https://www.newsfromthestates.com/article/more-states-restrict-3d-printed-firearms" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Legal challenges and free speech concerns</h3>
+<ul>
+<li><strong>PCMag (2026):</strong> Gun rights groups have sued over state efforts to regulate "ghost guns" and the online distribution of firearm-design files. Some advocates argue that restrictions on 3D-printed guns violate free speech protections by limiting the spread of digital information. The Second Amendment Foundation argues that outright bans are unlikely to stop criminal activity and raise significant constitutional concerns. Some argue that Americans have long been allowed under federal law to manufacture firearms for personal use. Gun control advocates counter that these policies are intended to get ahead of a rapidly evolving threat. (<a href="https://www.pcmag.com/opinions/ghost-gun-crackdown-threatens-the-future-of-3d-printing" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<ul>
+<li><strong>News From The States (Jun 11, 2026):</strong> A Minnesota proposal to regulate 3D-printed firearms (HF 3407) did not advance out of the legislature before lawmakers adjourned in May. The proposal would have banned the sale and possession of ghost guns, limited 3D printing of firearms, prohibited the distribution of firearm design files, and imposed additional requirements on serial numbers. In both California and New York, legislators are considering proposals that would require printers to recognize and reject weapon components, with uploaded files reviewed by AI programs and human oversight. (<a href="https://www.newsfromthestates.com/article/more-states-restrict-3d-printed-firearms" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h3>Broader manufacturing implications</h3>
+<ul>
+<li><strong>PCMag (2026):</strong> The ghost gun crackdown is "quietly threatening the future of 3D printing." Washington's HB 2320 didn't just target untraceable firearms — it reached upstream into the ecosystem that makes them possible, regulating digital firearm files, restricting their distribution, and explicitly pulling 3D printers and CNC machines into the legal framework. California's AB 1263 expands liability for those who facilitate or distribute digital firearm manufacturing code. The trend raises questions about whether content-filter mandates on general-purpose manufacturing tools could set a precedent for regulating other types of digital manufacturing. (<a href="https://www.pcmag.com/opinions/ghost-gun-crackdown-threatens-the-future-of-3d-printing" target="_blank" rel="noopener">Source</a>)</li>
+</ul>
+<h2>Source links</h2>
+<ul>
+<li><a href="https://www.pcmag.com/opinions/ghost-gun-crackdown-threatens-the-future-of-3d-printing" target="_blank" rel="noopener">PCMag — The Ghost Gun Crackdown Is Quietly Threatening the Future of 3D Printing</a></li>
+<li><a href="https://www.newsfromthestates.com/article/more-states-restrict-3d-printed-firearms" target="_blank" rel="noopener">News From The States — More states restrict 3D-printed firearms</a></li>
+<li><a href="https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/House/2320-S.E%20HBR%20APH%2026.pdf" target="_blank" rel="noopener">Washington State Legislature — HB 2320 Bill Report</a></li>
+<li><a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2047" target="_blank" rel="noopener">California Legislature — AB 2047</a></li>
+<li><a href="https://www.nysenate.gov/legislation/bills/2025/S9005/amendment/B" target="_blank" rel="noopener">New York Senate — S9005: 3D Printer Blocking Technology</a></li>
+<li><a href="https://leg.colorado.gov/bills/HB26-1144" target="_blank" rel="noopener">Colorado Legislature — HB26-1144</a></li>
+</ul>
+<hr>
+<p><em>Compiled by Hermes scheduled research — saved 2026-10-18</em></p></div>
+<section class="contact">
+  <h2>// Contact</h2>
+  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
+  <span class="addr" id="contactAddr"></span>
+</section>
+<div class="footer">Published from ~/Documents/Daily-Research · updates twice daily</div>
+</main><script>
+(function () {
+  var KEY = "research-viewer-theme";
+  var btn = document.getElementById("themeBtn");
+  function apply(t) {
+    document.body.classList.toggle("light", t === "light");
+    btn.textContent = t === "light" ? "Dark" : "Light";
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved === "light" ? "light" : "dark");
+  btn.addEventListener("click", function () {
+    var now = document.body.classList.contains("light") ? "dark" : "light";
+    apply(now);
+    try { localStorage.setItem(KEY, now); } catch (e) {}
+  });
+})();
+(function () {
+  var user = "wh1sper1", dom = "proton.me";
+  var addr = user + "@" + dom;
+  var link = document.getElementById("contactLink");
+  if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
+  var disp = document.getElementById("contactAddr");
+  if (disp) { disp.textContent = addr; }
+})();
+
+(function () {
+  var c = document.getElementById("rain");
+  if (!c || !c.getContext) { return; }
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var ctx = c.getContext("2d");
+  var chars = "01001101001101ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂ01AF39E5<>/[]=+-*$#?@|";
+  var fs = 14, cols = 0, drops = [];
+  function resize() {
+    c.width = c.offsetWidth; c.height = c.offsetHeight;
+    cols = Math.floor(c.width / fs);
+    drops = [];
+    for (var i = 0; i < cols; i++) { drops[i] = Math.random() * -20; }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  var last = 0;
+  function frame(ts) {
+    if (ts - last > 55) {
+      last = ts;
+      ctx.fillStyle = "rgba(0,0,0,0.10)";
+      ctx.fillRect(0, 0, c.width, c.height);
+      ctx.font = fs + "px monospace";
+      for (var i = 0; i < cols; i++) {
+        var ch = chars.charAt(Math.floor(Math.random() * chars.length));
+        ctx.fillStyle = Math.random() > 0.985 ? "#d9ffe9" : "#39ff88";
+        ctx.fillText(ch, i * fs, drops[i] * fs);
+        if (drops[i] * fs > c.height && Math.random() > 0.975) { drops[i] = 0; }
+        drops[i] += 0.9;
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script></body></html>
