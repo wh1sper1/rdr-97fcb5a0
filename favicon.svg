@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b2416"/>
+      <stop offset="1" stop-color="#04120b"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#tile)"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="none"
+        stroke="#39ff88" stroke-width="2.5" opacity="0.85"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- cyan halo under the neon strokes -->
+    <g stroke="#00e5ff" stroke-width="10" opacity="0.16">
+      <path d="M9 46.5 L16 17.5 L23 46.5"/>
+      <path d="M11.7 37.5 H20.3"/>
+      <path d="M27 46.5 V17.5 H37"/>
+      <path d="M27 31.5 H35"/>
+      <path d="M41 17.5 V46.5"/>
+      <path d="M41 17.5 H47.5 A7 7 0 0 1 47.5 31.5 H41"/>
+      <path d="M41 31.5 H48 A7.5 7.5 0 0 1 48 46.5 H41"/>
+    </g>
+    <!-- neon letters -->
+    <g stroke="#39ff88" stroke-width="5.5">
+      <path d="M9 46.5 L16 17.5 L23 46.5"/>
+      <path d="M11.7 37.5 H20.3"/>
+      <path d="M27 46.5 V17.5 H37"/>
+      <path d="M27 31.5 H35"/>
+      <path d="M41 17.5 V46.5"/>
+      <path d="M41 17.5 H47.5 A7 7 0 0 1 47.5 31.5 H41"/>
+      <path d="M41 31.5 H48 A7.5 7.5 0 0 1 48 46.5 H41"/>
+    </g>
+  </g>
+</svg>
