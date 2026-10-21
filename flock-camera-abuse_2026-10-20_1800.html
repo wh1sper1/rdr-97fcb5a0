@@ -4,19 +4,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Daily Anti-Fascist Brief">
 <meta property="og:title" content="Flock Camera Abuse — Research Digest — Daily Anti-Fascist Brief">
-<meta property="og:description" content="Times of San Diego (Oct 20, 2026): A San Diego City Council committee is set to consider a resolution to terminate the police department's use of automated license plate readers (ALPRs) citywide. Councilmember Henry Foster III's resolution calls for ending the">
+<meta property="og:description" content="Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected">
 <meta property="og:image" content="https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg">
 <meta property="og:url" content="https://antifascistbrief.org/flock-camera-abuse_2026-10-20_1800.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Flock Camera Abuse — Research Digest — Daily Anti-Fascist Brief">
-<meta name="twitter:description" content="Times of San Diego (Oct 20, 2026): A San Diego City Council committee is set to consider a resolution to terminate the police department's use of automated license plate readers (ALPRs) citywide. Councilmember Henry Foster III's resolution calls for ending the">
+<meta name="twitter:description" content="Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected">
 <meta name="twitter:image" content="https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg">
 <meta name="theme-color" content="#050b07">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="Daily Anti-Fascist Brief RSS" href="feed.xml">
-<meta name="description" content="Times of San Diego (Oct 20, 2026): A San Diego City Council committee is set to consider a resolution to terminate the police department's use of automated license plate readers (ALPRs) citywide. Councilmember Henry Foster III's resolution calls for ending the">
+<meta name="description" content="Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected">
 <link rel="canonical" href="https://antifascistbrief.org/flock-camera-abuse_2026-10-20_1800.html">
 <title>Flock Camera Abuse — Research Digest — Daily Anti-Fascist Brief</title><style>
 
@@ -283,24 +283,66 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
-</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Flock Camera Abuse — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/flock-camera-abuse_2026-10-20_1800.html", "image": "https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg", "description": "Times of San Diego (Oct 20, 2026): A San Diego City Council committee is set to consider a resolution to terminate the police department's use of automated license plate readers (ALPRs) citywide. Councilmember Henry Foster III's resolution calls for ending the", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
+</style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Flock Camera Abuse — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/flock-camera-abuse_2026-10-20_1800.html", "image": "https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg", "description": "Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
   <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
+  <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip active" href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="flock-camera-abuse.html">&larr; All Camera Abuse briefs</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Flock Camera Abuse — Research Digest</h1><div class="meta">Saved 2026-10-20 18:00 &middot; Camera Abuse &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ice.html">ICE</a> <a href="tag-license-plate-readers-alpr.html">License Plate Readers (ALPR)</a> <a href="tag-deflock.html">DeFlock</a> <a href="tag-flock-safety.html">Flock Safety</a> <a href="tag-aclu.html">ACLU</a> <a href="tag-arizona.html">Arizona</a> <a href="tag-audit-assistance.html">Audit Assistance</a> <a href="tag-colorado.html">Colorado</a></div></div><article class="article entry"><a class="hero-link" href="https://timesofsandiego.com/politics/2026/10/20/council-committee-to-discuss-resolution-to-terminate-services-with-flock-safety/" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-20_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="flock-camera-abuse.html">&larr; All Camera Abuse briefs</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Flock Camera Abuse — Research Digest</h1><div class="meta">Saved 2026-10-20 18:00 &middot; Camera Abuse &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ice.html">ICE</a> <a href="tag-license-plate-readers-alpr.html">License Plate Readers (ALPR)</a> <a href="tag-deflock.html">DeFlock</a> <a href="tag-flock-safety.html">Flock Safety</a> <a href="tag-texas.html">Texas</a> <a href="tag-aclu.html">ACLU</a> <a href="tag-arizona.html">Arizona</a> <a href="tag-audit-assistance.html">Audit Assistance</a></div><div class="why"><p>Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected or deactivated Flock contracts is now past 90 — while the Washington Post's tally of officers accused, charged or convicted of misusing ALPR data has passed 50.</p>
+<p>The throughline is that the abuse was never a bug cities could train around. The same national database that let Texas deputies track a woman suspected of traveling for an abortion is the one Flock now proposes to police itself with an "Audit Assistance" feature — a fix pitched by the company that built the loophole. Senator Hawley opening an investigation into a network that maps much of the country's cars is the clearest sign yet that the politics have shifted: this is no longer a left-right fight about policing, it is a fight over whether a private company gets to index public movement.</p>
+<p>What to watch: whether San Diego's council survives a mayoral veto, and whether Flock's competitors — now signing the cities Flock loses — keep the same data-sharing habits or actually compete on restraint.</p></div></div><article class="article entry"><a class="hero-link" href="https://timesofsandiego.com/politics/2026/10/20/council-committee-to-discuss-resolution-to-terminate-services-with-flock-safety/" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-20_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Times of San Diego, NPR, The Hill, USA Today, Jackson Clarion Ledger, ACLU, 404 Media, Washington Post, DeFlock</p>
 <h2>Key findings</h2>
 <h3>City contract cancellations accelerate</h3>
@@ -330,6 +372,7 @@ body.light .tagcard .tc-name { color:#16241d; }
 <li><a href="https://www.aclu.org/campaigns-initiatives/get-the-flock-out" target="_blank" rel="noopener">ACLU — Get The Flock Out</a></li>
 <li><a href="https://www.404media.co" target="_blank" rel="noopener">404 Media — Denver and Longmont sign contracts with Flock competitors</a></li>
 </ul></article><div class="article"><div class="section-title">More from Camera Abuse</div><div class="grid"><a class="card" href="flock-camera-abuse_2026-10-20_1004.html"><img src="img/flock-camera-abuse_2026-10-20_1004.jpg" alt="Flock Cameras: Jackson Ends Its Contract, Tempe Votes a Ban — and the Surveillance Just Moves Next Door" loading="lazy"><div class="body"><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h2>Flock Cameras: Jackson Ends Its Contract, Tempe Votes a Ban — and the Surveillance Just Moves Next Door</h2><div class="snippet">The point of a license-plate reader network was never that it photographs cars. It is that every car, everywhere, becomes searchable by any cop, anywhere, without a warrant. That is the product Flock Safety sells, and more than 100 cities have now decided they…</div><div class="when">Saved 2026-10-20 10:04</div></div></a><a class="card" href="flock-camera-abuse_2026-10-20_0300.html"><img src="img/flock-camera-abuse_2026-10-20_0300.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h2>Flock Camera Abuse — Research Digest</h2><div class="snippet">NPR (August 22, 2026): Dozens of cities have canceled their contracts with Flock Safety, with about 100 cities having deactivated cameras, rejected deals, or cancelled contracts according to the DeFlock database. Some cities like Denver and Longmont, Colorado,…</div><div class="when">Saved 2026-10-20 03:00</div></div></a><a class="card" href="flock-camera-abuse_2026-10-19_1800.html"><img src="img/flock-camera-abuse_2026-10-19_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h2>Flock Camera Abuse — Research Digest</h2><div class="snippet">ABC News (Oct 2026): More than 50 cities and counties have canceled or deactivated Flock Safety ALPR cameras in 2026, according to Politico, with pushback occurring across red and blue states alike. Privacy concerns have been stoked by instances of police offi…</div><div class="when">Saved 2026-10-19 18:00</div></div></a></div></div>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>

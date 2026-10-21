@@ -283,24 +283,65 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Daily Anti-Fascist Brief", "url": "https://antifascistbrief.org/", "description": "Twice-daily sourced briefs on surveillance, government corruption, war, AI, cyber, gaming, synth music and more — built to defeat fascism and the corruption of politicians."}, {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "url": "https://antifascistbrief.org/", "logo": "https://antifascistbrief.org/img/share-banner.png"}]}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
   <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
+  <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
 <main><div class="article"><a class="back" href="tags.html">&larr; All dossiers</a><span class="kicker" style="color:var(--cyan)">Dossier</span><h1>3D Printed Gun Safety Act (S.2165)</h1><div class="meta">8 brief(s) &middot; filed 2026-10-18 through 2026-10-20 &middot; auto-generated index of every brief mentioning this subject</div></div><div class="article"><a class="row" href="3d-printing-cnc-manufacturing-laws_2026-10-20_1800.html"><span class="row-date">2026-10-20 18:00</span><span class="row-topic" style="color:#6d28d9">LAW &amp; MAKING</span><span class="row-main"><span class="row-title">3D Printing, CNC Manufacturing &amp; Laws — Research Digest</span><span class="row-snip">S.2165 — 119th Congress (2025-2026): The 3D Printed Gun Safety Act would amend Chapter 44 of Title 18 of the U.S. Code to prohibit the distribution of 3D printer plans fo…</span></span></a><a class="row" href="ai-news_2026-10-20_1800.html"><span class="row-date">2026-10-20 18:00</span><span class="row-topic" style="color:#1d4ed8">TECHNOLOGY</span><span class="row-main"><span class="row-title">AI News — Research Digest</span><span class="row-snip">Inside Global Tech (Oct 19, 2026): Congress focused on AI data center costs, chatbot safety, AI-driven pricing, and AI system oversight in Q3 2026. The House passed Rep. …</span></span></a><a class="row" href="gaming_2026-10-20_1800.html"><span class="row-date">2026-10-20 18:00</span><span class="row-topic" style="color:#22d3ee">GAMING</span><span class="row-main"><span class="row-title">Gaming — Research Digest</span><span class="row-snip">GTA VI is the story everyone is talking about. Rockstar Games released the final GTA VI launch trailer on October 15, 2026 — an &quot;impressive montage of emotional and bomba…</span></span></a><a class="row" href="ai-news_2026-10-20_0300.html"><span class="row-date">2026-10-20 03:00</span><span class="row-topic" style="color:#1d4ed8">TECHNOLOGY</span><span class="row-main"><span class="row-title">AI News — Research Digest</span><span class="row-snip">Inside Global Tech (October 19, 2026): On September 29, President Trump issued Executive Order 14434, &quot;Inaugurating the Era of Super Intelligence,&quot; directing the executiv…</span></span></a><a class="row" href="3d-printing-cnc-manufacturing-laws_2026-10-19_0300.html"><span class="row-date">2026-10-19 03:00</span><span class="row-topic" style="color:#6d28d9">LAW &amp; MAKING</span><span class="row-main"><span class="row-title">3D Printing &amp; CNC Manufacturing Laws — Research Digest</span><span class="row-snip">Washington State Legislature (2026): HB 2320, signed into law, prohibits the manufacturing of certain firearms and firearm components through the use of a three-dimension…</span></span></a><a class="row" href="gaming_2026-10-19_0300.html"><span class="row-date">2026-10-19 03:00</span><span class="row-topic" style="color:#22d3ee">GAMING</span><span class="row-main"><span class="row-title">Gaming — Research Digest</span><span class="row-snip">Shazoo (October 2026): A Taiwanese browser game, Fab24hr: A Day in the Life of a Semiconductor Wafer Factory Worker, became a viral hit in Taiwan — engineers compare it t…</span></span></a><a class="row" href="geopolitical-world-intel_2026-10-18_1621.html"><span class="row-date">2026-10-18 16:21</span><span class="row-topic" style="color:#c2410c">WORLD INTEL</span><span class="row-main"><span class="row-title">Geo Political World Intel — Research Digest</span><span class="row-snip">Anadolu Agency (Oct 17): Trump issued an executive order implementing the Lindsey Graham Sanctioning Russia and Iran Act of 2026 — but waived its tariffs and many sanctio…</span></span></a><a class="row" href="trump-admin-corruption_2026-10-18_1433.html"><span class="row-date">2026-10-18 14:33</span><span class="row-topic" style="color:#b91c1c">POLITICS</span><span class="row-main"><span class="row-title">Trump Administration Corruption — Research Digest</span><span class="row-snip">Kimberly Guilfoyle resigned as U.S. ambassador to Greece (Oct 2026) amid allegations of improper and possibly illegal conduct. WSJ reported she asked Trump donor Eric Det…</span></span></a></div>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>

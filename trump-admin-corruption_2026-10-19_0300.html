@@ -283,18 +283,58 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Trump Administration Corruption — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/trump-admin-corruption_2026-10-19_0300.html", "image": "https://antifascistbrief.org/img/trump-admin-corruption_2026-10-19_0300.jpg", "description": "UnHerd (October 2026): Kimberly Guilfoyle, U.S. ambassador to Greece, was forced to resign on October 13, 2026. According to The Wall Street Journal, she asked a Trump donor to cover a $100,000 personal credit card debt in exchange for access to administration", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-19T03:00:00-07:00", "dateModified": "2026-10-19T03:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
+  <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
   <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
@@ -334,6 +374,7 @@ body.light .tagcard .tc-name { color:#16241d; }
 <li><a href="https://www.washingtonpost.com/investigations/2026/06/16/records-reveal-600m-estimate-trumps-ballroom-project-with-half-taxpayers/" target="_blank" rel="noopener">Washington Post — White House ballroom donors list</a></li>
 <li><a href="https://www.npr.org/2025/05/21/nx-s1-5406420/trump-accepts-qatar-plane-air-force-one" target="_blank" rel="noopener">NPR — Trump accepts Qatar plane Air Force One</a></li>
 </ul></article><div class="article"><div class="section-title">More from Trump Admin</div><div class="grid"><a class="card" href="trump-admin-corruption_2026-10-20_1800.html"><img src="img/trump-admin-corruption_2026-10-20_1800.jpg" alt="Trump Administration Corruption — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b91c1c">POLITICS</span><h2>Trump Administration Corruption — Research Digest</h2><div class="snippet">Washington Post / ABC News / Ipsos (via National Security Journal): Almost two-thirds of Americans believe the president is &quot;using the presidency to enrich himself.&quot; Among Republicans and Republican-leaning independents, 34% agree — up from 22% in September 20…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="trump-admin-corruption_2026-10-20_1245.html"><img src="img/trump-admin-corruption_2026-10-20_1245.jpg" alt="Guilfoyle resignation: the $100,000 &quot;Honey Please&quot; text and the pay-to-play pattern Congress may finally have to probe" loading="lazy"><div class="body"><span class="kicker" style="color:#b91c1c">POLITICS</span><h2>Guilfoyle resignation: the $100,000 &quot;Honey Please&quot; text and the pay-to-play pattern Congress may finally have to probe</h2><div class="snippet">A Trump ambassador with access to national security information asked a donor to quietly pay off her $100,000 American Express bill days before her Senate confirmation hearing, promising him access to administration officials in return — and told him the wirin…</div><div class="when">Saved 2026-10-20 12:45</div></div></a><a class="card" href="trump-admin-corruption_2026-10-20_0300.html"><img src="img/trump-admin-corruption_2026-10-20_0300.jpg" alt="Trump Administration Corruption — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b91c1c">POLITICS</span><h2>Trump Administration Corruption — Research Digest</h2><div class="snippet">National Review (October 19, 2026): Kimberly Guilfoyle, Trump&#x27;s ambassador to Greece, was forced to resign after multiple Wall Street Journal reports revealed she asked a Trump donor to pay a $100,000 credit card bill in a way she thought was untraceable, prom…</div><div class="when">Saved 2026-10-20 03:00</div></div></a></div></div>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>

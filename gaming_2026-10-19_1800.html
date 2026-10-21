@@ -283,18 +283,58 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Gaming — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/gaming_2026-10-19_1800.html", "image": "https://antifascistbrief.org/img/gaming_2026-10-19_1800.jpg", "description": "Ground News (Oct 2026): A viral 'Punch the Wall to Escape' game on social media sparked an immediate wave of AI-powered clone games on Roblox — with nearly identical copies appearing the very next day. The phenomenon has ignited debate in indie dev circles abo", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-19T18:00:00-07:00", "dateModified": "2026-10-19T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
+  <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
   <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
@@ -339,6 +379,7 @@ body.light .tagcard .tc-name { color:#16241d; }
 <li><a href="https://blog.playstation.com/" target="_blank" rel="noopener">PlayStation Blog — The Saros: Zenith update, Peak on PS5, Wolf Among Us Remastered, Kena: Scars of Kosmora</a></li>
 <li><a href="https://www.iheart.com/podcast/269-fox-on-games-277833804/" target="_blank" rel="noopener">FOX on Games — Apex Blood Pact, Rust Halloween, Marvel Rivals, Zelda OoT remake hands-on</a></li>
 </ul></article><div class="article"><div class="section-title">More from Gaming</div><div class="grid"><a class="card" href="gaming_2026-10-20_1800.html"><img src="img/gaming_2026-10-20_1800.jpg" alt="Gaming — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#22d3ee">GAMING</span><h2>Gaming — Research Digest</h2><div class="snippet">GTA VI is the story everyone is talking about. Rockstar Games released the final GTA VI launch trailer on October 15, 2026 — an &quot;impressive montage of emotional and bombastic moments all set to a great soundtrack.&quot; The game launches November 19, 2026. Rockstar…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="gaming_2026-10-20_1026.html"><img src="img/gaming_2026-10-20_1026.jpg" alt="Who Owns the Game You Bought? Vibe Coding, the PS5 Jailbreak, and the Fight for Your Console" loading="lazy"><div class="body"><span class="kicker" style="color:#22d3ee">GAMING</span><h2>Who Owns the Game You Bought? Vibe Coding, the PS5 Jailbreak, and the Fight for Your Console</h2><div class="snippet">Every PlayStation 5 sold is a computer that its owner is forbidden to fully use. The console-hacking scene spent September and October proving that line is fictional — and spent the same weeks watching what happens when AI moves the same tools into everyone&#x27;s …</div><div class="when">Saved 2026-10-20 10:26</div></div></a><a class="card" href="gaming_2026-10-20_0300.html"><img src="img/gaming_2026-10-20_0300.jpg" alt="Gaming — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#22d3ee">GAMING</span><h2>Gaming — Research Digest</h2><div class="snippet">Khel Now / Player.gg (October 2026): Call of Duty: Modern Warfare 4 is releasing this week and is already earning widespread praise for its darker campaign, stronger storytelling, and Very Positive Steam reviews. It has become the highest-rated Call of Duty on…</div><div class="when">Saved 2026-10-20 03:00</div></div></a></div></div>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>

@@ -283,18 +283,58 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "World Report — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/world-report_2026-10-20_1800.html", "image": "https://antifascistbrief.org/img/world-report_2026-10-20_1800.jpg", "description": "UN News (Oct 16, 2026): Less than a month before the UN climate conference COP31 opens in Antalya, Türkiye (November 9-20), representatives of three successive summit presidencies gathered to address a pressing question: how can the world restore trust in clim", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
+  <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
   <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
@@ -362,6 +402,7 @@ body.light .tagcard .tc-name { color:#16241d; }
 <li><a href="https://abcnews.com/international" target="_blank" rel="noopener">ABC News — International News: Latest World News, Videos &amp; Photos</a></li>
 <li><a href="https://news.un.org/en/story/2026/05/1167551" target="_blank" rel="noopener">UN News — World News in Brief: Geopolitical tensions impact global economy, Gaza aid funding shortfall, violence in South Sudan</a></li>
 </ul></article><div class="article"><div class="section-title">More from World Report</div><div class="grid"><a class="card" href="world-report_2026-10-20_1245.html"><img src="img/world-report_2026-10-20_1245.jpg" alt="UN Global Risk Report 2026: Large-Scale War Is the Fastest-Rising Risk on Earth — and the Money to Prevent It Isn&#x27;t There" loading="lazy"><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>UN Global Risk Report 2026: Large-Scale War Is the Fastest-Rising Risk on Earth — and the Money to Prevent It Isn&#x27;t There</h2><div class="snippet">More than 1,300 governments, businesses and civil-society groups told the UN what they are most afraid of in 2026. Large-scale war climbed 16 places in the rankings — the steepest rise of any risk on the list — and now sits in the top ten threats in every one …</div><div class="when">Saved 2026-10-20 12:45</div></div></a><a class="card" href="world-report_2026-10-20_0300.html"><img src="img/world-report_2026-10-20_0300.jpg" alt="World Report — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">UN News (September 15, 2026): The 2026 UN Global Risk Report finds that geopolitical tensions and large-scale war are now seen as among the most pressing and interconnected risks. Drawing on responses from more than 1,300 stakeholders from governments, busines…</div><div class="when">Saved 2026-10-20 03:00</div></div></a><a class="card" href="world-report_2026-10-19_1800.html"><img src="img/world-report_2026-10-19_1800.jpg" alt="World Report — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">UN News (Oct 16, 2026): UN Secretary-General António Guterres issued an appeal in Yerevan, Armenia, ahead of the opening of COP17 — the UN Biodiversity Conference — for governments, business, and communities to accelerate efforts to protect biodiversity. He wa…</div><div class="when">Saved 2026-10-19 18:00</div></div></a></div></div>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>

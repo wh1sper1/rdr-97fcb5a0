@@ -283,24 +283,66 @@ body.light .section-title .plink { color:#0e7c4a; }
 body.light .searchbar button { color:#0a7f46; border-color:#0a7f46; }
 body.light .searchbar button:hover { background:rgba(10,127,70,.1); }
 body.light .tagcard .tc-name { color:#16241d; }
+/* ---- tier 2: voice layer, subscribe, videos, weekly ---- */
+.why { border:1px solid var(--line); border-left:3px solid var(--neon); border-radius:4px;
+  background:var(--card); padding:14px 18px; margin:0 0 20px; }
+.why::before { content:"// Why it matters"; display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); margin-bottom:8px; }
+.why p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:17px; line-height:1.7; margin:0 0 10px; color:var(--ink); }
+.why p:last-child { margin-bottom:0; }
+body.light .why { background:#f2fbf5; border-color:#cfe9d8; border-left-color:#0a7f46; }
+body.light .why::before { color:#0a7f46; }
+.subbox { max-width:760px; margin:26px auto 0; padding:24px; border:1px solid var(--line);
+  border-radius:4px; background:var(--card); text-align:center; }
+.subbox h2 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:16px; letter-spacing:2px; color:var(--neon); margin:0 0 8px; text-transform:uppercase; }
+.subbox p { color:var(--muted); font-size:14px; margin:0 4px; line-height:1.55; }
+.subbox .subnote { margin-top:14px; }
+.subbox .subnote a { color:var(--cyan); }
+body.light .subbox h2 { color:#0a7f46; }
+.vidgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px; }
+.vidcard { background:var(--card); border:1px solid var(--line); border-radius:4px;
+  overflow:hidden; text-decoration:none; display:flex; flex-direction:column;
+  transition:box-shadow .15s ease, border-color .15s ease, transform .15s ease; }
+.vidcard:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 0 18px rgba(57,255,136,.3); }
+.vidthumb { position:relative; display:block; }
+.vidthumb img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block;
+  background:#0d1a12; }
+.vidcard .body { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; }
+.vidcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; font-weight:700; margin:0; line-height:1.35; color:var(--ink); }
+.feat { margin:0 0 26px; }
+.feat iframe { width:100%; aspect-ratio:16/9; border:1px solid var(--line);
+  border-radius:6px; background:#000; }
+.masthead .brand a { color:inherit; text-decoration:none; }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Camera Abuse — Daily Anti-Fascist Brief", "mainEntityOfPage": "https://antifascistbrief.org/flock-camera-abuse.html", "image": "https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg", "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="rain" aria-hidden="true"></canvas>
-  <div class="brand">Daily <span>Anti-Fascist Brief</span></div>
+  <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
   <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="index.html">Front page</a>
-  <span>·</span>
   <a href="tags.html">Dossiers</a>
   <span>·</span>
   <a href="search.html">Search</a>
   <span>·</span>
   <a href="archive.html">Archive</a>
   <span>·</span>
+  <a href="videos.html">Videos</a>
+  <span>·</span>
+  <a href="weekly.html">Weekly</a>
+  <span>·</span>
+  <a href="subscribe.html">Subscribe</a>
+  <span>·</span>
   <a href="about.html">About</a>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip active" href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Camera Abuse</h1><div class="meta">7 digest(s) &middot; newest first</div></div><div class="section-title">Saved 2026-10-20 18:00<a class="plink" href="flock-camera-abuse_2026-10-20_1800.html">Permalink &#8599;</a></div><article class="article entry"><a class="hero-link" href="https://timesofsandiego.com/politics/2026/10/20/council-committee-to-discuss-resolution-to-terminate-services-with-flock-safety/" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-20_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Camera Abuse</h1><div class="meta">7 digest(s) &middot; newest first</div></div><div class="section-title">Saved 2026-10-20 18:00<a class="plink" href="flock-camera-abuse_2026-10-20_1800.html">Permalink &#8599;</a></div><article class="article entry"><div class="why"><p>Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected or deactivated Flock contracts is now past 90 — while the Washington Post's tally of officers accused, charged or convicted of misusing ALPR data has passed 50.</p>
+<p>The throughline is that the abuse was never a bug cities could train around. The same national database that let Texas deputies track a woman suspected of traveling for an abortion is the one Flock now proposes to police itself with an "Audit Assistance" feature — a fix pitched by the company that built the loophole. Senator Hawley opening an investigation into a network that maps much of the country's cars is the clearest sign yet that the politics have shifted: this is no longer a left-right fight about policing, it is a fight over whether a private company gets to index public movement.</p>
+<p>What to watch: whether San Diego's council survives a mayoral veto, and whether Flock's competitors — now signing the cities Flock loses — keep the same data-sharing habits or actually compete on restraint.</p></div><a class="hero-link" href="https://timesofsandiego.com/politics/2026/10/20/council-committee-to-discuss-resolution-to-terminate-services-with-flock-safety/" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-20_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Times of San Diego, NPR, The Hill, USA Today, Jackson Clarion Ledger, ACLU, 404 Media, Washington Post, DeFlock</p>
 <h2>Key findings</h2>
 <h3>City contract cancellations accelerate</h3>
@@ -547,6 +589,7 @@ body.light .tagcard .tc-name { color:#16241d; }
 <li><a href="https://theconversation.com/the-trouble-with-flock-cameras-is-the-surveillance-systems-architecture-not-just-some-of-its-users-291621" target="_blank" rel="noopener">The Conversation — The trouble with Flock cameras is the system's architecture</a></li>
 <li><a href="https://www.404media.co/" target="_blank" rel="noopener">404 Media / Wired — Analysis of hacked Flock camera data</a></li>
 </ul></article>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
   <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
