@@ -163,6 +163,124 @@ body.light .mission-points strong { color:#0b1712; }
 @media (max-width:640px) {
   .mission { padding:26px 20px 24px; margin-bottom:22px; }
   .mission-points { grid-template-columns:1fr; } }
+/* ---------------- nav buttons ---------------- */
+.navbar { position:relative; z-index:2; display:flex; flex-wrap:wrap; gap:8px;
+  padding:14px 20px 2px; }
+.navbtn { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+  text-decoration:none; padding:7px 13px; border:1px solid rgba(77,230,164,.3);
+  border-radius:6px; color:#a9dcc4; background:rgba(8,20,14,.55);
+  transition:all .15s ease; }
+.navbtn:hover { color:#4de6a4; border-color:#4de6a4;
+  box-shadow:0 0 14px rgba(77,230,164,.3); transform:translateY(-1px); }
+.navbtn-live { border-color:rgba(240,184,102,.5); color:#f0c98d; }
+.navbtn-live::before { content:""; display:inline-block; width:6px; height:6px;
+  margin-right:7px; border-radius:50%; background:#f0b866;
+  box-shadow:0 0 7px #f0b866; animation:liveDot 2.2s ease-in-out infinite;
+  vertical-align:1px; }
+@keyframes liveDot { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+body.light .navbtn { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
+body.light .navbtn:hover { color:#047857; border-color:#047857;
+  box-shadow:0 0 10px rgba(10,127,70,.2); }
+@media (prefers-reduced-motion: reduce) {
+  .navbtn, .navbtn-live::before { animation:none; transition:none; } }
+/* ---------------- live tool cards (front page) ---------------- */
+.toolpair { display:grid; grid-template-columns:1fr 1fr; gap:16px;
+  max-width:1080px; margin:0 auto 26px; }
+.toolcard { display:block; text-decoration:none; padding:20px 22px;
+  border:1px solid var(--line); border-radius:10px; background:var(--card);
+  transition:all .18s ease; position:relative; overflow:hidden; }
+.toolcard::after { content:""; position:absolute; right:-40px; top:-40px;
+  width:140px; height:140px; border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(77,230,164,.12), transparent 65%); }
+.toolcard-war::after { background:radial-gradient(circle, rgba(240,184,102,.13), transparent 65%); }
+.toolcard:hover { border-color:var(--neon); transform:translateY(-3px);
+  box-shadow:0 8px 26px rgba(0,0,0,.35), 0 0 18px rgba(77,230,164,.18); }
+.toolcard-war:hover { border-color:var(--cyan);
+  box-shadow:0 8px 26px rgba(0,0,0,.35), 0 0 18px rgba(240,184,102,.2); }
+.tooltag { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:var(--neon); }
+.toolcard-war .tooltag { color:var(--cyan); }
+.toolcard h3 { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  margin:8px 0 6px; font-size:19px; color:var(--ink); }
+.toolcard p { margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--muted); }
+.toolcta { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:1px; color:var(--neon); }
+.toolcard-war .toolcta { color:var(--cyan); }
+body.light .toolcard:hover { box-shadow:0 6px 20px rgba(0,0,0,.08); }
+@media (max-width:640px) { .toolpair { grid-template-columns:1fr; } }
+/* ---------------- war map + live wire ---------------- */
+.war-legend { display:flex; flex-wrap:wrap; gap:8px 18px; margin:12px 0 0;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; color:var(--muted); }
+.war-legend span { display:inline-flex; align-items:center; gap:7px; }
+.war-legend i { width:13px; height:13px; border-radius:3px; display:inline-block; }
+.wire { max-width:1080px; margin:26px auto 0; padding:20px 22px;
+  border:1px solid var(--line); border-radius:10px; background:var(--card); }
+.wire-head { display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  margin-bottom:14px; }
+.wire-tab { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+  padding:7px 13px; border:1px solid var(--line); border-radius:6px;
+  background:transparent; color:var(--muted); cursor:pointer; transition:all .15s ease; }
+.wire-tab:hover { color:var(--ink); border-color:var(--neon); }
+.wire-tab.on { background:var(--neon); color:#04140b; border-color:var(--neon); }
+.wire-note { font-size:12px; color:var(--muted); margin-left:auto;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; }
+.wire-list { list-style:none; margin:0; padding:0; display:flex;
+  flex-direction:column; gap:2px; }
+.wire-list li { border-bottom:1px solid var(--line); }
+.wire-list li:last-child { border-bottom:none; }
+.wire-list a { display:flex; gap:12px; align-items:baseline; padding:9px 4px;
+  text-decoration:none; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:14.5px; color:var(--ink); border-radius:5px; }
+.wire-list a:hover { background:rgba(77,230,164,.06); color:var(--neon); }
+.wire-time { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; color:var(--muted); white-space:nowrap; }
+.wire-src { font-size:12px; color:var(--muted); margin-left:auto;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:38%; }
+.wire-empty { font-size:13.5px; color:var(--muted); padding:10px 4px; }
+body.light .wire-tab { border-color:#dbe4dc; }
+body.light .wire-tab.on { color:#fff; }
+body.light .wire-list a:hover { background:rgba(10,127,70,.07); color:#047857; }
+/* ---------------- leaf burst canvas ---------------- */
+#leafs { position:fixed; inset:0; width:100%; height:100%; pointer-events:none;
+  z-index:60; }
+/* ---------------- nest-egg easter egg + game ---------------- */
+.eggspot { position:fixed; z-index:70; width:24px; height:31px; border:none;
+  padding:0; background:radial-gradient(circle at 34% 28%, #ffe9b8, #f0b866 46%, #a86a1e);
+  border-radius:50% 50% 46% 46%; box-shadow:0 0 16px rgba(240,184,102,.75),
+  inset 0 -4px 8px rgba(0,0,0,.28); opacity:0; transition:opacity 1.2s ease;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2228%22 height=%2228%22><path d=%22M14 1.5l3.4 7.9 8.6.7-6.5 5.6 2 8.4-7.5-4.5-7.5 4.5 2-8.4L2 10.1l8.6-.7z%22 fill=%22%234de6a4%22 stroke=%22%2306110c%22 stroke-width=%221.4%22/></svg>") 14 14, pointer;
+  animation:eggBob 2.6s ease-in-out infinite; }
+.eggspot.show { opacity:1; }
+@keyframes eggBob { 0%,100% { transform:translateY(0); }
+  50% { transform:translateY(-5px); } }
+.game-overlay { position:fixed; inset:0; z-index:90; display:flex;
+  align-items:center; justify-content:center; padding:16px;
+  background:rgba(3,10,7,.82); backdrop-filter:blur(6px);
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2228%22 height=%2228%22><path d=%22M14 1.5l3.4 7.9 8.6.7-6.5 5.6 2 8.4-7.5-4.5-7.5 4.5 2-8.4L2 10.1l8.6-.7z%22 fill=%22%234de6a4%22 stroke=%22%2306110c%22 stroke-width=%221.4%22/></svg>") 14 14, auto; }
+.game-panel { width:min(420px, 96vw); border:1px solid rgba(77,230,164,.4);
+  border-radius:12px; background:var(--card); padding:18px 18px 16px;
+  box-shadow:0 0 40px rgba(77,230,164,.15); }
+.game-top { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.game-title { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:13px; font-weight:700; letter-spacing:3px; text-transform:uppercase;
+  color:var(--neon); margin:0; }
+.game-hud { margin-left:auto; display:flex; gap:14px; align-items:center;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; color:var(--muted); }
+.game-hud b { color:var(--ink); font-size:14px; }
+.game-close { border:1px solid var(--line); background:transparent; color:var(--muted);
+  width:28px; height:28px; border-radius:6px; cursor:pointer; font-size:15px;
+  line-height:1; }
+.game-close:hover { color:var(--ink); border-color:var(--neon); }
+#nestCanvas { width:100%; aspect-ratio:3/4; display:block; border-radius:8px;
+  background:linear-gradient(180deg, #07130d, #0a1a13); border:1px solid var(--line); }
+.game-hint { font-size:12px; color:var(--muted); margin:10px 2px 0; line-height:1.5; }
+@media (prefers-reduced-motion: reduce) { .eggspot { animation:none; } }
+
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
@@ -341,24 +459,21 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
   <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
-  <div class="dateline"><span>Tuesday, October 20, 2026</span><span>·</span>
-  <a href="tags.html">Dossiers</a>
-  <span>·</span>
-  <a href="flockmap.html">Flock Map</a>
-  <span>·</span>
-  <a href="search.html">Search</a>
-  <span>·</span>
-  <a href="archive.html">Archive</a>
-  <span>·</span>
-  <a href="videos.html">Videos</a>
-  <span>·</span>
-  <a href="weekly.html">Weekly</a>
-  <span>·</span>
-  <a href="subscribe.html">Subscribe</a>
-  <span>·</span>
-  <a href="about.html">About</a>
+  <div class="dateline"><span>Tuesday, October 20, 2026</span>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
+<nav class="navbar" aria-label="Sections">
+  <a class="navbtn" href="index.html">Front</a>
+  <a class="navbtn" href="tags.html">Dossiers</a>
+  <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
+  <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
+  <a class="navbtn" href="search.html">Search</a>
+  <a class="navbtn" href="archive.html">Archive</a>
+  <a class="navbtn" href="videos.html">Videos</a>
+  <a class="navbtn" href="weekly.html">Weekly</a>
+  <a class="navbtn" href="subscribe.html">Subscribe</a>
+  <a class="navbtn" href="about.html">About</a>
+</nav>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
 <main><div class="article"><a class="back" href="tags.html">&larr; All dossiers</a><span class="kicker" style="color:var(--cyan)">Dossier</span><h1>Volodymyr Zelenskyy</h1><div class="meta">11 brief(s) &middot; filed 2026-10-18 through 2026-10-20 &middot; auto-generated index of every brief mentioning this subject</div></div><div class="article"><a class="row" href="ukraine-russia-war_2026-10-20_1800.html"><span class="row-date">2026-10-20 18:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">ISW Russian Offensive Campaign Assessment (Oct 19, 2026): Russian forces launched an extensive nighttime assault on October 18-19 using Iskander-M and S-400 ballistic mis…</span></span></a><a class="row" href="geopolitical-world-intel_2026-10-20_1245.html"><span class="row-date">2026-10-20 12:45</span><span class="row-topic" style="color:#c2410c">WORLD INTEL</span><span class="row-main"><span class="row-title">Trump waives his own Russia sanctions before they take effect, leaving Europe to hold the line alone</span><span class="row-snip">On Friday, Oct. 16, President Trump signed an executive order waiving every operative Russia section of the Lindsey O. Graham Sanctioning Russia and Iran Act — a law he s…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-20_1245.html"><span class="row-date">2026-10-20 12:45</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine energy grid attacks: 2,147 strikes since July 16 as Zelensky says paid-for Patriot missiles sit unsigned on Hegseth&#x27;s desk</span><span class="row-snip">Russian forces hit 28 substations and other energy facilities across 11 oblasts overnight on Oct. 18-19, killing at least four people and wounding at least 55, and cuttin…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-20_0300.html"><span class="row-date">2026-10-20 03:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">ISW — Russian Offensive Campaign Assessment, October 19, 2026: Intense Russian drone and missile assaults on the night of October 18-19 caused severe damage to energy and…</span></span></a><a class="row" href="world-report_2026-10-20_0300.html"><span class="row-date">2026-10-20 03:00</span><span class="row-topic" style="color:#ca8a04">WORLD REPORT</span><span class="row-main"><span class="row-title">World Report — Research Digest</span><span class="row-snip">UN News (September 15, 2026): The 2026 UN Global Risk Report finds that geopolitical tensions and large-scale war are now seen as among the most pressing and interconnect…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-19_1800.html"><span class="row-date">2026-10-19 18:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">Kyiv Independent (Oct 17, 2026): Russia launched one of its largest attacks on Ukraine&#x27;s energy grid, killing seven people and injuring around 90. President Zelensky desc…</span></span></a><a class="row" href="geopolitical-world-intel_2026-10-19_0300.html"><span class="row-date">2026-10-19 03:00</span><span class="row-topic" style="color:#c2410c">WORLD INTEL</span><span class="row-main"><span class="row-title">Geopolitical World Intel — Research Digest</span><span class="row-snip">MD Weekly Briefing (October 19, 2026): Japan and the United States opened Keen Sword 27 (October 19-29), and for the first time US Marines will deploy the NMESIS anti-shi…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-19_0300.html"><span class="row-date">2026-10-19 03:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">Kyiv Independent (October 17, 2026): Russia launched one of its largest attacks on Ukraine&#x27;s energy grid, killing seven people and injuring around 90. Ukrainian forces do…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-18_1800.html"><span class="row-date">2026-10-18 18:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">CSIS (Jul 1, 2026): Russia has suffered approximately 1.4 million battlefield casualties — including killed, wounded, and missing soldiers — between February 2022 and Jun…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-18_1635.html"><span class="row-date">2026-10-18 16:35</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">The Independent (Oct 18): Trump&#x27;s proposed energy ceasefire has collapsed — Ukraine and Russia are trading strikes. Zelensky said Russia demonstrated &quot;ostentatious disres…</span></span></a><a class="row" href="geopolitical-world-intel_2026-10-18_1621.html"><span class="row-date">2026-10-18 16:21</span><span class="row-topic" style="color:#c2410c">WORLD INTEL</span><span class="row-main"><span class="row-title">Geo Political World Intel — Research Digest</span><span class="row-snip">Anadolu Agency (Oct 17): Trump issued an executive order implementing the Lindsey Graham Sanctioning Russia and Iran Act of 2026 — but waived its tariffs and many sanctio…</span></span></a></div>
 <section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
@@ -452,5 +567,277 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);
+})();
+
+(function () {
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var cv = document.createElement("canvas");
+  cv.id = "leafs";
+  cv.setAttribute("aria-hidden", "true");
+  document.body.appendChild(cv);
+  var ctx = cv.getContext("2d"), W = 0, H = 0, leaves = [], raf = 0;
+  function resize() { W = cv.width = innerWidth; H = cv.height = innerHeight; }
+  resize();
+  addEventListener("resize", resize);
+  /* dark mode: bioluminescent neons that glow off the night-paper bg;
+     light mode: deep forest greens + ochres that read on cream */
+  var HUES_DARK = [[77, 230, 164], [63, 190, 130], [126, 214, 160], [240, 184, 102],
+                   [199, 160, 66], [46, 160, 110]];
+  var HUES_LIGHT = [[10, 127, 70], [17, 94, 58], [46, 140, 90], [61, 124, 74],
+                    [143, 94, 18], [176, 120, 30]];
+  function isLight() { return document.body.classList.contains("light"); }
+  function pickHue() {
+    var p = isLight() ? HUES_LIGHT : HUES_DARK;
+    return p[Math.random() * p.length | 0];
+  }
+  function spawn(x, y, power) {
+    var n = 3 + (Math.random() * 4 | 0);
+    for (var i = 0; i < n; i++) {
+      var a = Math.random() * Math.PI * 2, sp = (0.6 + Math.random() * 1.8) * power;
+      leaves.push({
+        x: x + (Math.random() - 0.5) * 10, y: y + (Math.random() - 0.5) * 10,
+        vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 1.2,
+        rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.22,
+        size: 7 + Math.random() * 9, hue: pickHue(),
+        sway: 0.6 + Math.random() * 1.4, ph: Math.random() * Math.PI * 2,
+        life: 1, decay: 0.008 + Math.random() * 0.01, drag: 0.985
+      });
+    }
+    if (leaves.length > 90) { leaves.splice(0, leaves.length - 90); }
+    if (!raf) { raf = requestAnimationFrame(frame); }
+  }
+  function drawLeaf(l) {
+    var s = l.size, c = l.hue;
+    ctx.save();
+    ctx.translate(l.x, l.y);
+    ctx.rotate(l.rot);
+    ctx.globalAlpha = Math.max(0, Math.min(1, l.life)) * 0.92;
+    ctx.fillStyle = "rgb(" + c[0] + "," + c[1] + "," + c[2] + ")";
+    ctx.beginPath();
+    ctx.moveTo(0, -s);
+    ctx.bezierCurveTo(s * 0.9, -s * 0.4, s * 0.7, s * 0.6, 0, s);
+    ctx.bezierCurveTo(-s * 0.7, s * 0.6, -s * 0.9, -s * 0.4, 0, -s);
+    ctx.fill();
+    ctx.strokeStyle = isLight() ? "rgba(255,255,255,.55)" : "rgba(4,20,12,.5)";
+    ctx.lineWidth = Math.max(0.7, s * 0.09);
+    ctx.beginPath();
+    ctx.moveTo(0, -s * 0.85);
+    ctx.lineTo(0, s * 0.85);
+    ctx.stroke();
+    ctx.globalAlpha *= 0.45;
+    for (var i = -2; i <= 2; i++) {
+      if (!i) { continue; }
+      ctx.beginPath();
+      ctx.moveTo(0, i * s * 0.3);
+      ctx.lineTo((i > 0 ? 1 : -1) * s * 0.5, i * s * 0.3 + s * 0.28);
+      ctx.stroke();
+    }
+    ctx.restore();
+  }
+  function frame() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = leaves.length - 1; i >= 0; i--) {
+      var l = leaves[i];
+      l.ph += 0.04;
+      l.vx *= l.drag;
+      l.vy = l.vy * l.drag + 0.055 + Math.sin(l.ph) * 0.03;
+      l.x += l.vx + Math.sin(l.ph) * l.sway * 0.5;
+      l.y += l.vy;
+      l.rot += l.vr + Math.sin(l.ph) * 0.01;
+      l.life -= l.decay;
+      if (l.life <= 0 || l.y > H + 30) { leaves.splice(i, 1); continue; }
+      drawLeaf(l);
+    }
+    if (leaves.length) { raf = requestAnimationFrame(frame); }
+    else { raf = 0; ctx.clearRect(0, 0, W, H); }
+  }
+  document.addEventListener("pointerdown", function (e) {
+    spawn(e.clientX, e.clientY, 1);
+  });
+  /* ambient drift: a leaf or two rides the air every few seconds */
+  setInterval(function () {
+    if (document.hidden || leaves.length > 24) { return; }
+    var x = Math.random() * W;
+    leaves.push({
+      x: x, y: -16, vx: 0.25 + Math.random() * 0.5, vy: 0.3,
+      rot: Math.random() * Math.PI * 2, vr: (Math.random() - 0.5) * 0.1,
+      size: 8 + Math.random() * 8, hue: pickHue(),
+      sway: 1.1 + Math.random() * 1.6, ph: Math.random() * Math.PI * 2,
+      life: 1.25, decay: 0.0032, drag: 0.999
+    });
+    if (!raf) { raf = requestAnimationFrame(frame); }
+  }, 5200);
+  window.AFB_LEAF_BURST = spawn;
+})();
+
+(function () {
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) { return; }
+  var egg = document.createElement("button");
+  egg.type = "button";
+  egg.className = "eggspot";
+  egg.setAttribute("aria-label", "A small golden egg");
+  document.body.appendChild(egg);
+  var busy = false, hideT = null;
+  function place() {
+    if (busy || document.querySelector(".game-overlay")) { schedule(); return; }
+    var m = 70;
+    egg.style.left = (m + Math.random() * Math.max(1, innerWidth - 2 * m)) + "px";
+    egg.style.top = (m + Math.random() * Math.max(1, innerHeight - 2 * m)) + "px";
+    egg.classList.add("show");
+    hideT = setTimeout(function () {
+      egg.classList.remove("show");
+      schedule();
+    }, 14000);
+  }
+  function schedule() {
+    setTimeout(place, 40000 + Math.random() * 50000);
+  }
+  setTimeout(place, 18000 + Math.random() * 25000);
+  egg.addEventListener("click", function () {
+    if (busy) { return; }
+    busy = true;
+    clearTimeout(hideT);
+    egg.classList.remove("show");
+    openGame();
+  });
+  /* ---------------- the nest-egg game ---------------- */
+  function openGame() {
+    var ov = document.createElement("div");
+    ov.className = "game-overlay";
+    ov.innerHTML = '<div class="game-panel">' +
+      '<div class="game-top"><h2 class="game-title">// Nest Egg</h2>' +
+      '<div class="game-hud"><span>score <b id="ngScore">0</b></span>' +
+      '<span>best <b id="ngBest">0</b></span>' +
+      '<span>eggs <b id="ngLives">&#9679;&#9679;&#9679;</b></span></div>' +
+      '<button class="game-close" type="button" aria-label="Close game">&times;</button></div>' +
+      '<canvas id="nestCanvas" width="360" height="480"></canvas>' +
+      '<p class="game-hint">Move the nest to catch falling leaves and keep the ' +
+      'eggs warm. Catch the golden leaf for bonus points. Let three leaves ' +
+      'slip past and the clutch goes cold. Mouse, touch, or arrow keys.</p></div>';
+    document.body.appendChild(ov);
+    var best = 0;
+    try { best = parseInt(localStorage.getItem("afb-nest-best") || "0", 10) || 0; } catch (e) {}
+    document.getElementById("ngBest").textContent = best;
+    ov.querySelector(".game-close").addEventListener("click", close);
+    ov.addEventListener("pointerdown", function (e) { if (e.target === ov) { close(); } });
+    addEventListener("keydown", onKey);
+    var cv = document.getElementById("nestCanvas");
+    var ctx = cv.getContext("2d");
+    var Wc = cv.width, Hc = cv.height, running = true;
+    var nest = { x: Wc / 2, tx: Wc / 2, w: 74 };
+    var items = [], score = 0, lives = 3, tick = 0, spawnEvery = 46, over = false;
+    function onKey(e) {
+      if (e.key === "Escape") { close(); }
+      if (e.key === "ArrowLeft") { nest.tx = Math.max(20, nest.tx - 26); }
+      if (e.key === "ArrowRight") { nest.tx = Math.min(Wc - 20, nest.tx + 26); }
+    }
+    function move(clientX) {
+      var r = cv.getBoundingClientRect();
+      nest.tx = Math.max(20, Math.min(Wc - 20, (clientX - r.left) * (Wc / r.width)));
+    }
+    cv.addEventListener("pointermove", function (e) { move(e.clientX); });
+    cv.addEventListener("touchmove", function (e) {
+      if (e.touches[0]) { move(e.touches[0].clientX); e.preventDefault(); }
+    }, { passive: false });
+    function close() {
+      running = false;
+      removeEventListener("keydown", onKey);
+      if (ov.parentNode) { ov.parentNode.removeChild(ov); }
+      busy = false;
+      schedule();
+    }
+    function end() {
+      over = true;
+      if (score > best) {
+        best = score;
+        try { localStorage.setItem("afb-nest-best", String(best)); } catch (e) {}
+        document.getElementById("ngBest").textContent = best;
+      }
+      setTimeout(close, 1800);
+    }
+    function step() {
+      if (!running) { return; }
+      tick++;
+      nest.x += (nest.tx - nest.x) * 0.25;
+      if (tick % Math.max(16, spawnEvery - (score >> 1)) === 0) {
+        var gold = Math.random() < 0.08;
+        items.push({ x: 24 + Math.random() * (Wc - 48), y: -14,
+          vy: 1.1 + Math.random() * 0.9 + score * 0.02,
+          sway: 0.5 + Math.random() * 1.4, ph: Math.random() * 6.3,
+          rot: Math.random() * 6.3, vr: (Math.random() - 0.5) * 0.16,
+          s: 8 + Math.random() * 6, gold: gold });
+      }
+      ctx.clearRect(0, 0, Wc, Hc);
+      /* faint drifting glow, ties the game to the firefly masthead */
+      var g = ctx.createRadialGradient(Wc / 2, 40, 6, Wc / 2, 40, Hc);
+      g.addColorStop(0, "rgba(77,230,164,.05)");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, Wc, Hc);
+      var ny = Hc - 54;
+      for (var i = items.length - 1; i >= 0; i--) {
+        var it = items[i];
+        it.ph += 0.05;
+        it.y += it.vy;
+        it.x += Math.sin(it.ph) * it.sway * 0.6;
+        it.rot += it.vr;
+        /* draw leaf */
+        ctx.save();
+        ctx.translate(it.x, it.y);
+        ctx.rotate(it.rot);
+        ctx.fillStyle = it.gold ? "#ffd79a" : (Math.random() < 0.5 ? "#4de6a4" : "#3fbe82");
+        if (it.gold) { ctx.shadowColor = "#f0b866"; ctx.shadowBlur = 10; }
+        var s = it.s;
+        ctx.beginPath();
+        ctx.moveTo(0, -s);
+        ctx.bezierCurveTo(s * 0.9, -s * 0.4, s * 0.7, s * 0.6, 0, s);
+        ctx.bezierCurveTo(-s * 0.7, s * 0.6, -s * 0.9, -s * 0.4, 0, -s);
+        ctx.fill();
+        ctx.restore();
+        if (it.y > ny - 8 && it.y < ny + 22 && Math.abs(it.x - nest.x) < nest.w / 2 + 6) {
+          items.splice(i, 1);
+          if (window.AFB_LEAF_BURST) {
+            var r = cv.getBoundingClientRect();
+            AFB_LEAF_BURST(r.left + it.x * (r.width / Wc),
+              r.top + it.y * (r.height / Hc), it.gold ? 1.6 : 0.8);
+          }
+          score += it.gold ? 10 : 1;
+          document.getElementById("ngScore").textContent = score;
+          continue;
+        }
+        if (it.y > Hc + 14) {
+          items.splice(i, 1);
+          if (!it.gold) {
+            lives--;
+            var dots = "";
+            for (var d2 = 0; d2 < 3; d2++) { dots += d2 < lives ? "●" : "○"; }
+            document.getElementById("ngLives").textContent = dots;
+            if (lives <= 0) { end(); }
+          }
+        }
+      }
+      /* nest: woven arc + eggs */
+      ctx.save();
+      ctx.translate(nest.x, ny);
+      ctx.strokeStyle = "#8a6a3a";
+      ctx.lineWidth = 5;
+      ctx.lineCap = "round";
+      for (var w2 = 0; w2 < 4; w2++) {
+        ctx.beginPath();
+        ctx.moveTo(-nest.w / 2, w2 * 4 - 4);
+        ctx.quadraticCurveTo(0, 18 + w2 * 3, nest.w / 2, w2 * 4 - 4);
+        ctx.stroke();
+      }
+      ctx.fillStyle = "#e8ddc2";
+      for (var e2 = -1; e2 <= 1; e2++) {
+        ctx.beginPath();
+        ctx.ellipse(e2 * 18, -2, 8, 11, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+      requestAnimationFrame(step);
+    }
+    step();
+  }
 })();
 </script></body></html>
