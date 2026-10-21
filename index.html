@@ -133,48 +133,36 @@ body.light .article a { color:#0369a1; }
 body.light .back { color:#0e7c4a; }
 body.light .overlap { background:#fff8e6; border-color:#f0e0b0; }
 body.light .chip:hover { color:#0a7f46; border-color:#0a7f46; }
-.about { position:relative; overflow:hidden; max-width:1080px; margin:4px auto 18px;
-  padding:20px 26px 22px; border:1px solid var(--line); border-radius:8px;
-  background:var(--card); animation:aboutBreathe 6s ease-in-out infinite; }
-@keyframes aboutBreathe { 0%,100% { box-shadow:0 0 0 rgba(77,230,164,0);
-  border-color:var(--line); }
-  50% { box-shadow:0 0 18px rgba(77,230,164,.13); border-color:rgba(77,230,164,.45); } }
-.about::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
-  background:linear-gradient(180deg,#4de6a4,#f0b866); }
-.about::after { content:""; position:absolute; top:0; bottom:0; left:-40%; width:35%;
-  background:linear-gradient(90deg,transparent,rgba(77,230,164,.06),transparent);
-  animation:aboutSweep 9s linear infinite; pointer-events:none; }
-@keyframes aboutSweep { 0% { left:-40%; } 100% { left:120%; } }
-.about-eyebrow { display:flex; align-items:center; gap:10px; margin:0 0 12px;
-  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+.mission { position:relative; max-width:1080px; margin:10px auto 26px;
+  padding:36px 34px 32px; border:1px solid var(--line); border-radius:10px;
+  background:linear-gradient(155deg, rgba(77,230,164,.07), transparent 42%), var(--card); }
+.mission::before { content:""; position:absolute; left:0; top:0; bottom:0; width:3px;
+  border-radius:10px 0 0 10px; background:linear-gradient(180deg,#4de6a4,#f0b866); }
+.mission-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:11px; font-weight:700; letter-spacing:3.5px; text-transform:uppercase;
-  color:var(--cyan); }
-.about-eyebrow::after { content:""; flex:1; height:1px;
-  background:linear-gradient(90deg,rgba(240,184,102,.45),transparent); }
-.about-dot { width:7px; height:7px; border-radius:50%; background:var(--neon);
-  box-shadow:0 0 8px var(--neon); animation:aboutDot 2s ease-in-out infinite; }
-@keyframes aboutDot { 0%,100% { opacity:1; } 50% { opacity:.3; } }
-.about-lead { color:var(--ink); font-size:18px; line-height:1.65;
-  margin:0 0 10px; max-width:940px; }
-.about-lead strong { color:#ecfff5; }
-.about-support { color:var(--muted); font-size:15px; line-height:1.6;
-  margin:0; max-width:940px; }
-.about-support a { color:var(--neon); text-decoration:none;
-  border-bottom:1px solid rgba(77,230,164,.5); }
-.about-support a:hover { text-shadow:0 0 10px rgba(77,230,164,.8);
-  border-bottom-color:var(--neon); }
-body.light .about { animation:none; box-shadow:none; border-color:#dde3df; }
-body.light .about::after { display:none; }
-body.light .about-eyebrow { color:#047857; }
-body.light .about-eyebrow::after { background:linear-gradient(90deg,rgba(4,120,87,.45),transparent); }
-body.light .about-dot { background:#0a7f46; box-shadow:none; animation:none; }
-body.light .about-lead { color:#16241d; }
-body.light .about-lead strong { color:#0b1712; }
-body.light .about-support { color:#4e5a54; }
-body.light .about-support a { color:#047857; border-bottom-color:rgba(4,120,87,.5); }
-body.light .about-support a:hover { text-shadow:none; }
-@media (prefers-reduced-motion: reduce) {
-  .about, .about::after, .about-dot { animation:none !important; } }
+  color:var(--cyan); margin:0 0 16px; }
+.mission-title { font-size:clamp(21px,3.2vw,28px); line-height:1.4; font-weight:400;
+  color:var(--ink); margin:0 0 14px; max-width:980px; }
+.mission-sub { font-size:15.5px; line-height:1.72; color:var(--muted);
+  margin:0 0 26px; max-width:900px; }
+.mission-points { list-style:none; display:grid;
+  grid-template-columns:repeat(3,1fr); gap:14px; margin:0; padding:0; }
+.mission-points li { border:1px solid var(--line); border-radius:8px;
+  padding:15px 17px; background:rgba(255,255,255,.015); }
+.mission-points strong { display:block;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:14.5px; font-weight:700; color:var(--ink); margin:0 0 5px; }
+.mission-points span { font-size:13.5px; line-height:1.55; color:var(--muted); }
+body.light .mission { border-color:#dde3df;
+  background:linear-gradient(155deg, rgba(10,127,70,.05), transparent 42%), var(--card); }
+body.light .mission-eyebrow { color:#8f5e12; }
+body.light .mission-title { color:#16241d; }
+body.light .mission-sub { color:#4e5a54; }
+body.light .mission-points li { border-color:#e2e8e4; background:#fff; }
+body.light .mission-points strong { color:#0b1712; }
+@media (max-width:640px) {
+  .mission { padding:26px 20px 24px; margin-bottom:22px; }
+  .mission-points { grid-template-columns:1fr; } }
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .contact { max-width:760px; margin:40px auto 0; padding:26px 24px; border:1px solid var(--line);
@@ -372,15 +360,20 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><h1 class="sr-only">Daily Anti-Fascist Brief — Antifa, Anti-Corruption &amp; Independent News</h1><section class="about">
-  <div class="about-eyebrow"><span class="about-dot"></span>Mission</div>
-  <p class="about-lead"><strong>The Daily Anti-Fascist Brief exists to defeat fascism and the corruption of politicians.</strong>
-  Twice a day it gathers what&rsquo;s actually happening &mdash; surveillance overreach, government
-  graft, wars, covert operations, and the money behind all of it &mdash; with every claim sourced,
-  dated, and linked to the original article, so you can check the evidence instead of taking
-  anyone&rsquo;s word for it.</p>
-  <p class="about-support">If you like what you&rsquo;re reading, <a href="#donate">a small donation</a> keeps it
-  independent &mdash; no ads, no trackers, no paywall.</p>
+<main><h1 class="sr-only">Daily Anti-Fascist Brief — Antifa, Anti-Corruption &amp; Independent News</h1><section class="mission">
+  <div class="mission-eyebrow">Mission</div>
+  <p class="mission-title">Independent, sourced reporting that helps people see fascism,
+  corruption, and surveillance clearly &mdash; and organize against them.</p>
+  <p class="mission-sub">Twice a day we gather what&rsquo;s actually happening: surveillance overreach,
+  government graft, wars, covert operations, and the money behind all of it. Every claim is
+  sourced, dated, and linked to the original article, so you can check the evidence instead of
+  taking anyone&rsquo;s word for it. No ads, no trackers, no paywall &mdash; if it&rsquo;s worth
+  something to you, <a href="#donate">a small donation</a> keeps it independent.</p>
+  <ul class="mission-points">
+    <li><strong>Sourced</strong><span>Every claim links to the original article &mdash; check the evidence yourself.</span></li>
+    <li><strong>Twice daily</strong><span>New briefs at 3 AM and 6 PM Pacific, seven days a week.</span></li>
+    <li><strong>Independent</strong><span>No ads, no trackers, no paywall. Reader-supported, always.</span></li>
+  </ul>
 </section>
 <form class="searchbar" action="search.html" method="get" role="search"><input type="search" name="q" placeholder="Search every brief…" aria-label="Search every brief"><button type="submit">Search</button></form><div class="grid"><a class="card" href="flock-camera-abuse_2026-10-20_1800.html"><img src="img/flock-camera-abuse_2026-10-20_1800.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h2>Flock Camera Abuse — Research Digest</h2><div class="snippet">Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock&#x27;s count of cities that have cancelled, rejected…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="trump-admin-corruption_2026-10-20_1800.html"><img src="img/trump-admin-corruption_2026-10-20_1800.jpg" alt="Trump Administration Corruption — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#b91c1c">POLITICS</span><h2>Trump Administration Corruption — Research Digest</h2><div class="snippet">Washington Post / ABC News / Ipsos (via National Security Journal): Almost two-thirds of Americans believe the president is &quot;using the presidency to enrich himself.&quot; Among Republicans and Republican-leaning independents, 34% agree — up from 22% in September 20…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="ai-news_2026-10-20_1800.html"><img src="img/ai-news_2026-10-20_1800.jpg" alt="AI News — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#1d4ed8">TECHNOLOGY</span><h2>AI News — Research Digest</h2><div class="snippet">Inside Global Tech (Oct 19, 2026): Congress focused on AI data center costs, chatbot safety, AI-driven pricing, and AI system oversight in Q3 2026. The House passed Rep. Gabe Evans&#x27; (R-CO) Ratepayer Protection Act (H.R. 9340), a bipartisan bill requiring data …</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="3d-printing-cnc-manufacturing-laws_2026-10-20_1800.html"><img src="img/3d-printing-cnc-manufacturing-laws_2026-10-20_1800.jpg" alt="3D Printing, CNC Manufacturing &amp; Laws — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h2>3D Printing, CNC Manufacturing &amp; Laws — Research Digest</h2><div class="snippet">S.2165 — 119th Congress (2025-2026): The 3D Printed Gun Safety Act would amend Chapter 44 of Title 18 of the U.S. Code to prohibit the distribution of 3D printer plans for printing firearms. The bill makes it unlawful for any person to &quot;intentionally distribut…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="cybersecurity-news_2026-10-20_1800.html"><img src="img/cybersecurity-news_2026-10-20_1800.jpg" alt="Cybersecurity News — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#047857">CYBERSECURITY</span><h2>Cybersecurity News — Research Digest</h2><div class="snippet">Aviatrix Threat Research Center / Defense.gov (Week 40, 2026): The Pentagon&#x27;s Defense Manpower Data Center (DMDC) suffered a breach exposing personal data of 3.09 million military personnel and veterans — including 2.8 million living and 294,000 deceased servi…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="geopolitical-world-intel_2026-10-20_1800.html"><img src="img/geopolitical-world-intel_2026-10-20_1800.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h2>Geopolitical World Intel — Research Digest</h2><div class="snippet">Modern Diplomacy (Oct 19, 2026): On October 16, President Trump waived a sweeping slate of Russia energy sanctions days before they were due to take effect, under a law he had signed only the month before. The move came as the US-Israeli war on Iran drove fuel…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="ukraine-russia-war_2026-10-20_1800.html"><img src="img/ukraine-russia-war_2026-10-20_1800.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h2>Ukraine-Russia War — Research Digest</h2><div class="snippet">ISW Russian Offensive Campaign Assessment (Oct 19, 2026): Russian forces launched an extensive nighttime assault on October 18-19 using Iskander-M and S-400 ballistic missiles, Iskander-K cruise missiles, and 269 strike drones (including 59 jet-powered) plus d…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="israel-watch_2026-10-20_1800.html"><img src="img/israel-watch_2026-10-20_1800.jpg" alt="Israel Watch — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h2>Israel Watch — Research Digest</h2><div class="snippet">Middle East Council on Global Affairs (Oct 7, 2026): Israel enters the final run-up to the October 27 parliamentary elections embroiled in four intertwined crises: (1) fragmentation in the ruling right-wing camp despite efforts to settle matters before the ele…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="world-report_2026-10-20_1800.html"><img src="img/world-report_2026-10-20_1800.jpg" alt="World Report — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">UN News (Oct 16, 2026): Less than a month before the UN climate conference COP31 opens in Antalya, Türkiye (November 9-20), representatives of three successive summit presidencies gathered to address a pressing question: how can the world restore trust in clim…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="antifa_2026-10-20_1800.html"><img src="img/antifa_2026-10-20_1800.jpg" alt="Antifa — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#ef4444">ANTIFA</span><h2>Antifa — Research Digest</h2><div class="snippet">PBS NewsHour (June 2026): In two federal courts, a group of nine protesters received unusually long sentences after the Justice Department accused them of being members of Antifa. Sentences ranged from 30 to 100 years in prison — longer than the harshest sente…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="gaming_2026-10-20_1800.html"><img src="img/gaming_2026-10-20_1800.jpg" alt="Gaming — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#22d3ee">GAMING</span><h2>Gaming — Research Digest</h2><div class="snippet">GTA VI is the story everyone is talking about. Rockstar Games released the final GTA VI launch trailer on October 15, 2026 — an &quot;impressive montage of emotional and bombastic moments all set to a great soundtrack.&quot; The game launches November 19, 2026. Rockstar…</div><div class="when">Saved 2026-10-20 18:00</div></div></a><a class="card" href="synth-music_2026-10-20_1800.html"><img src="img/synth-music_2026-10-20_1800.jpg" alt="Synth Music — Research Digest" loading="lazy"><div class="body"><span class="kicker" style="color:#d946ef">SYNTH MUSIC</span><h2>Synth Music — Research Digest</h2><div class="snippet">M-VAVE officially opens FM-1 firmware to developers — October 20, 2026 (TODAY). M-VAVE has released &quot;FM1 Open,&quot; an official firmware and development project that adds an eight-track sequencer, multiple synthesis engines, sample playback, and tools for develope…</div><div class="when">Saved 2026-10-20 18:00</div></div></a></div>
 <section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
