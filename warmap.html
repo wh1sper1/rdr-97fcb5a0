@@ -6,19 +6,19 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Daily Anti-Fascist Brief">
 <meta property="og:title" content="The War Map — Daily Anti-Fascist Brief">
-<meta property="og:description" content="Live Ukraine front-line map from DeepStateMap's open data, plus a refreshing wire of Ukraine and Middle East war headlines — free, no tracking, from the Daily Anti-Fascist Brief.">
+<meta property="og:description" content="Live war maps for Ukraine and the Middle East from open data, plus a refreshing wire of Ukraine and Middle East war reporting — free, no tracking, from the Daily Anti-Fascist Brief.">
 <meta property="og:image" content="https://antifascistbrief.org/img/share-banner.png">
 <meta property="og:url" content="https://antifascistbrief.org/warmap.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The War Map — Daily Anti-Fascist Brief">
-<meta name="twitter:description" content="Live Ukraine front-line map from DeepStateMap's open data, plus a refreshing wire of Ukraine and Middle East war headlines — free, no tracking, from the Daily Anti-Fascist Brief.">
+<meta name="twitter:description" content="Live war maps for Ukraine and the Middle East from open data, plus a refreshing wire of Ukraine and Middle East war reporting — free, no tracking, from the Daily Anti-Fascist Brief.">
 <meta name="twitter:image" content="https://antifascistbrief.org/img/share-banner.png">
 <meta name="theme-color" content="#050b07">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="alternate icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="Daily Anti-Fascist Brief RSS" href="feed.xml">
-<meta name="description" content="Live Ukraine front-line map from DeepStateMap's open data, plus a refreshing wire of Ukraine and Middle East war headlines — free, no tracking, from the Daily Anti-Fascist Brief.">
+<meta name="description" content="Live war maps for Ukraine and the Middle East from open data, plus a refreshing wire of Ukraine and Middle East war reporting — free, no tracking, from the Daily Anti-Fascist Brief.">
 <link rel="canonical" href="https://antifascistbrief.org/warmap.html">
 <title>The War Map — Daily Anti-Fascist Brief</title><style>
 
@@ -218,6 +218,19 @@ body.light .toolcard:hover { box-shadow:0 6px 20px rgba(0,0,0,.08); }
   font-size:11.5px; color:var(--muted); }
 .war-legend span { display:inline-flex; align-items:center; gap:7px; }
 .war-legend i { width:13px; height:13px; border-radius:3px; display:inline-block; }
+[hidden] { display:none !important; }
+.war-tabs { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 2px; }
+.war-tab { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+  padding:7px 15px; border:1px solid var(--line); border-radius:7px;
+  background:transparent; color:var(--muted); cursor:pointer; transition:all .15s ease; }
+.war-tab:hover { color:#f0b866; border-color:#f0b866; }
+.war-tab.on { color:#f0c98d; border-color:rgba(240,184,102,.55);
+  background:rgba(240,184,102,.08); box-shadow:0 0 14px rgba(240,184,102,.16); }
+body.light .war-tab { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
+body.light .war-tab:hover { color:#8f5e12; border-color:#8f5e12; }
+body.light .war-tab.on { color:#8f5e12; border-color:#8f5e12;
+  background:rgba(240,184,102,.16); box-shadow:none; }
 .wire { max-width:1080px; margin:26px auto 0; padding:20px 22px;
   border:1px solid var(--line); border-radius:10px; background:var(--card); }
 .wire-head { display:flex; flex-wrap:wrap; gap:10px; align-items:center;
@@ -460,9 +473,14 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#a9dcc4; background:rgba(8,20,14,.55); transition:all .15s ease; }
 .pol-feed:hover { color:#4de6a4; border-color:#4de6a4;
   box-shadow:0 0 12px rgba(77,230,164,.25); transform:translateY(-1px); }
+.pol-gaps { margin:0; padding:0 0 0 18px; }
+.pol-gaps li { font-size:13.5px; line-height:1.65; color:var(--muted);
+  margin-bottom:9px; }
+.pol-gaps strong { color:var(--ink); }
 .pol-note { font-size:13px; line-height:1.65; color:var(--muted); margin:12px 0 0; }
 .pol-note a { color:var(--neon); }
 body.light .pol-id { color:#8f5e12; }
+body.light .pol-gaps strong { color:#04301c; }
 body.light .pol-feed { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
 body.light .pol-feed:hover { color:#047857; border-color:#047857;
   box-shadow:0 0 10px rgba(10,127,70,.18); }
@@ -491,7 +509,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#f0b866">Live War Map</span><h1>The War Map</h1><div class="meta">Frontline snapshot <strong>21.10 o 22:56</strong> &middot; 123 mapped areas &middot; <a href="ukraine-russia-war.html">Ukraine briefs</a> &middot; <a href="israel-watch.html">Israel briefs</a></div><p class="mapnote">Frontline geometry from <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a>, the Ukrainian open-source intelligence map, using their public snapshot API. <strong>Read it honestly:</strong> the map updates with a delay of up to 2&ndash;3 days, and DeepState itself warns against using it to plan movement or evacuation &mdash; this is a picture of the war for context, not a warning system. For air-raid alerts, use official channels.</p></div><div id="map" role="application" aria-label="Ukraine front line map"></div><div class="war-legend"><span><i style="background:#e5484d"></i>Occupied</span><span><i style="background:#4de6a4"></i>Liberated</span><span><i style="background:#8a9a90"></i>Contested</span><span><i style="background:#f0b866"></i>Attack vector</span></div><div id="mapinfo" class="idx-meta">Loading frontline data&hellip;</div><div class="wire"><div class="wire-head"><button class="wire-tab on" data-w="ua" type="button">Ukraine wire</button><button class="wire-tab" data-w="il" type="button">Middle East wire</button><span class="wire-note" id="wireNote">refreshes every 10 min</span></div><ul class="wire-list" id="wireList"><li class="wire-empty">Loading headlines&hellip;</li></ul></div><div class="article"><p class="mapnote">Frontline data: <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a> public snapshot API, free for volunteer and noncommercial use. Headlines: <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a> global news index (auto-aggregated, not an endorsement of any outlet). Map tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors.</p></div>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#f0b866">Live War Map</span><h1>The War Map</h1><div class="meta"><strong>21.10 o 22:56</strong> &middot; 112 theatres &middot; <a href="ukraine-russia-war.html">Ukraine briefs</a> &middot; <a href="israel-watch.html">Israel briefs</a></div><div class="war-tabs" role="tablist" aria-label="Theatres"><button class="war-tab on" type="button" role="tab" data-t="uk">Ukraine</button><button class="war-tab" type="button" role="tab" data-t="me">Middle East</button></div></div><div class="article"><p class="mapnote swap" id="note-uk" data-sw="note" data-k="uk">Frontline geometry from <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a>, the Ukrainian open-source intelligence map, using their public snapshot API. <strong>Read it honestly:</strong> the map updates with a delay of up to 2&ndash;3 days, and DeepState itself warns against using it to plan movement or evacuation &mdash; this is a picture of the war for context, not a warning system. For air-raid alerts, use official channels.</p><p class="mapnote swap" id="note-me" data-sw="note" data-k="me" hidden>Every dot is an attack or a protest reported in the news over the last week, across Israel, Gaza and the West Bank, Lebanon, Syria, Iraq, Iran, Saudi Arabia and Yemen &mdash; geocoded to where it happened. <strong>Read it honestly:</strong> GDELT Project counts what gets reported and geocoded, so a quiet patch of map is not a quiet week &mdash; it can mean nobody was watching. An event dot can also stand for weeks of the same fight. This is context for the stories we publish, not a warning system.</p></div><div id="map" role="application" aria-label="Conflict map"></div><div class="war-legend swap" id="legend-uk" data-sw="legend" data-k="uk"><span><i style="background:#e5484d"></i>Occupied</span><span><i style="background:#4de6a4"></i>Liberated</span><span><i style="background:#8a9a90"></i>Contested</span><span><i style="background:#f0b866"></i>Attack vector</span></div><div class="war-legend swap" id="legend-me" data-sw="legend" data-k="me" hidden><span><i style="background:#e5484d"></i>Attacks & killings</span><span><i style="background:#4de6a4"></i>Protests & unrest</span></div><div id="mapinfo" class="idx-meta">Loading&hellip;</div><div class="wire"><div class="wire-head"><button class="wire-tab on" data-w="ua" type="button">Ukraine wire</button><button class="wire-tab" data-w="il" type="button">Middle East wire</button><span class="wire-note" id="wireNote">refreshes every 10 min</span></div><ul class="wire-list" id="wireList"><li class="wire-empty">Loading headlines&hellip;</li></ul></div><div class="article"><p class="mapnote">Theatres: <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a> &middot; <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a>. Headlines: <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a> global news index (auto-aggregated, not an endorsement of any outlet). Map tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors.</p></div>
 <section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
@@ -688,17 +706,29 @@ body.light .pol-sect { color:#8f5e12; }
 
 (function () {
   var el = document.getElementById("map");
+  var CONF = {"uk":{"label":"Ukraine","minZoom":4.5,"wire":"ua","bounds":[[43.0,20.0],[62.5,41.5]],"datab":[[43.8,21.8],[52.6,40.4]],"fit":null,"base":"warmap/uk/","polys":true,"pts":true},"me":{"label":"Middle East","minZoom":4.0,"wire":"il","bounds":[[11.0,26.0],[43.0,64.0]],"datab":null,"fit":[[13.5,32.0],[37.5,61.5]],"base":"warmap/me/","polys":false,"pts":true}};
+  var KEYS = CONF ? Object.keys(CONF) : [];
   var WIRE_Q = {
     ua: "(ukraine OR russia) (war OR strike OR frontline OR missile OR drone) sourcelang:english",
-    il: "(israel OR gaza OR lebanon OR hezbollah OR iran) (strike OR war OR missile OR ceasefire) sourcelang:english"
+    il: "(israel OR gaza OR lebanon OR hezbollah OR iran OR syria OR yemen) (strike OR war OR missile OR ceasefire) sourcelang:english"
   };
   function esc(s) {
     return String(s == null ? "" : s).split("&").join("&amp;")
       .split("<").join("&lt;").split(">").join("&gt;").split('"').join("&quot;");
   }
+  function bootKey() {
+    var m = /[?&]t=([a-z]{2})\b/.exec(location.search);
+    if (m && CONF[m[1]]) { return m[1]; }
+    for (var i = 0; i < KEYS.length; i++) {
+      var c = CONF[KEYS[i]];
+      if (c && (c.pts || c.polys)) { return KEYS[i]; }
+    }
+    return KEYS[0] || null;
+  }
+  var HERE = bootKey();
   /* ---------- live wire (GDELT, CORS-open) ---------- */
-  var wireTab = "ua", wireBusy = false, wireTimer = null, wireStatic = null,
-      wireRetry = null;
+  var wireTab = (CONF[HERE] || {}).wire || "ua", wireBusy = false, wireTimer = null,
+      wireStatic = null, wireRetry = null;
   function wireRender(items) {
     var ul = document.getElementById("wireList");
     if (!ul) { return; }
@@ -732,15 +762,15 @@ body.light .pol-sect { color:#8f5e12; }
     try { live = JSON.parse(localStorage.getItem("afb-wire-" + tab) || "null"); } catch (e) {}
     if (live && live.items && live.items.length && (Date.now() - live.t) < 15 * 60 * 1000) {
       wireRender(live.items);
-      wireNoteSet("live · refreshes every 10 min");
+      wireNoteSet("live \u00b7 refreshes every 10 min");
       return;
     }
     if (wireStatic && wireStatic[tab] && wireStatic[tab].length) {
       wireRender(wireStatic[tab]);
-      wireNoteSet("snapshot " + (wireStatic.fetched || "cached") + " · refreshing…");
+      wireNoteSet("snapshot " + (wireStatic.fetched || "cached") + " \u00b7 refreshing\u2026");
     } else {
       wireRender([]);
-      wireNoteSet("waiting for feed…");
+      wireNoteSet("waiting for feed\u2026");
     }
   }
   /* Best-effort live refresh; on any failure the snapshot simply stays put. */
@@ -762,16 +792,17 @@ body.light .pol-sect { color:#8f5e12; }
           JSON.stringify({t: Date.now(), items: items}));
       } catch (e) {}
       wireRender(items);
-      wireNoteSet("live · refreshes every 10 min");
+      wireNoteSet("live \u00b7 refreshes every 10 min");
     }).catch(function () {
       wireBusy = false;
-      wireNoteSet("snapshot held · retrying soon");
+      wireNoteSet("snapshot held \u00b7 retrying soon");
       if (!wireRetry) {
         wireRetry = setTimeout(function () { wireRetry = null; wireRefresh(); }, 60000);
       }
     });
   }
   function wireTabTo(tab) {
+    if (!WIRE_Q[tab]) { return; }
     wireTab = tab;
     var btns = document.querySelectorAll(".wire-tab");
     for (var i = 0; i < btns.length; i++) {
@@ -801,76 +832,174 @@ body.light .pol-sect { color:#8f5e12; }
       .catch(function () { wireShow(wireTab); wireRefresh(); });
     wireTimer = setInterval(wireRefresh, 600000);
   }
-  /* ---------- frontline map ---------- */
-  if (!el) { return; }
+  /* ---------- theatre map ---------- */
+  if (!el || !KEYS.length) { return; }
+  var TILES = {
+    base: "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}",
+    ref: "https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}",
+    attr: "Tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors"
+  };
+  var STYLE = {
+    uk: {
+      occupied: { color: "#e5484d", weight: 1.1, fillColor: "#e5484d", fillOpacity: 0.22 },
+      liberated: { color: "#4de6a4", weight: 1.1, fillColor: "#4de6a4", fillOpacity: 0.2 },
+      unknown: { color: "#8a9a90", weight: 1, fillColor: "#8a9a90", fillOpacity: 0.16, dashArray: "4 3" },
+      attack: { color: "#f0b866", weight: 1, fillColor: "#f0b866", fillOpacity: 0.1 },
+      other: { color: "#7f93a8", weight: 0.9, fillColor: "#7f93a8", fillOpacity: 0.12 }
+    },
+    me: {
+      attack: { color: "#e5484d", weight: 0.9, r: 4.2 },
+      protest: { color: "#4de6a4", weight: 0.9, r: 3.0 },
+      other: { color: "#7f93a8", weight: 0.8, r: 2.8 }
+    }
+  };
+  var map = null;
+  /* Zoom at which the given theatre bounds exactly fill the viewport — used as
+     the zoom-out floor so the map can never be pulled back to a world view,
+     while still panning and zooming freely inside the conflict area. */
+  function theatreZoom(b, map) {
+    var s = map.getSize();
+    var sw = L.latLng(b[0][0], b[0][1]), ne = L.latLng(b[1][0], b[1][1]);
+    var px = map.project(ne, 18).subtract(map.project(sw, 18));
+    var zx = Math.log(s.x / Math.max(px.x, 1)) / Math.LN2 + 18;
+    var zy = Math.log(s.y / Math.max(px.y, 1)) / Math.LN2 + 18;
+    return Math.max(2, Math.min(zx, zy));
+  }
   function fail(msg) {
     var i = document.getElementById("mapinfo");
     if (i) { i.textContent = msg; }
   }
-  function boot() {
-    var map = L.map(el, { preferCanvas: true, minZoom: 4, maxZoom: 12, zoomSnap: 0.5 })
-      .setView([48.4, 33.5], 6);
-    L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}", {
-      maxZoom: 12,
-      attribution: "Tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors"
-    }).addTo(map);
-    L.tileLayer("https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}", {
-      maxZoom: 12, pane: "overlayPane"
-    }).addTo(map);
-    var STYLE = {
-      occupied: { color: "#e5484d", weight: 1.1, fillColor: "#e5484d", fillOpacity: 0.22 },
-      liberated: { color: "#4de6a4", weight: 1.1, fillColor: "#4de6a4", fillOpacity: 0.2 },
-      unknown: { color: "#8a9a90", weight: 1, fillColor: "#8a9a90", fillOpacity: 0.16,
-                 dashArray: "4 3" },
-      attack: { color: "#f0b866", weight: 1, fillColor: "#f0b866", fillOpacity: 0.1 },
-      other: { color: "#7f93a8", weight: 0.9, fillColor: "#7f93a8", fillOpacity: 0.12 }
-    };
-    var bounds = [];
-    fetch("warmap/frontlines.json").then(function (r) { return r.json(); })
-      .then(function (polys) {
-        for (var i = 0; i < polys.length; i++) {
-          var cat = polys[i][0], name = polys[i][1], rings = polys[i][2];
-          var latlngs = [];
-          for (var j = 0; j < rings.length; j++) {
-            var ring = [];
-            for (var k = 0; k < rings[j].length; k++) { ring.push(rings[j][k]); }
-            latlngs.push(ring);
-            if (j === 0) { for (var b = 0; b < ring.length; b++) { bounds.push(ring[b]); } }
-          }
-          L.polygon(latlngs, STYLE[cat] || STYLE.other)
-            .bindPopup("<strong>" + esc(name || "Mapped area") + "</strong><br>" +
-              "<span style=\"opacity:.75\">" + esc(cat) + "</span>")
-            .addTo(map);
-        }
-        if (bounds.length) { map.fitBounds(bounds, { padding: [24, 24] }); }
-        var i2 = document.getElementById("mapinfo");
-        if (i2) { i2.textContent = polys.length + " frontline areas loaded - tap an area for detail"; }
-      })
-      .catch(function () { fail("Frontline data could not be loaded."); });
-    fetch("warmap/events.json").then(function (r) { return r.json(); })
-      .then(function (pts) {
-        var g = L.layerGroup();
-        for (var i = 0; i < pts.length; i++) {
-          var cat = pts[i][0], col = (STYLE[cat] || STYLE.other).color;
-          L.circleMarker([pts[i][1], pts[i][2]], {
-            radius: cat === "attack" ? 3.6 : 2.8, color: col, weight: 0.8,
-            opacity: 0.85, fillColor: col, fillOpacity: 0.6
-          }).bindPopup(esc(pts[i][3] || cat)).addTo(g);
-        }
-        g.addTo(map);
-      })
-      .catch(function () {});
-    window.AFB_MAP = map;
+  function swap(kind, key) {
+    var nodes = document.querySelectorAll("[data-sw='" + kind + "']");
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].hidden = nodes[i].getAttribute("data-k") !== key;
+    }
   }
-  if (window.L) { boot(); return; }
-  var css = document.createElement("link");
-  css.rel = "stylesheet";
-  css.href = "leaflet/leaflet.css";
-  document.head.appendChild(css);
-  var s = document.createElement("script");
-  s.src = "leaflet/leaflet.js";
-  s.onload = boot;
-  s.onerror = function () { fail("Map failed to load."); };
-  document.head.appendChild(s);
+  function loadTheatre(key, markUrl) {
+    var c = CONF[key];
+    if (!c) { return; }
+    var db = c.datab || c.bounds;   /* fit only to what is really mapped */
+    if (map) { map.remove(); map = null; }
+    HERE = key;
+    swap("note", key);
+    swap("legend", key);
+    var btns = document.querySelectorAll(".war-tab");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle("on", btns[i].getAttribute("data-t") === key);
+    }
+    if (markUrl) {
+      try { history.replaceState(null, "", location.pathname + "?t=" + key); } catch (e) {}
+    }
+    var b = c.bounds;
+    var mid = [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
+    map = L.map(el, {
+      preferCanvas: true, minZoom: 2, maxZoom: 12, zoomSnap: 0.5,
+      maxBounds: b, maxBoundsViscosity: 0.8
+    }).setView(mid, 4);
+    map.setMinZoom(Math.max(c.minZoom, Math.floor(theatreZoom(b, map) * 2) / 2));
+    L.tileLayer(TILES.base, { maxZoom: 12, attribution: TILES.attr }).addTo(map);
+    L.tileLayer(TILES.ref, { maxZoom: 12, pane: "overlayPane" }).addTo(map);
+    window.AFB_MAP = map;
+    fail("Loading " + c.label + " data\u2026");
+    var stat = { polys: 0, pts: 0 }, got = 0;
+    var want = (c.polys ? 1 : 0) + (c.pts ? 1 : 0);
+    var auto = [];
+    function note() {
+      if (got < want) { return; }
+      if (!stat.polys && !stat.pts) {
+        fail(c.label + " data could not be loaded right now - try again shortly.");
+        return;
+      }
+      var bits = [];
+      if (stat.polys) { bits.push(stat.polys + " mapped areas"); }
+      if (stat.pts) { bits.push(stat.pts + " events"); }
+      fail(bits.join(" \u00b7 ") + " \u2014 tap a marker for detail");
+    }
+    function openFit() {
+      var target = c.fit || (auto.length ? auto : b);
+      map.fitBounds(target, { padding: [18, 18], maxZoom: 12 });
+    }
+    if (c.polys) {
+      fetch(c.base + "frontlines.json").then(function (r) { return r.json(); })
+        .then(function (polys) {
+          var sty = STYLE[key] || {};
+          for (var i = 0; i < polys.length; i++) {
+            var cat = polys[i][0], name = polys[i][1], rings = polys[i][2];
+            var latlngs = [];
+            for (var j = 0; j < rings.length; j++) {
+              latlngs.push(rings[j]);
+              if (j !== 0) { continue; }
+              for (var k = 0; k < rings[j].length; k++) {
+                var pt = rings[j][k];
+                if (pt[0] >= db[0][0] && pt[0] <= db[1][0] &&
+                    pt[1] >= db[0][1] && pt[1] <= db[1][1]) { auto.push(pt); }
+              }
+            }
+            L.polygon(latlngs, sty[cat] || sty.other || {})
+              .bindPopup("<strong>" + esc(name || "Mapped area") + "</strong><br>" +
+                "<span style='opacity:.75'>" + esc(cat) + "</span>")
+              .addTo(map);
+            stat.polys++;
+          }
+          openFit();
+          got++; note();
+        })
+        .catch(function () { got++; note(); });
+    }
+    if (c.pts) {
+      fetch(c.base + "events.json").then(function (r) { return r.json(); })
+        .then(function (rows) {
+          var sty = STYLE[key] || {};
+          var g = L.layerGroup();
+          for (var i = 0; i < rows.length; i++) {
+            var cat = rows[i][0], lat = rows[i][1], lon = rows[i][2], nm = rows[i][3];
+            var w = rows[i][4];
+            var st = sty[cat] || sty.other || { color: "#7f93a8", r: 2.8 };
+            L.circleMarker([lat, lon], {
+              radius: st.r || 2.8, color: st.color, weight: st.weight || 0.8,
+              opacity: 0.85, fillColor: st.color, fillOpacity: 0.6
+            }).bindPopup("<strong>" + esc(nm || cat) + "</strong><br>" +
+              "<span style='opacity:.75'>" + esc(cat) +
+              (w ? " &middot; " + esc(w) + " reports" : "") + "</span>").addTo(g);
+            auto.push([lat, lon]);
+            stat.pts++;
+          }
+          g.addTo(map);
+          if (!c.polys) { openFit(); }
+          got++; note();
+        })
+        .catch(function () { got++; note(); });
+    }
+    if (!want) { fail("No mapped data for " + c.label + " yet."); }
+  }
+  var wt = document.querySelectorAll(".war-tab");
+  for (var i = 0; i < wt.length; i++) {
+    (function (b) {
+      b.addEventListener("click", function () {
+        var k = b.getAttribute("data-t");
+        if (k === HERE && map) { return; }
+        loadTheatre(k, true);
+        if (CONF[k] && CONF[k].wire) { wireTabTo(CONF[k].wire); }
+      });
+    })(wt[i]);
+  }
+  function injectLeaflet() {
+    if (window.L) { loadTheatre(HERE, false); return; }
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "leaflet/leaflet.css";
+    document.head.appendChild(css);
+    var s = document.createElement("script");
+    s.src = "leaflet/leaflet.js";
+    s.onload = function () { loadTheatre(HERE, false); };
+    s.onerror = function () { fail("Map failed to load."); };
+    document.head.appendChild(s);
+  }
+  /* Open on the wire that matches the theatre the reader landed on
+     (?t=me must not show the Ukraine wire beside a Middle East map). The
+     buttons ship with the Ukraine tab lit, so this has to run even when
+     wireTab already holds the right key. */
+  wireTabTo((CONF[HERE] || {}).wire || "ua");
+  injectLeaflet();
 })();
 </script></body></html>

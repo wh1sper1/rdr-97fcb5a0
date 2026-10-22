@@ -218,6 +218,19 @@ body.light .toolcard:hover { box-shadow:0 6px 20px rgba(0,0,0,.08); }
   font-size:11.5px; color:var(--muted); }
 .war-legend span { display:inline-flex; align-items:center; gap:7px; }
 .war-legend i { width:13px; height:13px; border-radius:3px; display:inline-block; }
+[hidden] { display:none !important; }
+.war-tabs { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 2px; }
+.war-tab { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+  padding:7px 15px; border:1px solid var(--line); border-radius:7px;
+  background:transparent; color:var(--muted); cursor:pointer; transition:all .15s ease; }
+.war-tab:hover { color:#f0b866; border-color:#f0b866; }
+.war-tab.on { color:#f0c98d; border-color:rgba(240,184,102,.55);
+  background:rgba(240,184,102,.08); box-shadow:0 0 14px rgba(240,184,102,.16); }
+body.light .war-tab { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
+body.light .war-tab:hover { color:#8f5e12; border-color:#8f5e12; }
+body.light .war-tab.on { color:#8f5e12; border-color:#8f5e12;
+  background:rgba(240,184,102,.16); box-shadow:none; }
 .wire { max-width:1080px; margin:26px auto 0; padding:20px 22px;
   border:1px solid var(--line); border-radius:10px; background:var(--card); }
 .wire-head { display:flex; flex-wrap:wrap; gap:10px; align-items:center;
@@ -460,9 +473,14 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#a9dcc4; background:rgba(8,20,14,.55); transition:all .15s ease; }
 .pol-feed:hover { color:#4de6a4; border-color:#4de6a4;
   box-shadow:0 0 12px rgba(77,230,164,.25); transform:translateY(-1px); }
+.pol-gaps { margin:0; padding:0 0 0 18px; }
+.pol-gaps li { font-size:13.5px; line-height:1.65; color:var(--muted);
+  margin-bottom:9px; }
+.pol-gaps strong { color:var(--ink); }
 .pol-note { font-size:13px; line-height:1.65; color:var(--muted); margin:12px 0 0; }
 .pol-note a { color:var(--neon); }
 body.light .pol-id { color:#8f5e12; }
+body.light .pol-gaps strong { color:#04301c; }
 body.light .pol-feed { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
 body.light .pol-feed:hover { color:#047857; border-color:#047857;
   box-shadow:0 0 10px rgba(10,127,70,.18); }
@@ -517,8 +535,9 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="toolcard toolcard-war" href="warmap.html">
     <span class="tooltag">Live tool</span>
     <h3>The War Map</h3>
-    <p>Ukraine front lines from DeepState&#39;s open data, plus a live wire of
-    Ukraine and Middle East war reporting, refreshed as it happens.</p>
+    <p>Two theatres, each scoped to the conflict: Ukraine front lines from DeepState&rsquo;s
+    open data, and Middle East attacks and unrest from GDELT&rsquo;s event index &mdash;
+    plus a live wire of war reporting.</p>
     <span class="toolcta">Open the map &rarr;</span>
   </a>
   <a class="toolcard" href="policy.html">
