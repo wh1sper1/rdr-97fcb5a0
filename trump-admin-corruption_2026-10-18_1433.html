@@ -445,8 +445,12 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:var(--ink); display:flex; align-items:center; gap:10px; margin:0 0 12px; }
 .pol-count { font-size:10.5px; padding:2px 8px; border-radius:20px;
   border:1px solid var(--line); color:var(--muted); letter-spacing:.5px; }
-.pol-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:12px; }
+/* auto-FILL, not auto-fit: with fit a group holding a single bill stretches
+   that one card across the whole row, which read as "one giant California
+   card". fill keeps the empty tracks so every card is the same column width.
+   align-items:start stops short cards stretching to the tallest in their row. */
+.pol-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:12px; align-items:start; }
 .pol-card { display:block; text-decoration:none; padding:14px 16px;
   border:1px solid var(--line); border-radius:10px; background:var(--card);
   transition:all .16s ease; }
@@ -454,9 +458,16 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   box-shadow:0 8px 22px rgba(0,0,0,.3), 0 0 14px rgba(77,230,164,.14); }
 .pol-id { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:11px; font-weight:700; letter-spacing:1px; color:var(--cyan); }
-.pol-title { font-size:14.5px; line-height:1.5; color:var(--ink); margin-top:7px; }
-.pol-foot { display:flex; justify-content:space-between; align-items:center;
-  gap:10px; margin-top:10px; }
+.pol-title { font-size:14.5px; line-height:1.5; color:var(--ink); margin-top:7px;
+  display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical;
+  overflow:hidden; }
+.pol-foot { display:flex; flex-wrap:wrap; justify-content:space-between;
+  align-items:center; gap:6px 10px; margin-top:10px; }
+.pol-where { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px; font-weight:700; letter-spacing:.6px; text-transform:uppercase;
+  color:var(--cyan); border:1px solid rgba(240,184,102,.35); border-radius:5px;
+  padding:2.5px 7px; }
+body.light .pol-where { color:#8f5e12; border-color:rgba(143,94,18,.35); }
 .pol-kw { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
   color:var(--muted); border:1px solid var(--line); border-radius:5px;
@@ -492,7 +503,7 @@ body.light .pol-sect { color:#8f5e12; }
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
   <div class="brand"><a href="index.html">Daily <span>Anti-Fascist Brief</span></a></div>
-  <div class="dateline"><span>Wednesday, October 21, 2026</span>
+  <div class="dateline"><span>Thursday, October 22, 2026</span>
   <button id="themeBtn" class="theme-btn" type="button">Dark</button></div>
 </div>
 <nav class="navbar" aria-label="Sections">
