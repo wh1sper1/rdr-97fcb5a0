@@ -445,35 +445,77 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:var(--ink); display:flex; align-items:center; gap:10px; margin:0 0 12px; }
 .pol-count { font-size:10.5px; padding:2px 8px; border-radius:20px;
   border:1px solid var(--line); color:var(--muted); letter-spacing:.5px; }
-/* auto-FILL, not auto-fit: with fit a group holding a single bill stretches
-   that one card across the whole row, which read as "one giant California
-   card". fill keeps the empty tracks so every card is the same column width.
-   align-items:start stops short cards stretching to the tallest in their row. */
-.pol-cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:12px; align-items:start; }
-.pol-card { display:block; text-decoration:none; padding:14px 16px;
-  border:1px solid var(--line); border-radius:10px; background:var(--card);
-  transition:all .16s ease; }
-.pol-card:hover { border-color:var(--neon); transform:translateY(-2px);
-  box-shadow:0 8px 22px rgba(0,0,0,.3), 0 0 14px rgba(77,230,164,.14); }
-.pol-id { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
-  font-size:11px; font-weight:700; letter-spacing:1px; color:var(--cyan); }
-.pol-title { font-size:14.5px; line-height:1.5; color:var(--ink); margin-top:7px;
-  display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical;
+/* Docket table. Bills are a list you scan down, not a grid of boxes: the
+   bill number sits in a fixed column so it lines up, the title takes the
+   width it needs, and 400 rows stay readable where 400 cards did not. */
+.pol-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+/* With table-layout:fixed the FIRST row sets the column widths, and that row
+   is the header — so the widths have to live on the th, not the td. */
+.pol-table th { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
+  color:var(--muted); text-align:left; padding:0 12px 9px;
+  border-bottom:1px solid var(--line); }
+/* Sized to the longest real values, not guessed: "UK-BILL-1234" and
+   "HCONRES 12" need ~118px, "European Parliament" ~150px, "senate joint res."
+   ~132px. Too narrow and the docket's own identifiers truncate, which is
+   worse than a slightly narrower title. */
+.pol-table th:nth-child(1) { width:118px; }
+.pol-table th:nth-child(3) { width:150px; }
+.pol-table th:nth-child(4) { width:132px; }
+.pol-table th:nth-child(5) { width:30px; }
+.pol-table td { padding:11px 12px; border-bottom:1px solid var(--line);
+  font-size:14px; color:var(--ink); vertical-align:top; }
+.pol-table tbody tr { transition:background .12s ease; }
+.pol-table tbody tr:hover { background:rgba(77,230,164,.055); }
+.pol-table tbody tr:hover .pt-id { color:var(--neon); }
+.pt-id { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:.6px; color:var(--cyan);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  width:92px; padding-right:4px; }
+.pt-title { line-height:1.5; }
+.pt-title a { color:var(--ink); text-decoration:none;
+  display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical;
   overflow:hidden; }
-.pol-foot { display:flex; flex-wrap:wrap; justify-content:space-between;
-  align-items:center; gap:6px 10px; margin-top:10px; }
-.pol-where { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
-  font-size:10.5px; font-weight:700; letter-spacing:.6px; text-transform:uppercase;
-  color:var(--cyan); border:1px solid rgba(240,184,102,.35); border-radius:5px;
-  padding:2.5px 7px; }
-body.light .pol-where { color:#8f5e12; border-color:rgba(143,94,18,.35); }
-.pol-kw { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
-  font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
-  color:var(--muted); border:1px solid var(--line); border-radius:5px;
-  padding:2.5px 7px; }
-.pol-go { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
-  font-size:11px; font-weight:700; letter-spacing:.6px; color:var(--neon); }
+.pt-title a:hover { color:var(--neon); text-decoration:underline;
+  text-underline-offset:3px; }
+/* Fixed widths, not width:1% hints: with auto layout the long values
+   ("Congress.gov") inflated those columns and squeezed the title down to its
+   minimum, which is the opposite of what the docket needs. */
+.pt-where, .pt-topic { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px; font-weight:700; letter-spacing:.7px; text-transform:uppercase;
+  color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  width:118px; padding-left:14px; }
+.pt-topic { color:var(--cyan); }
+.pt-go { width:34px; text-align:right; padding-left:6px; }
+.pt-go a { color:var(--neon); text-decoration:none; font-size:15px;
+  line-height:1; display:inline-block; padding:2px 4px; }
+.pt-go a:hover { text-shadow:0 0 10px rgba(77,230,164,.7); }
+body.light .pt-title a { color:#04301c; }
+body.light .pt-title a:hover { color:#0a7f46; }
+body.light .pt-topic { color:#8f5e12; }
+body.light .pol-table tbody tr:hover { background:rgba(10,127,70,.06); }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px;
+  overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+/* Phone: the table becomes a stacked docket line — number, then title, then
+   the where/topic metadata sharing the last line. The arrow column goes,
+   because the title is already the link. */
+@media (max-width:640px) {
+  .pol-table thead { display:none; }
+  .pol-table th:nth-child(1), .pol-table th:nth-child(3),
+  .pol-table th:nth-child(4), .pol-table th:nth-child(5) { width:auto; }
+  .pt-id, .pt-where, .pt-topic { overflow:visible; text-overflow:clip; }
+  .pol-table tr { display:block; padding:12px 2px;
+    border-bottom:1px solid var(--line); }
+  .pol-table { table-layout:auto; }
+  .pol-table td { display:block; border:none; padding:0; width:auto;
+    overflow:visible; text-overflow:clip; }
+  .pt-id { display:inline-block; margin:0 0 5px; font-size:12.5px; }
+  .pt-title { display:block; font-size:14.5px; margin-bottom:7px; }
+  .pt-title a { -webkit-line-clamp:4; }
+  .pt-where, .pt-topic { display:inline-block; padding:0 10px 0 0;
+    white-space:normal; max-width:100%; }
+  .pt-go { display:none; }
+}
 .pol-sect { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:11.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
   color:var(--cyan); }
@@ -490,15 +532,14 @@ body.light .pol-where { color:#8f5e12; border-color:rgba(143,94,18,.35); }
 .pol-gaps strong { color:var(--ink); }
 .pol-note { font-size:13px; line-height:1.65; color:var(--muted); margin:12px 0 0; }
 .pol-note a { color:var(--neon); }
-body.light .pol-id { color:#8f5e12; }
 body.light .pol-gaps strong { color:#04301c; }
 body.light .pol-feed { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
 body.light .pol-feed:hover { color:#047857; border-color:#047857;
   box-shadow:0 0 10px rgba(10,127,70,.18); }
 body.light .pol-sect { color:#8f5e12; }
 @media (prefers-reduced-motion: reduce) {
-  .pol-card, .pol-feed { transition:none; }
-  .pol-card:hover, .pol-feed:hover { transform:none; } }
+  .pol-table tbody tr, .pol-feed { transition:none; }
+  .pol-feed:hover { transform:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Cybersecurity News — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/cybersecurity-news_2026-10-19_0300.html", "image": "https://antifascistbrief.org/img/cybersecurity-news_2026-10-19_0300.jpg", "description": "Aviatrix Threat Research Center (2026): The Pentagon's Defense Manpower Data Center (DMDC) suffered a breach exposing personal data of 3 million military personnel and veterans, including Social Security numbers and military records. The breach was discovered ", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-19T03:00:00-07:00", "dateModified": "2026-10-19T03:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
