@@ -187,8 +187,8 @@ body.light .navbtn:hover { color:#047857; border-color:#047857;
 @media (prefers-reduced-motion: reduce) {
   .navbtn, .navbtn-live::before { animation:none; transition:none; } }
 /* ---------------- live tool cards (front page) ---------------- */
-.toolpair { display:grid; grid-template-columns:1fr 1fr; gap:16px;
-  max-width:1080px; margin:0 auto 26px; }
+.toolpair { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px; max-width:1080px; margin:0 auto 26px; }
 .toolcard { display:block; text-decoration:none; padding:20px 22px;
   border:1px solid var(--line); border-radius:10px; background:var(--card);
   transition:all .18s ease; position:relative; overflow:hidden; }
@@ -424,6 +424,52 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+
+/* ---------------- policy radar ---------------- */
+.pol-list { display:flex; flex-direction:column; gap:26px; }
+.pol-group h3 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12.5px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;
+  color:var(--ink); display:flex; align-items:center; gap:10px; margin:0 0 12px; }
+.pol-count { font-size:10.5px; padding:2px 8px; border-radius:20px;
+  border:1px solid var(--line); color:var(--muted); letter-spacing:.5px; }
+.pol-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:12px; }
+.pol-card { display:block; text-decoration:none; padding:14px 16px;
+  border:1px solid var(--line); border-radius:10px; background:var(--card);
+  transition:all .16s ease; }
+.pol-card:hover { border-color:var(--neon); transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(0,0,0,.3), 0 0 14px rgba(77,230,164,.14); }
+.pol-id { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1px; color:var(--cyan); }
+.pol-title { font-size:14.5px; line-height:1.5; color:var(--ink); margin-top:7px; }
+.pol-foot { display:flex; justify-content:space-between; align-items:center;
+  gap:10px; margin-top:10px; }
+.pol-kw { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--muted); border:1px solid var(--line); border-radius:5px;
+  padding:2.5px 7px; }
+.pol-go { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:.6px; color:var(--neon); }
+.pol-sect { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
+  color:var(--cyan); }
+.pol-feeds { display:flex; flex-wrap:wrap; gap:8px; }
+.pol-feed { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:.6px; text-decoration:none;
+  padding:6px 11px; border:1px solid var(--line); border-radius:6px;
+  color:#a9dcc4; background:rgba(8,20,14,.55); transition:all .15s ease; }
+.pol-feed:hover { color:#4de6a4; border-color:#4de6a4;
+  box-shadow:0 0 12px rgba(77,230,164,.25); transform:translateY(-1px); }
+.pol-note { font-size:13px; line-height:1.65; color:var(--muted); margin:12px 0 0; }
+.pol-note a { color:var(--neon); }
+body.light .pol-id { color:#8f5e12; }
+body.light .pol-feed { color:#0a5c3a; border-color:rgba(10,127,70,.35); background:#fff; }
+body.light .pol-feed:hover { color:#047857; border-color:#047857;
+  box-shadow:0 0 10px rgba(10,127,70,.18); }
+body.light .pol-sect { color:#8f5e12; }
+@media (prefers-reduced-motion: reduce) {
+  .pol-card, .pol-feed { transition:none; }
+  .pol-card:hover, .pol-feed:hover { transform:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Flock Camera Abuse — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/flock-camera-abuse_2026-10-20_2315.html", "image": "https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_2315.jpg", "description": "The Flock Safety story has moved well past a privacy-debate niche and into a full-blown legitimacy crisis for automated license plate reader (ALPR) networks across the country. What makes this moment different from earlier surveillance pushback is the combinat", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T23:15:00-07:00", "dateModified": "2026-10-20T23:15:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
@@ -436,6 +482,7 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   <a class="navbtn" href="tags.html">Dossiers</a>
   <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
   <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
+  <a class="navbtn navbtn-live" href="policy.html">Policy Radar</a>
   <a class="navbtn" href="search.html">Search</a>
   <a class="navbtn" href="archive.html">Archive</a>
   <a class="navbtn" href="videos.html">Videos</a>
