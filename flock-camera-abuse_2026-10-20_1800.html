@@ -798,6 +798,111 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   .pol-chip, .tbtn, .wbtn { transition:none; }
   .pol-feed:hover, .pol-tile:not(.empty):hover { transform:none; }
   .pol-acc[open] .chev { transition:none; } }
+
+/* ---------------- power map (The Trump Stack) ---------------- */
+.swipehint { display:none; }
+.pm-wrap { border:1px solid var(--line); border-radius:6px; overflow:hidden;
+  background:#04070a; margin:8px 0 4px; }
+.pm-scroll { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
+.pm-svg { display:block; width:100%; height:auto; }
+.pm-svg .bg { fill:#04070a; }
+.pm-svg .gridline { stroke:rgba(57,255,136,.05); }
+.pm-legend { display:flex; flex-wrap:wrap; gap:9px 16px; padding:11px 14px;
+  border-top:1px solid rgba(57,255,136,.16); font-size:12px; letter-spacing:.5px;
+  color:#6d9083; font-family:'Cascadia Code',ui-monospace,Menlo,monospace; }
+.pm-legend .sw { display:inline-block; width:22px; border-top:3px solid;
+  vertical-align:middle; margin-right:6px; }
+.pm-legend .hint { margin-left:auto; opacity:.85; }
+.pm-svg text { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; }
+.pm-svg .edge { fill:none; stroke-width:2; opacity:.72; transition:opacity .15s; }
+.pm-svg .edge.cash { stroke:#39ff88; }
+.pm-svg .edge.equity { stroke:#22d3ee; }
+.pm-svg .edge.power { stroke:#ffb020; }
+.pm-svg .edge.media { stroke:#c084fc; }
+.pm-svg .edge.lore { stroke:#ff4d6d; stroke-dasharray:7 6; }
+.pm-svg .edge.family { stroke:#e8f1ee; stroke-dasharray:2 7; }
+.pm-svg .tag { font-size:12.5px; letter-spacing:.4px; paint-order:stroke;
+  stroke:#04070a; stroke-width:5px; stroke-linejoin:round; }
+.pm-svg .node { cursor:pointer; }
+.pm-svg .node circle.core { fill:#071119; stroke-width:2.5; }
+.pm-svg .node text.nm { font-weight:700; letter-spacing:1px; fill:#eafff3;
+  text-anchor:middle; }
+.pm-svg .node text.cap { font-size:11px; letter-spacing:.4px; fill:#6d9083;
+  text-anchor:middle; }
+.pm-svg .node .halo { opacity:.13; }
+.pm-svg .n-trump circle.core { stroke:#ffd75e; }
+.pm-svg .n-trump .halo { fill:#ffd75e; }
+.pm-svg .n-trump text.nm { fill:#ffd75e; }
+.pm-svg .n-cash circle.core { stroke:#39ff88; }
+.pm-svg .n-cash .halo { fill:#39ff88; }
+.pm-svg .n-eq circle.core { stroke:#22d3ee; }
+.pm-svg .n-eq .halo { fill:#22d3ee; }
+.pm-svg .n-media circle.core { stroke:#c084fc; }
+.pm-svg .n-media .halo { fill:#c084fc; }
+.pm-svg .n-lore circle.core { stroke:#ff4d6d; }
+.pm-svg .n-lore .halo { fill:#ff4d6d; }
+.pm-svg .n-out circle.core { stroke:#7a8f86; stroke-dasharray:4 4; }
+.pm-svg .n-out .halo { fill:#7a8f86; }
+.pm-svg.focusing .edge, .pm-svg.focusing .tag { opacity:.08; }
+.pm-svg.focusing .edge.on, .pm-svg.focusing .tag.on { opacity:1; }
+.pm-svg.focusing .node { opacity:.32; }
+.pm-svg.focusing .node.on { opacity:1; }
+.pm-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+  gap:10px; margin:4px 0 6px; }
+.pm-stat { border:1px solid var(--line); border-radius:5px; padding:10px 12px;
+  background:var(--card); }
+.pm-stat .v { font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
+  font-size:20px; font-weight:700; color:var(--cyan);
+  text-shadow:0 0 12px rgba(240,184,102,.25); }
+body.light .pm-stat .v { text-shadow:none; }
+.pm-stat .k { font-size:11px; color:var(--muted); letter-spacing:.5px;
+  text-transform:uppercase; line-height:1.4; margin-top:3px;
+  font-family:'Cascadia Code',ui-monospace,Menlo,monospace; }
+.pm-calls { display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
+  gap:12px; margin:4px 0 6px; }
+.pm-call { border:1px solid var(--line); border-left:3px solid var(--cyan);
+  border-radius:5px; padding:12px 15px; background:var(--card); }
+.pm-call h3 { margin:0 0 7px; font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase;
+  color:var(--cyan); line-height:1.5; }
+.pm-call p { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:13.5px; line-height:1.6; color:var(--ink); }
+.pm-tablewrap { overflow-x:auto; }
+.pm-ledger { width:100%; border-collapse:collapse; font-size:13.5px; }
+.pm-ledger th { text-align:left; font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
+  font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--muted); padding:8px 10px; border-bottom:1px solid var(--line); }
+.pm-ledger td { padding:11px 10px; border-bottom:1px solid var(--line);
+  vertical-align:top; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  line-height:1.55; }
+.pm-ledger .flow { color:var(--ink); font-weight:700; white-space:nowrap; }
+.pm-ledger .amt { color:var(--cyan); font-weight:700; white-space:nowrap;
+  font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:12.5px; }
+.pm-ledger .yr { color:var(--muted); white-space:nowrap;
+  font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:12px; }
+.pm-ledger .catch { color:var(--muted); }
+.pm-ledger tr:last-child td { border-bottom:0; }
+.pm-foot { font-size:12.5px; line-height:1.7; color:var(--muted);
+  border-top:1px solid var(--line); padding-top:14px; margin-top:8px; }
+@media (max-width:860px) {
+  .swipehint { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
+    font-size:11.5px; letter-spacing:.5px; color:var(--cyan); margin:2px 0 8px;
+    text-transform:uppercase; }
+  .pm-svg { min-width:1000px; }
+  .pm-legend .hint { margin-left:0; width:100%; }
+}
+@media (max-width:640px) {
+  /* ledger becomes stacked cards */
+  .pm-ledger, .pm-ledger tbody, .pm-ledger tr, .pm-ledger td { display:block; width:100%; }
+  .pm-ledger thead { display:none; }
+  .pm-ledger tr { border:1px solid var(--line); border-radius:5px; margin-bottom:10px;
+    padding:6px 4px; background:var(--card); }
+  .pm-ledger td { border:0; padding:4px 11px; white-space:normal !important; }
+  .pm-ledger td::before { content:attr(data-l); display:block;
+    font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:10px;
+    letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:1px; }
+}
+@media (prefers-reduced-motion:reduce) { .pm-svg .edge { transition:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Flock Camera Abuse, Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/flock-camera-abuse_2026-10-20_1800.html", "image": "https://antifascistbrief.org/img/flock-camera-abuse_2026-10-20_1800.jpg", "description": "Three years ago a city council voting to drop license-plate cameras was a curiosity. This week it is becoming the default: San Diego looks likely to join Tempe, Cave Creek and Jackson in walking away, and DeFlock's count of cities that have cancelled, rejected", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
@@ -819,6 +924,7 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
   <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
   <a class="navbtn" href="policy.html">Policy Radar</a>
+  <a class="navbtn" href="powermap.html">Power Map</a>
   <a class="navbtn" href="terms.html">Terms</a>
   <a class="navbtn" href="search.html">Search</a>
   <a class="navbtn" href="archive.html">Archive</a>
