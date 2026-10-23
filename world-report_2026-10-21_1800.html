@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,11 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; World Report &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-europe.html">Europe</a> <a href="tag-france.html">France</a></div><div class="why"><p>The world in October 2026 is a planet of overlapping emergencies that no single news frame can contain. The UN General Assembly in September gathered 130 heads of state against a backdrop of wars in Iran, Gaza, Ukraine, Sudan, Congo, and Myanmar — and a persisting question about whether the multilateral system can do anything to end them. Less than a month before COP31 opens in Antalya, Türkiye, representatives of three successive summit presidencies gathered to address a pressing question: how can the world restore trust in climate action when the consequences of a warming planet are already being felt? The answer, so far, is that it cannot.</p>
-<p>Alongside the major wars covered elsewhere in this digest, a quieter catastrophe is unfolding. Sudan is the world's largest hunger and displacement crisis. As drone strikes kill civilians from El Obeid to Blue Nile and famine risk spreads across Darfur and Kordofan, the UN Security Council meets on Sudan — ambassadors are expected to press yet again for a ceasefire, safe aid access, and an end to the weapons flows fueling the brutal conflict. Afghanistan faces an acute food insecurity crisis threatening 19.2 million people, with over four million babies and children under six needing treatment for acute malnutrition next year. Congo and Myanmar remain in active conflict with no resolution in sight.</p>
-<p>The protests sweeping Europe reveal a continent under economic and political strain. France imposed fresh curfews across Paris and Lyon after the most destructive rioting in years — more than 1,800 people arrested nationwide after violent groups clashed with officers and looted shops during demonstrations that drew hundreds of thousands. The unrest shocked the country because of both its scale and the apparent inability of police to contain it. France's president condemned the violence. Similar protests and riots are sweeping across Europe, driven by soaring rents, dilapidated schools, and inflation.</p>
-<p>The global economy faces a convergence of pressures: blocked shipping routes and supply chains increasing the cost of living and slowing growth, record greenhouse gas concentrations, and the El Niño phenomenon strengthening in a world already hotter, raising the risk of drought, floods, and crop losses across some of the world's most important food-producing regions. China's hybrid car exports to the EU surged by more than 200% as an import cap looms, climbing to nearly 100,000 vehicles in September ahead of limits due to take effect at the end of the year. More than $15 billion has been raised in the U.S. midterm elections.</p>
-<p>What to watch: COP31 in Antalya, COP17 in Yerevan (biodiversity), and the biodiversity conference's warning that fewer than half of national targets to protect plants, animals, and ecosystems are on track. The UN Secretary-General convened a Climate Action Summit on September 23, 2026, amid growing climate impacts and uncertainty around the global economy and energy security. The coming months will test whether the multilateral system can produce anything beyond rhetoric.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.npr.org/sections/world/" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-21_1800.jpg" alt="World Report — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=sYOAeQEjWsc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sYOAeQEjWsc/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4KFtg2RWpnk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4KFtg2RWpnk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; World Report &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-europe.html">Europe</a> <a href="tag-france.html">France</a></div></div><article class="article entry"><a class="hero-link" href="https://www.npr.org/sections/world/" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-21_1800.jpg" alt="World Report — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> UN News, NPR, PBS NewsHour, France24, SCMP, AP, UNICEF, UN Human Rights Monitoring Mission, Amnesty International UK, COP31, COP17</p>
 <h2>Key findings</h2>
 <h3>France imposes curfews after most destructive rioting in years</h3>
@@ -589,8 +633,11 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>UN General Assembly: 130 heads of state amid wars and AI fears</h3>
 <p>World leaders gathered at the United Nations in September 2026 against a backdrop of wars in the Middle East and Ukraine, rising fears over artificial intelligence, and mounting economic and climate pressures. The annual General Assembly tested whether the 193-member body can still bring countries together to tackle crises that increasingly transcend borders. The UN's 193 member nations agreed to a wide-ranging reform package that includes updating key institutions such as the UN Security Council. The future of the United Nations was definitely on the agenda. (<a href="https://www.pbs.org/newshour/world/world-leaders-meet-at-un-as-planet-grapples-with-war-runaway-ai-and-climate-shocks" target="_blank" rel="noopener">Source</a>)</p>
 <h3>UNICEF: 340+ children killed in Gaza more than one year after ceasefire</h3>
-<p>A little over one year since a ceasefire agreement was announced between Hamas fighters and Israel, more than 340 children have been reported killed and hundreds more injured in Gaza, UNICEF said on October 16, 2026. The figures underscore the ongoing human toll of the conflict even after the formal cessation of hostilities, and the slow pace of recovery and reconstruction in the territory. (<a href="https://news.un.org/en/news?summary=true&amp;sdkv=0&amp;userId=a8f9aa1f-4fdf-49ae-acbb-d56b6b85ebce&amp;variant=na&amp;region=IN&amp;jw_start=%7Bseek_to_second_number%7D&amp;page=1" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>A little over one year since a ceasefire agreement was announced between Hamas fighters and Israel, more than 340 children have been reported killed and hundreds more injured in Gaza, UNICEF said on October 16, 2026. The figures underscore the ongoing human toll of the conflict even after the formal cessation of hostilities, and the slow pace of recovery and reconstruction in the territory. (<a href="https://news.un.org/en/news?summary=true&amp;sdkv=0&amp;userId=a8f9aa1f-4fdf-49ae-acbb-d56b6b85ebce&amp;variant=na&amp;region=IN&amp;jw_start=%7Bseek_to_second_number%7D&amp;page=1" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=sYOAeQEjWsc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sYOAeQEjWsc/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4KFtg2RWpnk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4KFtg2RWpnk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The world in October 2026 is a planet of overlapping emergencies that no single news frame can contain. The UN General Assembly in September gathered 130 heads of state against a backdrop of wars in Iran, Gaza, Ukraine, Sudan, Congo, and Myanmar — and a persisting question about whether the multilateral system can do anything to end them. Less than a month before COP31 opens in Antalya, Türkiye, representatives of three successive summit presidencies gathered to address a pressing question: how can the world restore trust in climate action when the consequences of a warming planet are already being felt? The answer, so far, is that it cannot.</p>
+<p>Alongside the major wars covered elsewhere in this digest, a quieter catastrophe is unfolding. Sudan is the world's largest hunger and displacement crisis. As drone strikes kill civilians from El Obeid to Blue Nile and famine risk spreads across Darfur and Kordofan, the UN Security Council meets on Sudan — ambassadors are expected to press yet again for a ceasefire, safe aid access, and an end to the weapons flows fueling the brutal conflict. Afghanistan faces an acute food insecurity crisis threatening 19.2 million people, with over four million babies and children under six needing treatment for acute malnutrition next year. Congo and Myanmar remain in active conflict with no resolution in sight.</p>
+<p>The protests sweeping Europe reveal a continent under economic and political strain. France imposed fresh curfews across Paris and Lyon after the most destructive rioting in years — more than 1,800 people arrested nationwide after violent groups clashed with officers and looted shops during demonstrations that drew hundreds of thousands. The unrest shocked the country because of both its scale and the apparent inability of police to contain it. France's president condemned the violence. Similar protests and riots are sweeping across Europe, driven by soaring rents, dilapidated schools, and inflation.</p>
+<p>The global economy faces a convergence of pressures: blocked shipping routes and supply chains increasing the cost of living and slowing growth, record greenhouse gas concentrations, and the El Niño phenomenon strengthening in a world already hotter, raising the risk of drought, floods, and crop losses across some of the world's most important food-producing regions. China's hybrid car exports to the EU surged by more than 200% as an import cap looms, climbing to nearly 100,000 vehicles in September ahead of limits due to take effect at the end of the year. More than $15 billion has been raised in the U.S. midterm elections.</p>
+<p>What to watch: COP31 in Antalya, COP17 in Yerevan (biodiversity), and the biodiversity conference's warning that fewer than half of national targets to protect plants, animals, and ecosystems are on track. The UN Secretary-General convened a Climate Action Summit on September 23, 2026, amid growing climate impacts and uncertainty around the global economy and energy security. The coming months will test whether the multilateral system can produce anything beyond rhetoric.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://news.un.org/en/news?summary=true&amp;sdkv=0&amp;userId=a8f9aa1f-4fdf-49ae-acbb-d56b6b85ebce&amp;variant=na&amp;region=IN&amp;jw_start=%7Bseek_to_second_number%7D&amp;page=1" target="_blank" rel="noopener">UN News — Latest News</a></li>
 <li><a href="https://www.npr.org/sections/world/" target="_blank" rel="noopener">NPR — World News and International Headlines</a></li>

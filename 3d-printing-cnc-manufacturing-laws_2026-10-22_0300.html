@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip active" href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="3d-printing-cnc-manufacturing-laws.html">&larr; All 3D Printing &amp; CNC Laws briefs</a><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h1>3D Printing &amp; CNC Manufacturing Laws — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; 3D Printing &amp; CNC Laws &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-cnc.html">CNC</a> <a href="tag-fm-1.html">FM-1</a> <a href="tag-anarchists-and-anti-fascists.html">Anarchists and Anti-Fascists</a></div><div class="why"><p>The 3D printing and CNC manufacturing law wave of 2026 is the most significant expansion of firearm-adjacent regulation since the ghost gun rules — and it reaches far beyond guns into the general-purpose manufacturing tools that makers, woodworkers, machinists, and engineers use every day. The critical legal innovation is that several states are now defining "3D printing" to include subtractive manufacturing (CNC milling), which means a CNC machine in a home workshop or a vocational school program can fall under the same statutory framework as a resin printer making gun parts. Colorado's HB26-1144, which took effect July 1, 2026, explicitly defines 3D printing as both additive and subtractive manufacturing — a definitional move that the bill's own summary acknowledges pulls CNC machines, milling equipment, and router tables into a ghost gun manufacturing statute.</p>
-<p>The throughline connecting these laws is a shift from targeting finished firearms to targeting the entire production pipeline: the digital files (CAD/STL code), the machines that read them, and the firmware that can block them. New York's budget bill (S.9005) is the most aggressive: it requires all 3D printers sold or delivered in the state to include "blocking technology" — firmware that scans every print file through a firearms blueprint detection algorithm and refuses to print anything it flags — and the Adafruit analysis found the language reaches CNC mills and "any machine capable of making three-dimensional modifications to an object from a digital file using subtractive manufacturing." California's AB 2047 would require manufacturers to embed a DOJ-approved firearm blueprint detection algorithm in every printer sold in the state by July 2028, banning the sale of non-compliant printers. These are content-filter mandates for physical manufacturing tools, and they raise the same kind of feasibility and overbreadth questions that content filters for internet platforms do.</p>
-<p>What to watch next: whether AB 2047 passes the California Senate and gets signed (it passed the Assembly in May 2026), whether the New York task force actually produces workable blocking-technology standards given the widespread technical skepticism from Adafruit, EFF, and the Firearms Policy Coalition, and whether the federal NDAA FY2026 and HR 4143 produce any national framework that preempts the state patchwork. The open-source firmware community's response — alternate firmwares for the M-VAVE FM-1, Arturia Microfreak, and Elektron devices — is a preview of how the maker community may respond to printer-level mandates.</p></div></div><article class="article entry"><a class="hero-link" href="https://giffords.org/analysis/gun-law-trendwatch-states-are-moving-forward-in-2026/" target="_blank" rel="noopener"><img class="hero" src="img/3d-printing-cnc-manufacturing-laws_2026-10-22_0300.jpg" alt="3D Printing &amp; CNC Manufacturing Laws — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=BMVJFKhv-IA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BMVJFKhv-IA/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=AQ7Hr6vk_WM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AQ7Hr6vk_WM/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="3d-printing-cnc-manufacturing-laws.html">&larr; All 3D Printing &amp; CNC Laws briefs</a><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h1>3D Printing &amp; CNC Manufacturing Laws — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; 3D Printing &amp; CNC Laws &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-cnc.html">CNC</a> <a href="tag-fm-1.html">FM-1</a> <a href="tag-anarchists-and-anti-fascists.html">Anarchists and Anti-Fascists</a></div></div><article class="article entry"><a class="hero-link" href="https://giffords.org/analysis/gun-law-trendwatch-states-are-moving-forward-in-2026/" target="_blank" rel="noopener"><img class="hero" src="img/3d-printing-cnc-manufacturing-laws_2026-10-22_0300.jpg" alt="3D Printing &amp; CNC Manufacturing Laws — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
 <p><strong>Sources:</strong> Giffords, Colorado Legislature, California Senate, PCMag, The Register, Adafruit, EFF, New York Senate, Washington State Legislature</p>
 <h2>Key findings</h2>
 <h3>Colorado: 3D printing defined to include CNC, felony for second offense</h3>
@@ -589,8 +635,9 @@ body.light .pol-sect { color:#8f5e12; }
 <li><strong>Quality Rot (Jun 23, 2026):</strong> At least 16 states have laws addressing 3D-printed firearms; 7 added major legislation in 2026 per Stateline. EFF, Adafruit, Firearms Policy Coalition, and engineers have said the blocking technology is technically infeasible. The blocking mandate reaches open-source firmware, CNC machines, online printer sales, and CAD file sharing across multiple states. (<a href="https://www.youtube.com/watch?v=AQ7Hr6vk_WM" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>Synthtopia / M-VAVE (2026):</strong> M-VAVE has released FM1 Open, an official firmware and development project that adds an eight-track sequencer, multiple synthesis engines, sample playback and tools for developers to extend the FM-1 — part of an emerging ecosystem of open solutions around the FM-1 where users can preview synths online, download them to cheap hardware or run them as plugins in a DAW. This open firmware ecosystem is the kind of community response that printer-level content mandates are likely to trigger. (<a href="https://www.synthtopia.com/content/category/electronic-music-gear/synthesizers/" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>Elektron Model:Cycles / Free firmware mod (2026):</strong> Model-TG is a free, open-source firmware mod for the Elektron Model:Cycles that adds a full Sampler machine and a variety of other features — the kind of community-built firmware alternative that becomes more relevant when devices face content-blocking mandates. (<a href="https://www.synthtopia.com/content/category/electronic-music-gear/synthesizers/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=BMVJFKhv-IA" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/BMVJFKhv-IA/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=AQ7Hr6vk_WM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AQ7Hr6vk_WM/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The 3D printing and CNC manufacturing law wave of 2026 is the most significant expansion of firearm-adjacent regulation since the ghost gun rules — and it reaches far beyond guns into the general-purpose manufacturing tools that makers, woodworkers, machinists, and engineers use every day. The critical legal innovation is that several states are now defining "3D printing" to include subtractive manufacturing (CNC milling), which means a CNC machine in a home workshop or a vocational school program can fall under the same statutory framework as a resin printer making gun parts. Colorado's HB26-1144, which took effect July 1, 2026, explicitly defines 3D printing as both additive and subtractive manufacturing — a definitional move that the bill's own summary acknowledges pulls CNC machines, milling equipment, and router tables into a ghost gun manufacturing statute.</p>
+<p>The throughline connecting these laws is a shift from targeting finished firearms to targeting the entire production pipeline: the digital files (CAD/STL code), the machines that read them, and the firmware that can block them. New York's budget bill (S.9005) is the most aggressive: it requires all 3D printers sold or delivered in the state to include "blocking technology" — firmware that scans every print file through a firearms blueprint detection algorithm and refuses to print anything it flags — and the Adafruit analysis found the language reaches CNC mills and "any machine capable of making three-dimensional modifications to an object from a digital file using subtractive manufacturing." California's AB 2047 would require manufacturers to embed a DOJ-approved firearm blueprint detection algorithm in every printer sold in the state by July 2028, banning the sale of non-compliant printers. These are content-filter mandates for physical manufacturing tools, and they raise the same kind of feasibility and overbreadth questions that content filters for internet platforms do.</p>
+<p>What to watch next: whether AB 2047 passes the California Senate and gets signed (it passed the Assembly in May 2026), whether the New York task force actually produces workable blocking-technology standards given the widespread technical skepticism from Adafruit, EFF, and the Firearms Policy Coalition, and whether the federal NDAA FY2026 and HR 4143 produce any national framework that preempts the state patchwork. The open-source firmware community's response — alternate firmwares for the M-VAVE FM-1, Arturia Microfreak, and Elektron devices — is a preview of how the maker community may respond to printer-level mandates.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://giffords.org/analysis/gun-law-trendwatch-states-are-moving-forward-in-2026/" target="_blank" rel="noopener">Giffords — Gun Law Trendwatch: How States Are Moving Forward in 2026</a></li>
 <li><a href="https://leg.colorado.gov/bills/hb26-1144" target="_blank" rel="noopener">Colorado Legislature — HB26-1144 Prohibit 3D Printing Firearms &amp; Components</a></li>

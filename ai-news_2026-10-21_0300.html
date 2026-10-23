@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip active" href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ai-news.html">&larr; All AI News briefs</a><span class="kicker" style="color:#1d4ed8">TECHNOLOGY</span><h1>AI News — Research Digest</h1><div class="meta">Saved 2026-10-21 03:00 &middot; AI News &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-china.html">China</a> <a href="tag-anthropic.html">Anthropic</a> <a href="tag-openai.html">OpenAI</a> <a href="tag-europe.html">Europe</a> <a href="tag-ftc.html">FTC</a> <a href="tag-google.html">Google</a> <a href="tag-meta.html">Meta</a></div><div class="why"><p>The AI policy conversation this month crystallized around a single unresolved tension: the gap between what the industry says it will do voluntarily and what anyone can actually make it do. The White House safety accord signed by OpenAI, Anthropic, Meta, Google, and others on September 29 — the one Trump called "morally binding" and "almost a constitution" — carries no penalties for companies that fall short, and the administration has simultaneously canceled the Biden-era requirement for developers to share safety test results with the government. The industry is pledging independent audits and board-level oversight while the federal government steps back from oversight.</p>
-<p>The throughline is the global regulatory asymmetry. Europe passed the world's most comprehensive AI law and then watered it down and delayed the high-risk provisions to December 2027 after industry pushback; China has a complex existing regulatory framework and is now layering on AI companion bot rules aimed at curbing emotional dependency after a spate of child suicides linked to AI assistants; the U.S. is betting on a voluntary framework and an executive order blocking state-level AI regulation. Three different systems, three different risk tolerances, and no obvious mechanism for reconciling them — which matters because the technology doesn't respect borders and the companies building it operate globally.</p>
-<p>What to watch next: the FTC investigation into OpenAI, Anthropic, and other companies that opened after the White House luncheon; the November round of U.S.-China AI dialog; and whether the Senate Homeland Security Committee's warning about rogue AI agents — where Sen. Hawley, Sen. Kim, and Sen. Peters pressed witnesses on what happens when AI systems act beyond their intended controls — produces actual legislation before the midterms. The Anand Agrawal/OpenAI researcher firing scandal (three researchers fired with a note that "fear and unclear rules stymie AI safety work") is a live window into whether the voluntary framework has any internal teeth.</p></div></div><article class="article entry"><a class="hero-link" href="https://abcnews.com/US/wireStory/silicon-valley-ai-founders-cheer-trumps-calls-industry-137154175" target="_blank" rel="noopener"><img class="hero" src="img/ai-news_2026-10-21_0300.jpg" alt="AI News — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=OxZGRkUCDB8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OxZGRkUCDB8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=NBq9plPYFbs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NBq9plPYFbs/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="ai-news.html">&larr; All AI News briefs</a><span class="kicker" style="color:#1d4ed8">TECHNOLOGY</span><h1>AI News — Research Digest</h1><div class="meta">Saved 2026-10-21 03:00 &middot; AI News &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-china.html">China</a> <a href="tag-anthropic.html">Anthropic</a> <a href="tag-openai.html">OpenAI</a> <a href="tag-europe.html">Europe</a> <a href="tag-ftc.html">FTC</a> <a href="tag-google.html">Google</a> <a href="tag-meta.html">Meta</a></div></div><article class="article entry"><a class="hero-link" href="https://abcnews.com/US/wireStory/silicon-valley-ai-founders-cheer-trumps-calls-industry-137154175" target="_blank" rel="noopener"><img class="hero" src="img/ai-news_2026-10-21_0300.jpg" alt="AI News — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 03:00 (PDT)</p>
 <p><strong>Sources:</strong> AP, ABC News, CBC, CNN, The Economist, Financial Times, Simmons &amp; Simmons, BBC, The Daily Star</p>
 <h2>Key findings</h2>
 <h3>U.S. policy: voluntary accord, no enforcement</h3>
@@ -589,8 +635,9 @@ body.light .pol-sect { color:#8f5e12; }
 <li>The AI industry's gigantic debts are making investors nervous — the fast-growing stock of AI-related debt, from neoclouds like CoreWeave to hyperscalers and chipmakers, poses risks to financial markets; AI neolabs have raised $23 billion but most have yet to release commercial products. (<a href="https://www.economist.com/topics/artificial-intelligence" target="_blank" rel="noopener">Source</a>)</li>
 <li>Microsoft President Brad Smith called for urgent global AI safety rules, warning that the technology faces fewer safety requirements than everyday products like milk and washing machines, and urged governments to establish international AI safety standards including independent evaluations, mandatory incident reporting, and an "emergency brake" to stop rogue AI agents. (<a href="https://www.foxnews.com/live-news/ai-news-microsoft-rules-safety-10-12" target="_blank" rel="noopener">Source</a>)</li>
 <li>A Senate Homeland Security Committee hearing on September 30 addressed the growing dangers of rogue AI and what happens when AI agents act beyond their intended controls, with Senators Hawley, Kim, and Peters questioning witnesses about autonomous AI risks. (<a href="https://www.youtube.com/watch?v=OxZGRkUCDB8" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=OxZGRkUCDB8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/OxZGRkUCDB8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=NBq9plPYFbs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/NBq9plPYFbs/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The AI policy conversation this month crystallized around a single unresolved tension: the gap between what the industry says it will do voluntarily and what anyone can actually make it do. The White House safety accord signed by OpenAI, Anthropic, Meta, Google, and others on September 29 — the one Trump called "morally binding" and "almost a constitution" — carries no penalties for companies that fall short, and the administration has simultaneously canceled the Biden-era requirement for developers to share safety test results with the government. The industry is pledging independent audits and board-level oversight while the federal government steps back from oversight.</p>
+<p>The throughline is the global regulatory asymmetry. Europe passed the world's most comprehensive AI law and then watered it down and delayed the high-risk provisions to December 2027 after industry pushback; China has a complex existing regulatory framework and is now layering on AI companion bot rules aimed at curbing emotional dependency after a spate of child suicides linked to AI assistants; the U.S. is betting on a voluntary framework and an executive order blocking state-level AI regulation. Three different systems, three different risk tolerances, and no obvious mechanism for reconciling them — which matters because the technology doesn't respect borders and the companies building it operate globally.</p>
+<p>What to watch next: the FTC investigation into OpenAI, Anthropic, and other companies that opened after the White House luncheon; the November round of U.S.-China AI dialog; and whether the Senate Homeland Security Committee's warning about rogue AI agents — where Sen. Hawley, Sen. Kim, and Sen. Peters pressed witnesses on what happens when AI systems act beyond their intended controls — produces actual legislation before the midterms. The Anand Agrawal/OpenAI researcher firing scandal (three researchers fired with a note that "fear and unclear rules stymie AI safety work") is a live window into whether the voluntary framework has any internal teeth.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://abcnews.com/US/wireStory/silicon-valley-ai-founders-cheer-trumps-calls-industry-137154175" target="_blank" rel="noopener">ABC News — In Silicon Valley, AI founders cheer Trump's calls for the industry to police itself on safety</a></li>
 <li><a href="https://www.cbc.ca/news/business/ai-safety-regulation-9.7382483" target="_blank" rel="noopener">CBC News — Can AI be regulated? Why experts say government intervention is needed</a></li>

@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,10 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip active" href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-china.html">China</a> <a href="tag-kyiv.html">Kyiv</a></div><div class="why"><p>The Ukraine war has entered its fifth year in a state of grim equilibrium that neither side can break and neither side can afford to abandon. Russia controls all but 11% of the Donetsk region, and what remains of Ukrainian-held Donetsk is, as one military analyst described it, "the last defensible line… From there, it's just a straight shot into Kyiv." But Russia is not advancing — it has switched to "applying extraordinary pain on the people of Ukraine through drone strikes, through ballistic missile strikes, trying to destroy their energy infrastructure, their electricity." Ukraine, in turn, is striking Russian refineries and energy infrastructure deep inside Russia, with the first reported Ukrainian strike against the Khanty-Mansi Autonomous Okrug on October 16 — the Gazprom Chernomyrdin Condensate Stabilization Plant near Surgut, roughly 2,340 kilometers from the border.</p>
-<p>The casualties continue at a staggering scale. Russia's cumulative combat losses from February 24, 2022, to October 20, 2026, are estimated at nearly 1,568,720 personnel, 12,425 tanks, 25,570 armored fighting vehicles, 51,359 artillery systems, and 571,572 drones. The rate of Russian losses remains higher than the rate of replacement. For the first time, Russian casualties appear to outpace replacements — making 2026 the worst year of the war for Russian forces since the second Ukrainian counteroffensive in 2023. But Russia compensates with large-scale mobilization, and the rate of production of missiles and drones has increased compared to the same period a year earlier.</p>
-<p>The political dimension is now arguably more dangerous than the battlefield. Trump's gifts to Moscow — a sudden diesel deal likely to throw billions into Putin's war chest, an energy ceasefire unilaterally announced by Trump and apparently unknown to either side, and the waiver of new Russia sanctions on October 16 — have created a unique set of pressures on Kyiv. Zelensky has said Ukraine is prepared to stop targeting Russian energy facilities if Moscow also stops attacking Ukrainian power plants. But the Kremlin is advocating for a trilateral meeting involving the United States, Russia, and China — a format that would sideline Ukraine entirely. The proposed Trump-Putin-Xi summit at APEC Shenzhen is the ultimate expression of this pressure.</p>
-<p>UN human rights monitors reported in October 2026 that civilian casualty rates in Ukraine remain at "deadliest" levels in years, with intensified Russian attacks in September continuing a pattern of harm far exceeding previous years. More than 550,000 households across 15 regions of Ukraine lost power after Russian strikes on energy infrastructure on October 18-19.</p></div></div><article class="article entry"><a class="hero-link" href="https://newsukraine.rbc.ua/news/russia-s-losses-in-ukraine-as-of-october-1792414595.html" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-21_1800.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=jKrose8z4Dg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jKrose8z4Dg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=Lsc4MFVz6I4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Lsc4MFVz6I4/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-china.html">China</a> <a href="tag-kyiv.html">Kyiv</a></div></div><article class="article entry"><a class="hero-link" href="https://newsukraine.rbc.ua/news/russia-s-losses-in-ukraine-as-of-october-1792414595.html" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-21_1800.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> RBC-Ukraine, CNN, Institute for the Study of War, GlobalSecurity.org, Kyiv Independent, U.S. Army Strategic Studies Institute, UN Human Rights Monitoring Mission, DW Documentary, TAPUR UPDATE, BLUX</p>
 <h2>Key findings</h2>
 <h3>Russia's losses as of October 20: 1,568,720 troops and 571,572 drones</h3>
@@ -586,8 +631,10 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Russia recruiting foreign fighters; 27,000+ foreign fighters on Russian side</h3>
 <p>Russia needs more soldiers. At least 250,000 have already died in the Ukraine war. Moscow is ramping up international recruitment, targeting men from countries like Kenya, India, Nepal, Sri Lanka, Cuba, and Central Asia. Some are lured by money, others by promises of work or study opportunities. Ukraine says more than 27,000 foreign fighters are now fighting on the Russian side. A DW Documentary investigation found that Indian nationals traveled to Russia for a vacation and wound up conscripted against their will on the front line. (<a href="https://www.youtube.com/watch?v=Lsc4MFVz6I4" target="_blank" rel="noopener">Source</a>)</p>
 <h3>Ukraine's war effort: stronger position but tenuous</h3>
-<p>Ukraine's position remained tenuous as the Russian military continued to make slow but incremental gains in territory. The new U.S. administration in early 2025 cut direct military aid to Ukraine and publicly rebuked President Zelensky during a White House meeting, though the United States continued to share intelligence and allowed the purchase of American weaponry financed by European partners. By late spring 2026, there appeared to be a consensus among expert observers that Ukraine is in a stronger military and geopolitical position than a year earlier, with its technology and war-fighting experience recognized as a newly in-demand commodity. The shutting down of Starlink connectivity to Russian units on the front line in February 2026 made it the worst year for Russian forces since the second Ukrainian counteroffensive in 2023. (<a href="https://ssi.armywarcollege.edu/SSI-Media/Recent-Publications/Article/4509097/ukraines-war-effort-in-mid-2026-international-opportunities-and-domestic-challe/" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>Ukraine's position remained tenuous as the Russian military continued to make slow but incremental gains in territory. The new U.S. administration in early 2025 cut direct military aid to Ukraine and publicly rebuked President Zelensky during a White House meeting, though the United States continued to share intelligence and allowed the purchase of American weaponry financed by European partners. By late spring 2026, there appeared to be a consensus among expert observers that Ukraine is in a stronger military and geopolitical position than a year earlier, with its technology and war-fighting experience recognized as a newly in-demand commodity. The shutting down of Starlink connectivity to Russian units on the front line in February 2026 made it the worst year for Russian forces since the second Ukrainian counteroffensive in 2023. (<a href="https://ssi.armywarcollege.edu/SSI-Media/Recent-Publications/Article/4509097/ukraines-war-effort-in-mid-2026-international-opportunities-and-domestic-challe/" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=jKrose8z4Dg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jKrose8z4Dg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=Lsc4MFVz6I4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Lsc4MFVz6I4/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Ukraine war has entered its fifth year in a state of grim equilibrium that neither side can break and neither side can afford to abandon. Russia controls all but 11% of the Donetsk region, and what remains of Ukrainian-held Donetsk is, as one military analyst described it, "the last defensible line… From there, it's just a straight shot into Kyiv." But Russia is not advancing — it has switched to "applying extraordinary pain on the people of Ukraine through drone strikes, through ballistic missile strikes, trying to destroy their energy infrastructure, their electricity." Ukraine, in turn, is striking Russian refineries and energy infrastructure deep inside Russia, with the first reported Ukrainian strike against the Khanty-Mansi Autonomous Okrug on October 16 — the Gazprom Chernomyrdin Condensate Stabilization Plant near Surgut, roughly 2,340 kilometers from the border.</p>
+<p>The casualties continue at a staggering scale. Russia's cumulative combat losses from February 24, 2022, to October 20, 2026, are estimated at nearly 1,568,720 personnel, 12,425 tanks, 25,570 armored fighting vehicles, 51,359 artillery systems, and 571,572 drones. The rate of Russian losses remains higher than the rate of replacement. For the first time, Russian casualties appear to outpace replacements — making 2026 the worst year of the war for Russian forces since the second Ukrainian counteroffensive in 2023. But Russia compensates with large-scale mobilization, and the rate of production of missiles and drones has increased compared to the same period a year earlier.</p>
+<p>The political dimension is now arguably more dangerous than the battlefield. Trump's gifts to Moscow — a sudden diesel deal likely to throw billions into Putin's war chest, an energy ceasefire unilaterally announced by Trump and apparently unknown to either side, and the waiver of new Russia sanctions on October 16 — have created a unique set of pressures on Kyiv. Zelensky has said Ukraine is prepared to stop targeting Russian energy facilities if Moscow also stops attacking Ukrainian power plants. But the Kremlin is advocating for a trilateral meeting involving the United States, Russia, and China — a format that would sideline Ukraine entirely. The proposed Trump-Putin-Xi summit at APEC Shenzhen is the ultimate expression of this pressure.</p>
+<p>UN human rights monitors reported in October 2026 that civilian casualty rates in Ukraine remain at "deadliest" levels in years, with intensified Russian attacks in September continuing a pattern of harm far exceeding previous years. More than 550,000 households across 15 regions of Ukraine lost power after Russian strikes on energy infrastructure on October 18-19.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=Lsc4MFVz6I4" target="_blank" rel="noopener">DW Documentary — Putin's foreign fighters - How Russia is recruiting foreign nationals for the war</a></li>
 <li><a href="https://www.youtube.com/watch?v=7_dGbLHuEmk" target="_blank" rel="noopener">BLUX — Zelensky Is in DEEP Trouble — And It's Not Just Trump | #blux</a></li>

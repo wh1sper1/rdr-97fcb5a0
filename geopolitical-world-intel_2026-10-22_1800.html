@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,8 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip active" href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-22 18:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a></div><div class="why"><p>The great-power landscape in October 2026 is defined by a US administration simultaneously easing pressure on Russia and trying to pivot toward China — a combination that has alliance managers in Europe and Indo-Pacific capitals scrambling to figure out what American commitments are actually worth. On October 16, President Trump waived selected provisions of a new Russia sanctions law, citing US national interests, in an executive order that critics argue weakens pressure on Moscow and raises questions about future sanctions enforcement. The waiver came alongside a reported arrangement involving Russian diesel exports returning to global markets — a move framed as a way to lower fuel prices for American consumers but one that directly challenges the European and UK sanctions regime against Moscow and has NATO allies questioning whether the Western sanctions architecture is holding.</p>
-<p>The timing is politically charged: Trump is also weighing a reported proposal for a trilateral summit with Vladimir Putin and Xi Jinping at the APEC summit in Shenzhen in November 2026, a meeting that would exclude Ukraine and that European officials have already pushed back on, calling for Europe to play a role in any settlement. Ukraine's Foreign Minister warned that excluding Kyiv from negotiations about its future could encourage Moscow to continue the war. Meanwhile, China continues to play the key economic role in enabling Russia and Iran — buying almost all of Iran's oil despite a US-led sanctions regime and purchasing roughly 20% of Russia's oil and gas — and US adversaries are increasingly coordinating on military and technology sharing in ways that, according to Admiral John C. Aquilino, former US Indo-Pacific Command Commander, demand a closer defense, economic, and diplomatic response from democratic allies.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-22_1800.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TkuBV6O8ZGQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=1fc3Gik1H8A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1fc3Gik1H8A/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-22 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-22 18:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a></div></div><article class="article entry"><a class="hero-link" href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-22_1800.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Hudson Institute, Steptoe LLP, Washington Examiner, Washington Institute, ONE BRIEF, Times Now World, Jack Hamilton Geopolitics, USTD/SISF</p>
 <h2>Key findings</h2>
 <h3>US-Russia sanctions waiver and the diesel deal</h3>
@@ -581,8 +628,8 @@ body.light .pol-sect { color:#8f5e12; }
 <li>At the Sydney International Strategy Forum 2026, Admiral John C. Aquilino warned that China, Russia, Iran, and North Korea are cooperating on military and technology sharing, economic support, and information operations in ways that are reshaping global security governance; the panel examined risks of conflict over Taiwan and lessons from the wars in Ukraine and the Middle East. (<a href="https://www.youtube.com/watch?v=C3S1wA54t8M" target="_blank" rel="noopener">Source</a>)</li>
 <li>A report from Steptoe LLP noted that US-China relations will remain adversarial but stable into 2026, with tariff truces and limited cooperation continuing, but that the Ukraine war will stress-test the transatlantic alliance and that NATO allies fear Russia's wartime economy has achieved a scale of production capable of sustaining operations against the alliance within a few years. (<a href="https://www.steptoe.com/en/news-publications/stepwise-risk-outlook/the-new-rules-of-the-road-top-global-risks-for-businesses-in-2026.html" target="_blank" rel="noopener">Source</a>)</li>
 <li>John Mearsheimer argued that Europe's post-Cold War stability has depended heavily on the United States and NATO, but that the balance may be changing as Washington focuses on China and the Indo-Pacific; he warned that a major US drawdown could weaken NATO and put pressure on the European Union. (<a href="https://www.youtube.com/watch?v=waxeyDB-Wxg" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TkuBV6O8ZGQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=1fc3Gik1H8A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/1fc3Gik1H8A/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The great-power landscape in October 2026 is defined by a US administration simultaneously easing pressure on Russia and trying to pivot toward China — a combination that has alliance managers in Europe and Indo-Pacific capitals scrambling to figure out what American commitments are actually worth. On October 16, President Trump waived selected provisions of a new Russia sanctions law, citing US national interests, in an executive order that critics argue weakens pressure on Moscow and raises questions about future sanctions enforcement. The waiver came alongside a reported arrangement involving Russian diesel exports returning to global markets — a move framed as a way to lower fuel prices for American consumers but one that directly challenges the European and UK sanctions regime against Moscow and has NATO allies questioning whether the Western sanctions architecture is holding.</p>
+<p>The timing is politically charged: Trump is also weighing a reported proposal for a trilateral summit with Vladimir Putin and Xi Jinping at the APEC summit in Shenzhen in November 2026, a meeting that would exclude Ukraine and that European officials have already pushed back on, calling for Europe to play a role in any settlement. Ukraine's Foreign Minister warned that excluding Kyiv from negotiations about its future could encourage Moscow to continue the war. Meanwhile, China continues to play the key economic role in enabling Russia and Iran — buying almost all of Iran's oil despite a US-led sanctions regime and purchasing roughly 20% of Russia's oil and gas — and US adversaries are increasingly coordinating on military and technology sharing in ways that, according to Admiral John C. Aquilino, former US Indo-Pacific Command Commander, demand a closer defense, economic, and diplomatic response from democratic allies.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener">Hudson Institute — America and Europe: A Blueprint for the Next Chapter</a></li>
 <li><a href="https://www.steptoe.com/en/news-publications/stepwise-risk-outlook/the-new-rules-of-the-road-top-global-risks-for-businesses-in-2026.html" target="_blank" rel="noopener">Steptoe LLP — The New Rules of the Road: Top Global Risks for Businesses in 2026</a></li>

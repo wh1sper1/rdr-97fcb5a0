@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,10 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip active" href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="antifa.html">&larr; All Antifa briefs</a><span class="kicker" style="color:#ef4444">ANTIFA</span><h1>Antifa — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Antifa &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-ice.html">ICE</a> <a href="tag-fbi.html">FBI</a> <a href="tag-doj.html">DOJ</a> <a href="tag-texas.html">Texas</a> <a href="tag-europe.html">Europe</a> <a href="tag-france.html">France</a> <a href="tag-antifa.html">Antifa</a></div><div class="why"><p>The Trump administration's designation of "antifa" as a domestic terrorist organization — an executive order with no legal basis under U.S. law, since there is no process for designating domestic terrorist groups and "antifa" is not an organized group but an ideology — has produced a series of prosecutions that are testing the limits of the DOJ's authority and the tolerance of the federal courts. The Prairieland Defendants in Texas and the Minnesota 15 are the two most significant cases, and they represent the first major test of a policy that the Brennan Center calls "a campaign to investigate and prosecute almost anyone who opposes the administration's policies."</p>
-<p>The Prairieland case is particularly stark. On July 4, 2025, a group of activists organized a noise demonstration with fireworks at the Prairieland ICE detention center in Alvarado, Texas. One protester shot and wounded a police officer. Nineteen people were eventually arrested. In March 2026, a federal jury convicted nine activists of material support to terrorism under 18 U.S.C. § 2339A for actions stemming from the protest. On June 23, 2026, sentences were handed down: Benjamin Song, who fired a gun at a police officer, received 100 years; Daniel Sanchez Estrada, who was convicted only of obstructing the investigation by moving a box of antifascist zines after the protest, received 30 years. The sentences ranged from 30 to 100 years — longer than the harshest sentence handed down to any of the convicted rioters in the January 6th attack on the U.S. Capitol in 2021. All of those January 6 defendants have since received pardons or commutations from President Trump.</p>
-<p>The Brennan Center has documented that the administration's approach — Executive Order designating Antifa as a domestic terrorist organization plus NSPM-7 — "drives a campaign to investigate and prosecute almost anyone who opposes the administration's policies." The 2026 counterterrorism strategy doubles down, listing "Violent Left-Wing Extremists, including Anarchists and Anti-Fascists" as one of the three major types of terrorist groups the U.S. is facing, alongside drug cartels and al-Qaeda/ISIS. The DOJ has routinely branded protesters as "Antifa" and terrorists, often exaggerating the gravity of small-bore offenses and pushing for maximal punishment.</p>
-<p>Meanwhile, in France, the death of Quentin Deranque — a militant neonazi killed in Lyon — has been used by a large part of the political class and media to condemn the antifascist movement, La France Insoumise, and the broader left. The response has been asymmetrical: the National Anti-Terrorism Prosecutor's Office has dissolved several far-right groups on terrorism grounds, yet antifascist protesters have been the ones pushed back by riot police during counter-protests against neo-Nazi marches.</p></div></div><article class="article entry"><a class="hero-link" href="https://theintercept.com/2026/06/23/prairieland-texas-ice-protest-prison-sentences/" target="_blank" rel="noopener"><img class="hero" src="img/antifa_2026-10-21_1800.jpg" alt="Antifa — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=5IYVyPLd17Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5IYVyPLd17Y/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4KFtg2RWpnk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4KFtg2RWpnk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="antifa.html">&larr; All Antifa briefs</a><span class="kicker" style="color:#ef4444">ANTIFA</span><h1>Antifa — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Antifa &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-ice.html">ICE</a> <a href="tag-fbi.html">FBI</a> <a href="tag-doj.html">DOJ</a> <a href="tag-texas.html">Texas</a> <a href="tag-europe.html">Europe</a> <a href="tag-france.html">France</a> <a href="tag-antifa.html">Antifa</a></div></div><article class="article entry"><a class="hero-link" href="https://theintercept.com/2026/06/23/prairieland-texas-ice-protest-prison-sentences/" target="_blank" rel="noopener"><img class="hero" src="img/antifa_2026-10-21_1800.jpg" alt="Antifa — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> PBS NewsHour, The Intercept, Brennan Center, Minneapolis Star Tribune, El Pais, Common Dreams, Political Research Weekly, Charity &amp; Security Network, Fox 9, Turley Clips, No Future, Journal l'Humanité, Amnesty International UK</p>
 <h2>Key findings</h2>
 <h3>Prairieland Defendants: 30 to 100-year sentences for anti-ICE protest</h3>
@@ -586,8 +631,10 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>El Pais: Minnesota charges described as political persecution</h3>
 <p>Spanish outlet El Pais reported that the legal case brought by a federal grand jury in Minnesota "represents one of the most significant efforts so far by Donald Trump's administration against activists linked to the alleged antifa movement, a decentralized network of antifascist groups with no national leadership or organizational structure, which the president designated a domestic terrorist organization through an executive order signed last year." The report noted that the case "has already prompted accusations of political persecution." (<a href="https://english.elpais.com/usa/2026-06-17/minnesota-charges-15-activists-with-an-alleged-conspiracy-against-ice-agents-and-links-them-to-the-antifa-movement.html" target="_blank" rel="noopener">Source</a>)</p>
 <h3>Charity &amp; Security Network: First conviction under material support terrorism charges</h3>
-<p>On March 13, 2026, a federal jury convicted nine activists for material support to terrorism under 18 U.S.C. § 2339A for actions stemming from a "noise demonstration" outside an ICE facility in Prairieland, Texas, on July 4, 2025. This EO had no legal basis, as there is no process for designating domestic terrorist groups under U.S. law, and "antifa" is not an organized group, but rather an ideology. The government has largely won its first case bringing material-support-for-terrorism charges against protesters alleged to belong to "antifa." (<a href="https://charityandsecurity.org/litigation/united-states-v-cameron-arnold-et-al/" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>On March 13, 2026, a federal jury convicted nine activists for material support to terrorism under 18 U.S.C. § 2339A for actions stemming from a "noise demonstration" outside an ICE facility in Prairieland, Texas, on July 4, 2025. This EO had no legal basis, as there is no process for designating domestic terrorist groups under U.S. law, and "antifa" is not an organized group, but rather an ideology. The government has largely won its first case bringing material-support-for-terrorism charges against protesters alleged to belong to "antifa." (<a href="https://charityandsecurity.org/litigation/united-states-v-cameron-arnold-et-al/" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=5IYVyPLd17Y" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/5IYVyPLd17Y/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4KFtg2RWpnk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4KFtg2RWpnk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Trump administration's designation of "antifa" as a domestic terrorist organization — an executive order with no legal basis under U.S. law, since there is no process for designating domestic terrorist groups and "antifa" is not an organized group but an ideology — has produced a series of prosecutions that are testing the limits of the DOJ's authority and the tolerance of the federal courts. The Prairieland Defendants in Texas and the Minnesota 15 are the two most significant cases, and they represent the first major test of a policy that the Brennan Center calls "a campaign to investigate and prosecute almost anyone who opposes the administration's policies."</p>
+<p>The Prairieland case is particularly stark. On July 4, 2025, a group of activists organized a noise demonstration with fireworks at the Prairieland ICE detention center in Alvarado, Texas. One protester shot and wounded a police officer. Nineteen people were eventually arrested. In March 2026, a federal jury convicted nine activists of material support to terrorism under 18 U.S.C. § 2339A for actions stemming from the protest. On June 23, 2026, sentences were handed down: Benjamin Song, who fired a gun at a police officer, received 100 years; Daniel Sanchez Estrada, who was convicted only of obstructing the investigation by moving a box of antifascist zines after the protest, received 30 years. The sentences ranged from 30 to 100 years — longer than the harshest sentence handed down to any of the convicted rioters in the January 6th attack on the U.S. Capitol in 2021. All of those January 6 defendants have since received pardons or commutations from President Trump.</p>
+<p>The Brennan Center has documented that the administration's approach — Executive Order designating Antifa as a domestic terrorist organization plus NSPM-7 — "drives a campaign to investigate and prosecute almost anyone who opposes the administration's policies." The 2026 counterterrorism strategy doubles down, listing "Violent Left-Wing Extremists, including Anarchists and Anti-Fascists" as one of the three major types of terrorist groups the U.S. is facing, alongside drug cartels and al-Qaeda/ISIS. The DOJ has routinely branded protesters as "Antifa" and terrorists, often exaggerating the gravity of small-bore offenses and pushing for maximal punishment.</p>
+<p>Meanwhile, in France, the death of Quentin Deranque — a militant neonazi killed in Lyon — has been used by a large part of the political class and media to condemn the antifascist movement, La France Insoumise, and the broader left. The response has been asymmetrical: the National Anti-Terrorism Prosecutor's Office has dissolved several far-right groups on terrorism grounds, yet antifascist protesters have been the ones pushed back by riot police during counter-protests against neo-Nazi marches.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=5IYVyPLd17Y" target="_blank" rel="noopener">PBS NewsHour — Anti-ICE protesters sentenced to decades in prison in latest crackdown on dissent</a></li>
 <li><a href="https://www.youtube.com/watch?v=4A1MgsTFkrY" target="_blank" rel="noopener">No Future — 8 years for Antifa? 1200 angry activists in Jena</a></li>

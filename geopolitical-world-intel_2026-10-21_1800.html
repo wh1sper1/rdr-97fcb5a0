@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,11 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip active" href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a></div><div class="why"><p>The geopolitical picture in October 2026 is shaped by one dominant event: the approaching Trump-Xi summit at the APEC meeting in Shenzhen, China, on November 18-19. Everything else — the Iran war, the Ukraine impasse, NATO's European pivot — is being arranged around that meeting and the trade truce it is expected to extend. The U.S. and China have both enacted a range of trade restrictions ahead of the summit, but these measures are unlikely to derail the truce agreed to in October 2025 that halted the rapid tariff escalation between the two nations. The restrictions are structured to maintain the truce by not causing immediate economic damage, but they signal areas where the two sides will diverge more seriously in the coming years.</p>
-<p>The U.S. strategy in the war with Iran is shifting from military targeting to economic warfare and alliance-building. On August 24, 2026, Treasury Secretary Scott Bessent announced a new package of sanctions against Iran, expanding secondary sanctions on Iran's trading partners. Saudi Arabia, Pakistan, and Turkey signed a mutual defense pledge — the Mecca Joint Defense Agreement — on August 7, aligning three major Sunni Muslim countries. The Trump administration is supportive, as it creates conditions for U.S.-allied states in the Middle East to assume greater military responsibility while the United States reduces its commitments. This is a deliberate strategy of burden-shifting, and it is accelerating as Washington's attention is pulled toward Asia.</p>
-<p>In Europe, the Trump administration's 2025 National Security Strategy declared it was time for Europe to "stand on its own feet." At a June 2026 NATO defense ministers meeting, Secretary Pete Hegseth announced the Pentagon was "moving fast and irreversibly toward Europe stepping up to take primary responsibility for the defense of Europe." By August, Undersecretary of Defense Elbridge Colby said NATO would transition to a structure in which the continent does most of the work of defending itself. Meanwhile, Russia appears to have achieved its long-term goal of splitting the West, according to the Stimson Center's top ten global risks analysis.</p>
-<p>The EU adopted its most far-reaching sanctions against Russia in 2026, further reducing its ability to finance the war against Ukraine. The EU also sanctioned extremist Israeli settlers responsible for violence undermining the Two-State Solution, expanded measures against Hamas leaders, and added the Islamic Revolutionary Guard Corps to the EU terrorist list following violent repression of peaceful protests in Iran. The EU expanded sanctions against Iran and targeted those impeding lawful transit in the Strait of Hormuz.</p>
-<p>What to watch: the proposed Trump-Putin-Xi summit at APEC Shenzhen. Ukrainian President Volodymyr Zelensky has insisted that Kyiv must participate in any negotiations concerning Ukraine's future, warning that excluding Ukraine could encourage Moscow to continue the war. Whether this summit materializes and whether Ukraine gets a seat at the table will determine whether the Ukraine conflict moves toward a negotiated settlement or continues as a frozen attrition fought over a few hundred meters of devastated territory.</p></div></div><article class="article entry"><div class="video-embed"><a href="https://www.youtube.com/watch?v=jKrose8z4Dg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jKrose8z4Dg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TkuBV6O8ZGQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a></div></div><article class="article entry"><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> EEAS, Reuters, Hudson Institute, Stimson Center, ZeroFox, Al Jazeera, Axios, CNN, French24, SCMP, Times Now World, ONE BRIEF</p>
 <h2>Key findings</h2>
 <h3>Trump-Xi summit looms at APEC Shenzhen; Ukraine peace proposal surfaces</h3>
@@ -587,8 +631,11 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>130 heads of state gather at UN amid wars, AI fears, and global divisions</h3>
 <p>World leaders gathered at the United Nations General Assembly in September 2026 against a backdrop of wars in the Middle East and Ukraine, rising fears over artificial intelligence, and mounting economic and climate pressures. The annual high-level gathering tested whether the 193-member body can still bring countries together to tackle crises that increasingly transcend borders. Some 130 heads of state and government were expected to speak. The UN's 193 member nations agreed to a wide-ranging reform package that includes updating key institutions such as the UN Security Council. (<a href="https://www.france24.com/en/americas/20260922-world-leaders-gather-at-un-amid-wars-ai-fears-and-global-divisions" target="_blank" rel="noopener">Source</a>)</p>
 <h3>Russia-China-Iran axis deepens</h3>
-<p>In the war in the Middle East, Russia and China have provided important support to Tehran. China plays the key economic role in this effort, buying almost all of Iran's oil despite a U.S.-led sanctions regime. Russia provides Iran with satellite imagery of U.S. bases in the Gulf, helping improve targeting of U.S. regional sites. The Hudson Institute assessed that if Beijing decides to attack Taipei, a Third World War scenario becomes possible: while China attacks Taiwan, Russia attacks NATO, and Iran attacks Israel or the Gulf states. (<a href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>In the war in the Middle East, Russia and China have provided important support to Tehran. China plays the key economic role in this effort, buying almost all of Iran's oil despite a U.S.-led sanctions regime. Russia provides Iran with satellite imagery of U.S. bases in the Gulf, helping improve targeting of U.S. regional sites. The Hudson Institute assessed that if Beijing decides to attack Taipei, a Third World War scenario becomes possible: while China attacks Taiwan, Russia attacks NATO, and Iran attacks Israel or the Gulf states. (<a href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=jKrose8z4Dg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/jKrose8z4Dg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/TkuBV6O8ZGQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The geopolitical picture in October 2026 is shaped by one dominant event: the approaching Trump-Xi summit at the APEC meeting in Shenzhen, China, on November 18-19. Everything else — the Iran war, the Ukraine impasse, NATO's European pivot — is being arranged around that meeting and the trade truce it is expected to extend. The U.S. and China have both enacted a range of trade restrictions ahead of the summit, but these measures are unlikely to derail the truce agreed to in October 2025 that halted the rapid tariff escalation between the two nations. The restrictions are structured to maintain the truce by not causing immediate economic damage, but they signal areas where the two sides will diverge more seriously in the coming years.</p>
+<p>The U.S. strategy in the war with Iran is shifting from military targeting to economic warfare and alliance-building. On August 24, 2026, Treasury Secretary Scott Bessent announced a new package of sanctions against Iran, expanding secondary sanctions on Iran's trading partners. Saudi Arabia, Pakistan, and Turkey signed a mutual defense pledge — the Mecca Joint Defense Agreement — on August 7, aligning three major Sunni Muslim countries. The Trump administration is supportive, as it creates conditions for U.S.-allied states in the Middle East to assume greater military responsibility while the United States reduces its commitments. This is a deliberate strategy of burden-shifting, and it is accelerating as Washington's attention is pulled toward Asia.</p>
+<p>In Europe, the Trump administration's 2025 National Security Strategy declared it was time for Europe to "stand on its own feet." At a June 2026 NATO defense ministers meeting, Secretary Pete Hegseth announced the Pentagon was "moving fast and irreversibly toward Europe stepping up to take primary responsibility for the defense of Europe." By August, Undersecretary of Defense Elbridge Colby said NATO would transition to a structure in which the continent does most of the work of defending itself. Meanwhile, Russia appears to have achieved its long-term goal of splitting the West, according to the Stimson Center's top ten global risks analysis.</p>
+<p>The EU adopted its most far-reaching sanctions against Russia in 2026, further reducing its ability to finance the war against Ukraine. The EU also sanctioned extremist Israeli settlers responsible for violence undermining the Two-State Solution, expanded measures against Hamas leaders, and added the Islamic Revolutionary Guard Corps to the EU terrorist list following violent repression of peaceful protests in Iran. The EU expanded sanctions against Iran and targeted those impeding lawful transit in the Strait of Hormuz.</p>
+<p>What to watch: the proposed Trump-Putin-Xi summit at APEC Shenzhen. Ukrainian President Volodymyr Zelensky has insisted that Kyiv must participate in any negotiations concerning Ukraine's future, warning that excluding Ukraine could encourage Moscow to continue the war. Whether this summit materializes and whether Ukraine gets a seat at the table will determine whether the Ukraine conflict moves toward a negotiated settlement or continues as a frozen attrition fought over a few hundred meters of devastated territory.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=TkuBV6O8ZGQ" target="_blank" rel="noopener">ONE BRIEF — Global Geopolitics, 17 October 2026</a></li>
 <li><a href="https://www.youtube.com/watch?v=jKrose8z4Dg" target="_blank" rel="noopener">Times Now World — "No Talks on Ukraine's Future Without Kyiv" — Zelensky Pushes Back as Trump–Putin–Xi Summit Looms</a></li>

@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,8 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip active" href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="synth-music.html">&larr; All Synth Music briefs</a><span class="kicker" style="color:#d946ef">SYNTH MUSIC</span><h1>Synth Music — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Synth Music &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-fm-1.html">FM-1</a> <a href="tag-arturia-microfreak.html">Arturia Microfreak</a> <a href="tag-magazine.html">Magazine</a> <a href="tag-synthtopia.html">Synthtopia</a> <a href="tag-boutique.html">Boutique</a> <a href="tag-sequential-prophet-5.html">Sequential Prophet-5</a> <a href="tag-teenage-engineering.html">Teenage Engineering</a> <a href="tag-elektron.html">Elektron</a></div><div class="why"><p>The synth scene this week is led by a hardware story that has been the dominant conversation in synth forums and social media: the M-VAVE FM-1, a budget FM synthesizer that has become "the synth of the moment" because of its open ecosystem. Sound designers are making custom firmware, online synth preview tools are being built, and the hardware is being positioned as a platform rather than just a product — which is a genuinely unusual trajectory for a sub-$300 synthesizer. The firmware scene around it is the most buzzworthy development in the hardware synth world right now, and it fits the broader pattern this year of custom firmware hacking on established platforms (Sequential Prophet-5, Arturia MicroFreak, Novation Circuit Tracks) that Synthtopia has been tracking.</p>
-<p>Beyond the M-VAVE buzz, the week's review cycle is strong: the Roland Jupiter-08 (the analog reissue that isn't quite what people hoped for but is more than a facelift), the Roland n/vision (Roland's first true wavetable synth in the Boutique series), the Arturia MiniFreak 49 (the smaller-format MiniFreak that asks whether bigger is better), and the Erica Synths PERKONS HD-01 (which just got a firmware 1.3 update with a chord algorithm and real-time voice quantizer). The custom firmware story on the Sequential Prophet-5, Arturia MicroFreak, and Novation Circuit Tracks is the kind of under-the-radar enthusiast development that the synth scene rewards heavily.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.gearnews.com/zone/synth/" target="_blank" rel="noopener"><img class="hero" src="img/synth-music_2026-10-20_2315.jpg" alt="Synth Music — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
+<main><div class="article"><a class="back" href="synth-music.html">&larr; All Synth Music briefs</a><span class="kicker" style="color:#d946ef">SYNTH MUSIC</span><h1>Synth Music — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Synth Music &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-fm-1.html">FM-1</a> <a href="tag-arturia-microfreak.html">Arturia Microfreak</a> <a href="tag-magazine.html">Magazine</a> <a href="tag-synthtopia.html">Synthtopia</a> <a href="tag-boutique.html">Boutique</a> <a href="tag-sequential-prophet-5.html">Sequential Prophet-5</a> <a href="tag-teenage-engineering.html">Teenage Engineering</a> <a href="tag-elektron.html">Elektron</a></div></div><article class="article entry"><a class="hero-link" href="https://www.gearnews.com/zone/synth/" target="_blank" rel="noopener"><img class="hero" src="img/synth-music_2026-10-20_2315.jpg" alt="Synth Music — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
 <p><strong>Sources:</strong> Gear News, Synthtopia, Piano &amp; Synth Magazine, Future Retro</p>
 <h2>Key findings</h2>
 <h3>M-VAVE FM-1 is the synth of the moment</h3>
@@ -580,8 +627,8 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Groove Synthesis 3rd Wave Terminal</h3>
 <p>Gear News reported that the 3rd Wave Terminal from Groove Synthesis brings 3rd Wave synth control to your computer — and it's free. The 3rd Wave is a wavetable synthesis engine, and the Terminal software expands its accessibility for computer-based production. (<a href="https://www.gearnews.com/zone/synth/" target="_blank" rel="noopener">Gear News</a>)</p>
 <h3>Teenage Engineering OP-XY firmware 1.2.0</h3>
-<p>Piano &amp; Synth Magazine reported that nearly two years after the OP-XY mini synthesizer launched, Teenage Engineering rolled out version 1.2.0 of the operating system, adding a number of features. A free collection of sounds and presets from renowned producer and sound designer Douglas Carr is available as a free download following the firmware release. (<a href="https://pianoandsynth.com/category/synth-electronic/" target="_blank" rel="noopener">Piano &amp; Synth Magazine</a>)</p>
-<h2>Source links</h2>
+<p>Piano &amp; Synth Magazine reported that nearly two years after the OP-XY mini synthesizer launched, Teenage Engineering rolled out version 1.2.0 of the operating system, adding a number of features. A free collection of sounds and presets from renowned producer and sound designer Douglas Carr is available as a free download following the firmware release. (<a href="https://pianoandsynth.com/category/synth-electronic/" target="_blank" rel="noopener">Piano &amp; Synth Magazine</a>)</p><div class="why"><p>The synth scene this week is led by a hardware story that has been the dominant conversation in synth forums and social media: the M-VAVE FM-1, a budget FM synthesizer that has become "the synth of the moment" because of its open ecosystem. Sound designers are making custom firmware, online synth preview tools are being built, and the hardware is being positioned as a platform rather than just a product — which is a genuinely unusual trajectory for a sub-$300 synthesizer. The firmware scene around it is the most buzzworthy development in the hardware synth world right now, and it fits the broader pattern this year of custom firmware hacking on established platforms (Sequential Prophet-5, Arturia MicroFreak, Novation Circuit Tracks) that Synthtopia has been tracking.</p>
+<p>Beyond the M-VAVE buzz, the week's review cycle is strong: the Roland Jupiter-08 (the analog reissue that isn't quite what people hoped for but is more than a facelift), the Roland n/vision (Roland's first true wavetable synth in the Boutique series), the Arturia MiniFreak 49 (the smaller-format MiniFreak that asks whether bigger is better), and the Erica Synths PERKONS HD-01 (which just got a firmware 1.3 update with a chord algorithm and real-time voice quantizer). The custom firmware story on the Sequential Prophet-5, Arturia MicroFreak, and Novation Circuit Tracks is the kind of under-the-radar enthusiast development that the synth scene rewards heavily.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.gearnews.com/zone/synth/" target="_blank" rel="noopener">Gear News — Synths section</a></li>
 <li><a href="https://www.gearnews.com/tag/synth/" target="_blank" rel="noopener">Gear News — Synth Archives: Custom Firmware Is Still Booming</a></li>

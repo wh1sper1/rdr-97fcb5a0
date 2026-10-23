@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip active" href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="israel-watch.html">&larr; All Israel Watch briefs</a><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h1>Israel Watch — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Israel Watch &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-benjamin-netanyahu.html">Benjamin Netanyahu</a> <a href="tag-idf.html">IDF</a></div><div class="why"><p>The Israel story in October 2026 has three layers that are hard to separate but essential to track: the continuing violence in Gaza and the West Bank a full year after the October 2025 ceasefire (more than 1,400 Palestinians killed in Gaza since the truce, 1,135 verified by the UN Human Rights Office — 854 in reported Israeli jet and drone strikes alone); the explosive documentary NAZA, which premiered at Venice and won an Oscar, featuring anonymous testimony from 24 Israeli military intelligence insiders describing how the IDF calculated collateral damage in Gaza strikes; and the October 27 Israeli election, with Trump throwing his "Complete and Total Endorsement" behind Netanyahu.</p>
-<p>The NAZA documentary is the most consequential cultural-political event in this cycle. Directed by Israeli filmmakers Yuval Abraham and Rachel Szor (the team behind the Oscar-winning No Other Land), the film features IDF soldiers and intelligence officers describing targeting practices that the filmmakers characterize as calculated acceptance of civilian deaths. Netanyahu has ordered the attorney general and Shin Bet head to reveal the identities of the soldiers interviewed and prosecute them for "harm to Israel's diplomatic and security interests." The film is in theaters in the UK and US and will be shown in more than 50 countries. That an Israeli government is trying to criminally expose the identities of its own soldiers who spoke to an Israeli filmmaker about their own military's conduct is a measure of how high the stakes have become.</p>
-<p>What to watch next: the October 27 election result and whether Netanyahu's endorsement from Trump translates into votes; the UN Security Council's follow-up to its October 15 open debate on the Occupied Palestinian Territory; and whether the E1 settlement plan — which the UN Secretary-General has warned would deal a "devastating blow" to a viable contiguous Palestinian state — moves forward.</p></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168599" target="_blank" rel="noopener"><img class="hero" src="img/israel-watch_2026-10-20_2315.jpg" alt="Israel Watch — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=Z_Q7eq7yrt8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Z_Q7eq7yrt8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=8yyZvItIZJU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8yyZvItIZJU/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
+<main><div class="article"><a class="back" href="israel-watch.html">&larr; All Israel Watch briefs</a><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h1>Israel Watch — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Israel Watch &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-benjamin-netanyahu.html">Benjamin Netanyahu</a> <a href="tag-idf.html">IDF</a></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168599" target="_blank" rel="noopener"><img class="hero" src="img/israel-watch_2026-10-20_2315.jpg" alt="Israel Watch — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
 <p><strong>Sources:</strong> AP News, UN News, Ahram Online, Israel Political Press, Le Monde, MS NOW, The Young Turks</p>
 <h2>Key findings</h2>
 <h3>More than 1,400 Palestinians killed in Gaza since ceasefire</h3>
@@ -579,8 +625,9 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>UN Security Council debates Occupied Palestinian Territory</h3>
 <p>UN News reported that the Security Council held an open debate on October 15 on the current situation in the Occupied Palestinian Territory. Acting Special Coordinator Ramiz Alakbarov said that since the ceasefire began, Israeli military operations have killed about 1,500 Palestinians, including over 320 children. The Committee on the Exercise of the Inalienable Rights of the Palestinian People warned of "a mass collective punishment" being inflicted on Gaza's population and described settler terror as having reached "unprecedented levels" in the West Bank. Several speakers denounced Israel's E1 settlement plan, which the Secretary-General has warned would deal a "devastating blow" to the prospect of a viable contiguous Palestinian state. (<a href="https://news.un.org/en/story/2026/10/1168599" target="_blank" rel="noopener">UN News</a>)</p>
 <h3>Trump endorses Netanyahu ahead of October 27 election</h3>
-<p>AA.com.tr reported that Trump declared his "Complete and Total Endorsement" of Benjamin Netanyahu's bid for re-election ahead of Israel's October 27 vote — the first election since the October 7, 2023 Hamas attacks and the Gaza war. The election will decide the future of the longtime prime minister. (<a href="https://www.aa.com.tr/en/world/morning-briefing-oct-19-2026/4093015" target="_blank" rel="noopener">AA.com.tr</a>)</p>
-<h2>Source links</h2>
+<p>AA.com.tr reported that Trump declared his "Complete and Total Endorsement" of Benjamin Netanyahu's bid for re-election ahead of Israel's October 27 vote — the first election since the October 7, 2023 Hamas attacks and the Gaza war. The election will decide the future of the longtime prime minister. (<a href="https://www.aa.com.tr/en/world/morning-briefing-oct-19-2026/4093015" target="_blank" rel="noopener">AA.com.tr</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=Z_Q7eq7yrt8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Z_Q7eq7yrt8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=8yyZvItIZJU" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8yyZvItIZJU/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Israel story in October 2026 has three layers that are hard to separate but essential to track: the continuing violence in Gaza and the West Bank a full year after the October 2025 ceasefire (more than 1,400 Palestinians killed in Gaza since the truce, 1,135 verified by the UN Human Rights Office — 854 in reported Israeli jet and drone strikes alone); the explosive documentary NAZA, which premiered at Venice and won an Oscar, featuring anonymous testimony from 24 Israeli military intelligence insiders describing how the IDF calculated collateral damage in Gaza strikes; and the October 27 Israeli election, with Trump throwing his "Complete and Total Endorsement" behind Netanyahu.</p>
+<p>The NAZA documentary is the most consequential cultural-political event in this cycle. Directed by Israeli filmmakers Yuval Abraham and Rachel Szor (the team behind the Oscar-winning No Other Land), the film features IDF soldiers and intelligence officers describing targeting practices that the filmmakers characterize as calculated acceptance of civilian deaths. Netanyahu has ordered the attorney general and Shin Bet head to reveal the identities of the soldiers interviewed and prosecute them for "harm to Israel's diplomatic and security interests." The film is in theaters in the UK and US and will be shown in more than 50 countries. That an Israeli government is trying to criminally expose the identities of its own soldiers who spoke to an Israeli filmmaker about their own military's conduct is a measure of how high the stakes have become.</p>
+<p>What to watch next: the October 27 election result and whether Netanyahu's endorsement from Trump translates into votes; the UN Security Council's follow-up to its October 15 open debate on the Occupied Palestinian Territory; and whether the E1 settlement plan — which the UN Secretary-General has warned would deal a "devastating blow" to a viable contiguous Palestinian state — moves forward.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://apnews.com/article/mideast-israel-palestinians-houthis-october-17-2026-aaf6d7e5367f99869eaf4b419c66e0df" target="_blank" rel="noopener">AP News — Diplomats attacked in the occupied West Bank, and other Middle East developments</a></li>
 <li><a href="https://news.un.org/en/story/2026/10/1168599" target="_blank" rel="noopener">UN News — Security Council LIVE: Deaths, demolitions spike in Gaza, West Bank</a></li>

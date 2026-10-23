@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,8 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip active" href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a> <a href="tag-kharkiv.html">Kharkiv</a> <a href="tag-bbc.html">BBC</a></div><div class="why"><p>The Russia-Ukraine war has entered a phase that Ukrainian military leadership describes as a stabilization of the front line — not a ceasefire, not a negotiation, but a grinding attritional deadlock in which Russia is taking ground at a dramatically slower rate than in previous years while continuing to inflict catastrophic damage on Ukraine's energy infrastructure and civilian population. The numbers that frame it: Russia's total combat losses since February 24, 2022, stand at nearly 1,568,720 personnel as of October 20, 2026. Ukraine's former commander-in-chief, General Valerii Syrskyi, told the BBC that Moscow's overall losses were six times higher than Ukraine's — and if you count only the dead, up to 11 times. In the first six months of 2026, Russia managed to seize only 61 square kilometers.</p>
-<p>The civilians are bearing the cost of the continued long-range strike campaign. On the night of October 18 to 19, Russia launched 16 ballistic missiles and over 200 drones primarily against Kyiv, damaging residential, critical, and transportation infrastructure; strikes on energy infrastructure caused power outages for approximately 550,000 households in 15 oblasts. Since mid-July 2026, Russia has conducted 2,147 strikes against Ukrainian energy facilities. The throughline is that the front line has largely stopped moving, but the war has not stopped — it has shifted into a campaign of infrastructure destruction and energy deprivation aimed at degrading Ukrainian society's capacity to sustain the war. What to watch next is whether Ukraine's deep-strike campaign against Russian energy infrastructure — which has now reached the Khanty-Mansi Autonomous Okrug, over 2,300 kilometers from the border — begins to produce fuel shortages significant enough to affect Russian domestic politics, and whether the U.S.-led peace talks produce anything more than a pause in the diplomatic calendar.</p></div></div><article class="article entry"><a class="hero-link" href="https://newsukraine.rbc.ua/news/russia-s-losses-in-ukraine-as-of-october-1792414595.html" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-23_0300.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=-DZIkSvLGJY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-DZIkSvLGJY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=-1382H4Y1MI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-1382H4Y1MI/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a> <a href="tag-kharkiv.html">Kharkiv</a> <a href="tag-bbc.html">BBC</a></div></div><article class="article entry"><a class="hero-link" href="https://newsukraine.rbc.ua/news/russia-s-losses-in-ukraine-as-of-october-1792414595.html" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-23_0300.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
 <p><strong>Sources:</strong> RBC-Ukraine, BBC, Institute for the Study of War, Global Security, Understanding War, Zelenskyy Office, Ukrenergo, DTEK</p>
 <h2>Key findings</h2>
 <h3>Russian losses and the stabilized front</h3>
@@ -582,8 +629,8 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Russian offensive operations</h3>
 <ul>
 <li><strong>ISW (Oct 16, 2026):</strong> Russian forces have seized about 100 square kilometers and 69 settlements since January 1, 2026, and suffered a net loss of 122 square kilometers since September 1, 2026; Russian forces are conducting intense offensive operations and constant drone, aviation, and artillery strikes near Pokrovsk, with Ukrainian forces destroying between 40 and 50 Russian servicemembers daily during such assaults. (<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-16-2026/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=-DZIkSvLGJY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-DZIkSvLGJY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=-1382H4Y1MI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/-1382H4Y1MI/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Russia-Ukraine war has entered a phase that Ukrainian military leadership describes as a stabilization of the front line — not a ceasefire, not a negotiation, but a grinding attritional deadlock in which Russia is taking ground at a dramatically slower rate than in previous years while continuing to inflict catastrophic damage on Ukraine's energy infrastructure and civilian population. The numbers that frame it: Russia's total combat losses since February 24, 2022, stand at nearly 1,568,720 personnel as of October 20, 2026. Ukraine's former commander-in-chief, General Valerii Syrskyi, told the BBC that Moscow's overall losses were six times higher than Ukraine's — and if you count only the dead, up to 11 times. In the first six months of 2026, Russia managed to seize only 61 square kilometers.</p>
+<p>The civilians are bearing the cost of the continued long-range strike campaign. On the night of October 18 to 19, Russia launched 16 ballistic missiles and over 200 drones primarily against Kyiv, damaging residential, critical, and transportation infrastructure; strikes on energy infrastructure caused power outages for approximately 550,000 households in 15 oblasts. Since mid-July 2026, Russia has conducted 2,147 strikes against Ukrainian energy facilities. The throughline is that the front line has largely stopped moving, but the war has not stopped — it has shifted into a campaign of infrastructure destruction and energy deprivation aimed at degrading Ukrainian society's capacity to sustain the war. What to watch next is whether Ukraine's deep-strike campaign against Russian energy infrastructure — which has now reached the Khanty-Mansi Autonomous Okrug, over 2,300 kilometers from the border — begins to produce fuel shortages significant enough to affect Russian domestic politics, and whether the U.S.-led peace talks produce anything more than a pause in the diplomatic calendar.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://newsukraine.rbc.ua/news/russia-s-losses-in-ukraine-as-of-october-1792414595.html" target="_blank" rel="noopener">RBC-Ukraine — Russia's losses in Ukraine as of October 20</a></li>
 <li><a href="https://www.bbc.co.uk/news/articles/c9y7lgg2vdggo" target="_blank" rel="noopener">BBC — Russia's offensive ability is broken, Kyiv's former top general tells BBC</a></li>

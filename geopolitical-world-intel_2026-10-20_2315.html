@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip active" href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a></div><div class="why"><p>The great-power picture in October 2026 is defined by an accelerating collision between two structural trends: the deepening China-Russia "no-limits" alignment (with China now taking about a third of Russia's exports and supplying 70-90% of its priority high-technology imports), and the US administration's oscillating posture — simultaneously easing sanctions on Russian diesel, restricting Ukraine's access to Starlink navigation services, and demanding an "energy ceasefire" that Russia has ignored. The Hudson Institute's assessment is blunt: a new anti-Western axis centered on China and Russia, reinforced by Iran and North Korea, is threatening the security and prosperity of the free world, and the wars in Ukraine, the Middle East, and China's pressure on Taiwan are not separate problems but parts of a systematic effort to overturn the US-led global order.</p>
-<p>The Hormuz dimension adds real economic stakes. Iranian-backed Houthi attacks on Saudi Aramco facilities, the sinking of cargo ships in the Strait of Hormuz, and the IRGC's claim that it has hit at least seven oil tankers in five days drove Brent crude to $106.06 a barrel. Britain's announcement that it will deploy RAF Typhoon fighter jets to defend Saudi Arabian infrastructure is a direct NATO-domain escalation. The oil price spike is a direct consequence of the regional picture and a reminder that Hormuz remains the single most leverage-dense choke point in the global economy.</p>
-<p>What to watch next: whether Hegseth's unannounced visit to Israel produces any movement on the stalled Iran diplomacy, and whether the South Korea embassy staff withdrawal from Ukraine (over the POW transfer row) signals a broader allied fatigue that Russia can exploit.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-20_2315.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=v5AMWK2RMa8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/v5AMWK2RMa8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=zv9qWicFwUs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zv9qWicFwUs/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
+<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a></div></div><article class="article entry"><a class="hero-link" href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-20_2315.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
 <p><strong>Sources:</strong> Hudson Institute, Al Jazeera, DW, Reuters, Geomastery, Washington Institute</p>
 <h2>Key findings</h2>
 <h3>Hudson Institute: anti-Western axis threatens global order</h3>
@@ -577,8 +623,9 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>South Korea pulls embassy staff from Ukraine</h3>
 <p>AP News reported that South Korea is withdrawing some embassy staff from Ukraine as a row over the transfer of prisoners of war deepens — a sign of allied fatigue and the growing diplomatic strain around Kyiv's conduct of the war. The withdrawal came as Zelenskyy told Piers Morgan, "It is a pity we are losing a strong partner," referring to the US. (<a href="https://apnews.com/article/south-korea-ukraine-zelenskyy-pow-70cd52e7d282fa918e394f2eea714e82" target="_blank" rel="noopener">AP News</a>)</p>
 <h3>NATO bolsters Black Sea presence</h3>
-<p>The Kyiv Independent reported that NATO will bolster its Black Sea presence with patrol aircraft and drones after attacks on commercial ships. A NATO military spokesperson said allies have or will send additional maritime patrol aircraft, radar systems, explosive exploitation teams, intelligence personnel, and drones to the Black Sea. The move responds to the growing threat to commercial shipping from Russian drone and missile attacks in the Black Sea corridor. (<a href="https://kyivindependent.com/nato-to-bolster-black-sea-presence-with-patrol-aircraft-drones-after-attacks-on-commercial-ships/" target="_blank" rel="noopener">Kyiv Independent</a>)</p>
-<h2>Source links</h2>
+<p>The Kyiv Independent reported that NATO will bolster its Black Sea presence with patrol aircraft and drones after attacks on commercial ships. A NATO military spokesperson said allies have or will send additional maritime patrol aircraft, radar systems, explosive exploitation teams, intelligence personnel, and drones to the Black Sea. The move responds to the growing threat to commercial shipping from Russian drone and missile attacks in the Black Sea corridor. (<a href="https://kyivindependent.com/nato-to-bolster-black-sea-presence-with-patrol-aircraft-drones-after-attacks-on-commercial-ships/" target="_blank" rel="noopener">Kyiv Independent</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=v5AMWK2RMa8" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/v5AMWK2RMa8/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=zv9qWicFwUs" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/zv9qWicFwUs/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The great-power picture in October 2026 is defined by an accelerating collision between two structural trends: the deepening China-Russia "no-limits" alignment (with China now taking about a third of Russia's exports and supplying 70-90% of its priority high-technology imports), and the US administration's oscillating posture — simultaneously easing sanctions on Russian diesel, restricting Ukraine's access to Starlink navigation services, and demanding an "energy ceasefire" that Russia has ignored. The Hudson Institute's assessment is blunt: a new anti-Western axis centered on China and Russia, reinforced by Iran and North Korea, is threatening the security and prosperity of the free world, and the wars in Ukraine, the Middle East, and China's pressure on Taiwan are not separate problems but parts of a systematic effort to overturn the US-led global order.</p>
+<p>The Hormuz dimension adds real economic stakes. Iranian-backed Houthi attacks on Saudi Aramco facilities, the sinking of cargo ships in the Strait of Hormuz, and the IRGC's claim that it has hit at least seven oil tankers in five days drove Brent crude to $106.06 a barrel. Britain's announcement that it will deploy RAF Typhoon fighter jets to defend Saudi Arabian infrastructure is a direct NATO-domain escalation. The oil price spike is a direct consequence of the regional picture and a reminder that Hormuz remains the single most leverage-dense choke point in the global economy.</p>
+<p>What to watch next: whether Hegseth's unannounced visit to Israel produces any movement on the stalled Iran diplomacy, and whether the South Korea embassy staff withdrawal from Ukraine (over the POW transfer row) signals a broader allied fatigue that Russia can exploit.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.hudson.org/foreign-policy/america-europe-blueprint-next-chapter-peter-rough-ulrich-speck" target="_blank" rel="noopener">Hudson Institute — America and Europe: A Blueprint for the Next Chapter</a></li>
 <li><a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Al Jazeera — Ukraine advances in occupied Donetsk as Trump hands Putin diesel deal</a></li>

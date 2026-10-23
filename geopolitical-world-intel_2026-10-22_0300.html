@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip active" href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-gaza.html">Gaza</a></div><div class="why"><p>The geopolitical story of October 2026 is the visible collapse of US mediation credibility across multiple theaters simultaneously. In Ukraine, Trump's "energy ceasefire" lasted roughly three days before Russia continued striking Ukrainian energy facilities and Ukraine resumed striking Russian refineries — a unilateral pause that showed US mediation now lacks enough trust to restrain either combatant. In the Strait of Hormuz, the planned multinational mission to protect shipping remained in limbo as the British destroyer HMS Dragon returned home, even as at least 11 ships were struck in or near the strait between October 1 and 9. In Taiwan, China's sanctions on Belizean and Paraguayan ministers over Taiwan-related ties marked an escalation of "transnational repression" against Taipei's remaining diplomatic allies, while US-Japan Keen Sword 27 exercises with 45,000 Japanese and 12,000 US personnel signaled that Washington and Tokyo are planning for a prolonged First Island Chain campaign rather than a short missile exchange.</p>
-<p>The throughline is that the post-Cold War institutional architecture — US-led mediation, alliance-based maritime security, dollar-system sanctions as coercion tools — is under strain from three directions at once: the Trump administration's transactional approach to alliances (telling Ukraine it needs "a new president," waiving Graham Act sanctions on Russia for a diesel deal, exempting Russia from further sanctions), the China-Russia partnership that is cushioning Moscow from the full consequences of Western sanctions while Beijing turns AI know-how into an export-controlled strategic asset, and the global south's growing willingness to operate outside the Western framework (Central Asian C5+1 engagement, Pakistan confirming Saudi defense support, Qatar announcing a regional defense partnership while keeping dialogue with Iran open).</p>
-<p>What to watch next: whether Trump's 60-day review of Russia sanctions produces any actual policy change or just delays the Graham Act measures already waived, whether the Saudi-led coalition's offensive against the Houthis — after a strike on Riyadh's King Khalid International Airport killed at least 12 people — draws the US into direct interdiction at sea (the Financial Times reported US forces disabled the tanker Ocean Molica in the Gulf of Oman for allegedly violating the naval blockade on Iranian ports), and whether Taiwan's planned criminalization of unauthorized advanced-hardware exports to China (adding advanced AI servers and cutting-edge semiconductors to its controlled-export list) becomes a flashpoint.</p></div></div><article class="article entry"><a class="hero-link" href="https://restrictedhandling.substack.com/p/rh-102026-last-2448-hrs-russias-oslo" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-22_0300.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=dPLqLejNVbQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dPLqLejNVbQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=EJNQJ8lmQ2Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EJNQJ8lmQ2Q/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="geopolitical-world-intel.html">&larr; All Geo Political Intel briefs</a><span class="kicker" style="color:#c2410c">WORLD INTEL</span><h1>Geopolitical World Intel — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; Geo Political Intel &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-gaza.html">Gaza</a></div></div><article class="article entry"><a class="hero-link" href="https://restrictedhandling.substack.com/p/rh-102026-last-2448-hrs-russias-oslo" target="_blank" rel="noopener"><img class="hero" src="img/geopolitical-world-intel_2026-10-22_0300.jpg" alt="Geopolitical World Intel — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
 <p><strong>Sources:</strong> Financial Times, Reuters, Associated Press, Bloomberg, Guardian, Restricted Handling, Mackinder Forum, Modern Diplomacy, Taipei Times, Al Jazeera</p>
 <h2>Key findings</h2>
 <h3>Ukraine diplomacy: energy ceasefire collapses, Trump waivers Graham Act sanctions, "new president" remarks</h3>
@@ -593,8 +639,9 @@ body.light .pol-sect { color:#8f5e12; }
 <li><strong>Modern Diplomacy (Oct 12, 2026):</strong> In his October 10 National Day address, President William Lai defended a record NT$1.1 trillion (US$34.5bn) defence budget for 2027, more than 3% of GDP, as a way to "deter war." Beijing called the speech "separatist," and Taiwan counted 21 PLA aircraft and seven ships around the island that day. Lai's line welcoming US-China talks while insisting on Taiwan's right to exist was aimed at Washington as much as Beijing. (<a href="https://mdbriefing.substack.com/p/md-weekly-briefing-week-of-12-october" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>Think BRICS / Glenn Diesen (Feb 26, 2026):</strong> The multipolar world order is reshaping global power. The US-China-Russia rivalry is the accelerating great power rivalry redefining geopolitics 2026. Drawing from UN Security Council speech and international relations theory, Diesen explores NATO expansion, Ukraine war geopolitics, the security dilemma, and the decline of US hegemony. The rise of China and Russia, the Russia-China alliance, and expanding BRICS geopolitics reflect a deeper transformation toward a power-based world order. (<a href="https://www.youtube.com/watch?v=EJNQJ8lmQ2Q" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>Dr. Margaret Sullivan (May 14, 2026):</strong> This video examines the geopolitical weight behind China's red lines on Taiwan, Iran, trade, sanctions, military posture, and global influence. Russia, despite enormous costs, has maintained its military campaign in Ukraine for years, absorbing unprecedented Western sanctions without the economic collapse that many analysts predicted. China is providing economic support that cushions Russia from the full consequences of Western sanctions. (<a href="https://www.youtube.com/watch?v=efsx75mT-oQ" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=dPLqLejNVbQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/dPLqLejNVbQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=EJNQJ8lmQ2Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/EJNQJ8lmQ2Q/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The geopolitical story of October 2026 is the visible collapse of US mediation credibility across multiple theaters simultaneously. In Ukraine, Trump's "energy ceasefire" lasted roughly three days before Russia continued striking Ukrainian energy facilities and Ukraine resumed striking Russian refineries — a unilateral pause that showed US mediation now lacks enough trust to restrain either combatant. In the Strait of Hormuz, the planned multinational mission to protect shipping remained in limbo as the British destroyer HMS Dragon returned home, even as at least 11 ships were struck in or near the strait between October 1 and 9. In Taiwan, China's sanctions on Belizean and Paraguayan ministers over Taiwan-related ties marked an escalation of "transnational repression" against Taipei's remaining diplomatic allies, while US-Japan Keen Sword 27 exercises with 45,000 Japanese and 12,000 US personnel signaled that Washington and Tokyo are planning for a prolonged First Island Chain campaign rather than a short missile exchange.</p>
+<p>The throughline is that the post-Cold War institutional architecture — US-led mediation, alliance-based maritime security, dollar-system sanctions as coercion tools — is under strain from three directions at once: the Trump administration's transactional approach to alliances (telling Ukraine it needs "a new president," waiving Graham Act sanctions on Russia for a diesel deal, exempting Russia from further sanctions), the China-Russia partnership that is cushioning Moscow from the full consequences of Western sanctions while Beijing turns AI know-how into an export-controlled strategic asset, and the global south's growing willingness to operate outside the Western framework (Central Asian C5+1 engagement, Pakistan confirming Saudi defense support, Qatar announcing a regional defense partnership while keeping dialogue with Iran open).</p>
+<p>What to watch next: whether Trump's 60-day review of Russia sanctions produces any actual policy change or just delays the Graham Act measures already waived, whether the Saudi-led coalition's offensive against the Houthis — after a strike on Riyadh's King Khalid International Airport killed at least 12 people — draws the US into direct interdiction at sea (the Financial Times reported US forces disabled the tanker Ocean Molica in the Gulf of Oman for allegedly violating the naval blockade on Iranian ports), and whether Taiwan's planned criminalization of unauthorized advanced-hardware exports to China (adding advanced AI servers and cutting-edge semiconductors to its controlled-export list) becomes a flashpoint.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://restrictedhandling.substack.com/p/rh-102026-last-2448-hrs-russias-oslo" target="_blank" rel="noopener">Restricted Handling — RH 10.20.26: Last 24-48 hrs — Russia's Oslo rift, China's technology controls, Gulf defense choices</a></li>
 <li><a href="https://mackinderforum.org/geopolitical-newsletter/weekly-geopolitical-news-bulletin-october-10-2026-october-16-2026" target="_blank" rel="noopener">Mackinder Forum — Weekly Geopolitical News Bulletin: October 10-16, 2026</a></li>

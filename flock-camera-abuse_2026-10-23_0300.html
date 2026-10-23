@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,8 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip active" href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="flock-camera-abuse.html">&larr; All Camera Abuse briefs</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Flock Camera Abuse — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; Camera Abuse &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ice.html">ICE</a> <a href="tag-license-plate-readers-alpr.html">License Plate Readers (ALPR)</a> <a href="tag-flock-safety.html">Flock Safety</a> <a href="tag-illinois.html">Illinois</a> <a href="tag-florida.html">Florida</a> <a href="tag-govtech.html">GovTech</a> <a href="tag-institute-for-justice.html">Institute for Justice</a> <a href="tag-clarion-ledger.html">Clarion Ledger</a></div><div class="why"><p>The Flock Safety story is about what happens when a private company builds the infrastructure for mass surveillance and hands a login to local police. The company touts recovered children and solved crimes, and those wins are real — but the structural vulnerability is built into the product itself: a network of 120,000 cameras across 49 states, no warrant required to query it, data shared across agency lines and, as reporting has now documented, accessed by federal immigration authorities and the military without the knowledge of the local departments that own the cameras.</p>
-<p>The throughline connecting the abuse cases is not rogue hackers breaking in. It is people with a badge and a login using the system exactly as it is designed to be used — on people who were never suspects. More than 100 incidents of ALPR abuse have been identified by the Institute for Justice, and more than 50 cities and counties have canceled or deactivated their Flock cameras this year. The political response is finally catching up to the documented harms: Washington State passed a law limiting Flock data use to felony investigations, and Florida revoked permits for license plate readers on state highways. What to watch next is whether the contractual and legislative restrictions actually change practice on the ground, or whether the same database that let an officer track his ex-girlfriend 2,000 times just gets a new sign-in screen.</p></div></div><article class="article entry"><a class="hero-link" href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-23_0300.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=gtYTX_2SdAg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gtYTX_2SdAg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=UxwxcOCH6y0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UxwxcOCH6y0/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="flock-camera-abuse.html">&larr; All Camera Abuse briefs</a><span class="kicker" style="color:#b45309">SURVEILLANCE</span><h1>Flock Camera Abuse — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; Camera Abuse &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ice.html">ICE</a> <a href="tag-license-plate-readers-alpr.html">License Plate Readers (ALPR)</a> <a href="tag-flock-safety.html">Flock Safety</a> <a href="tag-illinois.html">Illinois</a> <a href="tag-florida.html">Florida</a> <a href="tag-govtech.html">GovTech</a> <a href="tag-institute-for-justice.html">Institute for Justice</a> <a href="tag-clarion-ledger.html">Clarion Ledger</a></div></div><article class="article entry"><a class="hero-link" href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener"><img class="hero" src="img/flock-camera-abuse_2026-10-23_0300.jpg" alt="Flock Camera Abuse — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
 <p><strong>Sources:</strong> ABC News, CNN, GovTech, USA Today, Politico, San Francisco Standard, WJCL Savannah, Institute for Justice</p>
 <h2>Key findings</h2>
 <h3>The surveillance network and documented abuse</h3>
@@ -581,8 +628,8 @@ body.light .pol-sect { color:#8f5e12; }
 <ul>
 <li><strong>Shawn Ryan Show / SRS docuseries (2026):</strong> Federal immigration authorities, ICE, the Secret Service, and the Navy had been running searches through local Flock networks, sometimes without the knowledge or consent of the local police departments that own the cameras; Evanston, Illinois ordered its Flock cameras removed after discovering the system let US Customs and Border Protection access local plate data, and Flock quietly reinstalled the cameras anyway after the city told them to take them down. (<a href="https://www.youtube.com/watch?v=gtYTX_2SdAg" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>InvestigateTV (Aug 15, 2026):</strong> More than 70 cases nationwide of officers getting fired or arrested for misusing Flock's data; the lack of oversight lags behind the technology's power. (<a href="https://www.youtube.com/watch?v=UxwxcOCH6y0" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=gtYTX_2SdAg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/gtYTX_2SdAg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=UxwxcOCH6y0" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/UxwxcOCH6y0/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Flock Safety story is about what happens when a private company builds the infrastructure for mass surveillance and hands a login to local police. The company touts recovered children and solved crimes, and those wins are real — but the structural vulnerability is built into the product itself: a network of 120,000 cameras across 49 states, no warrant required to query it, data shared across agency lines and, as reporting has now documented, accessed by federal immigration authorities and the military without the knowledge of the local departments that own the cameras.</p>
+<p>The throughline connecting the abuse cases is not rogue hackers breaking in. It is people with a badge and a login using the system exactly as it is designed to be used — on people who were never suspects. More than 100 incidents of ALPR abuse have been identified by the Institute for Justice, and more than 50 cities and counties have canceled or deactivated their Flock cameras this year. The political response is finally catching up to the documented harms: Washington State passed a law limiting Flock data use to felony investigations, and Florida revoked permits for license plate readers on state highways. What to watch next is whether the contractual and legislative restrictions actually change practice on the ground, or whether the same database that let an officer track his ex-girlfriend 2,000 times just gets a new sign-in screen.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://abcnews.com/US/flock-cameras-trigger-nationwide-backlash-privacy-concerns-police/story?id=136084771" target="_blank" rel="noopener">ABC News — Flock cameras trigger nationwide backlash over privacy concerns, police abuse</a></li>
 <li><a href="https://www.cnn.com/2026/07/26/us/flock-cameras-surveillance-abuse" target="_blank" rel="noopener">CNN — Inside the growing police use and misuse of Flock's license-plate reader cameras</a></li>

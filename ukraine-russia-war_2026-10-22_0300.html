@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,10 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip active" href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a></div><div class="why"><p>The Russia-Ukraine war in October 2026 has entered its most intense phase of energy infrastructure warfare since the spring 2024 campaign, and the strategic logic on both sides has shifted in ways that make a near-term negotiated settlement less likely. Russia has carried out 2,147 attacks on Ukraine's energy infrastructure since July 16 — an average of more than 45 per day, with not a single day without attacks, according to Prime Minister Serhiy Koretskyi. The October 19 wave alone struck 28 substations and critical energy facilities across Ukraine, knocking out power for 550,000 households, with Russia launching 16 ballistic missiles and more than 200 drones in what Zelensky described as a "targeted attack on Kyiv and Kyiv Oblast." Over the past week, Russia carried out 87 targeted attacks on Ukraine's energy, oil, and gas sectors, with 224 incidents causing damage.</p>
-<p>The throughline is that both sides are now striking deep into each other's energy infrastructure as a parallel campaign: Russia targeting Ukraine's power grid, water supply, and heating in what is clearly preparation for a winter campaign to break civilian morale, while Ukraine has pushed its long-range drone campaign to 2,500 kilometers inside Russia — hitting the Omsk oil refinery in Siberia and starting a fire at Gazprom's Chernomyrdin Condensate Stabilization Plant near Surgut in the Khanty-Mansi Autonomous Okrug, the first reported Ukrainian strike against that region. Ukraine struck a combined 53.6 million tons of annual crude oil processing capacity across six refineries in a single week, with Defense Minister confirmation that 51% of Russia's oil refining capacity has been damaged by the cumulative deep strike campaign.</p>
-<p>What makes this period strategically significant is the breakdown of Trump's "energy ceasefire": Ukraine respected it for three days, then resumed striking Russian refineries on October 15 after Russia continued striking Ukrainian energy facilities. Zelensky has declared Kyiv's readiness for reciprocal de-escalation but emphasized the need to compel Moscow to respect the suspension — a condition Russia has shown no willingness to meet. The parallel dynamic of US Patriot interceptor missile shortages, with Zelensky citing "delays in certain types of vital supplies at the level of the US Department of War," adds a layer of urgency to Ukraine's air defense calculus.</p>
-<p>What to watch next: whether the winter energy campaign achieves Russia's apparent objective of cutting electricity, heating, and water to major Ukrainian cities (the New York Times reported Ukraine showed European partners intercepted Russian plans involving up to 1,000 missiles, drones, and bombs targeting electrical substations, hydroelectric and thermal power plants, and boiler facilities), whether Ukraine's deepening strikes inside Russia — now reaching the Khanty-Mansi region over 2,300 km from the border — force a Russian domestic political response, and whether the US Congress adjournment in December leaves Ukraine without new aid before the winter is over.</p></div></div><article class="article entry"><a class="hero-link" href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-22_0300.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=KWWgg-fSjlY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/KWWgg-fSjlY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=CBPacbMFmYI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CBPacbMFmYI/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a></div></div><article class="article entry"><a class="hero-link" href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-22_0300.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
 <p><strong>Sources:</strong> Kyiv Independent, ISW, Critical Threats, Al Jazeera, OSW, ABC News, NV, BBC News Ukrainian, Understanding War</p>
 <h2>Key findings</h2>
 <h3>Russia's energy infrastructure campaign: 2,147 strikes since July 16</h3>
@@ -589,8 +634,10 @@ body.light .pol-sect { color:#8f5e12; }
 <li><strong>Ryan Forrest (Oct 21, 2026):</strong> In today's Russia-Ukraine War Update (October 21, 2026), the latest Russian strikes, attacks on Ukraine's energy infrastructure, and intense frontline fighting around Kostiantynivka, Pokrovsk, and Huliaipole are examined, before taking a closer look at Ukraine's extraordinary drone casualty evacuation. (<a href="https://www.youtube.com/watch?v=2CdY7KTo1so" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>BLUX (Oct 11, 2026):</strong> Donald Trump has publicly suggested that Ukraine needs a new president, Vladimir Putin is continuing Russia's war, and Zelensky is facing political pressure over corruption investigations, elections, peace negotiations and the future of Ukraine. The documentary also investigates the corruption controversies that have placed additional pressure on Zelensky's administration, including Operation Midas, the alleged $100 million corruption scheme involving Ukraine's energy sector and Energoatom. Zelensky himself has not been named as a suspect in those cases. (<a href="https://www.youtube.com/watch?v=7_dGbLHuEmk" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>ISW (Oct 12, 2026):</strong> Russia and Ukraine have not agreed to a ceasefire against energy infrastructure as of October 12, as Russian forces continued to strike Ukrainian energy infrastructure overnight on October 11 to 12. Russian forces struck a combined heat and power plant west of Kharkiv City, gas production infrastructure in Kharkiv Oblast, and an oil depot in Sarny, Rivne Oblast. Zelensky emphasized that Ukraine is ready to engage in a full energy ceasefire and continue refraining from striking Russian energy infrastructure if Russia reciprocates and formalizes an agreement. (<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-12-2026/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=KWWgg-fSjlY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/KWWgg-fSjlY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=CBPacbMFmYI" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/CBPacbMFmYI/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Russia-Ukraine war in October 2026 has entered its most intense phase of energy infrastructure warfare since the spring 2024 campaign, and the strategic logic on both sides has shifted in ways that make a near-term negotiated settlement less likely. Russia has carried out 2,147 attacks on Ukraine's energy infrastructure since July 16 — an average of more than 45 per day, with not a single day without attacks, according to Prime Minister Serhiy Koretskyi. The October 19 wave alone struck 28 substations and critical energy facilities across Ukraine, knocking out power for 550,000 households, with Russia launching 16 ballistic missiles and more than 200 drones in what Zelensky described as a "targeted attack on Kyiv and Kyiv Oblast." Over the past week, Russia carried out 87 targeted attacks on Ukraine's energy, oil, and gas sectors, with 224 incidents causing damage.</p>
+<p>The throughline is that both sides are now striking deep into each other's energy infrastructure as a parallel campaign: Russia targeting Ukraine's power grid, water supply, and heating in what is clearly preparation for a winter campaign to break civilian morale, while Ukraine has pushed its long-range drone campaign to 2,500 kilometers inside Russia — hitting the Omsk oil refinery in Siberia and starting a fire at Gazprom's Chernomyrdin Condensate Stabilization Plant near Surgut in the Khanty-Mansi Autonomous Okrug, the first reported Ukrainian strike against that region. Ukraine struck a combined 53.6 million tons of annual crude oil processing capacity across six refineries in a single week, with Defense Minister confirmation that 51% of Russia's oil refining capacity has been damaged by the cumulative deep strike campaign.</p>
+<p>What makes this period strategically significant is the breakdown of Trump's "energy ceasefire": Ukraine respected it for three days, then resumed striking Russian refineries on October 15 after Russia continued striking Ukrainian energy facilities. Zelensky has declared Kyiv's readiness for reciprocal de-escalation but emphasized the need to compel Moscow to respect the suspension — a condition Russia has shown no willingness to meet. The parallel dynamic of US Patriot interceptor missile shortages, with Zelensky citing "delays in certain types of vital supplies at the level of the US Department of War," adds a layer of urgency to Ukraine's air defense calculus.</p>
+<p>What to watch next: whether the winter energy campaign achieves Russia's apparent objective of cutting electricity, heating, and water to major Ukrainian cities (the New York Times reported Ukraine showed European partners intercepted Russian plans involving up to 1,000 missiles, drones, and bombs targeting electrical substations, hydroelectric and thermal power plants, and boiler facilities), whether Ukraine's deepening strikes inside Russia — now reaching the Khanty-Mansi region over 2,300 km from the border — force a Russian domestic political response, and whether the US Congress adjournment in December leaves Ukraine without new aid before the winter is over.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener">Kyiv Independent — Russia strikes 28 critical energy facilities across Ukraine in latest wave of attacks, Zelensky says</a></li>
 <li><a href="https://english.nv.ua/russian-war/russia-launches-over-2-000-strikes-on-ukraine-s-energy-grid-50651406.html" target="_blank" rel="noopener">NV — Russia has attacked Ukraine's energy infrastructure every day since July 16 (2,147 strikes)</a></li>

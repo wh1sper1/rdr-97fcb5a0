@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip active" href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a></div><div class="why"><p>The Ukraine-Russia war in late October 2026 has reached a point where the battlefield and the diplomatic picture are violently out of sync. On the battlefield, Ukraine is holding the line and even advancing — the Third Army Corps reclaimed an additional 100 sq km in eastern Donetsk, bringing Operation Vivaldi's total gains to 275 sq km and 16 settlements since August, and Russia's overall gains this year are close to nil. The ISW reports Russian attack frequency in the Sloviansk direction dropped from 14 per day in August to 3 per day in October. On the diplomatic and infrastructure front, Russia is hitting Ukrainian energy targets with devastating scale: 28 critical facilities in a single night on October 19, 550,000 households without power, and 2,147 attacks on energy infrastructure since July 16.</p>
-<p>The "energy ceasefire" declared by Trump on October 11 is not holding — Russia continued striking energy infrastructure in Kyiv and Kharkiv after his announcement, and Ukraine returned to striking Russian refineries on October 15 after a three-day pause. The deeper problem is the Starlink/Starshield navigation speed cap that Ukraine experienced on October 14: without the ability to track interceptors above 160 km/h, Ukraine cannot stop Russian jet-powered drones flying above 500 km/h. That is not a bureaucratic glitch — that is an air-defense capability partially disarmed by the owner of the satellite network, at the direction of the US government.</p>
-<p>What to watch next: whether the delays in Patriot interceptor missile shipments — which Zelenskyy says are "political agreements that have not been implemented at the working level" — are resolved, and whether Ukraine's return to striking Russian refineries triggers a Russian escalation that breaks the front-line stalemate.</p></div></div><article class="article entry"><a class="hero-link" href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-20_2315.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=csC_v1NpH8A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/csC_v1NpH8A/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=nOKqFjdkqbk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/nOKqFjdkqbk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
+<main><div class="article"><a class="back" href="ukraine-russia-war.html">&larr; All Ukraine-Russia War briefs</a><span class="kicker" style="color:#0e7490">UKRAINE WAR</span><h1>Ukraine-Russia War — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; Ukraine-Russia War &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-volodymyr-zelenskyy.html">Volodymyr Zelenskyy</a> <a href="tag-moscow.html">Moscow</a> <a href="tag-kyiv.html">Kyiv</a> <a href="tag-institute-for-the-study-of-war.html">Institute for the Study of War</a></div></div><article class="article entry"><a class="hero-link" href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener"><img class="hero" src="img/ukraine-russia-war_2026-10-20_2315.jpg" alt="Ukraine-Russia War — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
 <p><strong>Sources:</strong> Kyiv Independent, Al Jazeera, ABC News, Politico, Understanding War, ISW</p>
 <h2>Key findings</h2>
 <h3>Russia strikes 28 energy facilities, 550,000 households lose power</h3>
@@ -577,8 +623,9 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Patriot missiles shortage, US delays</h3>
 <p>The Kyiv Independent reported that Ukraine faces a critical shortage of US-made Patriot interceptor missiles, essential for defending against Russian ballistic missiles. Zelenskyy said "there are political agreements that have not been implemented at the working level. There are also delays in certain types of vital supplies at the level of the US Department of War." Rubio said the delays are not a "deliberate political directive to harm Ukraine," acknowledging possible delays in interceptor shipments. Ukraine also announced plans to increase production of anti-drone turrets. (<a href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener">Kyiv Independent</a>)</p>
 <h3>Ukrainian drones strike Yandex data centers</h3>
-<p>The Kyiv Independent reported that Ukraine struck three data centers owned by Yandex — in Sasovo, Kaluga, and Vladimir — between October 8-11, destroying or crippling them. A fourth data center owned by Sberbank was struck on October 14. The strikes caused Russians to lose online payment and other services. A drone strike on October 19 disrupted Russian court hearings, per media reports. The data-center campaign is part of Ukraine's broader strategy of striking Russian logistics, command posts, and digital infrastructure deep inside Russia. (<a href="https://kyivindependent.com/ukraine-war-latest-drone-strikes-on-yandex-data-centers-disrupt-russian-court-hearings-media-reports/" target="_blank" rel="noopener">Kyiv Independent</a>)</p>
-<h2>Source links</h2>
+<p>The Kyiv Independent reported that Ukraine struck three data centers owned by Yandex — in Sasovo, Kaluga, and Vladimir — between October 8-11, destroying or crippling them. A fourth data center owned by Sberbank was struck on October 14. The strikes caused Russians to lose online payment and other services. A drone strike on October 19 disrupted Russian court hearings, per media reports. The data-center campaign is part of Ukraine's broader strategy of striking Russian logistics, command posts, and digital infrastructure deep inside Russia. (<a href="https://kyivindependent.com/ukraine-war-latest-drone-strikes-on-yandex-data-centers-disrupt-russian-court-hearings-media-reports/" target="_blank" rel="noopener">Kyiv Independent</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=csC_v1NpH8A" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/csC_v1NpH8A/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=nOKqFjdkqbk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/nOKqFjdkqbk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The Ukraine-Russia war in late October 2026 has reached a point where the battlefield and the diplomatic picture are violently out of sync. On the battlefield, Ukraine is holding the line and even advancing — the Third Army Corps reclaimed an additional 100 sq km in eastern Donetsk, bringing Operation Vivaldi's total gains to 275 sq km and 16 settlements since August, and Russia's overall gains this year are close to nil. The ISW reports Russian attack frequency in the Sloviansk direction dropped from 14 per day in August to 3 per day in October. On the diplomatic and infrastructure front, Russia is hitting Ukrainian energy targets with devastating scale: 28 critical facilities in a single night on October 19, 550,000 households without power, and 2,147 attacks on energy infrastructure since July 16.</p>
+<p>The "energy ceasefire" declared by Trump on October 11 is not holding — Russia continued striking energy infrastructure in Kyiv and Kharkiv after his announcement, and Ukraine returned to striking Russian refineries on October 15 after a three-day pause. The deeper problem is the Starlink/Starshield navigation speed cap that Ukraine experienced on October 14: without the ability to track interceptors above 160 km/h, Ukraine cannot stop Russian jet-powered drones flying above 500 km/h. That is not a bureaucratic glitch — that is an air-defense capability partially disarmed by the owner of the satellite network, at the direction of the US government.</p>
+<p>What to watch next: whether the delays in Patriot interceptor missile shipments — which Zelenskyy says are "political agreements that have not been implemented at the working level" — are resolved, and whether Ukraine's return to striking Russian refineries triggers a Russian escalation that breaks the front-line stalemate.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://kyivindependent.com/russia-strikes-28-critical-energy-facilities-across-ukraine-in-latest-wave-of-attacks-zelensky-says/" target="_blank" rel="noopener">Kyiv Independent — Russia strikes 28 critical energy facilities across Ukraine</a></li>
 <li><a href="https://www.aljazeera.com/news/2026/10/16/ukraine-repels-russian-forces-as-us-support-wavers-energy-strikes-escalate" target="_blank" rel="noopener">Al Jazeera — Ukraine pushes Russian forces back as US support wavers</a></li>

@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; World Report &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-france.html">France</a></div><div class="why"><p>The world beyond the great-power and Middle East conflicts in October 2026 is a planet under simultaneous stress from multiple directions that rarely get equal billing: a war in Yemen that has now killed at least 17 people in a single Houthi strike on Riyadh's airport and displaced 233,000 people inside Yemen; a Sudan war where drones and hunger are taking a deadly toll and famine risk is spreading across Darfur and Kordofan; an Ebola outbreak in eastern Congo that has now reached Nigeria's first case and prompted an Africa CDC extraordinary crisis summit; a France gripped by violent protests over cost of living and school conditions that have forced a curfew and pushed President Macron into open confrontation with both protesters and foreign leaders who he accuses of exploiting the unrest for political gain; and a COP31 climate summit opening in Antalya, Türkiye, less than a month away, where the question on the table is how to restore trust in climate action when the world is on track to warm by 2.8°C above pre-industrial levels under current policies.</p>
-<p>The throughline is that the institutional machinery for handling these crises — UN Security Council, WHO, Africa CDC, WFP, IOM — is running on fumes. The WFP has cut Gaza assistance by roughly one-third as funding shortages threaten fragile food-security gains. The WHO is scaling up Ebola readiness in 22 countries across three continents but has received just over a third of the $113 million it needs for its DRC response. Fewer than half of national biodiversity targets are on track, and the COP17 biodiversity conference in Yerevan, Armenia, opens next week with the UN warning that over 1 million species face extinction risk but protection Action is "extremely slow" and funding "severely inadequate." The IMF has upgraded its global growth forecast to 3.1%, but a new UN report warns that AI and digital technologies are threatening to deepen socio-economic inequalities.</p>
-<p>What to watch next: whether the COP31 Antalya summit produces any credible mechanism for restoring trust or just another round of pledges that don't match the 2.8°C trajectory; whether the France protests escalate or get contained by the curfew; whether the Ebola outbreak in DRC continues to spread across borders; and whether the ICC arrest warrants against four senior Taliban figures for persecuting women and girls (a crime against humanity) produce any actual enforcement.</p></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168615" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-22_0300.jpg" alt="World Report — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=Wh5X6jYIewk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Wh5X6jYIewk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=2TrFzdICbdM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/2TrFzdICbdM/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; World Report &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-france.html">France</a></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168615" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-22_0300.jpg" alt="World Report — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
 <p><strong>Sources:</strong> UN News, NPR, Washington Post, AFP, Associated Press, Al Jazeera, France24, WHO, IMF, UNEP</p>
 <h2>Key findings</h2>
 <h3>Yemen, Sudan, DRC Ebola: the under-covered humanitarian emergencies</h3>
@@ -594,8 +640,9 @@ body.light .pol-sect { color:#8f5e12; }
 <li><strong>UN News (Oct 5, 2026):</strong> The International Criminal Court (ICC) has made public four arrest warrants against senior Taliban figures, accusing them of persecuting women and girls in Afghanistan, which amounts to a crime against humanity. (<a href="https://news.un.org/en/news" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>UN News (Oct 2026):</strong> Representatives from governments, civil society, and academia meeting in Muscat, Oman on Monday called for urgent action to address a global housing crisis affecting nearly 3.4 billion people. (<a href="https://news.un.org/en/news" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>Washington Post / AFP (Oct 2026):</strong> Brazil's Supreme Court suspends permit for major Amazon gold mine. Over 500 people in South Africa have fallen ill from a gastrointestinal illness linked to poor water quality in two cities. In Honduras, hard hit by drought, authorities hope to make it rain using contentious tactic — global warming is making the El Niño weather pattern stronger, and it's prolonging a devastating drought across a region of Central America known as the Dry Corridor. Pakistan has arrested a man accused of running an online counterfeit postage operation that US prosecutors say caused more than $126 million in losses to the US Postal Service. North Korea says it will resume propaganda broadcasts across border into South Korea — Kim Jong Un's sister says the country will resume broadcasting propaganda across the heavily armed border with South Korea this month. (<a href="https://www.washingtonpost.com/world/wires/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=Wh5X6jYIewk" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Wh5X6jYIewk/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=2TrFzdICbdM" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/2TrFzdICbdM/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The world beyond the great-power and Middle East conflicts in October 2026 is a planet under simultaneous stress from multiple directions that rarely get equal billing: a war in Yemen that has now killed at least 17 people in a single Houthi strike on Riyadh's airport and displaced 233,000 people inside Yemen; a Sudan war where drones and hunger are taking a deadly toll and famine risk is spreading across Darfur and Kordofan; an Ebola outbreak in eastern Congo that has now reached Nigeria's first case and prompted an Africa CDC extraordinary crisis summit; a France gripped by violent protests over cost of living and school conditions that have forced a curfew and pushed President Macron into open confrontation with both protesters and foreign leaders who he accuses of exploiting the unrest for political gain; and a COP31 climate summit opening in Antalya, Türkiye, less than a month away, where the question on the table is how to restore trust in climate action when the world is on track to warm by 2.8°C above pre-industrial levels under current policies.</p>
+<p>The throughline is that the institutional machinery for handling these crises — UN Security Council, WHO, Africa CDC, WFP, IOM — is running on fumes. The WFP has cut Gaza assistance by roughly one-third as funding shortages threaten fragile food-security gains. The WHO is scaling up Ebola readiness in 22 countries across three continents but has received just over a third of the $113 million it needs for its DRC response. Fewer than half of national biodiversity targets are on track, and the COP17 biodiversity conference in Yerevan, Armenia, opens next week with the UN warning that over 1 million species face extinction risk but protection Action is "extremely slow" and funding "severely inadequate." The IMF has upgraded its global growth forecast to 3.1%, but a new UN report warns that AI and digital technologies are threatening to deepen socio-economic inequalities.</p>
+<p>What to watch next: whether the COP31 Antalya summit produces any credible mechanism for restoring trust or just another round of pledges that don't match the 2.8°C trajectory; whether the France protests escalate or get contained by the curfew; whether the Ebola outbreak in DRC continues to spread across borders; and whether the ICC arrest warrants against four senior Taliban figures for persecuting women and girls (a crime against humanity) produce any actual enforcement.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://news.un.org/en/audio/2026/10/1168615" target="_blank" rel="noopener">UN News — UN News Today 16 October 2026 (Yemen, Gaza, biodiversity, Sudan, Ebola)</a></li>
 <li><a href="https://news.un.org/en/story/2026/10/1168617" target="_blank" rel="noopener">UN News — As disasters mount, next UN climate summit faces a test of trust (COP31 Antalya)</a></li>

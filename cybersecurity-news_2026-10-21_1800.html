@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,10 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip active" href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="cybersecurity-news.html">&larr; All Cyber Security briefs</a><span class="kicker" style="color:#047857">CYBERSECURITY</span><h1>Cybersecurity News — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Cyber Security &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ukraine.html">Ukraine</a> <a href="tag-fbi.html">FBI</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-openai.html">OpenAI</a> <a href="tag-pentagon.html">Pentagon</a> <a href="tag-killsec.html">KillSec</a> <a href="tag-social-security.html">Social Security</a> <a href="tag-cvss.html">CVSS</a></div><div class="why"><p>The cybersecurity landscape in October 2026 is defined by three converging trends: nation-state actors targeting critical infrastructure with increasing boldness, ransomware operations being dismantled through international cooperation but replaced by younger, faster-moving crews, and a federal government that is simultaneously issuing urgent vulnerability warnings while politically dismantling the oversight mechanisms meant to coordinate the response.</p>
-<p>The Pentagon's Defense Manpower Data Center breach — exposing personal data of 3 million military personnel and veterans, including Social Security numbers and military records, ongoing since October 2025 and discovered in July 2026 — is the kind of incident that should reshape the conversation about defense contractor security. It didn't. North Korean state-sponsored hackers exploited third-party zero-day vulnerabilities to steal $387 million from the Bitget cryptocurrency exchange in the same week. International law enforcement dismantled the KillSec ransomware operation and arrested a 16-year-old administrator — proof that these crews are increasingly run by teenagers with impressive technical skills but fragile operational security.</p>
-<p>CISA's Known Exploited Vulnerabilities catalog keeps growing. Three new additions this week: a Citrix NetScaler memory-corruption bug, two Zammad vulnerabilities involving session fixation and privilege management, and a FortiMail path traversal flaw. CISA also flagged CVE-2026-104935, a high-severity authentication bypass vulnerability in Ivanti Connect Secure being actively exploited as a zero-day since October 1. The agency added eight new NetScaler vulnerabilities, two already being exploited in the wild. The velocity of exploitation is outpacing the patching cycle, and the gap is where adversaries live.</p>
-<p>What to watch: the Saudi national arrested by the FBI in October 2026 — Abdulrahman Alfozan, a 35-year-old OpenAI engineering lead — allegedly planted a sophisticated recording device in an executive conference room at OpenAI's San Francisco offices. This is an insider threat story that hasn't been fully told yet, and it sits at the intersection of AI company security, nation-state espionage, and the physical vulnerabilities of the people building the most powerful technology of the era.</p></div></div><article class="article entry"><a class="hero-link" href="https://aviatrix.ai/threat-research-center/category/defense-space/" target="_blank" rel="noopener"><img class="hero" src="img/cybersecurity-news_2026-10-21_1800.jpg" alt="Cybersecurity News — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=sOicR2enFsY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sOicR2enFsY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=mKAx2XHBikg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mKAx2XHBikg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="cybersecurity-news.html">&larr; All Cyber Security briefs</a><span class="kicker" style="color:#047857">CYBERSECURITY</span><h1>Cybersecurity News — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Cyber Security &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-ukraine.html">Ukraine</a> <a href="tag-fbi.html">FBI</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-openai.html">OpenAI</a> <a href="tag-pentagon.html">Pentagon</a> <a href="tag-killsec.html">KillSec</a> <a href="tag-social-security.html">Social Security</a> <a href="tag-cvss.html">CVSS</a></div></div><article class="article entry"><a class="hero-link" href="https://aviatrix.ai/threat-research-center/category/defense-space/" target="_blank" rel="noopener"><img class="hero" src="img/cybersecurity-news_2026-10-21_1800.jpg" alt="Cybersecurity News — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Krebs on Security, Aviatrix Threat Research Center, The Hacker News, CERT-EU, TechTarget, DW Documentary, IBM, CISA, FBI</p>
 <h2>Key findings</h2>
 <h3>Pentagon DMDC breach: 3 million military personnel and veterans exposed</h3>
@@ -588,8 +633,10 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Manchester Airports Group breach exposes 8.7 million customers</h3>
 <p>A breach at Manchester Airports Group exposed data belonging to 8.7 million customers, though the company says most of what was accessed was limited to email addresses. The breach adds to a growing list of large-scale data exposures affecting travel and transportation infrastructure. (<a href="https://blogs.baruch.cuny.edu/issindustryengagement/category/cybersecurity/" target="_blank" rel="noopener">Source</a>)</p>
 <h3>Cisco FMC vulnerabilities exploited by ransomware and state-sponsored clusters</h3>
-<p>Cisco revealed that three distinct threat clusters linked to ransomware and state-sponsored attacks have been exploiting two recently patched Secure Firewall Management Center (FMC) vulnerabilities. The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass vulnerability in the web interface of FMC software that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system. The second flaw under exploitation is CVE-2026-20316 (CVSS score: 5.3). (<a href="https://thehackernews.com/search/label/Nation-State?max-results=20&amp;start=5920&amp;by-date=false" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>Cisco revealed that three distinct threat clusters linked to ransomware and state-sponsored attacks have been exploiting two recently patched Secure Firewall Management Center (FMC) vulnerabilities. The attacks leverage CVE-2026-20079 (CVSS score: 10.0), an authentication bypass vulnerability in the web interface of FMC software that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system. The second flaw under exploitation is CVE-2026-20316 (CVSS score: 5.3). (<a href="https://thehackernews.com/search/label/Nation-State?max-results=20&amp;start=5920&amp;by-date=false" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=sOicR2enFsY" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/sOicR2enFsY/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=mKAx2XHBikg" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/mKAx2XHBikg/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The cybersecurity landscape in October 2026 is defined by three converging trends: nation-state actors targeting critical infrastructure with increasing boldness, ransomware operations being dismantled through international cooperation but replaced by younger, faster-moving crews, and a federal government that is simultaneously issuing urgent vulnerability warnings while politically dismantling the oversight mechanisms meant to coordinate the response.</p>
+<p>The Pentagon's Defense Manpower Data Center breach — exposing personal data of 3 million military personnel and veterans, including Social Security numbers and military records, ongoing since October 2025 and discovered in July 2026 — is the kind of incident that should reshape the conversation about defense contractor security. It didn't. North Korean state-sponsored hackers exploited third-party zero-day vulnerabilities to steal $387 million from the Bitget cryptocurrency exchange in the same week. International law enforcement dismantled the KillSec ransomware operation and arrested a 16-year-old administrator — proof that these crews are increasingly run by teenagers with impressive technical skills but fragile operational security.</p>
+<p>CISA's Known Exploited Vulnerabilities catalog keeps growing. Three new additions this week: a Citrix NetScaler memory-corruption bug, two Zammad vulnerabilities involving session fixation and privilege management, and a FortiMail path traversal flaw. CISA also flagged CVE-2026-104935, a high-severity authentication bypass vulnerability in Ivanti Connect Secure being actively exploited as a zero-day since October 1. The agency added eight new NetScaler vulnerabilities, two already being exploited in the wild. The velocity of exploitation is outpacing the patching cycle, and the gap is where adversaries live.</p>
+<p>What to watch: the Saudi national arrested by the FBI in October 2026 — Abdulrahman Alfozan, a 35-year-old OpenAI engineering lead — allegedly planted a sophisticated recording device in an executive conference room at OpenAI's San Francisco offices. This is an insider threat story that hasn't been fully told yet, and it sits at the intersection of AI company security, nation-state espionage, and the physical vulnerabilities of the people building the most powerful technology of the era.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://blogs.baruch.cuny.edu/issindustryengagement/category/cybersecurity/" target="_blank" rel="noopener">Krebs on Security — Cybersecurity weekly roundup</a></li>
 <li><a href="https://aviatrix.ai/threat-research-center/pentagon-dmdc-breach-3-million-records-2026-killsec-takedown-bitget-387m-week-40/" target="_blank" rel="noopener">Aviatrix Threat Research Center — Pentagon DMDC Breach, KillSec Takedown &amp; $387M Bitget Heist</a></li>

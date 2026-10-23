@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,8 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip active" href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="synth-music.html">&larr; All Synth Music briefs</a><span class="kicker" style="color:#d946ef">SYNTH MUSIC</span><h1>Synth Music — Research Digest</h1><div class="meta">Saved 2026-10-22 18:00 &middot; Synth Music &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-fm-1.html">FM-1</a> <a href="tag-berlin.html">Berlin</a> <a href="tag-synthpopworld.html">Synthpopworld</a> <a href="tag-gearnews.html">Gearnews</a> <a href="tag-m-vave.html">M-VAVE</a> <a href="tag-rue-oberkampf.html">Rue Oberkampf</a> <a href="tag-shallow-grave.html">Shallow Grave</a> <a href="tag-st-digue.html">St Digue</a></div><div class="why"><p>The synth hardware story of the moment is the M-VAVE FM-1 — a $50–60 pocket FM synthesizer built on a Yamaha DX-7-based engine — and what is happening around it is a case study in what happens when a low-cost device ships with enough headroom for the community to run with it. M-VAVE released official firmware v16 on October 21, 2026, turning the FM-1 into a 20-voice multi-timbral FM synthesizer with a better sequencer; that same week, M-VAVE launched the FM-1 Open program, formally welcoming developers creating alternative firmware and offering them a dedicated space. The community response has been rapid and creative: zvenson's Obervave turns the FM-1 and SMK-37 Pro/Elite into an Oberheim-style VA polysynth; Hügelton Instruments' Felucca turns it into a multi-engine synthesizer; Charles Vestal's X0X turns it into a ReBirth-like groovebox; and Groove OS turns it into an 8-track groovebox — almost all free and open source. Sound designers are now jumping on board too: Natlife Sounds released the first FM-1 sound bank, with Ambient &amp; Dreams for the FM-1 and FM synthesizers.</p>
-<p>On the music side, the October 2026 release calendar for the darkwave, synthwave, and dark synthpop scene has been unusually dense. St. Digue, the Copenhagen dark synthwave artist, released his third album Secret Language on October 19, led by the singles Relapse and Secret Language. La Roux returned on November 6 with Old Flames, her first album in six years. In Strict Confidence returned with Fever, a new single and video that previews their next album. Mesh released the official video for Fallen Angel, title track of a nine-track mini-album out November 27. The Light Dreams and Steve Ogden of Three By One joined forces on LUX, a five-track EP. Dead Astronauts released Shallow Grave, a fifth album pulling from darkwave, synthwave, and post-punk. The scene's release velocity this month — multiple albums a week across the darkwave and synthwave spectrum — suggests a community that is productive and interconnected, not just nostalgic.</p></div></div><article class="article entry"><a class="hero-link" href="https://synthanatomy.com/category/music-tech-news" target="_blank" rel="noopener"><img class="hero" src="img/synth-music_2026-10-22_1800.jpg" alt="Synth Music — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="synth-music.html">&larr; All Synth Music briefs</a><span class="kicker" style="color:#d946ef">SYNTH MUSIC</span><h1>Synth Music — Research Digest</h1><div class="meta">Saved 2026-10-22 18:00 &middot; Synth Music &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-fm-1.html">FM-1</a> <a href="tag-berlin.html">Berlin</a> <a href="tag-synthpopworld.html">Synthpopworld</a> <a href="tag-gearnews.html">Gearnews</a> <a href="tag-m-vave.html">M-VAVE</a> <a href="tag-rue-oberkampf.html">Rue Oberkampf</a> <a href="tag-shallow-grave.html">Shallow Grave</a> <a href="tag-st-digue.html">St Digue</a></div></div><article class="article entry"><a class="hero-link" href="https://synthanatomy.com/category/music-tech-news" target="_blank" rel="noopener"><img class="hero" src="img/synth-music_2026-10-22_1800.jpg" alt="Synth Music — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Synthpopworld, Synth Anatomy, Gearnews, RecentMusic</p>
 <h2>Key findings</h2>
 <h3>The M-VAVE FM-1 firmware explosion</h3>
@@ -580,8 +627,8 @@ body.light .pol-sect { color:#8f5e12; }
 <li>Droid Bishop and UK synthwaver Shadow Recall teamed up on Sampled Memory, a neon-lit single out now; Nashville's Nightly brought in synthwave duo The Midnight for a new version of 1989, out October 16; Hotel Pools and Hello Meteor joined forces as Ocean Company on a ten-track synthwave album out now. (<a href="https://synthpopworld.com/category/synthwave/" target="_blank" rel="noopener">Source</a>)</li>
 <li>Dead Astronauts released Shallow Grave, a fifth album pulling from darkwave, synthwave, and post-punk; Deep Structure released Clash of the Universe, an 11-track album setting '80s science-fiction atmosphere against analogue synths; Future Analog's 13-track synthwave album Lost In Paradise arrived on September 24; Arcade High returned with a self-titled synthwave album on October 16, its most personal record yet. (<a href="https://synthpopworld.com/category/synthwave/" target="_blank" rel="noopener">Source</a>)</li>
 <li>Swedish dark synthpop duo Octolab released Waiting for a better ending, their first album for Rexius Records; Berlin synthpop duo WHOLE released THING, their third album on Blackjack Illuminist Records, mixing industrial and darkwave; Finnish coldwave and synthpunk artist Suzi Sabotage released Sacrifice on Out Of Line Music, a 130 BPM record. (<a href="https://synthpopworld.com/category/darkwave/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="why"><p>The synth hardware story of the moment is the M-VAVE FM-1 — a $50–60 pocket FM synthesizer built on a Yamaha DX-7-based engine — and what is happening around it is a case study in what happens when a low-cost device ships with enough headroom for the community to run with it. M-VAVE released official firmware v16 on October 21, 2026, turning the FM-1 into a 20-voice multi-timbral FM synthesizer with a better sequencer; that same week, M-VAVE launched the FM-1 Open program, formally welcoming developers creating alternative firmware and offering them a dedicated space. The community response has been rapid and creative: zvenson's Obervave turns the FM-1 and SMK-37 Pro/Elite into an Oberheim-style VA polysynth; Hügelton Instruments' Felucca turns it into a multi-engine synthesizer; Charles Vestal's X0X turns it into a ReBirth-like groovebox; and Groove OS turns it into an 8-track groovebox — almost all free and open source. Sound designers are now jumping on board too: Natlife Sounds released the first FM-1 sound bank, with Ambient &amp; Dreams for the FM-1 and FM synthesizers.</p>
+<p>On the music side, the October 2026 release calendar for the darkwave, synthwave, and dark synthpop scene has been unusually dense. St. Digue, the Copenhagen dark synthwave artist, released his third album Secret Language on October 19, led by the singles Relapse and Secret Language. La Roux returned on November 6 with Old Flames, her first album in six years. In Strict Confidence returned with Fever, a new single and video that previews their next album. Mesh released the official video for Fallen Angel, title track of a nine-track mini-album out November 27. The Light Dreams and Steve Ogden of Three By One joined forces on LUX, a five-track EP. Dead Astronauts released Shallow Grave, a fifth album pulling from darkwave, synthwave, and post-punk. The scene's release velocity this month — multiple albums a week across the darkwave and synthwave spectrum — suggests a community that is productive and interconnected, not just nostalgic.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://synthpopworld.com/category/darkwave/" target="_blank" rel="noopener">Synthpopworld — Dark Wave releases</a></li>
 <li><a href="https://synthpopworld.com/category/synthwave/" target="_blank" rel="noopener">Synthpopworld — Synth Wave releases</a></li>

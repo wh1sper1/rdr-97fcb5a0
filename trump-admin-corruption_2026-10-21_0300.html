@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip active" href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="trump-admin-corruption.html">&larr; All Trump Admin briefs</a><span class="kicker" style="color:#b91c1c">POLITICS</span><h1>Trump Administration Corruption — Research Digest</h1><div class="meta">Saved 2026-10-21 03:00 &middot; Trump Admin &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-kimberly-guilfoyle.html">Kimberly Guilfoyle</a> <a href="tag-republican.html">Republican</a> <a href="tag-democrats.html">Democrats</a> <a href="tag-qatar.html">Qatar</a></div><div class="why"><p>The defining feature of Trump's second term is not any single scandal but the volume and the variety — it is the way self-enrichment has become the operating system rather than the exception. Senators Elizabeth Warren and Chris Murphy have each assembled timelines that read less like a record of isolated incidents than a business plan: stock trades timed to policy announcements, government contracts funneled to companies linked to the president's children, a crypto venture backed by a foreign government that then received U.S. weapons and AI chips, gifts from foreign governments including a luxury jet from Qatar, and a meme coin that generated $636 million from investors who paid for access to a private dinner at Trump's golf club.</p>
-<p>The throughline connecting these stories is the erosion of the barrier between public office and private profit. In a normal administration, the appearance of a conflict is enough to trigger recusal or investigation; here the appearance is the point. The Trump Organization's lawsuit against the IRS to block an audit, the 3,555 stock trades in the first three months of 2026 alone, the $3.2 billion in direct government business awarded to companies in which Eric and Donald Jr. have invested — these are not being treated by the administration as problems to solve but as leverage to defend. When Sen. Murphy documents 500 days of what he calls "nuclear-grade corruption," and when the National Review — not exactly a hostile outlet — warns that GOP candidates may pay the price for it, the political vulnerability is becoming visible even inside the coalition.</p>
-<p>What to watch next: the midterm elections. More than $15 billion has been raised to influence the outcome, and Trump's self-dealing is now a live issue for Republican candidates in competitive districts. The inspector general investigations into figures like Kimberly Guilfoyle, the State Department's probe into her use of private planes and acceptance of improper gifts, and the ongoing questions about the World Liberty Financial deal with the Emirati royal are all still unfolding. The November results will measure whether the base sees this as corruption or as competence.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.warren.senate.gov/newsroom/press-releases/warren-garcia-press-trump-on-thousands-of-stock-trades-question-him-on-self-enrichment-from-government-actions/" target="_blank" rel="noopener"><img class="hero" src="img/trump-admin-corruption_2026-10-21_0300.jpg" alt="Trump Administration Corruption — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=AoGFzol3dkQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AoGFzol3dkQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4dVOyjfaziQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4dVOyjfaziQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 03:00 (PDT)</p>
+<main><div class="article"><a class="back" href="trump-admin-corruption.html">&larr; All Trump Admin briefs</a><span class="kicker" style="color:#b91c1c">POLITICS</span><h1>Trump Administration Corruption — Research Digest</h1><div class="meta">Saved 2026-10-21 03:00 &middot; Trump Admin &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-russia.html">Russia</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-vladimir-putin.html">Vladimir Putin</a> <a href="tag-kimberly-guilfoyle.html">Kimberly Guilfoyle</a> <a href="tag-republican.html">Republican</a> <a href="tag-democrats.html">Democrats</a> <a href="tag-qatar.html">Qatar</a></div></div><article class="article entry"><a class="hero-link" href="https://www.warren.senate.gov/newsroom/press-releases/warren-garcia-press-trump-on-thousands-of-stock-trades-question-him-on-self-enrichment-from-government-actions/" target="_blank" rel="noopener"><img class="hero" src="img/trump-admin-corruption_2026-10-21_0300.jpg" alt="Trump Administration Corruption — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 03:00 (PDT)</p>
 <p><strong>Sources:</strong> NPR, The Atlantic, ProPublica, Washington Post, Wall Street Journal, CNN, Senate.gov (Warren, Murphy), National Review, Chicago Sun-Times, CREW, Citizens for Ethics</p>
 <h2>Key findings</h2>
 <h3>Stock trades and financial disclosures</h3>
@@ -593,8 +639,9 @@ body.light .pol-sect { color:#8f5e12; }
 <li>The White House asked Guilfoyle to resign after multiple Wall Street Journal reports, including that she asked a Trump donor to pay a $100,000 credit card bill in a way she thought was untraceable and promised him access to high-level officials. (<a href="https://www.nationalreview.com/2026/10/gop-candidates-may-pay-the-price-for-trump-administration-self-dealing/" target="_blank" rel="noopener">Source</a>)</li>
 <li>Contracts totaling $143 million were allegedly given to an entity incorporated only 11 days before the solicitation; Corey Lewandowski took no salary for nearly two years while serving as effectively Kristi Noem's deputy during a period he was widely believed to be her romantic partner. (<a href="https://chicago.suntimes.com/columnists/2026/10/09/trump-corruption-sons-administration-money-deals-mona-charen" target="_blank" rel="noopener">Source</a>)</li>
 <li>CREW reports that Trump's conflicts in his second term have far surpassed the standard he set in his first term; Forbes analysis puts his net worth at $7.3 billion since his return to office. (<a href="https://www.citizensforethics.org/reports-investigations/crew-reports/trumps-properties-remain-an-epicenter-of-his-conflicts-and-corruption-in-second-term/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><div class="video-embed"><a href="https://www.youtube.com/watch?v=AoGFzol3dkQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/AoGFzol3dkQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=4dVOyjfaziQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/4dVOyjfaziQ/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>The defining feature of Trump's second term is not any single scandal but the volume and the variety — it is the way self-enrichment has become the operating system rather than the exception. Senators Elizabeth Warren and Chris Murphy have each assembled timelines that read less like a record of isolated incidents than a business plan: stock trades timed to policy announcements, government contracts funneled to companies linked to the president's children, a crypto venture backed by a foreign government that then received U.S. weapons and AI chips, gifts from foreign governments including a luxury jet from Qatar, and a meme coin that generated $636 million from investors who paid for access to a private dinner at Trump's golf club.</p>
+<p>The throughline connecting these stories is the erosion of the barrier between public office and private profit. In a normal administration, the appearance of a conflict is enough to trigger recusal or investigation; here the appearance is the point. The Trump Organization's lawsuit against the IRS to block an audit, the 3,555 stock trades in the first three months of 2026 alone, the $3.2 billion in direct government business awarded to companies in which Eric and Donald Jr. have invested — these are not being treated by the administration as problems to solve but as leverage to defend. When Sen. Murphy documents 500 days of what he calls "nuclear-grade corruption," and when the National Review — not exactly a hostile outlet — warns that GOP candidates may pay the price for it, the political vulnerability is becoming visible even inside the coalition.</p>
+<p>What to watch next: the midterm elections. More than $15 billion has been raised to influence the outcome, and Trump's self-dealing is now a live issue for Republican candidates in competitive districts. The inspector general investigations into figures like Kimberly Guilfoyle, the State Department's probe into her use of private planes and acceptance of improper gifts, and the ongoing questions about the World Liberty Financial deal with the Emirati royal are all still unfolding. The November results will measure whether the base sees this as corruption or as competence.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.warren.senate.gov/newsroom/press-releases/warren-garcia-press-trump-on-thousands-of-stock-trades-question-him-on-self-enrichment-from-government-actions/" target="_blank" rel="noopener">Senator Elizabeth Warren — Warren, Garcia Press Trump on Thousands of Stock Trades</a></li>
 <li><a href="https://www.theatlantic.com/politics/2026/08/trump-ethics-corruption-crypto-watchdogs/688187/" target="_blank" rel="noopener">The Atlantic — The Watchdogs Are Barking Themselves Hoarse</a></li>

@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip active" href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="gaming.html">&larr; All Gaming briefs</a><span class="kicker" style="color:#22d3ee">GAMING</span><h1>Gaming — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Gaming &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-israel.html">Israel</a> <a href="tag-ground-news.html">Ground News</a> <a href="tag-gta.html">GTA</a> <a href="tag-steam.html">Steam</a> <a href="tag-switch.html">Switch</a> <a href="tag-xbox.html">Xbox</a> <a href="tag-microsoft.html">Microsoft</a> <a href="tag-ps5.html">PS5</a></div><div class="why"><p>Gaming in October 2026 is dominated by one story: Grand Theft Auto VI is coming November 19, and every decision Rockstar has made about its release is generating a firestorm. The game will be the first in the 29-year-old franchise to be released without a physical disc — boxed copies will contain only a download code, requiring a full digital download to play. Rockstar has also locked exclusive in-game shops behind the $200+ Ultimate Edition, creating what fans describe as a "fragmented" version of the game world where parts of the map are only accessible to paying premium customers. The August 27 "Extended Look" premiered exclusively on Netflix at $8.99, six hours before it went free on YouTube — a paywall on one of gaming's most anticipated reveals that drew immediate and loud backlash.</p>
-<p>The controversy is not just about consumer frustration. It represents a fundamental shift in what "ownership" means for video games. When a physical box contains no disc — only a license to download — the game is no longer a product you own but a service you access. The leaker "Cyberleek" justified the GTA VI leak as a protest against the gaming industry's shift toward all-digital releases, calling for an end to digital preorders and a ban on selling DLC already contained in base-game files. Sony is reportedly ending production of physical game discs for new PlayStation games starting in 2028, making them available only in digital formats. The industry is moving decisively toward a digital-only future, and the consumer backlash is intensifying.</p>
-<p>Beyond GTA VI, the gaming landscape in October 2026 is defined by a wave of major releases: Final Fantasy Resonance launches October 22 with strong early reviews. Nintendo Switch Sports Resort arrives October 22 on Switch 2. Marvel Rivals announced a 50-player PvE mode with a Thanos fight. Helldivers 2's update 7.2.0 is switching to Easy Anti-Cheat, disrupting mods and sparking a surge of negative Steam reviews. And the industry's 2026 layoff count quietly passed all of 2025 combined by August.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.notebookcheck.net/The-biggest-gaming-news-from-August-2026.1387109.0.html" target="_blank" rel="noopener"><img class="hero" src="img/gaming_2026-10-21_1800.jpg" alt="Gaming — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="gaming.html">&larr; All Gaming briefs</a><span class="kicker" style="color:#22d3ee">GAMING</span><h1>Gaming — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Gaming &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-israel.html">Israel</a> <a href="tag-ground-news.html">Ground News</a> <a href="tag-gta.html">GTA</a> <a href="tag-steam.html">Steam</a> <a href="tag-switch.html">Switch</a> <a href="tag-xbox.html">Xbox</a> <a href="tag-microsoft.html">Microsoft</a> <a href="tag-ps5.html">PS5</a></div></div><article class="article entry"><a class="hero-link" href="https://www.notebookcheck.net/The-biggest-gaming-news-from-August-2026.1387109.0.html" target="_blank" rel="noopener"><img class="hero" src="img/gaming_2026-10-21_1800.jpg" alt="Gaming — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> The Game Traders, IGN, Digg, Polygon, NotebookCheck, DLCompare, RTE, VGTimes, LevelUp, Destructoid, Noisy Pixel, Epic Games, Nintendo, Rockstar Games, CD Projekt</p>
 <h2>Key findings</h2>
 <h3>GTA VI: Digital-only release, premium content lockouts, Netflix paywall</h3>
@@ -587,8 +633,9 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>Big Walk boycotts Xbox over Microsoft's ties to Israeli military</h3>
 <p>House House, the developers of Big Walk — one of 2026's most celebrated releases and a potential GOTY contender — confirmed they will not bring the game to Xbox Series X|S. The studio joined the boycotts against Microsoft, supporting the BDS campaign backed by Palestinian organizations. Microsoft has been at the center of controversy since 2025 because of its technological ties to the Israeli military, reportedly providing Azure Cloud and artificial intelligence systems. Numerous developers and independent creators began removing their games from the Xbox digital store and encouraging players to cancel Game Pass subscriptions earlier this year. (<a href="https://www.levelup.com/en/news/one-of-the-best-games-of-2026-and-a-potential-goty-contender-wont-launch-on-xbox-to-boycott-microsoft/" target="_blank" rel="noopener">Source</a>)</p>
 <h3>Nintendo dominates coverage; GTA leads mentions</h3>
-<p>This week, Nintendo dominated gaming coverage with 640 articles — up 33% from the previous period. Grand Theft Auto led individual game mentions with 185 hits. The Switch 2 led hardware coverage with 300 mentions. General gaming news drove 72% of all stories. Modern Warfare mentions jumped 136 this week, and Call of Duty mentions jumped 76. Zelda: Ocarina of Time Remake file size was officially confirmed, generating 94 stories across 26 outlets. (<a href="https://thegametraders.com/news/trending" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>This week, Nintendo dominated gaming coverage with 640 articles — up 33% from the previous period. Grand Theft Auto led individual game mentions with 185 hits. The Switch 2 led hardware coverage with 300 mentions. General gaming news drove 72% of all stories. Modern Warfare mentions jumped 136 this week, and Call of Duty mentions jumped 76. Zelda: Ocarina of Time Remake file size was officially confirmed, generating 94 stories across 26 outlets. (<a href="https://thegametraders.com/news/trending" target="_blank" rel="noopener">Source</a>)</p><div class="why"><p>Gaming in October 2026 is dominated by one story: Grand Theft Auto VI is coming November 19, and every decision Rockstar has made about its release is generating a firestorm. The game will be the first in the 29-year-old franchise to be released without a physical disc — boxed copies will contain only a download code, requiring a full digital download to play. Rockstar has also locked exclusive in-game shops behind the $200+ Ultimate Edition, creating what fans describe as a "fragmented" version of the game world where parts of the map are only accessible to paying premium customers. The August 27 "Extended Look" premiered exclusively on Netflix at $8.99, six hours before it went free on YouTube — a paywall on one of gaming's most anticipated reveals that drew immediate and loud backlash.</p>
+<p>The controversy is not just about consumer frustration. It represents a fundamental shift in what "ownership" means for video games. When a physical box contains no disc — only a license to download — the game is no longer a product you own but a service you access. The leaker "Cyberleek" justified the GTA VI leak as a protest against the gaming industry's shift toward all-digital releases, calling for an end to digital preorders and a ban on selling DLC already contained in base-game files. Sony is reportedly ending production of physical game discs for new PlayStation games starting in 2028, making them available only in digital formats. The industry is moving decisively toward a digital-only future, and the consumer backlash is intensifying.</p>
+<p>Beyond GTA VI, the gaming landscape in October 2026 is defined by a wave of major releases: Final Fantasy Resonance launches October 22 with strong early reviews. Nintendo Switch Sports Resort arrives October 22 on Switch 2. Marvel Rivals announced a 50-player PvE mode with a Thanos fight. Helldivers 2's update 7.2.0 is switching to Easy Anti-Cheat, disrupting mods and sparking a surge of negative Steam reviews. And the industry's 2026 layoff count quietly passed all of 2025 combined by August.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://thegametraders.com/news/trending" target="_blank" rel="noopener">The Game Traders — Trending in Gaming: Top News, Twitch &amp; Steam Live Dashboard</a></li>
 <li><a href="https://digg.com/gaming" target="_blank" rel="noopener">Digg — Gaming News</a></li>

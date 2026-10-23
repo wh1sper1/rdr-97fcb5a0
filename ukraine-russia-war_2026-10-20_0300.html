@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -579,8 +627,7 @@ body.light .pol-sect { color:#8f5e12; }
 <ul>
 <li><strong>ISW — October 19, 2026:</strong> Zelensky reported that Ukrainian forces continue to experience disruptions to Starlink and Starshield services on various frontline sectors. Starshield-enabled Ukrainian drones stop functioning at speeds between 130 and 161 km/h, affecting intermediate-range drones, jet-powered drone interceptors, and frontline logistics. Zelensky stated the US supplies Ukraine with 12 Patriot ballistic missile interceptors per month and suggested the US is delaying deliveries of Patriot interceptors purchased under the PURL initiative. Ukrainian Air Force spokesperson Col. Ihnat stated partners only provided advance warning for the second of two waves of Russian ballistic missile strikes, amid continued reports of withheld first-wave warnings. (<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/" target="_blank" rel="noopener">Source</a>)</li>
 <li><strong>ISW — October 19, 2026:</strong> The Kremlin is reportedly pushing for a trilateral meeting between the US, Russia, and China, likely as part of a dual-pronged effort to present itself as a diplomatic peer. Putin used an October 9 phone call with Trump to propose a trilateral summit with Xi Jinping on the sidelines of the November APEC Summit in hopes of promoting a Russia-favorable resolution to the Ukraine war. Russia recently maneuvered its Cosmos-2612 satellite to within just 26 meters of the Finnish-American ICEYE-X36 SAR satellite providing Ukrainian forces with imagery intelligence. (<a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/" target="_blank" rel="noopener">Source</a>)</li>
-</ul>
-<h2>Source links</h2>
+</ul><h2>Source links</h2>
 <ul>
 <li><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-19-2026/" target="_blank" rel="noopener">ISW — Russian Offensive Campaign Assessment, October 19, 2026</a></li>
 <li><a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-october-17-2026/" target="_blank" rel="noopener">ISW — Russian Offensive Campaign Assessment, October 17, 2026</a></li>

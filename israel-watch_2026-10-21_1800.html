@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,10 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip active" href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="israel-watch.html">&larr; All Israel Watch briefs</a><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h1>Israel Watch — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Israel Watch &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-lebanon.html">Lebanon</a> <a href="tag-idf.html">IDF</a></div><div class="why"><p>Israel's war machine in 2026 is defined by the marriage of mass surveillance, artificial intelligence, and kinetic force at a scale that has no precedent in modern warfare. The systems built to surveil Palestinians — Unit 8200's harvesting of phone call metadata, the "Lavender" AI system that listed as many as 37,000 Palestinian men as linked to Hamas or Palestinian Islamic Jihad, the "Gospel" platform that churned out targets at unprecedented speed — have been deployed not only in Gaza but in the escalated 2024-2026 Iran-Israel conflict. When the U.S. and Israel conducted coordinated strikes against Iran beginning February 28, 2026, targeting senior political and military leadership, air defenses, and nuclear enrichment facilities, they relied on AI-assisted surveillance and targeting systems to intensify the attack — striking Iran roughly once every minute and a half at the height of the war.</p>
-<p>The October 2026 revelation of "NAZA," a documentary by Oscar-winning Israeli filmmakers Yuval Abraham and Rachel Szor, brought the inner workings of this system into stark public view. The film features testimony from 24 Israeli military intelligence officers and soldiers who spoke on condition of anonymity about their role in the surveillance and remote killing of Palestinian civilians in Gaza. The whistleblowers described a system in which hacked civilian phones were monitored so precisely that everyday phrases like "daddy's home" were used as triggers to launch airstrikes. The film received a 25-minute standing ovation at the Venice Film Festival. Israel's government condemned it as treason.</p>
-<p>The cyber dimension of the conflict has intensified dramatically. Israel's National Cyber Directorate reported that the number of Iranian cyberattacks against Israel jumped from roughly 1,600 in June 2025 to some 4,800 in June 2026 — a threefold increase since the launch of the U.S.-Israeli war with Iran. Attacks were directed against systems used by Israel's critical infrastructure, central organizations, small- and medium-sized companies, and the public. Meanwhile, Israel-aligned hacking group Predatory Sparrow carried out cyberattacks on Iran's largest crypto exchange, Nobitex, destroying $90 million in cryptocurrency, and on Bank Sepah, one of the IRGC's principal banks, in June 2025.</p>
-<p>The Lebanon front remains active. Hezbollah has deployed fiber-optic-guided first-person view drones that account for one-third of Israeli fatalities in southern Lebanon since March 2026. The Lebanese President said Israel has failed to comply with a U.S.-mediated framework agreement signed in June and continues daily violations in southern Lebanon. Israeli strikes on Hezbollah command centers in Nabatieh and Mayfadoun continue. The 2024 pager explosions — in which thousands of pagers and walkie-talkies used by Hezbollah members exploded simultaneously across Lebanon — were the product of a year-long operation in which Unit 8200 experts tested and refined methods for discreetly inserting explosive material during the manufacturing process.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.youtube.com/watch?v=p0MmG3Tpt2Q" target="_blank" rel="noopener"><img class="hero" src="img/israel-watch_2026-10-21_1800.jpg" alt="Israel Watch — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=p0MmG3Tpt2Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/p0MmG3Tpt2Q/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=iFBXmOsYV38" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iFBXmOsYV38/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
+<main><div class="article"><a class="back" href="israel-watch.html">&larr; All Israel Watch briefs</a><span class="kicker" style="color:#be185d">ISRAEL WATCH</span><h1>Israel Watch — Research Digest</h1><div class="meta">Saved 2026-10-21 18:00 &middot; Israel Watch &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-israel.html">Israel</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-hamas.html">Hamas</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-lebanon.html">Lebanon</a> <a href="tag-idf.html">IDF</a></div></div><article class="article entry"><a class="hero-link" href="https://www.youtube.com/watch?v=p0MmG3Tpt2Q" target="_blank" rel="noopener"><img class="hero" src="img/israel-watch_2026-10-21_1800.jpg" alt="Israel Watch — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-21 18:00 (PDT)</p>
 <p><strong>Sources:</strong> Powerbase, Portside, Lawfare, The Guardian, +972 Magazine, Local Call, Times of Israel, Tehran Times, Al Jazeera, The Grayzone, NBC News, UN News, Le Monde, Wikipedia</p>
 <h2>Key findings</h2>
 <h3>NAZA documentary: Israeli intelligence hacked phones and monitored Gaza families before strikes</h3>
@@ -588,8 +633,10 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>UN: 340+ children killed in Gaza more than one year after ceasefire</h3>
 <p>A little over one year since a ceasefire agreement was announced between Hamas fighters and Israel, more than 340 children have been reported killed and hundreds more injured in Gaza, the UN Children's Fund (UNICEF) said on October 16, 2026. The figures underscore the ongoing human toll of the conflict even after the formal cessation of hostilities. (<a href="https://news.un.org/en/news?summary=true&amp;sdkv=0&amp;userId=a8f9aa1f-4fdf-49ae-acbb-d56b6b85ebce&amp;variant=na&amp;region=IN&amp;jw_start=%7Bseek_to_second_number%7D&amp;page=1" target="_blank" rel="noopener">Source</a>)</p>
 <h3>2026 Lebanon war: Israeli economic targeting of Hezbollah</h3>
-<p>Some of the earliest Israeli military efforts in March 2026 targeted Hezbollah's supply of gold and foreign currency, as well as branches of the Al-Qard Al-Hasan Association, a non-profit financial institution described as "Hezbollah's bank in Lebanon." The economic targeting was part of a broader strategy to degrade Hezbollah's financial infrastructure alongside kinetic operations in southern Lebanon. (<a href="https://en.wikipedia.org/wiki/2026_Lebanon_war" target="_blank" rel="noopener">Source</a>)</p>
-<h2>Source links</h2>
+<p>Some of the earliest Israeli military efforts in March 2026 targeted Hezbollah's supply of gold and foreign currency, as well as branches of the Al-Qard Al-Hasan Association, a non-profit financial institution described as "Hezbollah's bank in Lebanon." The economic targeting was part of a broader strategy to degrade Hezbollah's financial infrastructure alongside kinetic operations in southern Lebanon. (<a href="https://en.wikipedia.org/wiki/2026_Lebanon_war" target="_blank" rel="noopener">Source</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=p0MmG3Tpt2Q" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/p0MmG3Tpt2Q/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=iFBXmOsYV38" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/iFBXmOsYV38/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>Israel's war machine in 2026 is defined by the marriage of mass surveillance, artificial intelligence, and kinetic force at a scale that has no precedent in modern warfare. The systems built to surveil Palestinians — Unit 8200's harvesting of phone call metadata, the "Lavender" AI system that listed as many as 37,000 Palestinian men as linked to Hamas or Palestinian Islamic Jihad, the "Gospel" platform that churned out targets at unprecedented speed — have been deployed not only in Gaza but in the escalated 2024-2026 Iran-Israel conflict. When the U.S. and Israel conducted coordinated strikes against Iran beginning February 28, 2026, targeting senior political and military leadership, air defenses, and nuclear enrichment facilities, they relied on AI-assisted surveillance and targeting systems to intensify the attack — striking Iran roughly once every minute and a half at the height of the war.</p>
+<p>The October 2026 revelation of "NAZA," a documentary by Oscar-winning Israeli filmmakers Yuval Abraham and Rachel Szor, brought the inner workings of this system into stark public view. The film features testimony from 24 Israeli military intelligence officers and soldiers who spoke on condition of anonymity about their role in the surveillance and remote killing of Palestinian civilians in Gaza. The whistleblowers described a system in which hacked civilian phones were monitored so precisely that everyday phrases like "daddy's home" were used as triggers to launch airstrikes. The film received a 25-minute standing ovation at the Venice Film Festival. Israel's government condemned it as treason.</p>
+<p>The cyber dimension of the conflict has intensified dramatically. Israel's National Cyber Directorate reported that the number of Iranian cyberattacks against Israel jumped from roughly 1,600 in June 2025 to some 4,800 in June 2026 — a threefold increase since the launch of the U.S.-Israeli war with Iran. Attacks were directed against systems used by Israel's critical infrastructure, central organizations, small- and medium-sized companies, and the public. Meanwhile, Israel-aligned hacking group Predatory Sparrow carried out cyberattacks on Iran's largest crypto exchange, Nobitex, destroying $90 million in cryptocurrency, and on Bank Sepah, one of the IRGC's principal banks, in June 2025.</p>
+<p>The Lebanon front remains active. Hezbollah has deployed fiber-optic-guided first-person view drones that account for one-third of Israeli fatalities in southern Lebanon since March 2026. The Lebanese President said Israel has failed to comply with a U.S.-mediated framework agreement signed in June and continues daily violations in southern Lebanon. Israeli strikes on Hezbollah command centers in Nabatieh and Mayfadoun continue. The 2024 pager explosions — in which thousands of pagers and walkie-talkies used by Hezbollah members exploded simultaneously across Lebanon — were the product of a year-long operation in which Unit 8200 experts tested and refined methods for discreetly inserting explosive material during the manufacturing process.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=p0MmG3Tpt2Q" target="_blank" rel="noopener">MIRROR NOW — PHONE HACK SHOCK! Israeli Intelligence Monitored Gaza Families Before Strikes</a></li>
 <li><a href="https://www.youtube.com/watch?v=iFBXmOsYV38" target="_blank" rel="noopener">Sama — 'NAZA' and Interviewing 24 Israeli Soldiers about the genocide in GAZA</a></li>

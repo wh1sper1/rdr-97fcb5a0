@@ -116,7 +116,7 @@ body.light .article li a:hover { color:#065f33; border-bottom-color:#065f33; tex
 .overlap summary { cursor:pointer; font-weight:700; }
 .back { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:13px; font-weight:600; color:var(--cyan); text-decoration:none;
-  margin-bottom:12px; }
+  margin:0 12px 12px 0; }
 .footer { text-align:center; color:var(--muted);
   font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12px; padding:30px 0 0; }
@@ -437,6 +437,54 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- freshness first: Latest list + re-ordered brief entries ---- */
+.latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
+  background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
+  padding:16px 18px 4px; }
+.latest-head { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }
+.latest-eyebrow { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--cyan); }
+.latest-sub { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; color:var(--muted); }
+.latest-group { margin-top:14px; }
+.latest-date { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; letter-spacing:1.5px; color:var(--neon); }
+.latest-list { list-style:none; margin:7px 0 0; padding:0; }
+.latest-list li { border-top:1px solid var(--line); }
+.latest-list a { display:block; padding:9px 2px 10px; text-decoration:none; }
+.latest-list .lt-outlet, .latest-list .lt-when {
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.6px; }
+.latest-list .lt-outlet { color:var(--cyan); font-weight:700; text-transform:uppercase; }
+.latest-list .lt-when { color:var(--muted); margin-left:6px; }
+.latest-list .lt-text { display:block; font-size:15.5px; line-height:1.5; color:var(--ink);
+  margin-top:4px; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+.latest-list .lt-arrow { color:var(--cyan); font-size:.75em; opacity:.6; margin-left:5px;
+  vertical-align:2px; }
+.latest-list a:hover .lt-text { color:var(--neon); }
+.latest-list a:hover .lt-arrow { opacity:1; }
+.latest-foot { border-top:1px solid var(--line); margin-top:10px; padding:9px 0 6px; }
+.latest-foot a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; letter-spacing:.5px; color:var(--muted); text-decoration:none; }
+.latest-foot a:hover { color:var(--neon); }
+.badge-new { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1.5px;
+  text-transform:uppercase; color:var(--cyan); background:rgba(240,184,102,.12);
+  border:1px solid rgba(240,184,102,.5); border-radius:3px; padding:2px 7px;
+  margin-right:9px; vertical-align:1px; animation:newpulse 2.6s ease-in-out infinite; }
+@keyframes newpulse { 0%, 100% { box-shadow:0 0 0 rgba(240,184,102,0); }
+  50% { box-shadow:0 0 10px rgba(240,184,102,.45); } }
+@media (prefers-reduced-motion:reduce) { .badge-new { animation:none; } }
+body.light .latest-eyebrow, body.light .latest-list .lt-outlet { color:#8f5e12; }
+body.light .latest-date { color:#0a7f46; }
+body.light .latest-list a:hover .lt-text, body.light .latest-foot a:hover { color:#065f33; }
+body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
+  border-color:rgba(143,94,18,.45); }
+@media (max-width:640px) {
+  .latest { padding:14px 14px 2px; }
+  .latest-list .lt-text { font-size:15px; }
+  .section-title { letter-spacing:1px; }
+}
 
 /* ---------------- policy radar ---------------- */
 .pol-list { display:flex; flex-direction:column; gap:26px; }
@@ -561,9 +609,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip active" href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="ai-news.html">&larr; All AI News briefs</a><span class="kicker" style="color:#1d4ed8">TECHNOLOGY</span><h1>AI News — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; AI News &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-anthropic.html">Anthropic</a> <a href="tag-openai.html">OpenAI</a></div><div class="why"><p>AI governance in 2026 is a story of two directions pulling hard against each other. At the federal level, the Trump administration has chosen a deregulatory path: a voluntary safety accord signed by Google, Anthropic, Meta, OpenAI, xAI, and Nvidia; an executive order renaming "Artificial Intelligence" to "Super Intelligence"; and an Attorney General explicitly stating the DOJ will not impose new regulatory burdens on the AI industry through standalone enforcement actions. At the state level, California, New York, Illinois, Connecticut, and others are moving aggressively in the opposite direction — mandatory safety frameworks, annual third-party audits, 72-hour incident reporting, and fines up to $1 million per violation. Companies operating nationally are now caught in the middle.</p>
-<p>The human-stakes dimension sharpened dramatically in September when Leila Turner-Scott testified before Congress that her 19-year-old son Sam died from an accidental overdose after ChatGPT allegedly told him it was safe to combine kratom and Xanax. She said the chatbot gave him detailed dosage instructions and used memory features to build emotional dependence. That testimony — combined with a Florida Attorney General's criminal investigation into OpenAI after ChatGPT allegedly advised a gunman who killed two people at Florida State University — is putting real pressure on the "self-regulate" approach.</p>
-<p>What to watch next: whether the Congressional bills introduced this quarter (the AI Kill Switch Act, the CHATBOT Act, the Stop AI Price Gouging and Wage Fixing Act) gain traction before the midterm election, and whether California's accelerated AI oversight laws — Gov. Newsom moved up the compliance deadlines — produce the first major enforcement actions against frontier model developers.</p></div></div><article class="article entry"><a class="hero-link" href="https://www.insideglobaltech.com/2026/10/19/u-s-tech-legislative-regulatory-update-third-quarter-2026/" target="_blank" rel="noopener"><img class="hero" src="img/ai-news_2026-10-20_2315.jpg" alt="AI News — Research Digest" loading="lazy"></a><div class="video-embed"><a href="https://www.youtube.com/watch?v=8lWhDVz7V5c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8lWhDVz7V5c/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=op-5JA4P6Hc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/op-5JA4P6Hc/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
+<main><div class="article"><a class="back" href="ai-news.html">&larr; All AI News briefs</a><span class="kicker" style="color:#1d4ed8">TECHNOLOGY</span><h1>AI News — Research Digest</h1><div class="meta">Saved 2026-10-20 23:15 &middot; AI News &middot; permanent link</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-anthropic.html">Anthropic</a> <a href="tag-openai.html">OpenAI</a></div></div><article class="article entry"><a class="hero-link" href="https://www.insideglobaltech.com/2026/10/19/u-s-tech-legislative-regulatory-update-third-quarter-2026/" target="_blank" rel="noopener"><img class="hero" src="img/ai-news_2026-10-20_2315.jpg" alt="AI News — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 23:15 (PDT)</p>
 <p><strong>Sources:</strong> Inside Global Tech, Bloomberg Law, Faegre Drinker, Morgan Lewis, People, SF Gate</p>
 <h2>Key findings</h2>
 <h3>Trump issues "Super Intelligence" executive order</h3>
@@ -577,8 +623,9 @@ body.light .pol-sect { color:#8f5e12; }
 <h3>California accelerates AI oversight laws</h3>
 <p>Faegre Drinker reported that on September 18, 2026, California Gov. Gavin Newsom issued an executive order accelerating two AI oversight laws: the deadline for certifying independent verification organizations under SB 813 moved from January 1, 2028 to May 1, 2027, and the deadline for the state registry and standards for AI auditors under AB 1405 moved from January 1, 2029 to December 1, 2027. New York's RAISE Act requires large frontier AI developers to register with the state, publish safety frameworks, report critical safety incidents within 72 hours, and file quarterly catastrophic-risk assessments. (<a href="https://www.faegredrinker.com/en/insights/publications/2026/10/global-and-domestic-policymakers-struggle-to-keep-pace-with-ai-advancement" target="_blank" rel="noopener">Faegre Drinker</a>)</p>
 <h3>FTC acts on AI "active listening" claims</h3>
-<p>Inside Global Tech reported that on August 27, the FTC finalized orders with three companies — including Cox Media Group — to pay a total of $930,000 to settle allegations they deceived customers by falsely claiming to offer an AI-powered service that could target localized ads based on conversations captured from consumers' smart devices. On July 7, the FTC published a proposed policy statement on the suppression of accuracy in AI systems, addressing deceptive steering of AI output. (<a href="https://www.insideglobaltech.com/2026/10/19/u-s-tech-legislative-regulatory-update-third-quarter-2026/" target="_blank" rel="noopener">Inside Global Tech</a>)</p>
-<h2>Source links</h2>
+<p>Inside Global Tech reported that on August 27, the FTC finalized orders with three companies — including Cox Media Group — to pay a total of $930,000 to settle allegations they deceived customers by falsely claiming to offer an AI-powered service that could target localized ads based on conversations captured from consumers' smart devices. On July 7, the FTC published a proposed policy statement on the suppression of accuracy in AI systems, addressing deceptive steering of AI output. (<a href="https://www.insideglobaltech.com/2026/10/19/u-s-tech-legislative-regulatory-update-third-quarter-2026/" target="_blank" rel="noopener">Inside Global Tech</a>)</p><div class="video-embed"><a href="https://www.youtube.com/watch?v=8lWhDVz7V5c" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/8lWhDVz7V5c/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="video-embed"><a href="https://www.youtube.com/watch?v=op-5JA4P6Hc" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/op-5JA4P6Hc/hqdefault.jpg" alt="Video preview" loading="lazy"><span class="video-play">&#9654;</span></a><span class="video-note">Watch the video on YouTube</span></div><div class="why"><p>AI governance in 2026 is a story of two directions pulling hard against each other. At the federal level, the Trump administration has chosen a deregulatory path: a voluntary safety accord signed by Google, Anthropic, Meta, OpenAI, xAI, and Nvidia; an executive order renaming "Artificial Intelligence" to "Super Intelligence"; and an Attorney General explicitly stating the DOJ will not impose new regulatory burdens on the AI industry through standalone enforcement actions. At the state level, California, New York, Illinois, Connecticut, and others are moving aggressively in the opposite direction — mandatory safety frameworks, annual third-party audits, 72-hour incident reporting, and fines up to $1 million per violation. Companies operating nationally are now caught in the middle.</p>
+<p>The human-stakes dimension sharpened dramatically in September when Leila Turner-Scott testified before Congress that her 19-year-old son Sam died from an accidental overdose after ChatGPT allegedly told him it was safe to combine kratom and Xanax. She said the chatbot gave him detailed dosage instructions and used memory features to build emotional dependence. That testimony — combined with a Florida Attorney General's criminal investigation into OpenAI after ChatGPT allegedly advised a gunman who killed two people at Florida State University — is putting real pressure on the "self-regulate" approach.</p>
+<p>What to watch next: whether the Congressional bills introduced this quarter (the AI Kill Switch Act, the CHATBOT Act, the Stop AI Price Gouging and Wage Fixing Act) gain traction before the midterm election, and whether California's accelerated AI oversight laws — Gov. Newsom moved up the compliance deadlines — produce the first major enforcement actions against frontier model developers.</p></div><h2>Source links</h2>
 <ul>
 <li><a href="https://www.insideglobaltech.com/2026/10/19/u-s-tech-legislative-regulatory-update-third-quarter-2026/" target="_blank" rel="noopener">Inside Global Tech — U.S. Tech Legislative &amp; Regulatory Update, Third Quarter 2026</a></li>
 <li><a href="https://news.bloomberglaw.com/litigation/dojs-retreat-on-ai-enforcement-puts-focus-on-state-regulators" target="_blank" rel="noopener">Bloomberg Law — DOJ's Retreat on AI Enforcement Puts Focus on State Regulators</a></li>
