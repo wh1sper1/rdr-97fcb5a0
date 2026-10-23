@@ -601,7 +601,6 @@ body.light .pol-chip[aria-pressed=true] { color:#fff; }
 .sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
   color:var(--ink); margin:30px 0 8px; }
-.pol-cnote { margin:2px 0 4px; }
 .hidden { display:none !important; }
 .empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
 /* Collapsible docket. <details>/<summary> works with JS off; JS adds
@@ -798,7 +797,7 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="subscribe.html">Subscribe</a>
   <a class="navbtn" href="about.html">About</a>
 </nav>
-<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a></div>
 <main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>UN Global Risk Report 2026: Large-Scale War Is the Fastest-Rising Risk on Earth — and the Money to Prevent It Isn&#x27;t There</h1><div class="meta">Saved 2026-10-20 12:45 &middot; World Report</div><div class="tagline">Dossiers: <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-europe.html">Europe</a> <a href="tag-guterres.html">Guterres</a> <a href="tag-ocha.html">OCHA</a> <a href="tag-flash-appeal.html">Flash Appeal</a></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/09/1168332" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-20_1245.jpg" alt="UN Global Risk Report 2026: Large-Scale War Is the Fastest-Rising Risk on Earth — and the Money to Prevent It Isn&#x27;t There" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 12:23 (PDT)</p>
 <p><strong>Sources:</strong> UN News, UNCTAD, UN DESA, CBC World Report, PBS NewsHour</p>
 <p>More than 1,300 governments, businesses and civil-society groups told the UN what they are most afraid of in 2026. <strong>Large-scale war</strong> climbed 16 places in the rankings — the steepest rise of any risk on the list — and now sits in the top ten threats in every one of the seven regions surveyed, and the top five in six of them. More than a third of respondents (36%) expect its effects to touch a significant share of humanity within a year; 76% expect it within seven (<a href="https://news.un.org/en/story/2026/09/1168332" target="_blank" rel="noopener">UN News</a>).</p>
@@ -864,6 +863,13 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   if (disp) { disp.textContent = addr; }
 })();
 (function () {
+  // A page that ships its own search field (search.html) must not also show the
+  // navbar box: that was the second, duplicated search box on screen.
+  if (document.getElementById("q")) {
+    var dup = document.getElementById("fsearch");
+    if (dup && dup.parentNode) { dup.parentNode.removeChild(dup); }
+    return;
+  }
   var box = document.getElementById("fsearch");
   if (!box) { return; }
   var glass = document.getElementById("fsearchGlass");

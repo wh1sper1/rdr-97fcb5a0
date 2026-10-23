@@ -601,7 +601,6 @@ body.light .pol-chip[aria-pressed=true] { color:#fff; }
 .sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
   color:var(--ink); margin:30px 0 8px; }
-.pol-cnote { margin:2px 0 4px; }
 .hidden { display:none !important; }
 .empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
 /* Collapsible docket. <details>/<summary> works with JS off; JS adds
@@ -798,8 +797,8 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="subscribe.html">Subscribe</a>
   <a class="navbtn" href="about.html">About</a>
 </nav>
-<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; World Report</div><div class="tagline">Dossiers: <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-taiwan.html">Taiwan</a></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168646" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-23_0300.jpg" alt="World Report — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip active" href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a></div>
+<main><div class="article"><a class="back" href="world-report.html">&larr; All World Report briefs</a><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h1>World Report — Research Digest</h1><div class="meta">Saved 2026-10-23 03:00 &middot; World Report</div><div class="tagline">Dossiers: <a href="tag-russia.html">Russia</a> <a href="tag-ukraine.html">Ukraine</a> <a href="tag-iran.html">Iran</a> <a href="tag-middle-east.html">Middle East</a> <a href="tag-gaza.html">Gaza</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-west-bank.html">West Bank</a> <a href="tag-europe.html">Europe</a></div></div><article class="article entry"><a class="hero-link" href="https://news.un.org/en/story/2026/10/1168646" target="_blank" rel="noopener"><img class="hero" src="img/world-report_2026-10-23_0300.jpg" alt="World Report — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-23 03:00 (PDT)</p>
 <p><strong>Sources:</strong> UN News, ABC News, Associated Press, CNN, UNCTAD, UNDP, WFP</p>
 <h2>Key findings</h2>
 <h3>The UN Secretary-General's "El Niño of war" warning</h3>
@@ -870,6 +869,13 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   if (disp) { disp.textContent = addr; }
 })();
 (function () {
+  // A page that ships its own search field (search.html) must not also show the
+  // navbar box: that was the second, duplicated search box on screen.
+  if (document.getElementById("q")) {
+    var dup = document.getElementById("fsearch");
+    if (dup && dup.parentNode) { dup.parentNode.removeChild(dup); }
+    return;
+  }
   var box = document.getElementById("fsearch");
   if (!box) { return; }
   var glass = document.getElementById("fsearchGlass");

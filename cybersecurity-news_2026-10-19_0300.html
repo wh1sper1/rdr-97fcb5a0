@@ -601,7 +601,6 @@ body.light .pol-chip[aria-pressed=true] { color:#fff; }
 .sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
   color:var(--ink); margin:30px 0 8px; }
-.pol-cnote { margin:2px 0 4px; }
 .hidden { display:none !important; }
 .empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
 /* Collapsible docket. <details>/<summary> works with JS off; JS adds
@@ -798,7 +797,7 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="subscribe.html">Subscribe</a>
   <a class="navbtn" href="about.html">About</a>
 </nav>
-<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip active" href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip active" href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a></div>
 <main><div class="article"><a class="back" href="cybersecurity-news.html">&larr; All Cyber Security briefs</a><span class="kicker" style="color:#047857">CYBERSECURITY</span><h1>Cybersecurity News — Research Digest</h1><div class="meta">Saved 2026-10-19 03:00 &middot; Cyber Security</div><div class="tagline">Dossiers: <a href="tag-fbi.html">FBI</a> <a href="tag-north-korea.html">North Korea</a> <a href="tag-openai.html">OpenAI</a> <a href="tag-pentagon.html">Pentagon</a> <a href="tag-texas.html">Texas</a> <a href="tag-killsec.html">KillSec</a> <a href="tag-social-security.html">Social Security</a> <a href="tag-cvss.html">CVSS</a></div></div><article class="article entry"><a class="hero-link" href="https://aviatrix.ai/threat-research-center/pentagon-dmdc-breach-3-million-records-2026-killsec-takedown-bitget-387m-week-40/" target="_blank" rel="noopener"><img class="hero" src="img/cybersecurity-news_2026-10-19_0300.jpg" alt="Cybersecurity News — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-19 03:00 (PDT)</p>
 <p><strong>Sources:</strong> Aviatrix Threat Research Center, The Hacker News, Security Boulevard, FBI, CISA, Google Mandiant</p>
 <h2>Key findings</h2>
@@ -878,6 +877,13 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   if (disp) { disp.textContent = addr; }
 })();
 (function () {
+  // A page that ships its own search field (search.html) must not also show the
+  // navbar box: that was the second, duplicated search box on screen.
+  if (document.getElementById("q")) {
+    var dup = document.getElementById("fsearch");
+    if (dup && dup.parentNode) { dup.parentNode.removeChild(dup); }
+    return;
+  }
   var box = document.getElementById("fsearch");
   if (!box) { return; }
   var glass = document.getElementById("fsearchGlass");

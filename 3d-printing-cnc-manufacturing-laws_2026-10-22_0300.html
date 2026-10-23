@@ -601,7 +601,6 @@ body.light .pol-chip[aria-pressed=true] { color:#fff; }
 .sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
   color:var(--ink); margin:30px 0 8px; }
-.pol-cnote { margin:2px 0 4px; }
 .hidden { display:none !important; }
 .empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
 /* Collapsible docket. <details>/<summary> works with JS off; JS adds
@@ -798,8 +797,8 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="subscribe.html">Subscribe</a>
   <a class="navbtn" href="about.html">About</a>
 </nav>
-<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip active" href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="3d-printing-cnc-manufacturing-laws.html">&larr; All 3D Printing &amp; CNC Laws briefs</a><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h1>3D Printing &amp; CNC Manufacturing Laws — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; 3D Printing &amp; CNC Laws</div><div class="tagline">Dossiers: <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-cnc.html">CNC</a> <a href="tag-fm-1.html">FM-1</a> <a href="tag-anarchists-and-anti-fascists.html">Anarchists and Anti-Fascists</a></div></div><article class="article entry"><a class="hero-link" href="https://giffords.org/analysis/gun-law-trendwatch-states-are-moving-forward-in-2026/" target="_blank" rel="noopener"><img class="hero" src="img/3d-printing-cnc-manufacturing-laws_2026-10-22_0300.jpg" alt="3D Printing &amp; CNC Manufacturing Laws — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip active" href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a></div>
+<main><div class="article"><a class="back" href="3d-printing-cnc-manufacturing-laws.html">&larr; All 3D Printing &amp; CNC Laws briefs</a><span class="kicker" style="color:#6d28d9">LAW &amp; MAKING</span><h1>3D Printing &amp; CNC Manufacturing Laws — Research Digest</h1><div class="meta">Saved 2026-10-22 03:00 &middot; 3D Printing &amp; CNC Laws</div><div class="tagline">Dossiers: <a href="tag-california.html">California</a> <a href="tag-doj.html">DOJ</a> <a href="tag-colorado.html">Colorado</a> <a href="tag-new-york.html">New York</a> <a href="tag-cnc.html">CNC</a> <a href="tag-3d-printed-gun-safety-act-s-2165.html">3D Printed Gun Safety Act (S.2165)</a> <a href="tag-anarchists-and-anti-fascists.html">Anarchists and Anti-Fascists</a> <a href="tag-printer-is-about-to-become-illegal.html">Printer Is About to Become Illegal</a></div></div><article class="article entry"><a class="hero-link" href="https://giffords.org/analysis/gun-law-trendwatch-states-are-moving-forward-in-2026/" target="_blank" rel="noopener"><img class="hero" src="img/3d-printing-cnc-manufacturing-laws_2026-10-22_0300.jpg" alt="3D Printing &amp; CNC Manufacturing Laws — Research Digest" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-22 03:00 (PDT)</p>
 <p><strong>Sources:</strong> Giffords, Colorado Legislature, California Senate, PCMag, The Register, Adafruit, EFF, New York Senate, Washington State Legislature</p>
 <h2>Key findings</h2>
 <h3>Colorado: 3D printing defined to include CNC, felony for second offense</h3>
@@ -880,6 +879,13 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   if (disp) { disp.textContent = addr; }
 })();
 (function () {
+  // A page that ships its own search field (search.html) must not also show the
+  // navbar box: that was the second, duplicated search box on screen.
+  if (document.getElementById("q")) {
+    var dup = document.getElementById("fsearch");
+    if (dup && dup.parentNode) { dup.parentNode.removeChild(dup); }
+    return;
+  }
   var box = document.getElementById("fsearch");
   if (!box) { return; }
   var glass = document.getElementById("fsearchGlass");

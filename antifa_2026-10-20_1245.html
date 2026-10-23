@@ -601,7 +601,6 @@ body.light .pol-chip[aria-pressed=true] { color:#fff; }
 .sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
   font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
   color:var(--ink); margin:30px 0 8px; }
-.pol-cnote { margin:2px 0 4px; }
 .hidden { display:none !important; }
 .empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
 /* Collapsible docket. <details>/<summary> works with JS off; JS adds
@@ -798,7 +797,7 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="subscribe.html">Subscribe</a>
   <a class="navbtn" href="about.html">About</a>
 </nav>
-<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip active" href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
+<div class="chips"><a class="chip " href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip active" href="antifa.html">Antifa</a></div>
 <main><div class="article"><a class="back" href="antifa.html">&larr; All Antifa briefs</a><span class="kicker" style="color:#ef4444">ANTIFA</span><h1>Prairieland Antifa Sentences: 556 Years for a Protest — and the Warnings the State Ignored</h1><div class="meta">Saved 2026-10-20 12:45 &middot; Antifa</div><div class="tagline">Dossiers: <a href="tag-donald-trump.html">Donald Trump</a> <a href="tag-ice.html">ICE</a> <a href="tag-fbi.html">FBI</a> <a href="tag-texas.html">Texas</a> <a href="tag-antifa.html">Antifa</a> <a href="tag-minnesota.html">Minnesota</a> <a href="tag-nspm-7.html">NSPM-7</a> <a href="tag-prairieland.html">Prairieland</a></div></div><article class="article entry"><a class="hero-link" href="https://www.dallasobserver.com/news/post-prairieland-how-dallas-activism-has-changed-since-the-detention-center-shooting-40724069/" target="_blank" rel="noopener"><img class="hero" src="img/antifa_2026-10-20_1245.jpg" alt="Prairieland Antifa Sentences: 556 Years for a Protest — and the Warnings the State Ignored" loading="lazy"></a><p><strong>Date saved:</strong> 2026-10-20 12:23 (PDT)</p>
 <p><strong>Sources:</strong> PBS NewsHour, Type Investigations, Political Research Associates, Star Tribune, AP/MTSU First Amendment, Dallas Observer, Support Committee for the Prairieland Defendants</p>
 <p>Nine protesters are serving between 30 and 100 years in federal prison after the Justice Department called them members of Antifa. The combined terms handed to the defendants total <strong>556 years</strong> (<a href="https://www.dallasobserver.com/news/post-prairieland-how-dallas-activism-has-changed-since-the-detention-center-shooting-40724069/" target="_blank" rel="noopener">Dallas Observer</a>) — more than any January 6 defendant received, every one of whom has since been pardoned or commuted by President Trump. The case is the first to apply a September 2025 executive order designating Antifa a "domestic terrorist organization," a category that does not exist in United States law (<a href="https://www.pbs.org/newshour/show/anti-ice-protesters-sentenced-to-decades-in-prison-in-latest-crackdown-on-dissent" target="_blank" rel="noopener">PBS NewsHour</a>).</p>
@@ -868,6 +867,13 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   if (disp) { disp.textContent = addr; }
 })();
 (function () {
+  // A page that ships its own search field (search.html) must not also show the
+  // navbar box: that was the second, duplicated search box on screen.
+  if (document.getElementById("q")) {
+    var dup = document.getElementById("fsearch");
+    if (dup && dup.parentNode) { dup.parentNode.removeChild(dup); }
+    return;
+  }
   var box = document.getElementById("fsearch");
   if (!box) { return; }
   var glass = document.getElementById("fsearchGlass");

@@ -9,6 +9,5 @@
 - **Political corruption & anti-corruption reporting** — Trump administration graft, conflicts of interest, corporate capture
 - **Geopolitics** — Ukraine-Russia war, Israel watch, world report
 - **Tech & law** — AI, cybersecurity, surveillance overreach, 3D printing & CNC manufacturing laws
-- **Culture** — gaming, synth music
 
 Updated automatically twice daily (3 AM & 6 PM Pacific) from cited sources. No ads, no trackers, no paywall.
