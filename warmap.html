@@ -416,11 +416,17 @@ body.light .subbox h2 { color:#0a7f46; }
   background:#0a1410; margin:6px 0 8px; }
 .leaflet-container { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   background:#0a1410; }
-.leaflet-popup-content-wrapper, .leaflet-popup-tip { background:var(--card); color:var(--ink);
+.leaflet-container .leaflet-popup-content-wrapper, .leaflet-container .leaflet-popup-tip {
+  background:var(--card); color:var(--ink);
   border:1px solid var(--line); box-shadow:0 8px 26px rgba(0,0,0,.5); }
 .leaflet-popup-content { font-size:13px; line-height:1.55; margin:11px 14px; }
 .leaflet-popup-content strong { color:var(--neon); }
-.leaflet-popup-content a { color:var(--cyan); }
+/* Leaflet injects its own sheet at runtime, so anything it styles (white
+   popup, default blue links) needs to be beaten on specificity, not order. */
+.leaflet-container .leaflet-popup-content a { color:var(--cyan);
+  border-bottom:1px solid rgba(240,184,102,.45); }
+.leaflet-container .leaflet-popup-content a:hover { color:var(--neon);
+  border-bottom-color:var(--neon); }
 a.leaflet-popup-close-button { color:var(--muted)!important; }
 .leaflet-bar a { background:var(--card); color:var(--neon); border-color:var(--line); }
 .leaflet-bar a:hover { background:var(--line); color:var(--neon); }
@@ -428,11 +434,15 @@ a.leaflet-popup-close-button { color:var(--muted)!important; }
   color:var(--muted)!important; font-size:10px; }
 .leaflet-control-attribution a { color:var(--cyan); }
 body.light .leaflet-container, body.light #map { background:#e8eee9; }
-body.light .leaflet-popup-content-wrapper, body.light .leaflet-popup-tip {
+body.light .leaflet-container .leaflet-popup-content-wrapper,
+body.light .leaflet-container .leaflet-popup-tip {
   background:#fff; color:#14231b; }
 body.light .leaflet-popup-content strong { color:#0a7f46; }
-body.light .leaflet-popup-content a, body.light .leaflet-control-attribution a {
-  color:#8f5e12; }
+body.light .leaflet-container .leaflet-popup-content a,
+body.light .leaflet-control-attribution a {
+  color:#8f5e12; border-bottom-color:rgba(143,94,18,.45); }
+body.light .leaflet-container .leaflet-popup-content a:hover { color:#065f33;
+  border-bottom-color:#065f33; }
 body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!important;
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
@@ -484,6 +494,45 @@ body.light .badge-new { color:#8f5e12; background:rgba(143,94,18,.1);
   .latest { padding:14px 14px 2px; }
   .latest-list .lt-text { font-size:15px; }
   .section-title { letter-spacing:1px; }
+}
+/* ---- war map popup cards: status, place, what, when, where to read ---- */
+.pop-k { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+  color:var(--ink); margin:0 0 5px; }
+.pop-k i { display:inline-block; width:9px; height:9px; border-radius:2px;
+  margin-right:7px; vertical-align:-1px; box-shadow:0 0 6px rgba(0,0,0,.35); }
+.pop-t { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15.5px; font-weight:700; line-height:1.3; color:var(--ink); margin:0 0 4px; }
+.pop-b { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:13px; line-height:1.5; color:var(--muted); margin:0 0 7px; }
+.pop-d { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; line-height:1.55; color:var(--muted); margin:0 0 7px; }
+.pop-l { display:inline-block; font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12px; font-weight:700; color:var(--cyan); text-decoration:none;
+  border-bottom:1px solid rgba(240,184,102,.5); }
+.pop-l:hover { color:var(--neon); border-bottom-color:var(--neon); }
+.pop-s { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px; letter-spacing:.3px; color:var(--muted); margin:7px 0 0; }
+.pop-f { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.3px; color:var(--muted); margin:0 0 7px; }
+body.light .pop-l { color:#8f5e12; border-bottom-color:rgba(143,94,18,.5); }
+body.light .pop-l:hover { color:#065f33; border-bottom-color:#065f33; }
+/* Docked info card: the map pins itself to the theatre at minimum zoom, so a
+   bubble anchored to a dot near the edge gets cut off by the container. The
+   card sits over the bottom of the map instead and can never be clipped. */
+.mapwrap { position:relative; }
+.mapcard { position:absolute; left:10px; right:10px; bottom:10px; z-index:800;
+  max-height:56%; overflow:auto; padding:14px 34px 14px 16px;
+  background:var(--card); border:1px solid var(--line); border-radius:6px;
+  box-shadow:0 12px 30px rgba(0,0,0,.55); }
+.mapcard[hidden] { display:none !important; }
+.mapcard .mc-x { position:absolute; right:6px; top:4px; width:28px; height:28px;
+  border:0; background:transparent; color:var(--muted); font-size:20px; line-height:1;
+  cursor:pointer; border-radius:4px; }
+.mapcard .mc-x:hover { color:var(--neon); background:rgba(77,230,164,.12); }
+body.light .mapcard .mc-x:hover { color:#0a7f46; background:rgba(10,127,70,.1); }
+@media (min-width:900px) {
+  .mapcard { left:auto; right:12px; bottom:12px; width:340px; max-height:70%; }
 }
 
 /* ---------------- policy radar ---------------- */
@@ -609,7 +658,7 @@ body.light .pol-sect { color:#8f5e12; }
   <a class="navbtn" href="about.html">About</a>
 </nav>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a><a class="chip " href="gaming.html">Gaming</a><a class="chip " href="synth-music.html">Synth Music</a></div>
-<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#f0b866">Live War Map</span><h1>The War Map</h1><div class="meta"><strong>22.10 o 21:19</strong> &middot; 112 theatres &middot; <a href="ukraine-russia-war.html">Ukraine briefs</a> &middot; <a href="israel-watch.html">Israel briefs</a></div><div class="war-tabs" role="tablist" aria-label="Theatres"><button class="war-tab on" type="button" role="tab" data-t="uk">Ukraine</button><button class="war-tab" type="button" role="tab" data-t="me">Middle East</button></div></div><div class="article"><p class="mapnote swap" id="note-uk" data-sw="note" data-k="uk">Frontline geometry from <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a>, the Ukrainian open-source intelligence map, using their public snapshot API. <strong>Read it honestly:</strong> the map updates with a delay of up to 2&ndash;3 days, and DeepState itself warns against using it to plan movement or evacuation &mdash; this is a picture of the war for context, not a warning system. For air-raid alerts, use official channels.</p><p class="mapnote swap" id="note-me" data-sw="note" data-k="me" hidden>Every dot is an attack or a protest reported in the news over the last week, across Israel, Gaza and the West Bank, Lebanon, Syria, Iraq, Iran, Saudi Arabia and Yemen &mdash; geocoded to where it happened. <strong>Read it honestly:</strong> GDELT Project counts what gets reported and geocoded, so a quiet patch of map is not a quiet week &mdash; it can mean nobody was watching. An event dot can also stand for weeks of the same fight. This is context for the stories we publish, not a warning system.</p></div><div id="map" role="application" aria-label="Conflict map"></div><div class="war-legend swap" id="legend-uk" data-sw="legend" data-k="uk"><span><i style="background:#e5484d"></i>Occupied</span><span><i style="background:#4de6a4"></i>Liberated</span><span><i style="background:#8a9a90"></i>Contested</span><span><i style="background:#f0b866"></i>Attack vector</span></div><div class="war-legend swap" id="legend-me" data-sw="legend" data-k="me" hidden><span><i style="background:#e5484d"></i>Attacks & killings</span><span><i style="background:#4de6a4"></i>Protests & unrest</span></div><div id="mapinfo" class="idx-meta">Loading&hellip;</div><div class="wire"><div class="wire-head"><button class="wire-tab on" data-w="ua" type="button">Ukraine wire</button><button class="wire-tab" data-w="il" type="button">Middle East wire</button><span class="wire-note" id="wireNote">refreshes every 10 min</span></div><ul class="wire-list" id="wireList"><li class="wire-empty">Loading headlines&hellip;</li></ul></div><div class="article"><p class="mapnote">Theatres: <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a> &middot; <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a>. Headlines: <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a> global news index (auto-aggregated, not an endorsement of any outlet). Map tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors.</p></div>
+<main><div class="article"><a class="back" href="index.html">&larr; Back to front page</a><span class="kicker" style="color:#f0b866">Live War Map</span><h1>The War Map</h1><div class="meta"><strong>22 Oct 21:19</strong> &middot; 112 mapped areas &middot; 371 events &middot; copied 23 Oct 2026, 09:01 &middot; <a href="ukraine-russia-war.html">Ukraine briefs</a> &middot; <a href="israel-watch.html">Israel briefs</a></div><div class="war-tabs" role="tablist" aria-label="Theatres"><button class="war-tab on" type="button" role="tab" data-t="uk">Ukraine</button><button class="war-tab" type="button" role="tab" data-t="me">Middle East</button></div></div><div class="article"><p class="mapnote swap" id="note-uk" data-sw="note" data-k="uk">Frontline geometry from <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a>, the Ukrainian open-source intelligence map, using their public snapshot API. <strong>Read it honestly:</strong> the map updates with a delay of up to 2&ndash;3 days, and DeepState itself warns against using it to plan movement or evacuation &mdash; this is a picture of the war for context, not a warning system. For air-raid alerts, use official channels.</p><p class="mapnote swap" id="note-me" data-sw="note" data-k="me" hidden>Every dot is an attack or a protest reported in the news over the last week, across Israel, Gaza and the West Bank, Lebanon, Syria, Iraq, Iran, Saudi Arabia and Yemen &mdash; geocoded to where it happened. <strong>Read it honestly:</strong> GDELT Project counts what gets reported and geocoded, so a quiet patch of map is not a quiet week &mdash; it can mean nobody was watching. An event dot can also stand for weeks of the same fight. This is context for the stories we publish, not a warning system.</p></div><div class="mapwrap"><div id="map" role="application" aria-label="Conflict map"></div><div id="mapcard" class="mapcard" role="status" aria-live="polite" hidden></div></div><div class="war-legend swap" id="legend-uk" data-sw="legend" data-k="uk"><span><i style="background:#e5484d"></i>Occupied</span><span><i style="background:#4de6a4"></i>Liberated</span><span><i style="background:#8a9a90"></i>Contested</span><span><i style="background:#f0b866"></i>Attack vector</span><span><i style="background:#7f93a8"></i>Other markers</span></div><div class="war-legend swap" id="legend-me" data-sw="legend" data-k="me" hidden><span><i style="background:#e5484d"></i>Attacks & killings</span><span><i style="background:#4de6a4"></i>Protests & unrest</span></div><div id="mapinfo" class="idx-meta">Loading&hellip;</div><div class="wire"><div class="wire-head"><button class="wire-tab on" data-w="ua" type="button">Ukraine wire</button><button class="wire-tab" data-w="il" type="button">Middle East wire</button><span class="wire-note" id="wireNote">refreshes every 10 min</span></div><ul class="wire-list" id="wireList"><li class="wire-empty">Loading headlines&hellip;</li></ul></div><div class="article"><p class="mapnote">Theatres: <a href="https://deepstatemap.live" target="_blank" rel="noopener">DeepStateMap.Live</a> &middot; <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a>. Headlines: <a href="https://www.gdeltproject.org/" target="_blank" rel="noopener">GDELT Project</a> global news index (auto-aggregated, not an endorsement of any outlet). Map tiles &copy; Esri, HERE, Garmin, FAO, NOAA, USGS, OpenStreetMap contributors.</p></div>
 <section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
@@ -806,7 +855,7 @@ body.light .pol-sect { color:#8f5e12; }
 
 (function () {
   var el = document.getElementById("map");
-  var CONF = {"uk":{"label":"Ukraine","minZoom":4.5,"wire":"ua","bounds":[[43.0,20.0],[62.5,41.5]],"datab":[[43.8,21.8],[52.6,40.4]],"fit":null,"base":"warmap/uk/","polys":true,"pts":true},"me":{"label":"Middle East","minZoom":4.0,"wire":"il","bounds":[[11.0,26.0],[43.0,64.0]],"datab":null,"fit":[[13.5,32.0],[37.5,61.5]],"base":"warmap/me/","polys":false,"pts":true}};
+  var CONF = {"uk":{"label":"Ukraine","minZoom":4.5,"wire":"ua","bounds":[[43.0,20.0],[62.5,41.5]],"datab":[[43.8,21.8],[52.6,40.4]],"fit":null,"base":"warmap/uk/","polys":true,"pts":true,"snap":"22 Oct 21:19","fetched":"23 Oct 2026, 09:01","src":"DeepStateMap.Live","srcUrl":"https://deepstatemap.live","legend":[["occupied","Occupied","#e5484d"],["liberated","Liberated","#4de6a4"],["unknown","Contested","#8a9a90"],["attack","Attack vector","#f0b866"],["other","Other markers","#7f93a8"]],"blurb":{"occupied":"Marked as territory under occupation.","liberated":"Marked as recaptured territory.","unknown":"Control of this area is not confirmed.","attack":"Reported direction of an attack.","other":"Marker from the map's own layers."}},"me":{"label":"Middle East","minZoom":4.0,"wire":"il","bounds":[[11.0,26.0],[43.0,64.0]],"datab":null,"fit":[[13.5,32.0],[37.5,61.5]],"base":"warmap/me/","polys":false,"pts":true,"snap":"last 8 days","fetched":"23 Oct 2026, 09:01","src":"GDELT Project","srcUrl":"https://www.gdeltproject.org/","legend":[["attack","Attacks & killings","#e5484d"],["protest","Protests & unrest","#4de6a4"]],"blurb":{"attack":"Coded as attacks or killings in the news index.","protest":"Coded as protests or unrest in the news index."}}};
   var KEYS = CONF ? Object.keys(CONF) : [];
   var WIRE_Q = {
     ua: "(ukraine OR russia) (war OR strike OR frontline OR missile OR drone) sourcelang:english",
@@ -975,6 +1024,102 @@ body.light .pol-sect { color:#8f5e12; }
       nodes[i].hidden = nodes[i].getAttribute("data-k") !== key;
     }
   }
+  /* ---------- reader-facing popups: what a click actually tells you ------ */
+  function popKick(cat, c) {
+    var col = "#7f93a8", lab = cat, lg = (c && c.legend) || [];
+    for (var i = 0; i < lg.length; i++) {
+      if (lg[i][0] === cat) { lab = lg[i][1]; col = lg[i][2]; }
+    }
+    return '<div class="pop-k"><i style="background:' + esc(col) + '"></i>' +
+      esc(lab) + '</div>';
+  }
+  function popHost(url) {
+    var m = /^https?:\/\/([^/?#]+)/i.exec(url || "");
+    return m ? m[1].replace(/^www\./i, "") : "";
+  }
+  function popLink(url, text) {
+    return '<a class="pop-l" href="' + esc(url) + '" target="_blank" rel="noopener">' +
+      esc(text) + ' &#8599;</a>';
+  }
+  function popNum(n) {
+    return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  function popLine(cls, text) {
+    return text ? '<div class="' + cls + '">' + esc(text) + '</div>' : "";
+  }
+  /* Marker labels can be whole layer descriptions; cap them so a popup stays
+     a card instead of a paragraph. */
+  function popShort(t) {
+    t = String(t || "");
+    if (t.length <= 90) { return t; }
+    return t.slice(0, 88).replace(/\s+\S*$/, "") + "…";
+  }
+  /* Ukraine: DeepState shapes and markers. Status is the kicker, the place is
+     the title, and the shape's own date (when it carries one) is shown. */
+  function statusPopup(key, cat, name, date) {
+    var c = CONF[key] || {}, out = popKick(cat, c);
+    out += popLine("pop-t", popShort(name));
+    out += popLine("pop-b", (c.blurb || {})[cat] || "");
+    var bits = [];
+    if (date) { bits.push((cat === "liberated" ? "Liberated " : "Marked ") + date); }
+    if (c.snap) { bits.push("snapshot " + c.snap); }
+    out += popLine("pop-d", bits.join(" · "));
+    out += popLine("pop-f", c.fetched ? "Date copied: " + c.fetched : "");
+    if (c.srcUrl) { out += popLink(c.srcUrl, c.src || "Source"); }
+    return out;
+  }
+  /* Middle East: GDELT event clusters, with a real article behind the dot. */
+  function dotPopup(key, r) {
+    var c = CONF[key] || {};
+    if (key !== "me") { return statusPopup(key, r[0], r[3] || "", r[4] || ""); }
+    var out = popKick(r[0], c);
+    out += popLine("pop-t", popShort(r[3] || ""));
+    out += popLine("pop-b", (c.blurb || {})[r[0]] || "");
+    out += popLine("pop-d", popNum(r[4] || 0) + (r[4] === 1 ? " event" : " events") +
+                   (r[5] ? " · " + popNum(r[5]) +
+                     (r[5] === 1 ? " news mention" : " news mentions") : ""));
+    var when = [];
+    if (r[6]) { when.push(r[6]); }
+    if (r[7]) { when.push("most common: " + r[7]); }
+    out += popLine("pop-d", when.join(" · "));
+    out += popLine("pop-f", c.fetched ? "Date copied: " + c.fetched : "");
+    if (r[8]) { out += popLink(r[8], "Read the coverage on " + popHost(r[8])); }
+    out += popLine("pop-s", (c.src || "Source") + (c.snap ? " · " + c.snap : ""));
+    return out;
+  }
+  /* ---------- docked info card: tap a shape or a dot ---------- */
+  var cardEl = document.getElementById("mapcard"), selLayer = null, justPicked = false;
+  function clearSel() {
+    if (!selLayer) { return; }
+    try { if (selLayer.setStyle) { selLayer.setStyle({ weight: selLayer.__w || 1 }); } }
+    catch (e) {}
+    selLayer = null;
+  }
+  function hideCard() {
+    if (cardEl) { cardEl.hidden = true; cardEl.innerHTML = ""; }
+    clearSel();
+  }
+  function showCard(html) {
+    if (!cardEl) { return; }
+    cardEl.innerHTML = '<button class="mc-x" type="button" aria-label="Close">' +
+      '&times;</button>' + html;
+    cardEl.hidden = false;
+    cardEl.scrollTop = 0;
+    var x = cardEl.querySelector(".mc-x");
+    if (x) { x.addEventListener("click", function (e) { e.stopPropagation(); hideCard(); }); }
+  }
+  function pick(layer, html) {
+    if (!layer || !html) { return; }
+    clearSel();
+    selLayer = layer;
+    try {
+      if (layer.setStyle) { layer.setStyle({ weight: (layer.__w || 1) + 1.4 }); }
+      if (layer.bringToFront) { layer.bringToFront(); }
+    } catch (e) {}
+    justPicked = true;
+    setTimeout(function () { justPicked = false; }, 150);
+    showCard(html);
+  }
   function loadTheatre(key, markUrl) {
     var c = CONF[key];
     if (!c) { return; }
@@ -999,6 +1144,8 @@ body.light .pol-sect { color:#8f5e12; }
     map.setMinZoom(Math.max(c.minZoom, Math.floor(theatreZoom(b, map) * 2) / 2));
     L.tileLayer(TILES.base, { maxZoom: 12, attribution: TILES.attr }).addTo(map);
     L.tileLayer(TILES.ref, { maxZoom: 12, pane: "overlayPane" }).addTo(map);
+    hideCard();
+    map.on("click", function () { if (!justPicked) { hideCard(); } });
     window.AFB_MAP = map;
     fail("Loading " + c.label + " data\u2026");
     var stat = { polys: 0, pts: 0 }, got = 0;
@@ -1024,7 +1171,8 @@ body.light .pol-sect { color:#8f5e12; }
         .then(function (polys) {
           var sty = STYLE[key] || {};
           for (var i = 0; i < polys.length; i++) {
-            var cat = polys[i][0], name = polys[i][1], rings = polys[i][2];
+            var cat = polys[i][0], name = polys[i][1], date = polys[i][2],
+                rings = polys[i][3];
             var latlngs = [];
             for (var j = 0; j < rings.length; j++) {
               latlngs.push(rings[j]);
@@ -1035,10 +1183,11 @@ body.light .pol-sect { color:#8f5e12; }
                     pt[1] >= db[0][1] && pt[1] <= db[1][1]) { auto.push(pt); }
               }
             }
-            L.polygon(latlngs, sty[cat] || sty.other || {})
-              .bindPopup("<strong>" + esc(name || "Mapped area") + "</strong><br>" +
-                "<span style='opacity:.75'>" + esc(cat) + "</span>")
-              .addTo(map);
+            var pg = L.polygon(latlngs, sty[cat] || sty.other || {});
+            pg.__w = (sty[cat] && sty[cat].weight) || 1;
+            pg._card = statusPopup(key, cat, name, date);
+            pg.on("click", function () { pick(this, this._card); });
+            pg.addTo(map);
             stat.polys++;
           }
           openFit();
@@ -1052,15 +1201,16 @@ body.light .pol-sect { color:#8f5e12; }
           var sty = STYLE[key] || {};
           var g = L.layerGroup();
           for (var i = 0; i < rows.length; i++) {
-            var cat = rows[i][0], lat = rows[i][1], lon = rows[i][2], nm = rows[i][3];
-            var w = rows[i][4];
+            var cat = rows[i][0], lat = rows[i][1], lon = rows[i][2];
             var st = sty[cat] || sty.other || { color: "#7f93a8", r: 2.8 };
-            L.circleMarker([lat, lon], {
+            var cm = L.circleMarker([lat, lon], {
               radius: st.r || 2.8, color: st.color, weight: st.weight || 0.8,
               opacity: 0.85, fillColor: st.color, fillOpacity: 0.6
-            }).bindPopup("<strong>" + esc(nm || cat) + "</strong><br>" +
-              "<span style='opacity:.75'>" + esc(cat) +
-              (w ? " &middot; " + esc(w) + " reports" : "") + "</span>").addTo(g);
+            });
+            cm.__w = st.weight || 0.8;
+            cm._card = dotPopup(key, rows[i]);
+            cm.on("click", function () { pick(this, this._card); });
+            cm.addTo(g);
             auto.push([lat, lon]);
             stat.pts++;
           }
