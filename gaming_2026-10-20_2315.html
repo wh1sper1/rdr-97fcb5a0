@@ -323,6 +323,32 @@ body.light .donate h2 { color:#0a7f46; }
   font-size:12px; font-weight:600; letter-spacing:.5px; padding:9px 18px; border-radius:3px;
   border:1px solid var(--neon); background:transparent; color:var(--neon); cursor:pointer; }
 .searchbar button:hover { background:rgba(77,230,164,.12); }
+/* Front-page search: a magnifying-glass on the left that expands into a field.
+   Left-aligned (no auto margin) so it anchors the left edge as asked. */
+.fsearch { display:flex; align-items:center; justify-content:flex-start;
+  padding:14px 20px 2px; }
+.fsearch form { display:flex; align-items:center; gap:8px; }
+.fsearch .glass { flex:none; width:38px; height:38px; display:inline-flex;
+  align-items:center; justify-content:center; border:1px solid var(--line);
+  border-radius:50%; background:var(--card); color:var(--neon); cursor:pointer;
+  font-size:16px; line-height:1; transition:all .15s ease; padding:0; }
+.fsearch .glass:hover { border-color:var(--neon); background:rgba(77,230,164,.12);
+  box-shadow:0 0 12px rgba(77,230,164,.25); }
+.fsearch .glass:focus-visible { outline:none; border-color:var(--neon);
+  box-shadow:0 0 10px rgba(77,230,164,.35); }
+.fsearch input { width:0; padding:9px 0; border:1px solid transparent;
+  background:var(--card); border-radius:3px; color:var(--ink);
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace; font-size:13px;
+  opacity:0; transition:width .18s ease, opacity .15s ease, padding .18s ease; }
+.fsearch input::placeholder { color:var(--muted); opacity:.8; }
+.fsearch.open input { width:210px; padding:9px 12px; opacity:1;
+  border-color:var(--line); }
+.fsearch.open input:focus { outline:none; border-color:var(--neon);
+  box-shadow:0 0 10px rgba(77,230,164,.25); }
+@media (max-width:640px) {
+  .fsearch.open input { width:170px; } }
+@media (prefers-reduced-motion: reduce) {
+  .fsearch input, .fsearch .glass { transition:none; } }
 .row { display:grid; grid-template-columns:120px 150px 1fr; gap:12px; align-items:baseline;
   padding:9px 10px; border-bottom:1px solid var(--line); text-decoration:none; }
 .row:hover { background:rgba(77,230,164,.06); }
@@ -536,12 +562,58 @@ body.light .mapcard .mc-x:hover { color:#0a7f46; background:rgba(10,127,70,.1); 
 }
 
 /* ---------------- policy radar ---------------- */
-.pol-list { display:flex; flex-direction:column; gap:26px; }
-.pol-group h3 { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
-  font-size:12.5px; font-weight:700; letter-spacing:1.6px; text-transform:uppercase;
-  color:var(--ink); display:flex; align-items:center; gap:10px; margin:0 0 12px; }
-.pol-count { font-size:10.5px; padding:2px 8px; border-radius:20px;
-  border:1px solid var(--line); color:var(--muted); letter-spacing:.5px; }
+.pol-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin:6px 0 4px; }
+.pol-toolbar .tl { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase;
+  color:var(--muted); }
+.pol-toolbar .tl2 { margin-left:6px; }
+.tbtn { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:.6px; padding:6px 12px;
+  border-radius:6px; border:1px solid var(--line); background:transparent;
+  color:var(--muted); cursor:pointer; transition:all .14s ease; }
+.tbtn:hover { color:var(--neon); border-color:var(--neon); }
+.tbtn[aria-pressed=true] { background:var(--neon); border-color:var(--neon); color:#06110c; }
+body.light .tbtn[aria-pressed=true] { color:#fff; }
+.pol-search { flex:1; min-width:160px; max-width:260px; font:13px/1.4 inherit;
+  padding:7px 11px; border-radius:6px; border:1px solid var(--line);
+  background:transparent; color:var(--ink); }
+.pol-search::placeholder { color:var(--muted); }
+.pol-search:focus { outline:none; border-color:var(--neon); }
+.pol-gcount { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.7px; color:var(--muted); margin-left:auto;
+  white-space:nowrap; }
+.pol-filters { display:flex; flex-wrap:wrap; gap:7px; margin:10px 0 4px; }
+.pol-chip { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:.6px; padding:6px 11px;
+  border-radius:6px; border:1px solid var(--line); background:transparent;
+  color:var(--muted); cursor:pointer; transition:all .14s ease; }
+.pol-chip:hover { color:var(--neon); border-color:var(--neon); }
+.pol-chip[aria-pressed=true] { background:var(--neon); border-color:var(--neon); color:#06110c; }
+body.light .pol-chip[aria-pressed=true] { color:#fff; }
+.pol-chip .n { opacity:.72; margin-left:5px; }
+.sect-head { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:12.5px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase;
+  color:var(--ink); margin:30px 0 8px; }
+.pol-cnote { margin:2px 0 4px; }
+.hidden { display:none !important; }
+.empty-note { font-size:13.5px; color:var(--muted); padding:8px 2px; }
+/* Collapsible docket. <details>/<summary> works with JS off; JS adds
+   sibling-close, cartogram highlight and topic filtering. */
+.pol-acc { border:1px solid var(--line); border-radius:10px; background:var(--card);
+  margin:9px 0; overflow:hidden; }
+.pol-acc > summary { list-style:none; cursor:pointer; padding:12px 15px;
+  display:flex; align-items:center; gap:10px; user-select:none; }
+.pol-acc > summary::-webkit-details-marker { display:none; }
+.pol-acc .chev { color:var(--neon); font-size:10px; transition:transform .18s ease;
+  flex:none; }
+.pol-acc[open] .chev { transform:rotate(90deg); }
+.pol-acc .an { font-weight:640; font-size:15px; }
+.pol-acc .ac { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10.5px; font-weight:700; letter-spacing:.7px; padding:2px 9px;
+  border-radius:20px; border:1px solid var(--line); color:var(--muted);
+  margin-left:auto; flex:none; }
+.pol-acc .accbody { padding:0 15px 14px; }
 /* Docket table. Bills are a list you scan down, not a grid of boxes: the
    bill number sits in a fixed column so it lines up, the title takes the
    width it needs, and 400 rows stay readable where 400 cards did not. */
@@ -634,9 +706,64 @@ body.light .pol-feed { color:#0a5c3a; border-color:rgba(10,127,70,.35); backgrou
 body.light .pol-feed:hover { color:#047857; border-color:#047857;
   box-shadow:0 0 10px rgba(10,127,70,.18); }
 body.light .pol-sect { color:#8f5e12; }
+/* US tile cartogram: each state is a shaded square in its grid cell. */
+.carto { display:grid; grid-template-columns:repeat(12,1fr); gap:4px;
+  max-width:640px; margin:12px 0 4px; }
+.pol-tile { aspect-ratio:1; border:1px solid var(--line); border-radius:6px;
+  background:var(--card); color:var(--muted); cursor:pointer;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; line-height:1.15; padding:0;
+  transition:transform .13s ease, border-color .13s ease; }
+.pol-tile .tn { font-size:9px; opacity:.82; }
+.pol-tile.l1 { background:rgba(77,230,164,.10); }
+.pol-tile.l2 { background:rgba(77,230,164,.22); color:var(--ink); }
+.pol-tile.l3 { background:rgba(77,230,164,.40); color:#04231a; }
+.pol-tile.l4 { background:rgba(77,230,164,.62); color:#04231a; }
+body.light .pol-tile.l1 { background:rgba(10,127,70,.12); }
+body.light .pol-tile.l2 { background:rgba(10,127,70,.26); color:#04301c; }
+body.light .pol-tile.l3 { background:rgba(10,127,70,.44); color:#fff; }
+body.light .pol-tile.l4 { background:rgba(10,127,70,.66); color:#fff; }
+.pol-tile.empty { opacity:.32; cursor:default; }
+.pol-tile:not(.empty):hover { border-color:var(--neon); transform:scale(1.12); z-index:2; }
+.pol-tile.sel { border-color:var(--cyan); box-shadow:0 0 0 2px var(--cyan); }
+body.light .pol-tile:not(.empty):hover { border-color:#0a7f46; }
+.carto-key { display:flex; align-items:center; gap:6px;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:10px; letter-spacing:.8px; text-transform:uppercase;
+  color:var(--muted); margin:8px 0 0; flex-wrap:wrap; }
+.carto-key i { width:16px; height:11px; border-radius:3px;
+  border:1px solid var(--line); display:inline-block; }
+.carto-key .k0 { background:var(--card); }
+.carto-key .k1 { background:rgba(77,230,164,.10); }
+.carto-key .k2 { background:rgba(77,230,164,.22); }
+.carto-key .k3 { background:rgba(77,230,164,.40); }
+.carto-key .k4 { background:rgba(77,230,164,.62); }
+body.light .carto-key .k1 { background:rgba(10,127,70,.12); }
+body.light .carto-key .k2 { background:rgba(10,127,70,.26); }
+body.light .carto-key .k3 { background:rgba(10,127,70,.44); }
+body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
+.carto-key .ck-hint { margin-left:10px; text-transform:none; letter-spacing:.3px; }
+/* World country buttons. */
+.worldrow { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 4px; }
+.wbtn { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11.5px; font-weight:700; letter-spacing:.7px; padding:8px 13px;
+  border-radius:8px; border:1px solid var(--line); background:var(--card);
+  color:var(--ink); cursor:pointer; transition:all .14s ease; }
+.wbtn:hover { border-color:var(--neon); color:var(--neon); }
+.wbtn .n { color:var(--muted); margin-left:6px; font-size:10.5px; }
+.wbtn[aria-pressed=true] { border-color:var(--cyan); background:rgba(240,184,102,.10); }
+/* Phone: cartogram stays a grid but tighter; toolbar wraps. */
+@media (max-width:640px) {
+  .carto { gap:3px; }
+  .pol-tile { font-size:10px; }
+  .pol-gcount { margin-left:0; width:100%; order:5; }
+}
 @media (prefers-reduced-motion: reduce) {
-  .pol-table tbody tr, .pol-feed { transition:none; }
-  .pol-feed:hover { transform:none; } }
+  .pol-table tbody tr, .pol-feed, .pol-tile, .pol-acc .chev,
+  .pol-chip, .tbtn, .wbtn { transition:none; }
+  .pol-feed:hover, .pol-tile:not(.empty):hover { transform:none; }
+  .pol-acc[open] .chev { transition:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Gaming — Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/gaming_2026-10-20_2315.html", "image": "https://antifascistbrief.org/img/gaming_2026-10-20_2315.jpg", "description": "Gaming this week is led by two separate stories dominating feeds — one about a viral game moment spawning an AI-powered clone wave on Roblox, and one about the GTA 6 final trailer dropping with what reviewers are calling an emotionally bombastic montage. The A", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T23:15:00-07:00", "dateModified": "2026-10-20T23:15:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
@@ -722,6 +849,36 @@ body.light .pol-sect { color:#8f5e12; }
   if (link) { link.href = "mailto:" + addr + "?subject=" + encodeURIComponent("Message from the Daily Anti-Fascist Brief"); }
   var disp = document.getElementById("contactAddr");
   if (disp) { disp.textContent = addr; }
+})();
+(function () {
+  var box = document.getElementById("fsearch");
+  if (!box) { return; }
+  var glass = document.getElementById("fsearchGlass");
+  var input = document.getElementById("fsearchInput");
+  function open() {
+    box.classList.add("open");
+    glass.setAttribute("aria-expanded", "true");
+    input.focus();
+  }
+  glass.addEventListener("click", function () {
+    if (box.classList.contains("open") && !input.value) {
+      box.classList.remove("open");
+      glass.setAttribute("aria-expanded", "false");
+    } else {
+      open();
+    }
+  });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !input.value) {
+      box.classList.remove("open");
+      glass.setAttribute("aria-expanded", "false");
+      glass.focus();
+    }
+  });
+  // submitting an empty field should just open/focus, not run a blank search
+  box.querySelector("form").addEventListener("submit", function (e) {
+    if (!input.value.trim()) { e.preventDefault(); open(); }
+  });
 })();
 
 (function () {
