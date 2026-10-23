@@ -479,6 +479,35 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- reference page: term list, jump links, amber note box ---- */
+.ref-toc { display:flex; flex-wrap:wrap; gap:8px; max-width:760px; margin:0 0 4px; }
+.ref-toc a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; text-decoration:none; color:var(--muted);
+  border:1px solid var(--line); border-radius:20px; padding:5px 11px; }
+.ref-toc a:hover { color:#f0b866; border-color:rgba(240,184,102,.55); }
+body.light .ref-toc a { color:#5c6f64; background:#fff; border-color:rgba(143,94,18,.35); }
+body.light .ref-toc a:hover { color:#8f5e12; border-color:#8f5e12; }
+/* Amber box: same palette and shape as the war map's amber accents. The label
+   comes from data-label so one rule styles every box on the page. */
+.amberbox { max-width:760px; border:1px solid rgba(240,184,102,.45);
+  border-left:3px solid #f0b866; border-radius:6px;
+  background:linear-gradient(160deg, rgba(240,184,102,.10), transparent 58%), var(--card);
+  padding:14px 18px; margin:0 0 22px; }
+.amberbox::before { content:attr(data-label); display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:#f0b866; margin-bottom:8px; }
+.amberbox p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,sans-serif;
+  font-size:14.5px; line-height:1.65; color:var(--ink); margin:0 0 10px; }
+.amberbox p:last-child { margin-bottom:0; }
+.amberbox a { color:var(--cyan); }
+body.light .amberbox { border-color:rgba(143,94,18,.5); border-left-color:#8f5e12;
+  background:linear-gradient(160deg, rgba(240,184,102,.18), transparent 58%), var(--card); }
+body.light .amberbox::before { color:#8f5e12; }
+.ref-src { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.4px; color:var(--muted); margin:12px 0 0; }
+.ref-src a { color:var(--cyan); }
+body.light .ref-src a { color:#8f5e12; }
 /* ---- freshness first: Latest list + re-ordered brief entries ---- */
 .latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
   background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
@@ -789,7 +818,8 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="tags.html">Dossiers</a>
   <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
   <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
-  <a class="navbtn navbtn-live" href="policy.html">Policy Radar</a>
+  <a class="navbtn" href="policy.html">Policy Radar</a>
+  <a class="navbtn" href="reference.html">Reference</a>
   <a class="navbtn" href="search.html">Search</a>
   <a class="navbtn" href="archive.html">Archive</a>
   <a class="navbtn" href="videos.html">Videos</a>
@@ -799,10 +829,10 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
 </nav>
 <div class="chips"><a class="chip active" href="index.html">All</a><a class="chip " href="flock-camera-abuse.html">Camera Abuse</a><a class="chip " href="trump-admin-corruption.html">Trump Admin</a><a class="chip " href="ai-news.html">AI News</a><a class="chip " href="3d-printing-cnc-manufacturing-laws.html">3D Printing &amp; CNC Laws</a><a class="chip " href="cybersecurity-news.html">Cyber Security</a><a class="chip " href="geopolitical-world-intel.html">Geo Political Intel</a><a class="chip " href="ukraine-russia-war.html">Ukraine-Russia War</a><a class="chip " href="israel-watch.html">Israel Watch</a><a class="chip " href="world-report.html">World Report</a><a class="chip " href="antifa.html">Antifa</a></div>
 <main><div class="article"><a class="back" href="tags.html">&larr; All dossiers</a><span class="kicker" style="color:var(--cyan)">Dossier</span><h1>Kramatorsk</h1><div class="meta">4 brief(s) &middot; filed 2026-10-18 through 2026-10-21 &middot; auto-generated index of every brief mentioning this subject</div></div><div class="article"><a class="row" href="ukraine-russia-war_2026-10-21_1800.html"><span class="row-date">2026-10-21 18:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">The Ukraine war has entered its fifth year in a state of grim equilibrium that neither side can break and neither side can afford to abandon. Russia controls all but 11% …</span></span></a><a class="row" href="ukraine-russia-war_2026-10-20_2315.html"><span class="row-date">2026-10-20 23:15</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">The Ukraine-Russia war in late October 2026 has reached a point where the battlefield and the diplomatic picture are violently out of sync. On the battlefield, Ukraine is…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-19_0300.html"><span class="row-date">2026-10-19 03:00</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">Kyiv Independent (October 17, 2026): Russia launched one of its largest attacks on Ukraine&#x27;s energy grid, killing seven people and injuring around 90. Ukrainian forces do…</span></span></a><a class="row" href="ukraine-russia-war_2026-10-18_1635.html"><span class="row-date">2026-10-18 16:35</span><span class="row-topic" style="color:#0e7490">UKRAINE WAR</span><span class="row-main"><span class="row-title">Ukraine-Russia War — Research Digest</span><span class="row-snip">The Independent (Oct 18): Trump&#x27;s proposed energy ceasefire has collapsed — Ukraine and Russia are trading strikes. Zelensky said Russia demonstrated &quot;ostentatious disres…</span></span></a></div>
-<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs: the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly. Until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
-  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <p>Tips, corrections, story leads, or feedback. The door is open. Send a message.</p>
   <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
   <span class="addr" id="contactAddr"></span>
 </section>

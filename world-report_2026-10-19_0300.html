@@ -479,6 +479,35 @@ body.light .leaflet-control-attribution { background:rgba(255,255,255,.9)!import
   color:#5c6f64!important; }
 .mapnote { font-size:13.5px; line-height:1.65; color:var(--muted); }
 .mapnote a { color:var(--cyan); }
+/* ---- reference page: term list, jump links, amber note box ---- */
+.ref-toc { display:flex; flex-wrap:wrap; gap:8px; max-width:760px; margin:0 0 4px; }
+.ref-toc a { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.5px; text-decoration:none; color:var(--muted);
+  border:1px solid var(--line); border-radius:20px; padding:5px 11px; }
+.ref-toc a:hover { color:#f0b866; border-color:rgba(240,184,102,.55); }
+body.light .ref-toc a { color:#5c6f64; background:#fff; border-color:rgba(143,94,18,.35); }
+body.light .ref-toc a:hover { color:#8f5e12; border-color:#8f5e12; }
+/* Amber box: same palette and shape as the war map's amber accents. The label
+   comes from data-label so one rule styles every box on the page. */
+.amberbox { max-width:760px; border:1px solid rgba(240,184,102,.45);
+  border-left:3px solid #f0b866; border-radius:6px;
+  background:linear-gradient(160deg, rgba(240,184,102,.10), transparent 58%), var(--card);
+  padding:14px 18px; margin:0 0 22px; }
+.amberbox::before { content:attr(data-label); display:block;
+  font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  color:#f0b866; margin-bottom:8px; }
+.amberbox p { font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,sans-serif;
+  font-size:14.5px; line-height:1.65; color:var(--ink); margin:0 0 10px; }
+.amberbox p:last-child { margin-bottom:0; }
+.amberbox a { color:var(--cyan); }
+body.light .amberbox { border-color:rgba(143,94,18,.5); border-left-color:#8f5e12;
+  background:linear-gradient(160deg, rgba(240,184,102,.18), transparent 58%), var(--card); }
+body.light .amberbox::before { color:#8f5e12; }
+.ref-src { font-family:'Cascadia Code',ui-monospace,Menlo,Consolas,monospace;
+  font-size:11px; letter-spacing:.4px; color:var(--muted); margin:12px 0 0; }
+.ref-src a { color:var(--cyan); }
+body.light .ref-src a { color:#8f5e12; }
 /* ---- freshness first: Latest list + re-ordered brief entries ---- */
 .latest { max-width:760px; border:1px solid var(--line); border-radius:6px;
   background:linear-gradient(160deg, rgba(77,230,164,.07), transparent 55%), var(--card);
@@ -789,7 +818,8 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   <a class="navbtn" href="tags.html">Dossiers</a>
   <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
   <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
-  <a class="navbtn navbtn-live" href="policy.html">Policy Radar</a>
+  <a class="navbtn" href="policy.html">Policy Radar</a>
+  <a class="navbtn" href="reference.html">Reference</a>
   <a class="navbtn" href="search.html">Search</a>
   <a class="navbtn" href="archive.html">Archive</a>
   <a class="navbtn" href="videos.html">Videos</a>
@@ -846,10 +876,10 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
 <li><a href="https://www.opforjournal.com/p/weekly-significant-activity-report-e77" target="_blank" rel="noopener">OPFOR Journal — Weekly Significant Activity Report, October 17, 2026</a></li>
 <li><a href="https://www.ungeneva.org/en/news-media/news" target="_blank" rel="noopener">UN Geneva — Colombia: UN experts call for Ecopetrol reparations</a></li>
 </ul></article><div class="article"><div class="section-title">More from World Report</div><div class="grid"><a class="card" href="world-report_2026-10-23_0300.html"><img src="img/world-report_2026-10-23_0300.jpg" alt="World Report — Research Digest" loading="lazy"><span class="video-badge">&#9654; Video</span><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">The UN Secretary-General&#x27;s October 22, 2026, statement framing the global situation as an &quot;El Niño of war&quot; — conflicts intensifying and expanding in a way that, like the climate phenomenon, disrupts everything far from the epicenter — is the most concise disti…</div><div class="when">Saved 2026-10-23 03:00</div></div></a><a class="card" href="world-report_2026-10-22_1800.html"><img src="img/world-report_2026-10-22_1800.jpg" alt="World Report — Research Digest" loading="lazy"><span class="video-badge">&#9654; Video</span><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">The world in late October 2026 is coming apart at the seams in ways that are starting to connect. UN Secretary-General António Guterres, speaking to reporters in New York ahead of a visit to Egypt, warned that &quot;we are now witnessing an El Niño of war&quot; — confli…</div><div class="when">Saved 2026-10-22 18:00</div></div></a><a class="card" href="world-report_2026-10-22_0300.html"><img src="img/world-report_2026-10-22_0300.jpg" alt="World Report — Research Digest" loading="lazy"><span class="video-badge">&#9654; Video</span><div class="body"><span class="kicker" style="color:#ca8a04">WORLD REPORT</span><h2>World Report — Research Digest</h2><div class="snippet">The world beyond the great-power and Middle East conflicts in October 2026 is a planet under simultaneous stress from multiple directions that rarely get equal billing: a war in Yemen that has now killed at least 17 people in a single Houthi strike on Riyadh&#x27;s…</div><div class="when">Saved 2026-10-22 03:00</div></div></a></div></div>
-<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs — the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly — until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
+<section class="subbox" id="subscribe"><h2>// Get the brief by email</h2><p>Twice-daily briefs: the same sourced reporting, in your inbox the moment it&rsquo;s published. No ads, no trackers, one-click unsubscribe.</p><p class="subnote">The email edition opens shortly. Until then the <a href="feed.xml">RSS feed</a> lands every brief the moment it&rsquo;s published.</p></section>
 <section class="contact">
   <h2>// Contact</h2>
-  <p>Tips, corrections, story leads, or feedback — the door is open. Send a message.</p>
+  <p>Tips, corrections, story leads, or feedback. The door is open. Send a message.</p>
   <a class="contact-btn" id="contactLink" href="#">&#9993; Send a Message</a>
   <span class="addr" id="contactAddr"></span>
 </section>
