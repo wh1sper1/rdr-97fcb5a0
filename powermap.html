@@ -1665,7 +1665,7 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
     el.textContent = txt;
     el.style.left = lanes[laneN++ % lanes.length] + "%";
     el.style.color = COLORS[colN++ % COLORS.length];
-    el.style.setProperty("--fall", (17 + Math.random() * 5).toFixed(1) + "s");
+    el.style.setProperty("--fall", (15 + Math.random() * 3).toFixed(1) + "s");
     el.style.fontSize = (mobile ? 14 + Math.random() * 3
                                 : 18 + Math.random() * 4).toFixed(1) + "px";
     el.addEventListener("animationend", function(){
@@ -1674,18 +1674,20 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
     box.appendChild(el);
   }
   function brighten(){
-    if (box) box.style.opacity = (0.55 + energy() * 0.40).toFixed(2);
+    if (box) box.style.opacity = (0.50 + energy() * 0.38).toFixed(2);
   }
   function loop(){
     if (!alive) return;
     var t = A.currentTime;
+    brighten();
     if (t + 1 < lastT) seen = {};          /* loop wrap: replay schedule */
     lastT = t;
     for (var i = 0; i < SCHED.length; i++){
       if (seen[i]) continue;
       if (SCHED[i][0] <= t + 0.2){
         seen[i] = 1;
-        if (t - SCHED[i][0] < 6) spawn(SCHED[i][2]);  /* only near-time lines render */
+        var live = box ? box.querySelectorAll(".rain-line").length : 0;
+        if (t - SCHED[i][0] < 6 && live < 4) spawn(SCHED[i][2]);
       }
     }
   }
