@@ -1026,7 +1026,7 @@ body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
   overflow:hidden; opacity:0; transition:opacity .8s ease; }
 .rain-line { position:absolute; top:0; white-space:nowrap;
   transform:translateX(-50%); font-weight:500; line-height:1.15; opacity:0;
-  background:rgba(3,9,7,.45); padding:3px 10px; border-radius:4px;
+  background:rgba(3,9,7,.62); padding:3px 10px; border-radius:4px;
   text-shadow:0 0 7px currentColor, 0 1px 3px rgba(0,0,0,.85);
   animation:pm-rain-fall var(--fall,19s) linear forwards; }
 @keyframes pm-rain-fall {
@@ -1659,7 +1659,7 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
   }
   function spawn(txt){
     var mobile = window.innerWidth < 720;
-    var lanes = mobile ? [50] : [10, 50, 90];
+    var lanes = mobile ? [50] : [8, 50, 92];
     var el = document.createElement("div");
     el.className = "rain-line";
     el.textContent = txt;
