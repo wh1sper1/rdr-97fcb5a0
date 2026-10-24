@@ -1024,16 +1024,17 @@ body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
 .pm-toolbar, .pm-dossier { position:relative; z-index:40; }
 #pm-rain { position:fixed; inset:0; z-index:1; pointer-events:none;
   overflow:hidden; opacity:0; transition:opacity .8s ease; }
-.rain-line { position:absolute; top:-14%; white-space:nowrap;
-  transform:translateX(-50%); font-weight:400; line-height:1.15; opacity:0;
+.rain-line { position:absolute; top:0; white-space:nowrap;
+  transform:translateX(-50%); font-weight:500; line-height:1.15; opacity:0;
+  background:rgba(3,9,7,.45); padding:3px 10px; border-radius:4px;
   text-shadow:0 0 7px currentColor, 0 1px 3px rgba(0,0,0,.85);
-  animation:pm-rain-fall var(--fall,15s) linear forwards; }
+  animation:pm-rain-fall var(--fall,19s) linear forwards; }
 @keyframes pm-rain-fall {
-  0%   { transform:translate(-50%, 0); opacity:0; }
-  7%   { opacity:.95; }
-  86%  { opacity:.85; }
-  100% { transform:translate(-50%, 114vh); opacity:0; } }
-@media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:500; } }
+  0%   { transform:translate(-50%, 6vh); opacity:0; }
+  5%   { opacity:.97; }
+  88%  { opacity:.93; }
+  100% { transform:translate(-50%, 116vh); opacity:0; } }
+@media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:600; } }
 @media (prefers-reduced-motion: reduce){ #pm-rain { display:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "AI News, Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/ai-news_2026-10-19_1800.html", "image": "https://antifascistbrief.org/img/ai-news_2026-10-19_1800.jpg", "description": "ABC News (Oct 2026): President Trump brought tech leaders to Washington for a voluntary safety pact on 'Super Intelligence', a 308-word agreement encouraging advanced AI labs to monitor their own progress without specific enforcement details. OpenAI, Anthropic", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-19T18:00:00-07:00", "dateModified": "2026-10-19T18:00:00-07:00"}</script></head><body>
 <div class="masthead">

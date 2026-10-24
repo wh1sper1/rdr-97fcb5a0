@@ -1024,16 +1024,17 @@ body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
 .pm-toolbar, .pm-dossier { position:relative; z-index:40; }
 #pm-rain { position:fixed; inset:0; z-index:1; pointer-events:none;
   overflow:hidden; opacity:0; transition:opacity .8s ease; }
-.rain-line { position:absolute; top:-14%; white-space:nowrap;
-  transform:translateX(-50%); font-weight:400; line-height:1.15; opacity:0;
+.rain-line { position:absolute; top:0; white-space:nowrap;
+  transform:translateX(-50%); font-weight:500; line-height:1.15; opacity:0;
+  background:rgba(3,9,7,.45); padding:3px 10px; border-radius:4px;
   text-shadow:0 0 7px currentColor, 0 1px 3px rgba(0,0,0,.85);
-  animation:pm-rain-fall var(--fall,15s) linear forwards; }
+  animation:pm-rain-fall var(--fall,19s) linear forwards; }
 @keyframes pm-rain-fall {
-  0%   { transform:translate(-50%, 0); opacity:0; }
-  7%   { opacity:.95; }
-  86%  { opacity:.85; }
-  100% { transform:translate(-50%, 114vh); opacity:0; } }
-@media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:500; } }
+  0%   { transform:translate(-50%, 6vh); opacity:0; }
+  5%   { opacity:.97; }
+  88%  { opacity:.93; }
+  100% { transform:translate(-50%, 116vh); opacity:0; } }
+@media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:600; } }
 @media (prefers-reduced-motion: reduce){ #pm-rain { display:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "name": "Daily Anti-Fascist Brief", "url": "https://antifascistbrief.org/", "description": "Twice-daily sourced briefs on surveillance, government corruption, war, AI and cyber. Built to defeat fascism and the corruption of politicians."}, {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "url": "https://antifascistbrief.org/", "logo": "https://antifascistbrief.org/img/share-banner.png"}]}</script></head><body>
 <div class="masthead">
@@ -1635,21 +1636,20 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
   };
 })();
 
-/* ---- lyric rain: bold lines fall while the song plays ---- */
+/* ---- lyric rain: lines fall IN SYNC with the song (aligned schedule) ---- */
 (function(){
   var A = document.getElementById("pm-audio");
   if (!A) return;
   var ENV = [2, 8, 21, 73, 60, 51, 50, 53, 49, 48, 56, 53, 55, 57, 51, 60, 48, 100, 90, 100, 97, 75, 74, 80, 71, 35, 37, 39, 41, 34, 66, 85, 84, 76, 84, 69, 80, 88, 76, 82, 74, 87, 74, 85, 83, 74, 85, 80, 69, 69, 81, 80, 75, 80, 77, 79, 74, 74, 75, 40, 43, 45, 34, 34, 36, 34, 34, 45, 55, 63, 67, 73, 78, 83, 71, 83, 74, 85, 83, 81, 87, 78, 81, 76, 80, 80, 73, 77, 79, 78, 80, 77, 85, 77, 81, 63, 34, 27, 65, 91, 87, 87, 91, 81, 87, 100, 80, 84, 73, 86, 79, 77, 88, 83, 84, 80, 79, 89, 85, 80, 73, 78, 81, 89, 87, 86, 82, 86, 76, 82, 73, 85, 82, 71, 75, 71, 76, 81, 81, 67, 35, 31, 38, 37, 15, 33, 48, 30, 29, 42, 37, 21, 40, 44, 41, 51, 90, 88, 93, 91, 87, 95, 89, 89, 95, 91, 98, 95, 97, 91, 100, 100, 100, 100, 100, 100, 100, 92, 99, 95, 100, 100, 85, 69, 41, 27, 45, 43, 37, 28, 36, 37, 25, 40, 44, 46, 76, 81, 81, 78, 77, 80, 88, 93, 88, 85, 90, 89, 77, 83, 99, 100, 95, 90, 97, 94, 100, 99, 98, 99, 95, 99, 100, 92, 100, 100, 100, 100, 100, 93, 75, 69, 58, 39, 27, 28, 27, 21, 22, 34, 13, 15, 64, 57, 36, 35, 46, 48, 50, 40, 49, 43, 45, 44, 45, 33, 32, 43, 100, 73, 71];
-  var LYR = ["You don't own this...", "Not anymore...", "You bought the network, bent the truth", "You hired the cop, you bought the booth", "You call it strength, we call it theft", "You took the country, now you'll give it back", "Follow the money home", "Let it fall, the paper crown", "Let it fall, we're burning it down", "Let it fall, your golden throne", "Let it fall, you reap what you've sown", "You shook their hands while hospitals burned", "You called the rubble lessons learned", "You signed the checks that flew the planes", "Genocide with American names", "They can buy the platforms, they can buy the news", "They can never buy the people, we refuse", "Fascism dies the day we stand", "We tear it down with our bare hands", "LET IT FALL!", "You reap what you've sown...", "Let it fall..."];
+  var SCHED = [[3.2, 4.4, "You don't own this..."], [7.6, 9.0, "Not anymore..."], [19.94, 9.0, "We tear it down with our bare hands"], [31.54, 5.74, "You bought the network, bent the truth"], [37.28, 7.28, "You hired the cop, you bought the booth"], [44.56, 7.3, "You call it strength, we call it theft"], [51.86, 5.98, "You took the country, now you'll give it back"], [57.84, 6.86, "Follow the money home"], [64.7, 3.76, "Follow the money home"], [68.46, 6.84, "Let it fall, the paper crown"], [75.3, 8.7, "Let it fall, we're burning it down"], [84.0, 4.76, "Let it fall, your golden throne"], [88.76, 9.0, "Let it fall, you reap what you've sown"], [107.34, 3.98, "Let it fall, you reap what you've sown"], [111.32, 8.02, "You shook their hands while hospitals burned"], [119.34, 7.14, "You called the rubble lessons learned"], [126.48, 6.72, "You signed the checks that flew the planes"], [133.2, 6.16, "Genocide with American names"], [139.36, 6.94, "Let it fall, the paper crown"], [146.3, 8.44, "Let it fall, we're burning it down"], [154.74, 3.5, "Let it fall, your golden throne"], [156.3, 3.5, "You call it strength, we call it theft"], [158.34, 6.16, "Let it fall, you reap what you've sown"], [164.5, 6.5, "Let it fall, you reap what you've sown"], [171.0, 6.5, "Let it fall, you reap what you've sown"], [177.5, 6.0, "Let it fall, you reap what you've sown"], [183.5, 3.5, "They can buy the platforms, they can buy the news"], [186.5, 3.5, "They can never buy the people, we refuse"], [189.3, 3.5, "Fascism dies the day we stand"], [192.18, 9.0, "We tear it down with our bare hands"], [206.34, 3.96, "LET IT FALL!"], [210.3, 3.5, "Let it fall, the paper crown"], [213.46, 7.98, "Let it fall, we're burning it down"], [221.44, 4.76, "Let it fall, your golden throne"], [226.2, 9.0, "Let it fall, you reap what you've sown"], [237.68, 5.9, "You reap what you've sown..."], [243.58, 7.1, "Let it fall..."], [250.68, 9.0, "We tear it down with our bare hands"]];
   var COLORS = ["#39ff88", "#22d3ee", "#ffd9a0", "#8ff5c8"];
   var reduced = false;
   try { reduced = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch(e){}
-  var box = null, timer = null, tick = null, idx = 0, alive = false;
+  var box = null, tick = null, seen = null, lastT = 0, laneN = 0, colN = 0, alive = false;
   function energy(){
     var t = Math.floor(A.currentTime || 0);
     return (ENV[t] !== undefined ? ENV[t] : 60) / 100;
   }
-  function slots(){ return window.innerWidth < 720 ? [50] : [10, 50, 90]; }
   function ensure(){
     if (box || reduced) return;
     box = document.createElement("div");
@@ -1657,40 +1657,52 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
     box.setAttribute("aria-hidden", "true");
     document.body.appendChild(box);
   }
-  function spawn(){
-    if (!alive) return;
-    var e = energy();
-    var sl = slots();
+  function spawn(txt){
+    var mobile = window.innerWidth < 720;
+    var lanes = mobile ? [50] : [10, 50, 90];
     var el = document.createElement("div");
     el.className = "rain-line";
-    el.textContent = LYR[idx % LYR.length];
-    idx++;
-    el.style.left = sl[Math.floor(Math.random() * sl.length)] + "%";
-    el.style.color = COLORS[idx % COLORS.length];
-    el.style.setProperty("--fall", (13 + Math.random() * 7).toFixed(1) + "s");
-    el.style.fontSize = (window.innerWidth < 720 ? 12 + Math.random() * 2.5
-                                                  : 14 + Math.random() * 4).toFixed(1) + "px";
+    el.textContent = txt;
+    el.style.left = lanes[laneN++ % lanes.length] + "%";
+    el.style.color = COLORS[colN++ % COLORS.length];
+    el.style.setProperty("--fall", (17 + Math.random() * 5).toFixed(1) + "s");
+    el.style.fontSize = (mobile ? 14 + Math.random() * 3
+                                : 18 + Math.random() * 4).toFixed(1) + "px";
     el.addEventListener("animationend", function(){
       if (el.parentNode) el.parentNode.removeChild(el);
     });
     box.appendChild(el);
-    timer = setTimeout(spawn, (1500 + (1 - e) * 2800) * (0.8 + Math.random() * 0.5));
   }
   function brighten(){
-    if (box) box.style.opacity = (0.32 + energy() * 0.30).toFixed(2);
+    if (box) box.style.opacity = (0.55 + energy() * 0.40).toFixed(2);
+  }
+  function loop(){
+    if (!alive) return;
+    var t = A.currentTime;
+    if (t + 1 < lastT) seen = {};          /* loop wrap: replay schedule */
+    lastT = t;
+    for (var i = 0; i < SCHED.length; i++){
+      if (seen[i]) continue;
+      if (SCHED[i][0] <= t + 0.2){
+        seen[i] = 1;
+        if (t - SCHED[i][0] < 6) spawn(SCHED[i][2]);  /* only near-time lines render */
+      }
+    }
   }
   function start(){
     if (alive || reduced) return;
     ensure();
     if (!box) return;
     alive = true;
+    seen = {};
+    lastT = A.currentTime || 0;
+    for (var i = 0; i < SCHED.length; i++)
+      if (SCHED[i][0] < lastT - 6) seen[i] = 1;   /* mid-song join: no backlog dump */
     brighten();
-    tick = setInterval(brighten, 1000);
-    spawn();
+    tick = setInterval(loop, 250);
   }
   function stop(){
     alive = false;
-    if (timer){ clearTimeout(timer); timer = null; }
     if (tick){ clearInterval(tick); tick = null; }
     if (box){
       box.style.opacity = "0";
@@ -1710,7 +1722,8 @@ var PM_PEOPLE={"jfk": {"full": "John F. Kennedy", "role": "35th President of the
   window.__pmRain = {
     lines: function(){ return box ? box.querySelectorAll(".rain-line").length : 0; },
     on: function(){ return alive; },
-    idx: function(){ return idx; }
+    sched: function(){ return SCHED; },
+    seen: function(){ return seen ? Object.keys(seen).length : 0; }
   };
 })();
 </script></body></html>
