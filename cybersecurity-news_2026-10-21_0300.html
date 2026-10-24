@@ -1025,15 +1025,15 @@ body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
 #pm-rain { position:fixed; inset:0; z-index:1; pointer-events:none;
   overflow:hidden; opacity:0; transition:opacity .8s ease; }
 .rain-line { position:absolute; top:0; white-space:nowrap;
-  transform:translateX(-50%); font-weight:500; line-height:1.15; opacity:0;
+  transform:translateX(var(--tx,-50%)); font-weight:500; line-height:1.15; opacity:0;
   background:rgba(3,9,7,.62); padding:3px 10px; border-radius:4px;
   text-shadow:0 0 7px currentColor, 0 1px 3px rgba(0,0,0,.85);
   animation:pm-rain-fall var(--fall,19s) linear forwards; }
 @keyframes pm-rain-fall {
-  0%   { transform:translate(-50%, 6vh); opacity:0; }
+  0%   { transform:translate(var(--tx,-50%), 6vh); opacity:0; }
   5%   { opacity:.97; }
   88%  { opacity:.93; }
-  100% { transform:translate(-50%, 116vh); opacity:0; } }
+  100% { transform:translate(var(--tx,-50%), 116vh); opacity:0; } }
 @media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:600; } }
 @media (prefers-reduced-motion: reduce){ #pm-rain { display:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Cybersecurity News, Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/cybersecurity-news_2026-10-21_0300.html", "image": "https://antifascistbrief.org/img/cybersecurity-news_2026-10-21_0300.jpg", "description": "The cybersecurity landscape this month has two separate stories that are converging into one larger problem. The first is the shift in how attackers get in: the 2026 Verizon Data Breach Investigations Report found that vulnerability exploitation has overtaken ", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-21T03:00:00-07:00", "dateModified": "2026-10-21T03:00:00-07:00"}</script></head><body>
