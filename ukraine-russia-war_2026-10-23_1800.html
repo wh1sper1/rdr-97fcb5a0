@@ -1019,6 +1019,22 @@ body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
   .pm-svg .edge.on, .pm-svg .node.on .halo { animation:none; }
   .toolcard-hot { animation:none; }
 }
+
+/* ---- lyric rain: sound-on typography falling over the map ---- */
+.pm-toolbar, .pm-dossier { position:relative; z-index:40; }
+#pm-rain { position:fixed; inset:0; z-index:1; pointer-events:none;
+  overflow:hidden; opacity:0; transition:opacity .8s ease; }
+.rain-line { position:absolute; top:-14%; white-space:nowrap;
+  transform:translateX(-50%); font-weight:600; line-height:1.15; opacity:0;
+  text-shadow:0 0 10px currentColor, 0 1px 3px rgba(0,0,0,.9);
+  animation:pm-rain-fall var(--fall,15s) linear forwards; }
+@keyframes pm-rain-fall {
+  0%   { transform:translate(-50%, 0); opacity:0; }
+  7%   { opacity:.95; }
+  86%  { opacity:.85; }
+  100% { transform:translate(-50%, 114vh); opacity:0; } }
+@media (max-width:720px){ .rain-line { letter-spacing:0; font-weight:700; } }
+@media (prefers-reduced-motion: reduce){ #pm-rain { display:none; } }
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Ukraine-Russia War: Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/ukraine-russia-war_2026-10-23_1800.html", "image": "https://antifascistbrief.org/img/ukraine-russia-war_2026-10-23_1800.jpg", "description": "The Ukraine war has entered what might be called a grinding attritional phase with two simultaneous dynamics: Russia continues to batter Ukraine's energy infrastructure with repetitive long-range strikes, while Ukraine has built a substantial long-range strike", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-23T18:00:00-07:00", "dateModified": "2026-10-23T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
