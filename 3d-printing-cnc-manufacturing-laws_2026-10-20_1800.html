@@ -800,11 +800,31 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
   .pol-acc[open] .chev { transition:none; } }
 
 /* ---------------- power map (The Trump Stack) ---------------- */
-.swipehint { display:none; }
+.pm-page { margin:6px 0 4px; }
 .pm-wrap { border:1px solid var(--line); border-radius:6px; overflow:hidden;
   background:#04070a; margin:8px 0 4px; }
-.pm-scroll { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; }
-.pm-svg { display:block; width:100%; height:auto; }
+.pm-toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px;
+  padding:10px 14px; background:#060e0a; border-bottom:1px solid rgba(57,255,136,.16); }
+.pm-zoom { display:flex; align-items:center; gap:6px; }
+.pm-btn { width:32px; height:30px; border-radius:6px;
+  border:1px solid rgba(57,255,136,.35); background:rgba(77,230,164,.07);
+  color:#8ff5c8; font:700 16px/1 'Cascadia Code',ui-monospace,Menlo,monospace;
+  cursor:pointer; transition:all .14s ease; }
+.pm-btn-wide { width:auto; padding:0 13px; font-size:11px; letter-spacing:1.4px; }
+.pm-btn:hover { border-color:#4de6a4; color:#4de6a4;
+  box-shadow:0 0 12px rgba(77,230,164,.4); }
+.pm-btn:active { transform:translateY(1px); }
+.pm-zlvl { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:11px;
+  color:#6d9083; min-width:40px; text-align:center; }
+.pm-tbnote { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:11px;
+  letter-spacing:.5px; color:#6d9083; }
+.pm-view { position:relative; background:#04070a; touch-action:none;
+  cursor:grab; }
+.pm-view.dragging { cursor:grabbing; }
+.pm-view::after { content:""; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse at 50% 45%, transparent 58%, rgba(0,0,0,.5)); }
+.pm-svg { display:block; width:100%; height:auto; touch-action:none;
+  user-select:none; -webkit-user-select:none; }
 .pm-svg .bg { fill:#04070a; }
 .pm-svg .gridline { stroke:rgba(57,255,136,.05); }
 .pm-legend { display:flex; flex-wrap:wrap; gap:9px 16px; padding:11px 14px;
@@ -826,9 +846,11 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
 .pm-svg .node { cursor:pointer; }
 .pm-svg .node circle.core { fill:#071119; stroke-width:2.5; }
 .pm-svg .node text.nm { font-weight:700; letter-spacing:1px; fill:#eafff3;
-  text-anchor:middle; }
+  text-anchor:middle; paint-order:stroke; stroke:#04070a; stroke-width:4px;
+  stroke-linejoin:round; }
 .pm-svg .node text.cap { font-size:11px; letter-spacing:.4px; fill:#6d9083;
-  text-anchor:middle; }
+  text-anchor:middle; paint-order:stroke; stroke:#04070a; stroke-width:4px;
+  stroke-linejoin:round; }
 .pm-svg .node .halo { opacity:.13; }
 .pm-svg .n-trump circle.core { stroke:#ffd75e; }
 .pm-svg .n-trump .halo { fill:#ffd75e; }
@@ -847,6 +869,65 @@ body.light .carto-key .k4 { background:rgba(10,127,70,.66); }
 .pm-svg.focusing .edge.on, .pm-svg.focusing .tag.on { opacity:1; }
 .pm-svg.focusing .node { opacity:.32; }
 .pm-svg.focusing .node.on { opacity:1; }
+/* money visibly flowing along a selected connection */
+.pm-svg .edge.on { stroke-dasharray:12 12;
+  animation:pmflow .9s linear infinite; }
+@keyframes pmflow { to { stroke-dashoffset:-24; } }
+/* legend layer muting (must come after the focusing rules) */
+.pm-svg.hide-cash .edge.cash, .pm-svg.hide-cash .tag.cash { opacity:0; }
+.pm-svg.hide-equity .edge.equity, .pm-svg.hide-equity .tag.equity { opacity:0; }
+.pm-svg.hide-power .edge.power, .pm-svg.hide-power .tag.power { opacity:0; }
+.pm-svg.hide-media .edge.media, .pm-svg.hide-media .tag.media { opacity:0; }
+.pm-svg.hide-lore .edge.lore, .pm-svg.hide-lore .tag.lore { opacity:0; }
+.pm-svg.hide-family .edge.family, .pm-svg.hide-family .tag.family { opacity:0; }
+/* node feedback */
+.pm-svg .node:hover .core, .pm-svg .node.on .core { stroke-width:4; }
+.pm-svg .node:hover .halo, .pm-svg .node.on .halo { opacity:.32; }
+.pm-svg .node.on .halo { animation:pmpulse 1.6s ease-in-out infinite; }
+@keyframes pmpulse { 50% { opacity:.12; } }
+.pm-svg .node:focus { outline:none; }
+.pm-svg .node:focus-visible .core { stroke:#fff; stroke-width:4; }
+/* legend becomes buttons */
+.pm-lg { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:12px;
+  background:transparent; border:1px solid transparent; color:#6d9083;
+  cursor:pointer; padding:3px 9px; border-radius:5px; letter-spacing:.5px;
+  transition:all .14s ease; }
+.pm-lg:hover { color:#d9f2e4; border-color:rgba(57,255,164,.35); }
+.pm-lg[aria-pressed=false] { opacity:.42; text-decoration:line-through;
+  text-decoration-thickness:1px; }
+/* dossier: per-node money trail with source links */
+.pm-dossier { border-top:1px solid rgba(57,255,164,.22);
+  background:linear-gradient(180deg, rgba(77,230,164,.08), rgba(6,14,10,.94));
+  padding:15px 18px 18px; }
+.pm-dossier[hidden] { display:none; }
+.pm-dhead { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.pm-dkick { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:10.5px;
+  letter-spacing:2.4px; color:#f0b866; text-transform:uppercase; }
+.pm-dclose { width:30px; height:30px; border-radius:6px; flex:none;
+  border:1px solid rgba(57,255,164,.3); background:transparent; color:#8ff5c8;
+  font-size:17px; line-height:1; cursor:pointer; transition:all .14s ease; }
+.pm-dclose:hover { border-color:#4de6a4; color:#fff;
+  box-shadow:0 0 10px rgba(77,230,164,.35); }
+.pm-dname { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:22px;
+  font-weight:700; color:#ffd75e; margin:7px 0 2px; letter-spacing:1.2px;
+  text-shadow:0 0 16px rgba(255,215,94,.3); }
+.pm-drole { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:14px; color:#a9c9ba; margin-bottom:11px; }
+.pm-dbio { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:15px; line-height:1.68; color:#d9f2e4; margin:0 0 13px; max-width:840px; }
+.pm-dmoney { list-style:none; margin:0 0 14px; padding:0; display:flex;
+  flex-wrap:wrap; gap:8px; }
+.pm-dmoney li { font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
+  font-size:12.5px; color:#9ff2cf; border:1px solid rgba(57,255,164,.32);
+  background:rgba(77,230,164,.08); border-radius:999px; padding:5px 13px; }
+.pm-dlinks { display:flex; flex-wrap:wrap; gap:9px; }
+.pm-dlink { font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:12.5px;
+  color:#f0b866; border:1px solid rgba(240,184,102,.45); background:rgba(240,184,102,.09);
+  border-radius:7px; padding:7px 13px; text-decoration:none;
+  transition:all .14s ease; }
+.pm-dlink:hover { border-color:#f0b866; color:#ffd9a0;
+  box-shadow:0 0 12px rgba(240,184,102,.35); }
+.pm-dlink::after { content:" 97"; font-size:.8em; opacity:.75; }
 .pm-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
   gap:10px; margin:4px 0 6px; }
 .pm-stat { border:1px solid var(--line); border-radius:5px; padding:10px 12px;
@@ -885,13 +966,14 @@ body.light .pm-stat .v { text-shadow:none; }
 .pm-foot { font-size:12.5px; line-height:1.7; color:var(--muted);
   border-top:1px solid var(--line); padding-top:14px; margin-top:8px; }
 @media (max-width:860px) {
-  .swipehint { display:block; font-family:'Cascadia Code',ui-monospace,Menlo,monospace;
-    font-size:11.5px; letter-spacing:.5px; color:var(--cyan); margin:2px 0 8px;
-    text-transform:uppercase; }
-  .pm-svg { min-width:1000px; }
+  .pm-tbnote { width:100%; order:3; }
   .pm-legend .hint { margin-left:0; width:100%; }
+  .pm-dname { font-size:19px; }
 }
 @media (max-width:640px) {
+  .pm-lg { font-size:13px; padding:5px 10px; }
+  .pm-tbnote { font-size:12px; }
+  .pm-legend .hint { font-size:12px; }
   /* ledger becomes stacked cards */
   .pm-ledger, .pm-ledger tbody, .pm-ledger tr, .pm-ledger td { display:block; width:100%; }
   .pm-ledger thead { display:none; }
@@ -902,7 +984,35 @@ body.light .pm-stat .v { text-shadow:none; }
     font-family:'Cascadia Code',ui-monospace,Menlo,monospace; font-size:10px;
     letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:1px; }
 }
-@media (prefers-reduced-motion:reduce) { .pm-svg .edge { transition:none; } }
+/* front page + nav standouts for the map */
+.toolcard-hot { border-color:rgba(77,230,164,.6);
+  background:linear-gradient(155deg, rgba(77,230,164,.11),
+    rgba(240,184,102,.06) 55%, var(--card));
+  box-shadow:0 0 24px rgba(77,230,164,.16), inset 0 0 0 1px rgba(240,184,102,.22);
+  animation:hotedge 4s ease-in-out infinite; }
+@keyframes hotedge { 0%,100% { border-color:rgba(77,230,164,.6); }
+  50% { border-color:rgba(240,184,102,.8); } }
+.toolcard-hot .tooltag { color:#4de6a4; letter-spacing:2px; }
+.toolcard-hot .toolcta { color:#f0b866; }
+.toolcard-hot::after { background:
+  radial-gradient(circle at 88% 8%, rgba(77,230,164,.2), transparent 60%),
+  radial-gradient(circle at 8% 96%, rgba(240,184,102,.15), transparent 60%); }
+.toolcard-hot:hover { box-shadow:0 0 36px rgba(77,230,164,.35);
+  transform:translateY(-3px); }
+body.light .toolcard-hot { box-shadow:0 0 0 1px rgba(10,127,70,.3); }
+body.light .toolcard-hot:hover { box-shadow:0 0 0 1px rgba(10,127,70,.4),
+  0 6px 20px rgba(0,0,0,.08); }
+.navbtn-hot { border-color:rgba(240,184,102,.7); color:#ffd9a0;
+  box-shadow:0 0 10px rgba(240,184,102,.25); }
+.navbtn-hot:hover { color:#ffe9c9; border-color:#f0b866;
+  box-shadow:0 0 18px rgba(240,184,102,.45); }
+body.light .navbtn-hot { color:#8f5e12; border-color:rgba(143,94,18,.65);
+  background:#fff; box-shadow:none; }
+@media (prefers-reduced-motion:reduce) {
+  .pm-svg .edge { transition:none; }
+  .pm-svg .edge.on, .pm-svg .node.on .halo { animation:none; }
+  .toolcard-hot { animation:none; }
+}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "3D Printing, CNC Manufacturing & Laws, Research Digest", "mainEntityOfPage": "https://antifascistbrief.org/3d-printing-cnc-manufacturing-laws_2026-10-20_1800.html", "image": "https://antifascistbrief.org/img/3d-printing-cnc-manufacturing-laws_2026-10-20_1800.jpg", "description": "S.2165, 119th Congress (2025-2026): The 3D Printed Gun Safety Act would amend Chapter 44 of Title 18 of the U.S. Code to prohibit the distribution of 3D printer plans for printing firearms. The bill makes it unlawful for any person to \"intentionally distribute", "isPartOf": {"@type": "Blog", "name": "Daily Anti-Fascist Brief"}, "publisher": {"@type": "Organization", "name": "Daily Anti-Fascist Brief", "logo": {"@type": "ImageObject", "url": "https://antifascistbrief.org/img/share-banner.png"}}, "datePublished": "2026-10-20T18:00:00-07:00", "dateModified": "2026-10-20T18:00:00-07:00"}</script></head><body>
 <div class="masthead">
   <canvas id="fireflies" aria-hidden="true"></canvas>
@@ -920,11 +1030,11 @@ body.light .pm-stat .v { text-shadow:none; }
     </form>
   </div>
   <a class="navbtn" href="index.html">Front</a>
+  <a class="navbtn navbtn-hot" href="powermap.html">The Trump Stack</a>
   <a class="navbtn" href="tags.html">Dossiers</a>
   <a class="navbtn navbtn-live" href="flockmap.html">Flock Map</a>
   <a class="navbtn navbtn-live" href="warmap.html">War Map</a>
   <a class="navbtn" href="policy.html">Policy Radar</a>
-  <a class="navbtn" href="powermap.html">Power Map</a>
   <a class="navbtn" href="terms.html">Terms</a>
   <a class="navbtn" href="search.html">Search</a>
   <a class="navbtn" href="archive.html">Archive</a>
